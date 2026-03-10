@@ -1,0 +1,9 @@
+.next
+node_modules
+out
+dist
+.DS_Store
+*.log
+.tools
+.fang_cloud_tmp_dir
+.vercel

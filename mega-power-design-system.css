@@ -1,0 +1,512 @@
+/* ================================================================
+   MEGA POWER TECHNOLOGY — Design System Reference
+   Version: 1.0
+   Last Updated: 2026-03-09
+   
+   This document serves as a complete CSS design reference
+   extracted from the MEGA POWER website. It covers:
+   
+   1. Design Tokens (Colors, Fonts, Spacing)
+   2. Typography Scale
+   3. Spacing & Layout System
+   4. Component Styles
+   5. Animation & Motion
+   6. Responsive Breakpoints
+   ================================================================ */
+
+
+/* ================================================================
+   1. DESIGN TOKENS — Colors
+   ================================================================
+   
+   Color Philosophy:
+   - Dark teal-on-dark base → conveys energy-tech professionalism
+   - Accent green (#2DD4A8) → represents clean/green energy
+   - Cyan highlights (#00E5FF) → used sparingly for "energy" feel
+   - Warm amber (#F5A623) → reserved for warnings/alerts
+   
+   ================================================================ */
+
+:root {
+
+  /* ---- Brand Colors ---- */
+  --clr-primary:          #0A5E5C;     /* Deep teal — brand anchor */
+  --clr-primary-light:    #0D7D7A;     /* Lighter teal — hover states, gradients */
+  --clr-accent:           #2DD4A8;     /* Green mint — primary CTA, highlights, interactive */
+  --clr-accent-glow:      #2DD4A866;   /* Accent with 40% opacity — glow/shadow effects */
+  --clr-energy:           #00E5FF;     /* Cyan — secondary accent for "energy" visual cues */
+  --clr-warning:          #F5A623;     /* Amber — warnings and alerts (reserved) */
+
+  /* ---- Background Colors (Dark Theme, 4-tier hierarchy) ---- */
+  --clr-dark:             #0B1A1F;     /* Darkest — page background */
+  --clr-dark-mid:         #122830;     /* Mid-dark — alternating section bg, cards */
+  --clr-surface:          #163038;     /* Surface — elevated cards, product cards */
+  --clr-surface-light:    #1D3E48;     /* Lightest surface — subtle elevation, gradients */
+
+  /* ---- Text Colors ---- */
+  --clr-text:             #E8F4F0;     /* Primary text — headings and body on dark bg */
+  --clr-text-dim:         #8AACB8;     /* Secondary text — descriptions, labels, captions */
+
+  /* ---- Derived / Utility Colors ---- */
+  /* border-subtle:       rgba(45, 212, 168, 0.08)   — card borders, dividers */
+  /* border-hover:        rgba(45, 212, 168, 0.2)    — hover state borders */
+  /* border-active:       rgba(45, 212, 168, 0.25)   — active/focus borders */
+  /* bg-tint:             rgba(45, 212, 168, 0.1)    — icon backgrounds, badge fills */
+  /* bg-tint-light:       rgba(45, 212, 168, 0.05)   — spec item backgrounds */
+  /* bg-tint-tag:         rgba(45, 212, 168, 0.08)   — tag backgrounds */
+  /* overlay-dark:        rgba(11, 26, 31, 0.8)      — navbar backdrop */
+  /* overlay-deep:        rgba(11, 26, 31, 0.95)     — navbar scrolled */
+
+
+  /* ---- Fonts ---- */
+  --font-body:            'Plus Jakarta Sans', sans-serif;  /* Primary — all body text, headings */
+  --font-mono:            'Space Mono', monospace;          /* Accent — labels, tags, model numbers, data */
+
+  /* Google Fonts Import:
+     https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap
+  */
+}
+
+
+/* ================================================================
+   2. TYPOGRAPHY SCALE
+   ================================================================
+   
+   Base: 16px (1rem)
+   Scale: Custom (loosely based on 1.25 ratio)
+   Line Heights: 1.05–1.7 depending on context
+   
+   ================================================================ */
+
+/* ---- Hero Typography ---- */
+/*
+   Hero H1:          clamp(2.8rem, 6vw, 5rem)   |  44.8px → 80px   |  weight: 800  |  line-height: 1.05
+   Hero Eyebrow:     0.8rem                      |  12.8px           |  weight: 400  |  letter-spacing: 4px  |  font: mono
+   Hero Description: 1.2rem                      |  19.2px           |  weight: 400  |  line-height: 1.7
+   Hero Stat Value:  2.4rem                      |  38.4px           |  weight: 800  |  line-height: 1
+   Hero Stat Label:  0.85rem                     |  13.6px           |  weight: 400
+*/
+
+/* ---- Section Typography ---- */
+/*
+   Section Label:    0.75rem   |  12px     |  weight: 400  |  letter-spacing: 3px  |  font: mono  |  uppercase
+   Section Title:    clamp(2rem, 4vw, 3.2rem)  |  32px → 51.2px  |  weight: 800  |  line-height: 1.15
+   Section Subtitle: 1.1rem   |  17.6px   |  weight: 400  |  line-height: 1.7     |  color: text-dim
+*/
+
+/* ---- Solution Block Typography ---- */
+/*
+   Solution Number:  0.75rem   |  12px     |  weight: 400  |  letter-spacing: 2px  |  font: mono
+   Solution H3:      clamp(1.6rem, 3vw, 2.2rem)  |  25.6px → 35.2px  |  weight: 800  |  line-height: 1.2
+   Solution Desc:    1rem      |  16px     |  weight: 400  |  line-height: 1.7     |  color: text-dim
+   Feature Item:     0.9rem    |  14.4px   |  weight: 400
+*/
+
+/* ---- Card Typography ---- */
+/*
+   Card H3:          1.2rem    |  19.2px   |  weight: 700
+   Card Body:        0.92rem   |  14.7px   |  weight: 400  |  line-height: 1.65   |  color: text-dim
+   Card Tag:         0.7rem    |  11.2px   |  weight: 400  |  font: mono
+*/
+
+/* ---- Technology Cards ---- */
+/*
+   Abbreviation:     1.8rem    |  28.8px   |  weight: 700  |  font: mono  |  color: accent
+   Card Name:        0.92rem   |  14.7px   |  weight: 700
+   Card Description: 0.85rem   |  13.6px   |  weight: 400  |  line-height: 1.6
+*/
+
+/* ---- Product Cards ---- */
+/*
+   Category Label:   0.68rem   |  10.9px   |  weight: 400  |  letter-spacing: 2px  |  font: mono  |  uppercase
+   Product Name H4:  1.05rem   |  16.8px   |  weight: 700
+   Model Number:     0.8rem    |  12.8px   |  weight: 400  |  font: mono  |  color: text-dim
+   Spec Text:        0.78rem   |  12.5px   |  weight: 400
+   Spec Strong:      0.78rem   |  12.5px   |  weight: 600  |  color: text
+*/
+
+/* ---- Data Display ---- */
+/*
+   Spec Value:       1.6rem    |  25.6px   |  weight: 800  |  color: accent
+   Spec Label:       0.78rem   |  12.5px   |  weight: 400  |  color: text-dim
+*/
+
+/* ---- Security Section ---- */
+/*
+   Security H4:      1rem      |  16px     |  weight: 700  |  font: mono  |  color: accent
+   Security Body:    0.82rem   |  13.1px   |  weight: 400  |  line-height: 1.55
+*/
+
+/* ---- Service Section ---- */
+/*
+   Service Col H3:   1.4rem    |  22.4px   |  weight: 700
+   Service Item H4:  0.95rem   |  15.2px   |  weight: 700
+   Service Item Body: 0.85rem  |  13.6px   |  weight: 400  |  line-height: 1.55
+*/
+
+/* ---- Navigation ---- */
+/*
+   Logo Text:        1.3rem    |  20.8px   |  weight: 800  |  letter-spacing: -0.5px
+   Nav Links:        0.9rem    |  14.4px   |  weight: 500
+*/
+
+/* ---- Footer ---- */
+/*
+   Footer Body:      0.9rem    |  14.4px   |  weight: 400  |  line-height: 1.6
+   Footer Col Title: 0.85rem   |  13.6px   |  weight: 700
+   Footer Links:     0.85rem   |  13.6px   |  weight: 400
+   Footer Bottom:    0.8rem    |  12.8px   |  weight: 400
+*/
+
+/* ---- CTA Section ---- */
+/*
+   CTA H2:           clamp(2rem, 4vw, 3rem)  |  32px → 48px  |  weight: 800
+   CTA Body:         1.1rem    |  17.6px     |  weight: 400
+*/
+
+
+/* ================================================================
+   3. SPACING & LAYOUT SYSTEM
+   ================================================================ */
+
+/* ---- Container ---- */
+/*
+   Max Width:         1280px
+   Horizontal Padding: 40px (desktop) → 20px (mobile ≤768px)
+*/
+
+/* ---- Section Vertical Padding ---- */
+/*
+   Standard Section:  120px top/bottom
+   Hero:              min-height 100vh, padding-top 80px (for fixed nav)
+   CTA:               120px top/bottom
+   Footer:            60px top, 32px bottom
+*/
+
+/* ---- Section Internal Spacing ---- */
+/*
+   Section Label → Title:       12px (margin-bottom on label)
+   Title → Subtitle:            20px (margin-bottom on title)
+   Subtitle → Content Grid:     48px (margin-top on grid)
+   Content → Next Block:        80–120px
+*/
+
+/* ---- Card Spacing ---- */
+/*
+   Scenario Cards:
+     Grid Gap:        24px
+     Internal Padding: 36px
+     Icon → Title:     20px
+     Title → Body:     12px
+     Body → Tags:      20px
+     Tag Gap:          8px
+     Tag Padding:      4px 12px
+
+   Tech (6S) Cards:
+     Grid Gap:        20px
+     Internal Padding: 32px
+     Abbr → Name:      4px
+     Name → Desc:      12px
+
+   Product Cards:
+     Grid Gap:        24px
+     Image Height:     200px
+     Info Padding:     24px
+     Category → Name:  8px
+     Name → Model:     8px
+     Model → Specs:    16px
+     Spec Gap:         12px
+
+   Service Items:
+     List Gap:         24px
+     Internal Padding: 24px
+     Icon → Content:   16px
+     Title → Body:     6px
+*/
+
+/* ---- Solution Block Spacing ---- */
+/*
+   Grid:              2 columns, 80px gap
+   Features Grid:     2 columns, 16px gap
+   Block Margin:      120px bottom (between solution blocks)
+   Number → Title:    12px
+   Title → Desc:      20px
+   Desc → Features:   28px
+   Features → Button: 28px
+*/
+
+/* ---- Hero Stats ---- */
+/*
+   Gap:               48px (row) → stacks vertically at ≤768px with 24px gap
+   Margin Top:        72px
+   Padding Top:       40px (with 1px top border)
+   Value → Label:     6px
+*/
+
+/* ---- Security Grid ---- */
+/*
+   Columns:           4 (desktop) → 2 (tablet) → 1 (mobile)
+   Gap:               32px
+   Icon Size:         64×64px, margin-bottom: 16px
+   Title → Body:      6px
+*/
+
+/* ---- Button Spacing ---- */
+/*
+   Primary:    padding 14px 32px
+   Outline:    padding 14px 32px
+   Nav CTA:    padding 10px 24px
+   Button Gap: 16px (hero-buttons, cta-buttons)
+*/
+
+
+/* ================================================================
+   4. COMPONENT STYLES — Border, Shadow, Radius
+   ================================================================ */
+
+/* ---- Border Radius ---- */
+/*
+   Small (tags, buttons):     6px
+   Medium (cards, inputs):    8–14px
+   Large (sections, visuals): 16–20px
+   Tags/Badges:               20px (pill shape)
+   Icons:                     10–16px
+   Logo Icon:                 8px
+   Circular elements:         50%
+*/
+
+/* ---- Borders ---- */
+/*
+   Card Default:     1px solid rgba(45, 212, 168, 0.08)
+   Card Hover:       1px solid rgba(45, 212, 168, 0.2)
+   Active/Focus:     1px solid rgba(45, 212, 168, 0.25)
+   Nav Bottom:       1px solid rgba(45, 212, 168, 0.1)
+   Hero Stats Top:   1px solid rgba(45, 212, 168, 0.15)
+   Tag Border:       1px solid rgba(45, 212, 168, 0.15)
+   Accent Top Bar:   3px (gradient, on scenario card hover)
+   Footer Divider:   1px solid rgba(45, 212, 168, 0.06)
+*/
+
+/* ---- Box Shadows ---- */
+/*
+   Card Hover:       0 20px 60px rgba(0, 0, 0, 0.3)
+   Product Hover:    0 16px 48px rgba(0, 0, 0, 0.2)
+   Button Hover:     0 8px 30px #2DD4A866 (accent glow)
+*/
+
+/* ---- Icon Containers ---- */
+/*
+   Scenario Icon:    56×56px, bg: rgba(45,212,168,0.1), radius: 14px
+   Security Icon:    64×64px, bg: rgba(45,212,168,0.1), radius: 16px
+   Service Icon:     44×44px, bg: rgba(45,212,168,0.1), radius: 10px
+   Logo Icon:        36×36px, gradient bg, radius: 8px
+*/
+
+/* ---- Feature Dot ---- */
+/*
+   Size:             8×8px
+   Color:            var(--clr-accent)
+   Shape:            circle (border-radius: 50%)
+   Vertical Align:   margin-top: 7px (aligns with text baseline)
+*/
+
+
+/* ================================================================
+   5. ANIMATION & MOTION
+   ================================================================ */
+
+/* ---- Fade-In on Scroll ---- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);  /* ease-out-expo */
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Stagger Delays ---- */
+/*
+   .stagger-1:  transition-delay: 0.1s
+   .stagger-2:  transition-delay: 0.2s
+   .stagger-3:  transition-delay: 0.3s
+   .stagger-4:  transition-delay: 0.4s
+*/
+
+/* ---- Hover Transitions ---- */
+/*
+   Cards:            all 0.3s–0.4s, translateY(-4px to -6px)
+   Buttons:          all 0.3s, translateY(-2px) + glow shadow
+   Nav Links:        color 0.3s
+   Service Items:    border-color 0.3s
+*/
+
+/* ---- Background Animations ---- */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: translateY(-50%) scale(1); }
+  50%      { opacity: 1;   transform: translateY(-50%) scale(1.05); }
+  /* Duration: 4s, ease-in-out, infinite */
+}
+
+@keyframes rotate-slow {
+  to { transform: rotate(360deg); }
+  /* Duration: 20s (outer) / 30s (inner, reverse), linear, infinite */
+}
+
+/* ---- Navbar Scroll Transition ---- */
+/*
+   Trigger:          window.scrollY > 50
+   Effect:           padding shrinks (16px → 10px), bg opacity increases (0.8 → 0.95)
+   Transition:       all 0.3s
+*/
+
+
+/* ================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ================================================================ */
+
+/* ---- Tablet: ≤1024px ---- */
+/*
+   Solution blocks:    1 column (stacked)
+   Security grid:      2 columns
+   Footer grid:        2 columns
+   Hero visual:        hidden
+   Solution .reverse:  normal direction (ltr)
+*/
+
+/* ---- Mobile: ≤768px ---- */
+/*
+   Container padding:  20px
+   Nav padding:        12px 20px
+   Nav links:          hidden (hamburger toggle)
+   Hero stats:         vertical stack, gap 24px
+   Scenario grid:      1 column
+   Solution features:  1 column
+   Security grid:      1 column
+   Service columns:    1 column
+   Footer grid:        1 column
+   Footer bottom:      column layout, center aligned
+   Security section:   padding 32px 20px
+   Spec grid:          1 column
+*/
+
+
+/* ================================================================
+   7. GRADIENT RECIPES
+   ================================================================ */
+
+/* ---- Hero Background ---- */
+/*
+   Layer 1: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(13, 125, 122, 0.25), transparent)
+   Layer 2: radial-gradient(ellipse 50% 50% at 20% 80%, rgba(45, 212, 168, 0.08), transparent)
+   Layer 3: var(--clr-dark)  (solid base)
+*/
+
+/* ---- Hero Grid Overlay ---- */
+/*
+   Pattern:  linear-gradient(rgba(45,212,168,0.04) 1px, transparent 1px),
+             linear-gradient(90deg, rgba(45,212,168,0.04) 1px, transparent 1px)
+   Size:     80px × 80px
+   Mask:     radial-gradient(ellipse 70% 70% at 60% 50%, black 20%, transparent 70%)
+*/
+
+/* ---- CTA Section ---- */
+/*
+   Background: linear-gradient(135deg, var(--clr-primary), var(--clr-dark-mid))
+   Overlay 1:  radial-gradient(circle at 30% 50%, rgba(45, 212, 168, 0.15), transparent 50%)
+   Overlay 2:  radial-gradient(circle at 70% 50%, rgba(0, 229, 255, 0.08), transparent 50%)
+*/
+
+/* ---- Gradient Text (Hero Highlight) ---- */
+/*
+   background: linear-gradient(135deg, var(--clr-accent), var(--clr-energy))
+   -webkit-background-clip: text
+   -webkit-text-fill-color: transparent
+*/
+
+/* ---- Logo Icon ---- */
+/*
+   background: linear-gradient(135deg, var(--clr-accent), var(--clr-primary))
+*/
+
+/* ---- Accent Top Bar (Card Hover) ---- */
+/*
+   background: linear-gradient(90deg, var(--clr-accent), var(--clr-energy))
+   height: 3px, top of card
+*/
+
+/* ---- Nav Backdrop ---- */
+/*
+   backdrop-filter: blur(20px)
+   background: rgba(11, 26, 31, 0.8) → rgba(11, 26, 31, 0.95) on scroll
+*/
+
+
+/* ================================================================
+   8. QUICK COPY-PASTE TOKEN MAP
+   ================================================================
+   
+   For fast reference when building new pages/components:
+   
+   COLORS
+   ──────────────────────────────
+   Page BG            #0B1A1F
+   Section Alt BG     #122830
+   Card BG            #163038
+   Card Hover BG      #1D3E48
+   Primary Text       #E8F4F0
+   Secondary Text     #8AACB8
+   Accent Green       #2DD4A8
+   Accent Cyan        #00E5FF
+   Brand Teal         #0A5E5C
+   Warning Amber      #F5A623
+   
+   FONTS
+   ──────────────────────────────
+   Body:  Plus Jakarta Sans (300,400,500,600,700,800)
+   Mono:  Space Mono (400,700)
+   
+   TYPE SCALE (rem → px at 16px base)
+   ──────────────────────────────
+   5rem     80px    Hero H1 max
+   3.2rem   51.2px  Section Title max
+   2.4rem   38.4px  Stat Value
+   2.2rem   35.2px  Solution H3 max
+   1.8rem   28.8px  Tech Abbreviation
+   1.4rem   22.4px  Service H3
+   1.3rem   20.8px  Logo
+   1.2rem   19.2px  Hero body / Card H3
+   1.1rem   17.6px  Subtitle / CTA body
+   1.05rem  16.8px  Product H4
+   1rem     16px    Base / Solution desc
+   0.95rem  15.2px  Service item title / Button
+   0.92rem  14.7px  Card body / Tech name
+   0.9rem   14.4px  Nav links / Feature text
+   0.85rem  13.6px  Footer text / Tech desc
+   0.82rem  13.1px  Security body
+   0.8rem   12.8px  Model text / Hero eyebrow
+   0.78rem  12.5px  Spec text
+   0.75rem  12px    Section label / Solution number
+   0.7rem   11.2px  Tags / Visual label
+   0.68rem  10.9px  Product category
+   
+   SPACING
+   ──────────────────────────────
+   Section padding:     120px
+   Container max-width: 1280px
+   Container pad-x:     40px (desktop) / 20px (mobile)
+   Card gap:            20–24px
+   Card padding:        24–36px
+   Button padding:      14px 32px
+   
+   RADIUS
+   ──────────────────────────────
+   XS:  6px   (buttons, small elements)
+   SM:  8px   (diagram nodes, tabs)
+   MD:  10-14px (cards, icons)
+   LG:  16px  (large cards, product cards)
+   XL:  20px  (section containers, visuals)
+   Pill: 20px (tags)
+   
+   ================================================================ */

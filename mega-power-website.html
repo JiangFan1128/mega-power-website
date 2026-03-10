@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEGA POWER TECHNOLOGY — Integrated Digital Green Energy Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --clr-primary: #0A5E5C;
+  --clr-primary-light: #0D7D7A;
+  --clr-accent: #2DD4A8;
+  --clr-accent-glow: #2DD4A866;
+  --clr-dark: #0B1A1F;
+  --clr-dark-mid: #122830;
+  --clr-surface: #163038;
+  --clr-surface-light: #1D3E48;
+  --clr-text: #E8F4F0;
+  --clr-text-dim: #8AACB8;
+  --clr-warning: #F5A623;
+  --clr-energy: #00E5FF;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--clr-dark);
+  color: var(--clr-text);
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+/* ========== UTILITY ========== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: 12px;
+  display: block;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--clr-text-dim);
+  max-width: 640px;
+  line-height: 1.7;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.btn-primary:hover { background: #3EEAB8; transform: translateY(-2px); box-shadow: 0 8px 30px var(--clr-accent-glow); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--clr-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid var(--clr-accent);
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.btn-outline:hover { background: var(--clr-accent); color: var(--clr-dark); }
+
+/* ========== NAV ========== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(20px);
+  background: rgba(11, 26, 31, 0.8);
+  border-bottom: 1px solid rgba(45, 212, 168, 0.1);
+  transition: all 0.3s;
+}
+nav.scrolled { padding: 10px 40px; background: rgba(11, 26, 31, 0.95); }
+.logo {
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--clr-text);
+}
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--clr-accent), var(--clr-primary));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--clr-text-dim);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--clr-accent); }
+.nav-contact {
+  padding: 10px 24px !important;
+  background: var(--clr-accent) !important;
+  color: var(--clr-dark) !important;
+  border-radius: 6px;
+  font-weight: 700 !important;
+}
+.mobile-toggle { display: none; background: none; border: none; color: var(--clr-text); font-size: 1.5rem; cursor: pointer; }
+
+/* ========== HERO ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(13, 125, 122, 0.25), transparent),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(45, 212, 168, 0.08), transparent),
+    var(--clr-dark);
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(45, 212, 168, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 212, 168, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask: radial-gradient(ellipse 70% 70% at 60% 50%, black 20%, transparent 70%);
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: var(--clr-accent);
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  max-width: 800px;
+  margin-bottom: 28px;
+}
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--clr-accent), var(--clr-energy));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: var(--clr-text-dim);
+  max-width: 560px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(45, 212, 168, 0.15);
+}
+.hero-stat-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--clr-accent);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.85rem;
+  color: var(--clr-text-dim);
+  margin-top: 6px;
+}
+.hero-visual {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 212, 168, 0.12) 0%, transparent 70%);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 60px;
+  border: 2px solid rgba(45, 212, 168, 0.15);
+  border-radius: 50%;
+  animation: rotate-slow 20s linear infinite;
+}
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: 120px;
+  border: 1px dashed rgba(45, 212, 168, 0.1);
+  border-radius: 50%;
+  animation: rotate-slow 30s linear infinite reverse;
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: translateY(-50%) scale(1); }
+  50% { opacity: 1; transform: translateY(-50%) scale(1.05); }
+}
+@keyframes rotate-slow { to { transform: rotate(360deg); } }
+
+/* ========== SCENARIOS SECTION ========== */
+.scenarios { padding: 120px 0; position: relative; }
+.scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.scenario-card {
+  background: var(--clr-dark-mid);
+  border: 1px solid rgba(45, 212, 168, 0.08);
+  border-radius: 16px;
+  padding: 36px;
+  transition: all 0.4s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.scenario-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-accent), var(--clr-energy));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.scenario-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(45, 212, 168, 0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.scenario-card:hover::before { opacity: 1; }
+.scenario-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(45, 212, 168, 0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.scenario-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.scenario-card p {
+  font-size: 0.92rem;
+  color: var(--clr-text-dim);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.scenario-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.scenario-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 4px 12px;
+  background: rgba(45, 212, 168, 0.08);
+  border: 1px solid rgba(45, 212, 168, 0.15);
+  border-radius: 20px;
+  color: var(--clr-accent);
+}
+
+/* ========== SOLUTIONS ========== */
+.solutions { padding: 120px 0; background: var(--clr-dark-mid); }
+.solution-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 120px;
+}
+.solution-block:last-child { margin-bottom: 0; }
+.solution-block.reverse { direction: rtl; }
+.solution-block.reverse > * { direction: ltr; }
+.solution-number {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--clr-accent);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.solution-block h3 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.solution-block .desc {
+  color: var(--clr-text-dim);
+  margin-bottom: 28px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.solution-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.solution-visual {
+  background: var(--clr-surface);
+  border-radius: 20px;
+  padding: 48px;
+  position: relative;
+  border: 1px solid rgba(45, 212, 168, 0.08);
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.visual-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--clr-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.visual-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.diagram-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.diagram-node {
+  padding: 10px 16px;
+  background: rgba(45, 212, 168, 0.08);
+  border: 1px solid rgba(45, 212, 168, 0.15);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.diagram-node.active {
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  border-color: var(--clr-accent);
+}
+.diagram-arrow {
+  color: var(--clr-accent);
+  font-size: 1.2rem;
+}
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.spec-item {
+  padding: 20px;
+  background: rgba(45, 212, 168, 0.05);
+  border-radius: 10px;
+}
+.spec-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--clr-accent);
+  line-height: 1;
+}
+.spec-label {
+  font-size: 0.78rem;
+  color: var(--clr-text-dim);
+  margin-top: 6px;
+}
+
+/* ========== TECHNOLOGY ========== */
+.technology { padding: 120px 0; position: relative; }
+.tech-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.tech-hero .section-subtitle { margin: 0 auto; }
+.sixs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 80px;
+}
+.sixs-card {
+  background: var(--clr-dark-mid);
+  border: 1px solid rgba(45, 212, 168, 0.08);
+  border-radius: 14px;
+  padding: 32px;
+  transition: all 0.3s;
+}
+.sixs-card:hover {
+  border-color: rgba(45, 212, 168, 0.25);
+  transform: translateY(-4px);
+}
+.sixs-abbr {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  margin-bottom: 4px;
+}
+.sixs-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.sixs-desc {
+  font-size: 0.85rem;
+  color: var(--clr-text-dim);
+  line-height: 1.6;
+}
+.security-section {
+  background: var(--clr-dark-mid);
+  border-radius: 20px;
+  padding: 60px;
+  border: 1px solid rgba(45, 212, 168, 0.08);
+}
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+.security-item { text-align: center; }
+.security-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  background: rgba(45, 212, 168, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.security-item h4 {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--clr-accent);
+  margin-bottom: 6px;
+}
+.security-item p {
+  font-size: 0.82rem;
+  color: var(--clr-text-dim);
+  line-height: 1.55;
+}
+
+/* ========== PRODUCTS ========== */
+.products { padding: 120px 0; background: var(--clr-dark-mid); }
+.product-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.product-tab {
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid rgba(45, 212, 168, 0.15);
+  border-radius: 8px;
+  color: var(--clr-text-dim);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.product-tab.active, .product-tab:hover {
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  border-color: var(--clr-accent);
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.product-card {
+  background: var(--clr-surface);
+  border: 1px solid rgba(45, 212, 168, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.product-card:hover {
+  border-color: rgba(45, 212, 168, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+.product-img {
+  height: 200px;
+  background: linear-gradient(135deg, var(--clr-dark-mid), var(--clr-surface-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.product-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, var(--clr-surface));
+}
+.product-info { padding: 24px; }
+.product-category {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--clr-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.product-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.product-model {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--clr-text-dim);
+  margin-bottom: 16px;
+}
+.product-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.product-spec {
+  font-size: 0.78rem;
+  color: var(--clr-text-dim);
+}
+.product-spec strong {
+  color: var(--clr-text);
+  font-weight: 600;
+}
+
+/* ========== SERVICE ========== */
+.service { padding: 120px 0; }
+.service-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 48px;
+}
+.service-col h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.service-col h3 span {
+  color: var(--clr-accent);
+}
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.service-item {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  background: var(--clr-dark-mid);
+  border-radius: 12px;
+  border: 1px solid rgba(45, 212, 168, 0.06);
+  transition: all 0.3s;
+}
+.service-item:hover { border-color: rgba(45, 212, 168, 0.2); }
+.service-item-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(45, 212, 168, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.service-item h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.service-item p {
+  font-size: 0.85rem;
+  color: var(--clr-text-dim);
+  line-height: 1.55;
+}
+
+/* ========== CTA ========== */
+.cta {
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-dark-mid));
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(45, 212, 168, 0.15), transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(0, 229, 255, 0.08), transparent 50%);
+}
+.cta > * { position: relative; z-index: 2; }
+.cta h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.cta p {
+  font-size: 1.1rem;
+  color: rgba(232, 244, 240, 0.7);
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ========== FOOTER ========== */
+footer {
+  padding: 60px 0 32px;
+  border-top: 1px solid rgba(45, 212, 168, 0.08);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand p {
+  font-size: 0.9rem;
+  color: var(--clr-text-dim);
+  margin-top: 16px;
+  line-height: 1.6;
+  max-width: 300px;
+}
+.footer-col h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--clr-text);
+}
+.footer-col a {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--clr-text-dim);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--clr-accent); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(45, 212, 168, 0.06);
+  font-size: 0.8rem;
+  color: var(--clr-text-dim);
+}
+
+/* ========== ANIMATIONS ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .solution-block { grid-template-columns: 1fr; gap: 40px; }
+  .solution-block.reverse { direction: ltr; }
+  .hero-visual { display: none; }
+  .security-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  nav { padding: 12px 20px; }
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  .hero-stats { flex-direction: column; gap: 24px; }
+  .scenarios-grid { grid-template-columns: 1fr; }
+  .solution-features { grid-template-columns: 1fr; }
+  .security-grid { grid-template-columns: 1fr; }
+  .service-columns { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .security-section { padding: 32px 20px; }
+  .spec-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav id="navbar">
+  <a href="#" class="logo">
+    <div class="logo-icon">⚡</div>
+    MEGA POWER
+  </a>
+  <div class="nav-links">
+    <a href="#scenarios">Scenarios</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#technology">Technology</a>
+    <a href="#products">Products</a>
+    <a href="#service">Service</a>
+    <a href="#contact" class="nav-contact">Contact Us</a>
+  </div>
+  <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</button>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-visual"></div>
+  <div class="container hero-content">
+    <div class="hero-eyebrow">MEGA POWER TECHNOLOGY</div>
+    <h1>Empowering Global <span class="highlight">Sustainable Energy</span> Development</h1>
+    <p>Integrated digital green energy solutions combining photovoltaic generation, flexible storage, efficient charging, and intelligent management — from megawatt-scale grids to modular microgrids.</p>
+    <div class="hero-buttons">
+      <a href="#solutions" class="btn-primary">Explore Solutions →</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-value">20+</div>
+        <div class="hero-stat-label">Years of Industry Expertise</div>
+      </div>
+      <div>
+        <div class="hero-stat-value">6S+EDR</div>
+        <div class="hero-stat-label">Patented Safety System</div>
+      </div>
+      <div>
+        <div class="hero-stat-value">&lt;50ms</div>
+        <div class="hero-stat-label">Frequency Regulation Latency</div>
+      </div>
+      <div>
+        <div class="hero-stat-value">28 Days</div>
+        <div class="hero-stat-label">Advance Failure Detection</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SCENARIOS ========== -->
+<section class="scenarios" id="scenarios">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">Your Challenge</span>
+      <h2 class="section-title">Find the Right Solution for Your Scenario</h2>
+      <p class="section-subtitle">Whether you're managing a wind farm, electrifying a fleet, or powering a remote site — we have the energy storage system designed for your exact needs.</p>
+    </div>
+    <div class="scenarios-grid">
+
+      <div class="scenario-card fade-in stagger-1" onclick="document.getElementById('sol-utility').scrollIntoView({behavior:'smooth'})">
+        <div class="scenario-icon">🏗️</div>
+        <h3>Grid-Scale Renewable Integration</h3>
+        <p>You operate wind or solar farms and need to smooth intermittency, shift energy across time, and meet grid requirements for stability and capacity.</p>
+        <div class="scenario-tags">
+          <span class="scenario-tag">Wind Farms</span>
+          <span class="scenario-tag">PV Stations</span>
+          <span class="scenario-tag">Substations</span>
+        </div>
+      </div>
+
+      <div class="scenario-card fade-in stagger-2" onclick="document.getElementById('sol-freq').scrollIntoView({behavior:'smooth'})">
+        <div class="scenario-icon">📡</div>
+        <h3>Grid Frequency Stabilization</h3>
+        <p>Your grid faces frequency deviations and needs rapid-response regulation to maintain stability around 50Hz — faster than thermal or hydro power can deliver.</p>
+        <div class="scenario-tags">
+          <span class="scenario-tag">Frequency Regulation</span>
+          <span class="scenario-tag">Green Energy Stations</span>
+          <span class="scenario-tag">Microgrids</span>
+        </div>
+      </div>
+
+      <div class="scenario-card fade-in stagger-3" onclick="document.getElementById('sol-pvess').scrollIntoView({behavior:'smooth'})">
+        <div class="scenario-icon">🔌</div>
+        <h3>EV Charging with Limited Grid</h3>
+        <p>You need high-power EV charging but face no-grid, weak-grid, or limited distribution capacity. From passenger cars to heavy trucks and mining vehicles.</p>
+        <div class="scenario-tags">
+          <span class="scenario-tag">No Grid / Weak Grid</span>
+          <span class="scenario-tag">Heavy Truck Supercharge</span>
+          <span class="scenario-tag">High-Power EV</span>
+        </div>
+      </div>
+
+      <div class="scenario-card fade-in stagger-4" onclick="document.getElementById('sol-transport').scrollIntoView({behavior:'smooth'})">
+        <div class="scenario-icon">🚚</div>
+        <h3>Mobile & Emergency Power</h3>
+        <p>You need energy delivered to remote locations, construction sites, or disaster zones — rapidly deployable, transportable, and independent of fixed infrastructure.</p>
+        <div class="scenario-tags">
+          <span class="scenario-tag">Emergency Rescue</span>
+          <span class="scenario-tag">Remote Area</span>
+          <span class="scenario-tag">Green Mining</span>
+        </div>
+      </div>
+
+      <div class="scenario-card fade-in stagger-1" onclick="document.getElementById('sol-ci').scrollIntoView({behavior:'smooth'})">
+        <div class="scenario-icon">🏢</div>
+        <h3>Commercial & Industrial Cost Control</h3>
+        <p>You're a factory, building, hospital, or school looking to cut electricity costs, provide backup power, and move toward green energy transformation.</p>
+        <div class="scenario-tags">
+          <span class="scenario-tag">Industrial Enterprise</span>
+          <span class="scenario-tag">CBD Buildings</span>
+          <span class="scenario-tag">Hospitals & Schools</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOLUTIONS ========== -->
+<section class="solutions" id="solutions">
+  <div class="container">
+    <div class="fade-in" style="text-align:center; margin-bottom: 80px;">
+      <span class="section-label">Solutions</span>
+      <h2 class="section-title">Comprehensive Digital Green Energy Solutions</h2>
+      <p class="section-subtitle" style="margin:0 auto;">MEGA combines green generation, stable supply, flexible storage, and efficient charging — powered by intelligent digital management tools.</p>
+    </div>
+
+    <!-- Solution 1: Utility-Scale -->
+    <div class="solution-block fade-in" id="sol-utility">
+      <div>
+        <div class="solution-number">SOLUTION 01</div>
+        <h3>Utility-Scale Energy Storage</h3>
+        <p class="desc">Megawatt-level systems deployed on the grid or generation side, designed to shift energy over time and bridge the gap between power generation and consumption. Improve grid stability, enable higher renewable integration, and boost overall system efficiency.</p>
+        <div class="solution-features">
+          <div class="feature-item"><div class="feature-dot"></div><span>Millisecond-class active/reactive power regulation</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Peak shaving & backup capacity</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Black start & rapid fault response</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Smooth intermittency & shift energy</span></div>
+        </div>
+        <a href="#products" class="btn-primary">View Products →</a>
+      </div>
+      <div class="solution-visual">
+        <div class="visual-label">System Architecture</div>
+        <div class="visual-diagram">
+          <div class="diagram-row">
+            <div class="diagram-node">☀️ PV Station</div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node">PV Step-up Container</div>
+          </div>
+          <div class="diagram-row">
+            <div class="diagram-node">💨 Wind Generation</div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node">Wind Step-up Container</div>
+          </div>
+          <div class="diagram-row">
+            <div class="diagram-node">🔋 Battery Storage</div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node active">PCS-Integrated Step-up</div>
+          </div>
+          <div class="diagram-row" style="margin-top:8px; padding-top:16px; border-top: 1px dashed rgba(45,212,168,0.15);">
+            <div class="diagram-arrow">↘</div>
+            <div class="diagram-node active" style="font-size:0.9rem;">⚡ Grid Connection</div>
+            <div class="diagram-arrow">↗</div>
+          </div>
+          <div class="diagram-row" style="justify-content:flex-end;">
+            <div class="diagram-node" style="background:rgba(0,229,255,0.08);border-color:rgba(0,229,255,0.2);">MCS / EMS Digital Management</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution 2: Frequency Regulation -->
+    <div class="solution-block reverse fade-in" id="sol-freq">
+      <div>
+        <div class="solution-number">SOLUTION 02</div>
+        <h3>Frequency Regulation Storage</h3>
+        <p class="desc">Millisecond-level response to grid frequency deviations, surpassing thermal power (minute-level) and hydro power (second-level). Precisely follows dispatch instructions, flexibly absorbs or releases power, and generates significant revenue in ancillary service markets.</p>
+        <div class="solution-features">
+          <div class="feature-item"><div class="feature-dot"></div><span>Instant response: millisecond-level</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Two-way regulation capability</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Zero-latency full power delivery</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Significant market revenue potential</span></div>
+        </div>
+        <a href="#products" class="btn-primary">View Products →</a>
+      </div>
+      <div class="solution-visual">
+        <div class="visual-label">Response Speed Comparison</div>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-value">&lt;50ms</div>
+            <div class="spec-label">MEGA Battery Storage Response</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">~1s</div>
+            <div class="spec-label">Hydro Power Response</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">~1min</div>
+            <div class="spec-label">Thermal Power Response</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">50Hz</div>
+            <div class="spec-label">Target Grid Frequency</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution 3: PV-ESS-Charging -->
+    <div class="solution-block fade-in" id="sol-pvess">
+      <div>
+        <div class="solution-number">SOLUTION 03</div>
+        <h3>Integrated PV-ESS-Charging</h3>
+        <p class="desc">Combines solar PV, energy storage, and EV charging into a smart microgrid via AC or DC coupling. Ideal for no-grid, weak-grid, or capacity-limited scenarios — from HPC power nodes to megawatt-level charging corridors for heavy trucks.</p>
+        <div class="solution-features">
+          <div class="feature-item"><div class="feature-dot"></div><span>Virtual grid expansion, bypass limits</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Off-grid / On-grid seamless switching</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Modular plug-and-play deployment</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>AI-driven "6S+EDR" smart O&M</span></div>
+        </div>
+        <a href="#products" class="btn-primary">View Products →</a>
+      </div>
+      <div class="solution-visual">
+        <div class="visual-label">Charging Configuration Matrix</div>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-value">200kW</div>
+            <div class="spec-label">HPC Power Node — Passenger Cars</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">240kW×N</div>
+            <div class="spec-label">E-Bus Depot Charging Station</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">480kW×N</div>
+            <div class="spec-label">Megawatt Charging Corridor</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">XFC</div>
+            <div class="spec-label">Ultra-Fast Charging Power Park</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution 4: Transportable -->
+    <div class="solution-block reverse fade-in" id="sol-transport">
+      <div>
+        <div class="solution-number">SOLUTION 04</div>
+        <h3>Transportable Energy Storage</h3>
+        <p class="desc">Power generation, storage, and control integrated into containers, trailers, or vehicles — delivering energy "wherever it's needed." Features automotive-grade vibration resistance, all-weather liquid cooling, and intelligent stability control.</p>
+        <div class="solution-features">
+          <div class="feature-item"><div class="feature-dot"></div><span>10,000+ fast-plug mating cycles</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Automotive-grade anti-vibration</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>A1 class flame-resistant materials</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>SOP automated fault dispatch</span></div>
+        </div>
+        <a href="#products" class="btn-primary">View Products →</a>
+      </div>
+      <div class="solution-visual">
+        <div class="visual-label">System Topology</div>
+        <div class="visual-diagram">
+          <div class="diagram-row">
+            <div class="diagram-node">⚡ Grid</div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node active">Grid-Connected Charging</div>
+          </div>
+          <div class="diagram-row" style="justify-content:center;">
+            <div class="diagram-arrow">↕ Battery Turnover</div>
+          </div>
+          <div class="diagram-row">
+            <div class="diagram-node">🔋 Charging Batteries</div>
+            <div class="diagram-arrow">⇌</div>
+            <div class="diagram-node">🔋 Discharging Batteries</div>
+          </div>
+          <div class="diagram-row">
+            <div class="diagram-node active">Off-Grid Discharging</div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node">🏭 Load</div>
+          </div>
+          <div class="diagram-row" style="justify-content:flex-end; margin-top: 8px;">
+            <div class="diagram-node" style="background:rgba(0,229,255,0.08);border-color:rgba(0,229,255,0.2);">DMS Intelligent Dispatch</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution 5: C&I -->
+    <div class="solution-block fade-in" id="sol-ci">
+      <div>
+        <div class="solution-number">SOLUTION 05</div>
+        <h3>Commercial & Industrial Energy Storage</h3>
+        <p class="desc">Scalable from small (≤2MWh) to large (≥5MWh) installations. Customized capacity assessment, grid interconnection compliance, and the industry-exclusive "6S+EDR" safety system — delivering energy cost control, reliability, and green transformation.</p>
+        <div class="solution-features">
+          <div class="feature-item"><div class="feature-dot"></div><span>Customized sizing & site surveying</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Grid interconnection compliance</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Multi-dimensional 6S+EDR safety</span></div>
+          <div class="feature-item"><div class="feature-dot"></div><span>Full data monitoring & fault alerts</span></div>
+        </div>
+        <a href="#products" class="btn-primary">View Products →</a>
+      </div>
+      <div class="solution-visual">
+        <div class="visual-label">Scalable Architecture</div>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-value">≤2MWh</div>
+            <div class="spec-label">Small-scale — 261kWh Cabinets × N<br>0.4kV Input</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">2–10MWh</div>
+            <div class="spec-label">Medium-scale — 418kWh Cabinets × N<br>10kV Input</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">≥5MWh</div>
+            <div class="spec-label">Large-scale — 5MWh Containers × N<br>≥10kV Input</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">ECS</div>
+            <div class="spec-label">Intelligent Capacity Calculation<br>for Precise Decision Making</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== TECHNOLOGY ========== -->
+<section class="technology" id="technology">
+  <div class="container">
+    <div class="tech-hero fade-in">
+      <span class="section-label">Core Technology</span>
+      <h2 class="section-title">The "6S+EDR" Innovative Safety System</h2>
+      <p class="section-subtitle">Built on 20+ years of power generation expertise, integrating IoT, AI, and edge computing with advanced energy storage — pioneering the world's first energy storage EDR system.</p>
+    </div>
+
+    <div class="sixs-grid">
+      <div class="sixs-card fade-in stagger-1">
+        <div class="sixs-abbr">BWS</div>
+        <div class="sixs-name">Battery Warning System</div>
+        <div class="sixs-desc">Data-driven algorithm with intelligent advance warning — detects gradual failures 28 days in advance, preventing battery cluster fires before they occur.</div>
+      </div>
+      <div class="sixs-card fade-in stagger-2">
+        <div class="sixs-abbr">EDR</div>
+        <div class="sixs-name">Event Data Recorder</div>
+        <div class="sixs-desc">World's first for energy storage (patented). Multi-source data collection with comprehensive recording for credible accident tracing and root cause analysis.</div>
+      </div>
+      <div class="sixs-card fade-in stagger-3">
+        <div class="sixs-abbr">HCS</div>
+        <div class="sixs-name">High-speed Control System</div>
+        <div class="sixs-desc">Real-time Ethernet technology achieving high-speed synchronization and low-delay regulation — reducing frequency regulation latency to under 50ms.</div>
+      </div>
+      <div class="sixs-card fade-in stagger-1">
+        <div class="sixs-abbr">EMS</div>
+        <div class="sixs-name">Energy Management System</div>
+        <div class="sixs-desc">Dynamic intelligent control with system-level partition safety management. On-premises deployment available at three scale tiers with full data security.</div>
+      </div>
+      <div class="sixs-card fade-in stagger-2">
+        <div class="sixs-abbr">OMS</div>
+        <div class="sixs-name">Operations & Maintenance</div>
+        <div class="sixs-desc">Real-time monitoring with automatic work order generation and visible progress tracking — maximizing uptime and maintenance efficiency.</div>
+      </div>
+      <div class="sixs-card fade-in stagger-3">
+        <div class="sixs-abbr">BMS</div>
+        <div class="sixs-name">Battery Management System</div>
+        <div class="sixs-desc">Connector temperature detection with PACK-level fire prevention linkage — multi-layer protection at the cell, module, and system levels.</div>
+      </div>
+      <div class="sixs-card fade-in stagger-1">
+        <div class="sixs-abbr">PCS</div>
+        <div class="sixs-name">Power Conversion System</div>
+        <div class="sixs-desc">Series multi-branch design providing effective electrical and safety isolation — ensuring fault containment and system reliability.</div>
+      </div>
+    </div>
+
+    <!-- Data Security -->
+    <div class="security-section fade-in">
+      <span class="section-label">Data Security</span>
+      <h3 class="section-title" style="font-size: 1.8rem;">EMS On-Premises Deployment & Data Protection</h3>
+      <p class="section-subtitle">Customized EMS deployments across three scales with enterprise-grade data security from collection to storage.</p>
+      <div class="security-grid">
+        <div class="security-item">
+          <div class="security-icon">🔐</div>
+          <h4>E2EE</h4>
+          <p>End-to-end encryption with TLS 1.3 for transmission and AES-256 for storage — data protected at every stage.</p>
+        </div>
+        <div class="security-item">
+          <div class="security-icon">👤</div>
+          <h4>RBAC</h4>
+          <p>Role-based access control ensuring personnel can only access data and APIs within their job responsibilities.</p>
+        </div>
+        <div class="security-item">
+          <div class="security-icon">🔑</div>
+          <h4>MFA</h4>
+          <p>Multi-factor authentication combining password with dynamic verification code or biometric recognition.</p>
+        </div>
+        <div class="security-item">
+          <div class="security-icon">📋</div>
+          <h4>Log Audit</h4>
+          <p>Immutable log system supporting multi-dimensional audit queries by time, user, and operation type.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRODUCTS ========== -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">Product Portfolio</span>
+      <h2 class="section-title">Core Hardware Products</h2>
+      <p class="section-subtitle">From megawatt-scale containerized systems to compact distributed cabinets — engineered for every scenario.</p>
+    </div>
+
+    <div class="product-tabs" style="margin-top: 40px;">
+      <button class="product-tab active" onclick="filterProducts('all', this)">All Products</button>
+      <button class="product-tab" onclick="filterProducts('grid', this)">Grid & Frequency</button>
+      <button class="product-tab" onclick="filterProducts('pvess', this)">PV-ESS-Charging</button>
+      <button class="product-tab" onclick="filterProducts('transport', this)">Transportable</button>
+      <button class="product-tab" onclick="filterProducts('ci', this)">C&I / Distributed</button>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+
+      <div class="product-card" data-cat="grid">
+        <div class="product-img">🏭</div>
+        <div class="product-info">
+          <div class="product-category">Grid & Frequency</div>
+          <h4>PCS-Integrated Step-up Container (Cluster)</h4>
+          <div class="product-model">iBCS100-2500B/20-AC</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>2500kW</strong> Rated</div>
+            <div class="product-spec"><strong>12</strong> DC Channels</div>
+            <div class="product-spec"><strong>20kV</strong></div>
+            <div class="product-spec"><strong>IP54</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="grid">
+        <div class="product-img">⚡</div>
+        <div class="product-info">
+          <div class="product-category">Grid & Frequency</div>
+          <h4>PCS-Integrated Step-up Container (Integrated)</h4>
+          <div class="product-model">iBCS100-2500A/20-AC</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>2750kW</strong> Max</div>
+            <div class="product-spec"><strong>20/35kV</strong></div>
+            <div class="product-spec"><strong>≤18T</strong></div>
+            <div class="product-spec"><strong>IP66</strong> PCS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="grid">
+        <div class="product-img">🔋</div>
+        <div class="product-info">
+          <div class="product-category">Grid & Frequency</div>
+          <h4>DC Battery Storage Container</h4>
+          <div class="product-model">iESS100-5015B2-LC</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>5015.9kWh</strong></div>
+            <div class="product-spec"><strong>LFP</strong></div>
+            <div class="product-spec"><strong>Liquid Cooling</strong></div>
+            <div class="product-spec"><strong>42T</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="pvess">
+        <div class="product-img">☀️</div>
+        <div class="product-info">
+          <div class="product-category">PV-ESS-Charging</div>
+          <h4>PV-Storage Hybrid Unit</h4>
+          <div class="product-model">iPES100-100-215-AC-100</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>100kW</strong> AC</div>
+            <div class="product-spec"><strong>215kWh</strong> Battery</div>
+            <div class="product-spec"><strong>2×50kW</strong> PV</div>
+            <div class="product-spec"><strong>GB/CE</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="pvess">
+        <div class="product-img">🔌</div>
+        <div class="product-info">
+          <div class="product-category">PV-ESS-Charging</div>
+          <h4>Energy Storage Integrated Charger</h4>
+          <div class="product-model">iEFC100-80/120-AL-C</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>120kW</strong> Rated</div>
+            <div class="product-spec"><strong>200kW</strong> Max</div>
+            <div class="product-spec"><strong>209kWh</strong></div>
+            <div class="product-spec"><strong>IP55</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="pvess">
+        <div class="product-img">⚡</div>
+        <div class="product-info">
+          <div class="product-category">PV-ESS-Charging</div>
+          <h4>Power Cabinet & High-Power Terminal</h4>
+          <div class="product-model">iEFC Series</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>1440kW</strong> Cabinet</div>
+            <div class="product-spec"><strong>12</strong> Output Ch.</div>
+            <div class="product-spec"><strong>2×600A</strong></div>
+            <div class="product-spec"><strong>IP55</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="transport">
+        <div class="product-img">📦</div>
+        <div class="product-info">
+          <div class="product-category">Transportable</div>
+          <h4>Grid-Connected Charging Container</h4>
+          <div class="product-model">iBCS100-1725A/10-AC</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>1725kW</strong> Rated</div>
+            <div class="product-spec"><strong>10kV</strong></div>
+            <div class="product-spec"><strong>≤13T</strong></div>
+            <div class="product-spec"><strong>IP66</strong> PCS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="transport">
+        <div class="product-img">🔓</div>
+        <div class="product-info">
+          <div class="product-category">Transportable</div>
+          <h4>Off-Grid Discharging Container</h4>
+          <div class="product-model">iBCS100-2×2500A/10-AC</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>2510kW</strong> Rated</div>
+            <div class="product-spec"><strong>Grid + Off-grid</strong></div>
+            <div class="product-spec"><strong>≤18T</strong></div>
+            <div class="product-spec"><strong>0.69kV</strong> Off-grid</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="transport">
+        <div class="product-img">🚛</div>
+        <div class="product-info">
+          <div class="product-category">Transportable</div>
+          <h4>Battery Storage Transport Vehicle</h4>
+          <div class="product-model">iESS100-3343B2-LC-M</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>LFP</strong></div>
+            <div class="product-spec"><strong>6000</strong> Cycles</div>
+            <div class="product-spec"><strong>Anti-Vibration</strong></div>
+            <div class="product-spec"><strong>≤40T</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="ci">
+        <div class="product-img">🏢</div>
+        <div class="product-info">
+          <div class="product-category">Distributed / C&I</div>
+          <h4>Distributed Energy Storage Cabinet (125kW)</h4>
+          <div class="product-model">iDPS100-125/261 LC</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>261kWh</strong></div>
+            <div class="product-spec"><strong>125kW</strong></div>
+            <div class="product-spec"><strong>AC380V</strong></div>
+            <div class="product-spec"><strong>Liquid Cooling</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="ci">
+        <div class="product-img">🏗️</div>
+        <div class="product-info">
+          <div class="product-category">Distributed / C&I</div>
+          <h4>Distributed Energy Storage Cabinet (200kW)</h4>
+          <div class="product-model">iDPS200-200/418 LC</div>
+          <div class="product-specs">
+            <div class="product-spec"><strong>418kWh</strong></div>
+            <div class="product-spec"><strong>200kW</strong></div>
+            <div class="product-spec"><strong>AC690V</strong></div>
+            <div class="product-spec"><strong>IP55 / C4</strong></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICE ========== -->
+<section class="service" id="service">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">Service & Support</span>
+      <h2 class="section-title">Global O&M Strategy & Service Mechanism</h2>
+      <p class="section-subtitle">Localized teams, proactive maintenance, and rapid response — ensuring your energy system runs at peak performance.</p>
+    </div>
+
+    <div class="service-columns">
+      <div class="service-col fade-in">
+        <h3><span>01</span> O&M Strategy</h3>
+        <div class="service-list">
+          <div class="service-item">
+            <div class="service-item-icon">📍</div>
+            <div>
+              <h4>Localized Service Team</h4>
+              <p>Dedicated operation and maintenance teams established locally to understand market needs and provide customized services.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-item-icon">🌐</div>
+            <div>
+              <h4>Cross-Cultural Communication</h4>
+              <p>Service teams trained in cross-cultural communication to effectively engage with customers from diverse backgrounds.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-item-icon">🔄</div>
+            <div>
+              <h4>Continuous Technical Updates</h4>
+              <p>Ongoing technical support with regular solution updates to meet constantly evolving market demands.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-item-icon">🤝</div>
+            <div>
+              <h4>Partner Network Expansion</h4>
+              <p>Strategic partnerships with local enterprises, leveraging combined market knowledge and resources.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-col fade-in stagger-2">
+        <h3><span>02</span> Service Mechanism</h3>
+        <div class="service-list">
+          <div class="service-item">
+            <div class="service-item-icon">🚨</div>
+            <div>
+              <h4>7×24h Emergency Hotline</h4>
+              <p>Round-the-clock emergency fault resolution with rapid response to all after-sales service requests.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-item-icon">🔧</div>
+            <div>
+              <h4>Preventive Maintenance</h4>
+              <p>Periodic inspection and maintenance plans to prevent system failures and ensure service continuity.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-item-icon">📚</div>
+            <div>
+              <h4>Customer Training & Support</h4>
+              <p>Online and on-site training programs ensuring correct product usage and reducing operational issues.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-item-icon">📦</div>
+            <div>
+              <h4>24h Replacement Part Delivery</h4>
+              <p>Strategic parts warehouse network ensuring critical components delivered within 24 hours, minimizing downtime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta" id="contact">
+  <h2>Ready to Power Your Future?</h2>
+  <p>Let's discuss how MEGA's integrated digital green energy solutions can transform your energy infrastructure.</p>
+  <div class="cta-buttons">
+    <a href="mailto:info@megapower.co.jp" class="btn-primary">Contact Our Team →</a>
+    <a href="#solutions" class="btn-outline">Download Brochure</a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="margin-bottom:0;">
+          <div class="logo-icon">⚡</div>
+          MEGA POWER
+        </a>
+        <p>Empowering global sustainable energy development through integrated digital green energy solutions and core products.</p>
+        <p style="margin-top:12px; font-size:0.85rem;">MEGA POWER CO., LTD<br>Tokyo, Japan</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="#sol-utility">Utility-Scale Storage</a>
+        <a href="#sol-freq">Frequency Regulation</a>
+        <a href="#sol-pvess">PV-ESS-Charging</a>
+        <a href="#sol-transport">Transportable ESS</a>
+        <a href="#sol-ci">C&I Storage</a>
+      </div>
+      <div class="footer-col">
+        <h4>Technology</h4>
+        <a href="#technology">6S+EDR System</a>
+        <a href="#technology">Battery Warning (BWS)</a>
+        <a href="#technology">Event Data Recorder</a>
+        <a href="#technology">EMS Platform</a>
+        <a href="#technology">Data Security</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#service">Service & O&M</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#">Careers</a>
+        <a href="#">News</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MEGA POWER CO., LTD. All rights reserved.</span>
+      <span>Tokyo, Japan | Empowering Sustainable Energy</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Product filter
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.product-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
