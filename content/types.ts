@@ -235,5 +235,6 @@ export type SiteContent = {
     intro: SectionLead;
     items: ContactItem[];
     note: string;
+    mapEmbed: string;
   };
 };

@@ -16,7 +16,7 @@ export const en: SiteContent = {
   footer: {
     summary:
       "MEGA POWER positions energy storage, charging, digital control, and long-term service as one integrated operating system for green energy deployment.",
-    address: "MEGA POWER CO., LTD · Tokyo, Japan",
+    address: "TWG Kojimachi 5F, 3-10-1 Kojimachi, Chiyoda-ku, Tokyo 102-0083, Japan",
     note:
       "This MVP presents core business information, strategic capabilities, and selected products from the source material only.",
   },
@@ -663,11 +663,14 @@ export const en: SiteContent = {
     },
     items: [
       { label: "Company", value: "MEGA POWER CO., LTD" },
-      { label: "Address", value: "Tokyo, Japan" },
-      { label: "Phone", value: "To be added with verified details" },
-      { label: "Email", value: "To be added with verified details" },
+      {
+        label: "Address",
+        value: "TWG Kojimachi 5F\n3-10-1 Kojimachi, Chiyoda-ku\nTokyo 102-0083, Japan",
+      },
     ],
     note:
       "Phone and email have not been published in the confirmed source materials available to this MVP. They can be added once verified. A contact form remains out of scope for the current phase.",
+    mapEmbed:
+      "https://www.google.com/maps?q=%E3%80%92102-0083%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E9%BA%B9%E7%94%BA3-10-1%20TWG%20%E9%BA%B9%E7%94%BA%205F&output=embed",
   },
 };

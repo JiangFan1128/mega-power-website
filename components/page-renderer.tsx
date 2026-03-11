@@ -1150,23 +1150,26 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
           </section>
           <section className="section-space bg-black/10">
             <div className="shell grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-              <div className="panel-strong p-8">
-                <SectionIntro section={content.contact.intro} />
-              </div>
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid gap-5">
                 {content.contact.items.map((item) => (
                   <article key={item.label} className="panel p-6">
                     <div className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-mega-accent">
                       {item.label}
                     </div>
-                    <div className="mt-3 text-lg font-semibold leading-[1.4] text-white">
+                    <div className="mt-3 whitespace-pre-line text-lg font-semibold leading-[1.55] text-white">
                       {item.value}
                     </div>
                   </article>
                 ))}
-                <div className="panel p-6 sm:col-span-2 text-[0.9rem] leading-[1.6] text-mega-muted">
-                  {content.contact.note}
-                </div>
+              </div>
+              <div className="panel overflow-hidden p-0">
+                <iframe
+                  className="h-[360px] w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={content.contact.mapEmbed}
+                  title="MEGA POWER Map"
+                />
               </div>
             </div>
           </section>

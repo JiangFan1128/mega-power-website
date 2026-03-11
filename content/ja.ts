@@ -16,7 +16,7 @@ export const ja: SiteContent = {
   footer: {
     summary:
       "MEGA POWER は蓄電、充電、デジタル制御、長期保守を一体化したグリーンエネルギー運用システムとして提案します。",
-    address: "MEGA POWER CO., LTD · 東京・日本",
+    address: "〒102-0083 東京都千代田区麹町3-10-1 TWG 麹町 5F",
     note:
       "この MVP は、提供資料に基づく事業概要、戦略能力、主要製品群を整理して紹介するものです。",
   },
@@ -566,11 +566,11 @@ export const ja: SiteContent = {
     },
     items: [
       { label: "会社名", value: "MEGA POWER CO., LTD" },
-      { label: "住所", value: "Tokyo, Japan" },
-      { label: "電話", value: "確認済み情報の反映待ち" },
-      { label: "メール", value: "確認済み情報の反映待ち" },
+      { label: "住所", value: "〒102-0083\n東京都千代田区麹町3-10-1\nTWG 麹町 5F" },
     ],
     note:
       "電話番号とメールアドレスは、現時点で確認済みの提供資料に掲載がないため未反映です。確認後に追加可能です。問い合わせフォームは現段階の対象外です。",
+    mapEmbed:
+      "https://www.google.com/maps?q=%E3%80%92102-0083%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E9%BA%B9%E7%94%BA3-10-1%20TWG%20%E9%BA%B9%E7%94%BA%205F&output=embed",
   },
 };
