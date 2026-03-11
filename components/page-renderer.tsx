@@ -433,7 +433,6 @@ function ScenarioSolutionSections({
       products: "Typical Product Families",
       platform: "Platform Support",
       safety: "Safety & Service Support",
-      japan: "Japan Deployment Notes",
     },
     ja: {
       challenge: "主な課題",
@@ -441,7 +440,6 @@ function ScenarioSolutionSections({
       products: "代表的な製品ファミリー",
       platform: "プラットフォーム支援",
       safety: "安全・サービス支援",
-      japan: "日本導入メモ",
     },
     zh: {
       challenge: "主要问题",
@@ -449,7 +447,6 @@ function ScenarioSolutionSections({
       products: "典型产品家族",
       platform: "平台支撑",
       safety: "安全与服务支撑",
-      japan: "日本部署提示",
     },
   }[locale];
 
@@ -488,12 +485,12 @@ function ScenarioSolutionSections({
       {pairings.map(({ preview, scenario, solution, products }) => (
         <article
           className="panel-strong grid gap-6 overflow-hidden p-6 lg:grid-cols-[0.96fr_1.04fr] lg:p-7"
-          key={scenario.title}
+          key={preview?.title ?? scenario.title}
         >
           <div className="space-y-5">
             <div className="eyebrow">{labels.challenge}</div>
             <h3 className="text-[clamp(1.45rem,2.6vw,2rem)] font-extrabold leading-[1.16] tracking-[-0.03em] text-white">
-              {scenario.title}
+              {preview?.title ?? scenario.title}
             </h3>
             {preview?.preview ? (
               <p className="text-[0.98rem] font-semibold leading-[1.65] text-[#d8eef7]">
@@ -501,18 +498,8 @@ function ScenarioSolutionSections({
               </p>
             ) : null}
             <p className="card-copy text-[0.96rem] leading-[1.72] text-mega-text">
-              {preview?.summary ? `${preview.summary} ${scenario.problem}` : scenario.problem}
+              {preview?.summary ?? scenario.problem}
             </p>
-            <div className="rounded-[16px] border border-[#35577f]/60 bg-[rgba(8,17,32,0.42)] p-4">
-              <div className="micro-label">{labels.japan}</div>
-              <p className="mt-2 card-copy">
-                {locale === "en"
-                  ? "Compact integration, reliability, maintainability, and service clarity remain important, especially for Japan-facing deployments."
-                  : locale === "ja"
-                    ? "特に日本向け案件では、コンパクト統合、信頼性、保守性、支援体制の明確さが重要です。"
-                    : "尤其面向日本市场时，紧凑集成、可靠性、可维护性和服务清晰度会更加重要。"}
-              </p>
-            </div>
           </div>
 
           <div className="space-y-5">
@@ -674,6 +661,86 @@ function BulletPanel({
         ))}
       </ul>
     </div>
+  );
+}
+
+function PlatformManagementSection({
+  section,
+}: {
+  section: SiteContent["platform"]["management"];
+}) {
+  return (
+    <section className="section-space bg-black/10">
+      <div className="shell space-y-8">
+        <SectionIntro section={section} />
+        <div className="flex flex-wrap gap-3">
+          {section.systems.map((system) => (
+            <span
+              className="rounded-full border border-mega-accent/15 bg-mega-accent/10 px-4 py-2 text-[0.72rem] font-mono uppercase tracking-[0.16rem] text-mega-accent"
+              key={system}
+            >
+              {system}
+            </span>
+          ))}
+        </div>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {section.highlights.map((item) => (
+            <article className="panel p-6" key={item.title}>
+              <h3 className="text-[1.15rem] font-bold leading-[1.28] text-white">
+                {item.title}
+              </h3>
+              <p className="mt-3 card-copy">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PlatformSecuritySection({
+  section,
+}: {
+  section: SiteContent["platform"]["security"];
+}) {
+  return (
+    <section className="section-space">
+      <div className="shell space-y-8">
+        <SectionIntro section={section} />
+        <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="panel-strong p-6 sm:p-8">
+            <div className="eyebrow">
+              {section.label}
+            </div>
+            <h3 className="mt-4 text-2xl font-bold text-white">
+              {section.title}
+            </h3>
+            <div className="mt-6 grid gap-3">
+              {section.deployment.map((item) => (
+                <div
+                  className="rounded-[16px] border border-[#35577f]/60 bg-[rgba(8,17,32,0.38)] px-4 py-3 text-[0.95rem] text-mega-text"
+                  key={item}
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {section.safeguards.map((item) => (
+              <article className="panel p-6" key={item.title}>
+                <div className="font-mono text-[2rem] font-bold leading-none text-mega-accent">
+                  {item.title}
+                </div>
+                <p className="mt-4 card-copy text-[0.94rem] leading-[1.72]">
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -1000,12 +1067,8 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
             capability={content.platform.capability}
             intro={content.platform.intro}
           />
-          <section className="section-space bg-black/10">
-            <div className="shell grid gap-6 lg:grid-cols-2">
-              <BulletPanel {...content.platform.workflow} />
-              <BulletPanel {...content.platform.security} />
-            </div>
-          </section>
+          <PlatformManagementSection section={content.platform.management} />
+          <PlatformSecuritySection section={content.platform.security} />
           <CTASection locale={locale} {...content.platform.cta} />
         </>
       );

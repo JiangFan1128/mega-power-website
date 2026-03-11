@@ -335,19 +335,67 @@ export const ja: SiteContent = {
       { name: "BMS", title: "Battery Management System", description: "コネクタ温度検知と PACK レベル防火連携。" },
       { name: "PCS", title: "Power Conversion System", description: "電気的・安全的分離を支える変換設計。" },
     ],
-    workflow: {
-      label: "Operational Workflow",
-      title: "監視と O&M を連続ループとして設計",
+    management: {
+      label: "デジタルエネルギー管理プラットフォーム",
+      title: "データ蓄積、可視化分析、O&M 協調を一つの平台レイヤーに統合",
       body:
-        "早期警報、イベント追跡、戦略ディスパッチ、作業指示生成、保守実行を結び付け、より速く文脈を持って対応できる運用を目指します。",
-      bullets: ["早期警報", "可視化分析", "戦略ディスパッチ", "自動作業指示", "分散型から系統用までの監視"],
+        "このプラットフォームは大規模から小規模までの蓄電システム管理に対応し、イベント記録、戦略ディスパッチ、監視、警報、O&M 実行を一体のデジタル運用面として整理します。",
+      systems: ["EDR", "ECS", "EMS", "OMS", "BWS"],
+      highlights: [
+        {
+          title: "Comprehensive Data Storage",
+          body: "電站データ、運転イベント、ライフサイクル状態を一つのプラットフォームに集約し、情報の分断を減らします。",
+        },
+        {
+          title: "Visualized Analysis",
+          body: "可視化画面、トレンド、警報を通じて、運用状況、異常、安心材料を把握しやすくします。",
+        },
+        {
+          title: "Intelligent Strategy Dispatch",
+          body: "EMS ロジックで充放電戦略、系統分区、ディスパッチ実行をつなぎ、より文脈を持った制御を支えます。",
+        },
+        {
+          title: "Precise Early Warning",
+          body: "BWS と運用データを組み合わせ、異常兆候をより早く捉え、問題が大きくなる前に対応しやすくします。",
+        },
+        {
+          title: "Safety Analysis",
+          body: "イベント追跡、多ソース記録、一貫したシステム可視性により、故障解析と安全分析を支えます。",
+        },
+        {
+          title: "Efficiency in O&M and Monitoring",
+          body: "監視、作業指示生成、進捗可視化を結び付け、O&M をより構造化し、見える化します。",
+        },
+      ],
     },
     security: {
-      label: "Data Security",
-      title: "オンプレ配備とロールベースのセキュリティ",
+      label: "EMS オンプレミス展開とデータ安全保障",
+      title: "案件規模に応じたローカル配備と多層データ保護",
       body:
-        "提供資料では、規模別 EMS 配備とデータ収集、伝送、保存、認証、監査の保護策が示されています。",
-      bullets: ["TLS 1.3 / AES-256", "RBAC", "多要素認証", "改ざん困難な監査ログ"],
+        "資料では、小規模・中規模・大規模案件に応じた EMS ローカル配備と、データ収集、伝送、保存、機能アクセス、サーバ保護、コンプライアンス面の安全設計が示されています。",
+      deployment: [
+        "小規模配備：1MWh 未満",
+        "中規模配備：1MWh から 5MWh",
+        "大規模配備：5MWh 超",
+      ],
+      safeguards: [
+        {
+          title: "E2EE",
+          body: "伝送時は TLS 1.3、保存時は AES-256 を用い、収集から保存までの各段階でデータ保護を強化します。",
+        },
+        {
+          title: "RBAC",
+          body: "ロールベースのアクセス制御により、各担当者は自身の職責に応じたデータと API のみにアクセスします。",
+        },
+        {
+          title: "MFA",
+          body: "パスワードと動的認証を組み合わせた多要素認証で、アカウント保護を強化します。",
+        },
+        {
+          title: "Log Audit",
+          body: "改ざん困難なログレイヤーに操作記録を残し、時間、利用者、操作種別ごとの監査確認を支えます。",
+        },
+      ],
     },
     cta: {
       label: "Trust Layer",

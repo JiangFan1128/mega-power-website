@@ -329,19 +329,67 @@ export const zh: SiteContent = {
       { name: "BMS", title: "Battery Management System", description: "连接器温度检测与 PACK 级联动防火。" },
       { name: "PCS", title: "Power Conversion System", description: "支持电气隔离与安全隔离的变流设计。" },
     ],
-    workflow: {
-      label: "Operational Workflow",
-      title: "把监控与运维设计成连续闭环",
+    management: {
+      label: "数字能源管理平台",
+      title: "把数据存储、可视化分析和运维协同放进同一平台层",
       body:
-        "平台将早期预警、事件追踪、策略调度、工单生成与维护执行连接起来，让团队更快、更有上下文地行动。",
-      bullets: ["精准预警", "可视化分析", "智能策略调度", "自动工单生成", "覆盖分布式到大储的生命周期监控"],
+        "平台部分强调其适用于大、中、小型储能系统的综合管理能力，把事件记录、策略调度、监控、预警和运维执行整合为同一个数字运行界面。",
+      systems: ["EDR", "ECS", "EMS", "OMS", "BWS"],
+      highlights: [
+        {
+          title: "Comprehensive Data Storage",
+          body: "把电站数据、运行事件和全生命周期状态放进同一平台层，而不是分散在多个独立工具里。",
+        },
+        {
+          title: "Visualized Analysis",
+          body: "通过可视化大屏、趋势和告警，让运行表现、异常状态与安全情况更容易被识别和解释。",
+        },
+        {
+          title: "Intelligent Strategy Dispatch",
+          body: "通过 EMS 逻辑连接充放电策略、系统分区和调度执行，让运行控制更具上下文。",
+        },
+        {
+          title: "Precise Early Warning",
+          body: "结合 BWS 与运行数据，对异常趋势进行更早识别，让团队在问题升级前采取行动。",
+        },
+        {
+          title: "Safety Analysis",
+          body: "通过事件追溯、多源记录和一致的系统视图，为故障复盘和安全分析提供依据。",
+        },
+        {
+          title: "Efficiency in O&M and Monitoring",
+          body: "把监控、工单生成与进度跟踪连接起来，让运维执行更结构化、更可见。",
+        },
+      ],
     },
     security: {
-      label: "Data Security",
-      title: "本地化部署与角色化安全机制",
+      label: "EMS 本地化部署与数据安全保障",
+      title: "按项目规模部署 EMS，并建立分层数据安全机制",
       body:
-        "源资料展示了不同规模项目的 EMS 部署模式，以及数据采集、传输、存储、认证和审计保护措施。",
-      bullets: ["TLS 1.3 与 AES-256", "基于角色的访问控制", "多因素认证", "不可篡改日志与审计"],
+        "源资料展示了面向小型、中型和大型项目的本地化 EMS 部署方式，并强调从数据采集、传输、存储、功能访问、服务器保护到合规控制的整体安全设计。",
+      deployment: [
+        "小型项目部署：1MWh 以下",
+        "中型项目部署：1MWh 至 5MWh",
+        "大型项目部署：5MWh 以上",
+      ],
+      safeguards: [
+        {
+          title: "E2EE",
+          body: "在数据传输中采用 TLS 1.3，在存储中采用 AES-256，降低数据在采集、传输和留存过程中的非法访问风险。",
+        },
+        {
+          title: "RBAC",
+          body: "通过基于角色的访问策略，让不同岗位人员只访问与职责相关的数据集和接口能力。",
+        },
+        {
+          title: "MFA",
+          body: "采用密码加动态校验等多因素认证机制，强化账号层面的访问安全。",
+        },
+        {
+          title: "Log Audit",
+          body: "将操作行为写入不可篡改日志系统，支持按时间、用户和操作类型进行审计查询。",
+        },
+      ],
     },
     cta: {
       label: "Trust Layer",

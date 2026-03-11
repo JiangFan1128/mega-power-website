@@ -59,6 +59,11 @@ export type PlatformModule = {
   description: string;
 };
 
+export type PlatformFeatureCard = {
+  title: string;
+  body: string;
+};
+
 export type PlatformCapabilityGroup = {
   label: string;
   title: string;
@@ -166,9 +171,15 @@ export type SiteContent = {
       control: PlatformCapabilityGroup;
       brain: PlatformCapabilityGroup;
     };
+    management: SectionLead & {
+      systems: string[];
+      highlights: PlatformFeatureCard[];
+    };
     modules: PlatformModule[];
-    workflow: SectionLead & { bullets: string[] };
-    security: SectionLead & { bullets: string[] };
+    security: SectionLead & {
+      deployment: string[];
+      safeguards: PlatformFeatureCard[];
+    };
     cta: SectionLead & { action: LinkAction };
   };
   products: {

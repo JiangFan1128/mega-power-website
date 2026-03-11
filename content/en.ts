@@ -431,19 +431,67 @@ export const en: SiteContent = {
       { name: "BMS", title: "Battery Management System", description: "Connector temperature detection and PACK-level fire prevention linkage inside the storage system." },
       { name: "PCS", title: "Power Conversion System", description: "Series multi-branch conversion design supporting electrical and safety isolation." },
     ],
-    workflow: {
-      label: "Operational Workflow",
-      title: "Monitoring and O&M logic designed as a continuous loop",
+    management: {
+      label: "Digital Energy Management Platform",
+      title: "Comprehensive data storage, visualized analysis, and safer O&M coordination",
       body:
-        "The platform ties together early warning, event tracing, dispatch strategy, work-order generation, and maintenance execution so that operating teams can act faster and with more context.",
-      bullets: ["Precise early warning", "Visualized analysis", "Intelligent strategy dispatch", "Automated work-order generation", "Lifecycle monitoring for distributed and utility-scale systems"],
+        "The platform is presented as a comprehensive digital layer for large, medium, and small energy storage systems, integrating event recording, strategy dispatch, monitoring, warning, and O&M execution into one operating surface.",
+      systems: ["EDR", "ECS", "EMS", "OMS", "BWS"],
+      highlights: [
+        {
+          title: "Comprehensive Data Storage",
+          body: "Record station data, operating events, and lifecycle status in one platform layer instead of scattering information across separate tools.",
+        },
+        {
+          title: "Visualized Analysis",
+          body: "Turn operating data into dashboards, alarms, and trends that make performance, exceptions, and safety status easier to interpret.",
+        },
+        {
+          title: "Intelligent Strategy Dispatch",
+          body: "Use EMS logic to coordinate charge-discharge strategy, system partitioning, and control execution with better operating context.",
+        },
+        {
+          title: "Precise Early Warning",
+          body: "Combine BWS and recorded operating data so teams can identify abnormal trends earlier and respond before issues escalate.",
+        },
+        {
+          title: "Safety Analysis",
+          body: "Support fault review and safety analysis through event traceability, multi-source records, and consistent system-level visibility.",
+        },
+        {
+          title: "Efficiency in O&M and Monitoring",
+          body: "Connect monitoring, work-order generation, and progress tracking so plant O&M becomes more structured and visible.",
+        },
+      ],
     },
     security: {
-      label: "Data Security",
-      title: "On-premises deployment and role-based security logic",
+      label: "EMS On-Premises Deployment & Data Safety",
+      title: "Localized deployment by project scale with layered security safeguards",
       body:
-        "The source material presents deployment options by project scale alongside data collection, transmission, storage, authentication, and audit safeguards.",
-      bullets: ["TLS 1.3 and AES-256 encryption", "Role-based access control", "Multi-factor authentication", "Immutable operation logs and audits"],
+        "The source material describes localized EMS deployment for small-scale, medium-scale, and large-scale projects, supported by safeguards across collection, transmission, storage, functional access, server protection, and compliance-oriented control.",
+      deployment: [
+        "Small-scale deployment: under 1 MWh",
+        "Medium-scale deployment: 1 MWh to 5 MWh",
+        "Large-scale deployment: above 5 MWh",
+      ],
+      safeguards: [
+        {
+          title: "E2EE",
+          body: "Use TLS 1.3 in transmission and AES-256 in storage so data remains protected across collection, transfer, and retention.",
+        },
+        {
+          title: "RBAC",
+          body: "Apply role-based access policies so personnel only reach the datasets and API interfaces that match their job responsibilities.",
+        },
+        {
+          title: "MFA",
+          body: "Require multi-factor authentication through password and dynamic verification to strengthen account-level protection.",
+        },
+        {
+          title: "Log Audit",
+          body: "Write operations into an immutable log layer so teams can query user behavior, operation type, and time-based activity for audit review.",
+        },
+      ],
     },
     cta: {
       label: "Trust Layer",
