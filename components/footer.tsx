@@ -23,8 +23,8 @@ export function Footer({ locale, content }: FooterProps) {
 
   return (
     <footer className="border-t border-white/10 bg-black/20">
-      <div className="shell grid gap-10 py-14 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
-        <div className="space-y-5">
+      <div className="shell grid gap-10 py-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.9fr)_minmax(0,0.9fr)_minmax(0,0.8fr)] lg:gap-12">
+        <div className="space-y-6">
           <div className="flex items-center gap-3">
             <span className="flex h-9 w-9 items-center justify-center rounded-[8px] border border-mega-accent/30 bg-gradient-to-br from-mega-accent to-mega-primary text-sm font-bold text-white">
               MG
@@ -38,17 +38,16 @@ export function Footer({ locale, content }: FooterProps) {
               </div>
             </div>
           </div>
-          <p className="max-w-md text-[0.9rem] leading-[1.6] text-mega-muted">
+          <p className="max-w-[27rem] text-[0.9rem] leading-[1.75] text-mega-muted">
             {content.footer.summary}
           </p>
-          <p className="text-[0.85rem] font-bold text-white">{content.footer.address}</p>
-          <p className="text-[0.85rem] leading-[1.6] text-mega-muted">
-            {content.footer.note}
+          <p className="max-w-[24rem] whitespace-pre-line text-[0.88rem] font-semibold leading-[1.7] text-white">
+            {content.footer.address}
           </p>
         </div>
 
         {groups.map((group, index) => (
-          <div key={index} className="space-y-4">
+          <div key={index} className="space-y-5">
             <div className="eyebrow">{navLabel}</div>
             <div className="grid gap-3">
               {group.map((page) => (
