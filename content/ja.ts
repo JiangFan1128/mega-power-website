@@ -476,7 +476,7 @@ export const ja: SiteContent = {
     metadata: {
       title: "サービス | MEGA POWER",
       description:
-        "O&M 戦略、ローカルサービス、パートナー連携、技術継続性、日本向け支援準備を扱うページ。",
+        "O&M 戦略、ローカルサービス、パートナー連携、技術継続性を扱うページ。",
     },
     hero: {
       title: "長期パートナーシップのためのサービスと O&M",
@@ -502,16 +502,15 @@ export const ja: SiteContent = {
       { title: "交換部品の迅速対応", body: "重要部品の修復時間短縮を目的とした部材対応思想を示します。" },
     ],
     japan: {
-      label: "Japan Support Readiness",
-      title: "日本向けサービスでは、信頼、規律、保守性を重視",
-      body:
-        "日本向けには、応答準備、対話品質、長期安定運用、狭小地条件を踏まえた支援ロジックを強調します。",
+      label: "",
+      title: "",
+      body: "",
       bullets: ["長期運用に耐える保守性", "関係者との構造化された対話", "狭小地条件下での支援準備", "パートナー協業しやすい運用"],
     },
     cta: {
       label: "Company",
       title: "サービス能力を会社全体の位置付けで見る",
-      body: "会社情報ページでは、ミッション、統合能力、日本市場の位置付けをまとめます。",
+      body: "会社情報ページでは、ミッション、統合能力、長期サービスロジックをまとめます。",
       action: { label: "会社情報へ", page: "about" },
     },
   },
@@ -519,7 +518,7 @@ export const ja: SiteContent = {
     metadata: {
       title: "会社情報 | MEGA POWER",
       description:
-        "統合型デジタル・グリーンエネルギー企業としての位置付け、ミッション、日本市場志向を示す MEGA POWER 会社情報ページ。",
+        "統合型デジタル・グリーンエネルギー企業としての位置付けとミッションを示す MEGA POWER 会社情報ページ。",
     },
     hero: {
       title: "MEGA POWER について",
@@ -539,22 +538,21 @@ export const ja: SiteContent = {
       { title: "運用支援志向", body: "長期保守性とローカル対応をブランドストーリーの中に組み込みます。" },
     ],
     japan: {
-      label: "Japan Positioning",
-      title: "東京を起点とした日本市場志向を企業物語に反映",
-      body:
-        "提供資料は東京・日本を示しています。本サイトでは、法規の過剰主張ではなく、信頼性、狭小地対応、支援準備の言語で日本を表現します。",
+      label: "",
+      title: "",
+      body: "",
     },
     cta: {
       label: "Contact",
       title: "ビジネス対話を始める",
-      body: "お問い合わせページは、このフェーズでは簡潔でプロフェッショナルに保ちます。",
-      action: { label: "お問い合わせ", page: "contact" },
+      body: "本 MVP では基本会社情報を会社情報ページ内に統合しています。",
+      action: { label: "会社情報へ", page: "about" },
     },
   },
   contact: {
     metadata: {
-      title: "お問い合わせ | MEGA POWER",
-      description: "本 MVP 向けの基本会社情報と簡潔な問い合わせ案内。",
+      title: "会社情報 | MEGA POWER",
+      description: "会社名、所在地文脈、確認待ちの連絡先項目を含む基本会社情報セクション。",
     },
     hero: {
       title: "お問い合わせ",
@@ -562,16 +560,17 @@ export const ja: SiteContent = {
         "案件・事業相談のための基本情報です。本 MVP ではフォームを設けず、裏付けのない運用情報も追加しません。",
     },
     intro: {
-      label: "Inquiry Information",
-      title: "簡潔でプロフェッショナルな問い合わせ導線",
-      body: "現段階では、提供資料にある会社情報と所在地文脈を中心に掲載します。",
+      label: "Company Information",
+      title: "ビジネス対話に向けた基本会社情報",
+      body: "現段階では、提供資料で確認できる会社情報のみを掲載し、連絡導線は簡潔かつプロフェッショナルに保ちます。",
     },
     items: [
       { label: "会社名", value: "MEGA POWER CO., LTD" },
-      { label: "所在地", value: "Tokyo, Japan" },
-      { label: "問い合わせ種別", value: "案件相談・事業相談" },
+      { label: "住所", value: "Tokyo, Japan" },
+      { label: "電話", value: "確認済み情報の反映待ち" },
+      { label: "メール", value: "確認済み情報の反映待ち" },
     ],
     note:
-      "本 MVP では、提供資料を超える直接連絡先は掲載していません。問い合わせフォームと PDF ダウンロード導線は現段階の対象外です。",
+      "電話番号とメールアドレスは、現時点で確認済みの提供資料に掲載がないため未反映です。確認後に追加可能です。問い合わせフォームは現段階の対象外です。",
   },
 };

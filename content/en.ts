@@ -572,7 +572,7 @@ export const en: SiteContent = {
     metadata: {
       title: "Services | MEGA POWER",
       description:
-        "Service page for MEGA POWER covering O&M strategy, localized service logic, partner collaboration, technical continuity, and Japan support readiness.",
+        "Service page for MEGA POWER covering O&M strategy, localized service logic, partner collaboration, and technical continuity.",
     },
     hero: {
       title: "Service and O&M designed for long-term partnership",
@@ -598,16 +598,15 @@ export const en: SiteContent = {
       { title: "Replacement parts readiness", body: "A replacement-parts network is described as a way to reduce repair time for critical components." },
     ],
     japan: {
-      label: "Japan Support Readiness",
-      title: "Service messaging for Japan emphasizes trust, discipline, and maintainability",
-      body:
-        "Japan-oriented service content focuses on response readiness, communication quality, stable long-term operation, and support logic that respects constrained deployment realities.",
+      label: "",
+      title: "",
+      body: "",
       bullets: ["Maintainability for long operating horizons", "Structured communication with project stakeholders", "Support readiness under constrained site conditions", "Partner-friendly collaboration logic"],
     },
     cta: {
       label: "Company",
       title: "See how service capability fits into MEGA POWER's broader company positioning",
-      body: "The about page connects mission, integrated capability, and Japan positioning into one narrative.",
+      body: "The about page connects mission, integrated capability, and long-term service logic into one narrative.",
       action: { label: "About MEGA POWER", page: "about" },
     },
   },
@@ -615,7 +614,7 @@ export const en: SiteContent = {
     metadata: {
       title: "About | MEGA POWER",
       description:
-        "About MEGA POWER page covering company introduction, integrated digital green energy positioning, mission, and Japan-Tokyo market orientation.",
+        "About MEGA POWER page covering company introduction, integrated digital green energy positioning, and mission.",
     },
     hero: {
       title: "About MEGA POWER",
@@ -635,22 +634,21 @@ export const en: SiteContent = {
       { title: "Operational support mindset", body: "Long-term maintainability and localized delivery logic are built into the brand story from the start." },
     ],
     japan: {
-      label: "Japan Positioning",
-      title: "Tokyo-based market orientation as part of the company narrative",
-      body:
-        "The source material places MEGA POWER in Tokyo, Japan. On this website, Japan is reflected through reliability messaging, constrained-site awareness, and support-readiness language rather than unsupported legal or operational claims.",
+      label: "",
+      title: "",
+      body: "",
     },
     cta: {
       label: "Contact",
       title: "Open a business conversation",
-      body: "The contact page keeps the inquiry path simple and professional for this MVP.",
-      action: { label: "Contact MEGA POWER", page: "contact" },
+      body: "Basic company information is presented directly in the about page for this MVP.",
+      action: { label: "About MEGA POWER", page: "about" },
     },
   },
   contact: {
     metadata: {
-      title: "Contact | MEGA POWER",
-      description: "Basic MEGA POWER contact page with company information and a simple inquiry note for this MVP.",
+      title: "Company Information | MEGA POWER",
+      description: "Basic MEGA POWER company information section covering company name, address context, and pending contact details.",
     },
     hero: {
       title: "Contact MEGA POWER",
@@ -658,17 +656,18 @@ export const en: SiteContent = {
         "Basic company information for project and business inquiries. This MVP intentionally avoids a contact form and does not invent unsupported operational details.",
     },
     intro: {
-      label: "Inquiry Information",
-      title: "Simple and professional inquiry path",
+      label: "Company Information",
+      title: "Basic company information for business communication",
       body:
-        "The current site presents company identity and location context from the source material while keeping the contact experience minimal.",
+        "The current site presents only the company details that can be supported by the source material, while keeping the communication path simple and professional.",
     },
     items: [
       { label: "Company", value: "MEGA POWER CO., LTD" },
-      { label: "Location", value: "Tokyo, Japan" },
-      { label: "Inquiry Type", value: "Project and business discussions" },
+      { label: "Address", value: "Tokyo, Japan" },
+      { label: "Phone", value: "To be added with verified details" },
+      { label: "Email", value: "To be added with verified details" },
     ],
     note:
-      "Direct contact details are not expanded beyond the provided source materials in this MVP. A contact form and download workflow are intentionally out of scope for the current phase.",
+      "Phone and email have not been published in the confirmed source materials available to this MVP. They can be added once verified. A contact form remains out of scope for the current phase.",
   },
 };

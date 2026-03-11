@@ -32,7 +32,6 @@ const order = [
   "safety",
   "services",
   "about",
-  "contact",
 ] as const;
 
 export function Header({ locale, navigation }: HeaderProps) {

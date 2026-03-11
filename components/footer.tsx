@@ -11,7 +11,7 @@ type FooterProps = {
 const groups = [
   ["scenarios", "solutions", "products"],
   ["platform", "safety", "services"],
-  ["about", "contact"],
+  ["about"],
 ] as const;
 
 export function Footer({ locale, content }: FooterProps) {

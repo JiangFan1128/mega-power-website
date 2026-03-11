@@ -470,7 +470,7 @@ export const zh: SiteContent = {
     metadata: {
       title: "服务 | MEGA POWER",
       description:
-        "围绕运维策略、本地化服务、伙伴协同、技术连续性与日本市场支持准备的服务页面。",
+        "围绕运维策略、本地化服务、伙伴协同与技术连续性的服务页面。",
     },
     hero: {
       title: "为长期合作而设计的服务与运维",
@@ -496,16 +496,15 @@ export const zh: SiteContent = {
       { title: "备件快速响应", body: "通过备件网络缩短关键部件的修复时间。" },
     ],
     japan: {
-      label: "Japan Support Readiness",
-      title: "面向日本市场的服务表达强调信任、纪律与可维护性",
-      body:
-        "日本相关内容聚焦响应准备、沟通质量、长期稳定运行，以及适应受限部署条件的支持逻辑。",
+      label: "",
+      title: "",
+      body: "",
       bullets: ["面向长期运行的可维护性", "与项目相关方的结构化沟通", "受限场地下的支持准备", "适合伙伴协同的服务逻辑"],
     },
     cta: {
       label: "Company",
       title: "从公司定位角度理解服务能力",
-      body: "关于页面将把使命、综合能力和日本市场定位连接为一个整体叙事。",
+      body: "关于页面将把使命、综合能力与长期服务逻辑连接为一个整体叙事。",
       action: { label: "关于 MEGA POWER", page: "about" },
     },
   },
@@ -513,7 +512,7 @@ export const zh: SiteContent = {
     metadata: {
       title: "关于 MEGA POWER | MEGA POWER",
       description:
-        "展示 MEGA POWER 作为综合数字绿色能源解决方案提供商的公司定位、能力与日本市场取向。",
+        "展示 MEGA POWER 作为综合数字绿色能源解决方案提供商的公司定位与能力。",
     },
     hero: {
       title: "关于 MEGA POWER",
@@ -533,22 +532,21 @@ export const zh: SiteContent = {
       { title: "长期运营支持思维", body: "把可维护性与本地化交付逻辑放入品牌故事之中。" },
     ],
     japan: {
-      label: "Japan Positioning",
-      title: "以东京为线索，体现日本市场定位",
-      body:
-        "源资料明确提到东京、日本。网站将日本重点体现在可靠性、受限场地认知与支持准备语言中，而不做无依据的法规或运营承诺。",
+      label: "",
+      title: "",
+      body: "",
     },
     cta: {
       label: "Contact",
       title: "开启业务沟通",
-      body: "本阶段联系页面保持简洁、克制和专业。",
-      action: { label: "联系 MEGA POWER", page: "contact" },
+      body: "本阶段已将基础公司信息直接整合进关于页面。",
+      action: { label: "关于 MEGA POWER", page: "about" },
     },
   },
   contact: {
     metadata: {
-      title: "联系 | MEGA POWER",
-      description: "用于当前 MVP 的基础公司信息与简洁联系说明页面。",
+      title: "公司信息 | MEGA POWER",
+      description: "包含公司名称、所在地背景以及待确认联系方式字段的基础公司信息区块。",
     },
     hero: {
       title: "联系 MEGA POWER",
@@ -556,17 +554,18 @@ export const zh: SiteContent = {
         "用于项目和业务沟通的基础信息。本 MVP 不提供联系表单，也不会补充未经资料支持的运营信息。",
     },
     intro: {
-      label: "Inquiry Information",
-      title: "简洁而专业的联系路径",
+      label: "Company Information",
+      title: "用于业务沟通的基础公司信息",
       body:
-        "当前网站仅展示源资料中可以确认的公司身份与所在地背景，保持联系体验克制清晰。",
+        "当前网站仅展示源资料中可以确认的公司信息，保持沟通路径简洁、克制且专业。",
     },
     items: [
       { label: "公司", value: "MEGA POWER CO., LTD" },
-      { label: "所在地", value: "Tokyo, Japan" },
-      { label: "咨询类型", value: "项目与业务交流" },
+      { label: "地址", value: "Tokyo, Japan" },
+      { label: "电话", value: "待补充已核实信息" },
+      { label: "邮箱", value: "待补充已核实信息" },
     ],
     note:
-      "当前 MVP 未超出提供资料范围公开更多直接联系方式。联系表单与 PDF 下载功能均不在现阶段范围内。",
+      "当前可核实资料中未提供电话和邮箱，因此此处保留字段但不编造信息；后续确认后可补充。联系表单仍不在现阶段范围内。",
   },
 };

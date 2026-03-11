@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { PageRenderer } from "@/components/page-renderer";
 import { getMetadataForPage, getSiteContent } from "@/lib/content";
@@ -84,6 +84,10 @@ export default async function LocalePage({
 
   const locale = resolved.locale as Locale;
   const content = getSiteContent(locale);
+
+  if (page === "contact") {
+    redirect(`/${locale}/about`);
+  }
 
   return <PageRenderer content={content} locale={locale} page={page} />;
 }

@@ -1135,11 +1135,6 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
               </div>
             </div>
           </section>
-          <section className="section-space bg-black/10">
-            <div className="shell">
-              <BulletPanel {...content.services.japan} />
-            </div>
-          </section>
           <CTASection locale={locale} {...content.services.cta} />
         </>
       );
@@ -1154,13 +1149,27 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
             </div>
           </section>
           <section className="section-space bg-black/10">
-            <div className="shell">
-              <div className="panel-strong p-8 sm:p-10">
-                <SectionIntro section={content.about.japan} />
+            <div className="shell grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="panel-strong p-8">
+                <SectionIntro section={content.contact.intro} />
+              </div>
+              <div className="grid gap-5 sm:grid-cols-2">
+                {content.contact.items.map((item) => (
+                  <article key={item.label} className="panel p-6">
+                    <div className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-mega-accent">
+                      {item.label}
+                    </div>
+                    <div className="mt-3 text-lg font-semibold leading-[1.4] text-white">
+                      {item.value}
+                    </div>
+                  </article>
+                ))}
+                <div className="panel p-6 sm:col-span-2 text-[0.9rem] leading-[1.6] text-mega-muted">
+                  {content.contact.note}
+                </div>
               </div>
             </div>
           </section>
-          <CTASection locale={locale} {...content.about.cta} />
         </>
       );
     case "contact":
