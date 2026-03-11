@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ProductGallery } from "@/components/product-gallery";
 import { ProductFamilyTabs } from "@/components/product-family-tabs";
 import type {
   HeroContent,
@@ -775,7 +776,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
           <section className="section-space">
             <div className="shell space-y-10">
               <SectionIntro section={content.products.intro} />
-              <ProductFamilyTabs locale={locale} />
+              <ProductGallery locale={locale} />
             </div>
           </section>
           <section className="section-space bg-black/10">
