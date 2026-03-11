@@ -88,8 +88,8 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
 
   return (
     <>
-      <div className="space-y-8">
-        <div className="flex flex-col gap-4 rounded-[18px] border border-mega-accent/12 bg-[linear-gradient(180deg,rgba(17,48,59,0.92),rgba(10,35,43,0.94))] p-5 sm:flex-row sm:items-end sm:justify-between sm:p-6">
+      <div className="space-y-6">
+        <div className="flex flex-col gap-4 rounded-[18px] border border-[#35577f]/70 bg-[linear-gradient(150deg,rgba(18,34,56,0.96),rgba(23,50,82,0.84))] p-5 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-3">
             <div className="eyebrow">{copy.browse}</div>
             <div className="flex flex-wrap gap-2.5">
@@ -119,15 +119,15 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
           </div>
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid gap-5 xl:grid-cols-2">
           {visibleItems.map((item) => (
             <article
               key={item.model}
-              className="overflow-hidden rounded-[20px] border border-mega-accent/12 bg-[linear-gradient(180deg,rgba(14,48,58,0.9),rgba(10,34,42,0.96))] shadow-panel transition-all duration-300 hover:-translate-y-1 hover:border-mega-accent/25"
+              className="overflow-hidden rounded-[20px] border border-[#35577f]/70 bg-[linear-gradient(150deg,rgba(18,34,56,0.96),rgba(23,50,82,0.84))] shadow-panel transition-all duration-300 hover:-translate-y-1 hover:border-[#4f709a]"
             >
               <button
                 aria-label={`${copy.preview}: ${item.name}`}
-                className="group relative flex h-[24rem] w-full items-center justify-center overflow-hidden border-b border-mega-accent/10 bg-[radial-gradient(circle_at_top,rgba(45,212,168,0.14),transparent_52%),linear-gradient(180deg,rgba(233,244,244,0.96),rgba(212,228,230,0.98))] p-4"
+                className="group relative flex h-[21rem] w-full items-center justify-center overflow-hidden border-b border-[#35577f]/55 bg-[radial-gradient(circle_at_top,rgba(70,162,255,0.16),transparent_52%),linear-gradient(180deg,rgba(233,244,244,0.96),rgba(212,228,230,0.98))] p-4"
                 onClick={() =>
                   setPreview({
                     src: item.image,
@@ -150,7 +150,7 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
                 </span>
               </button>
 
-              <div className="space-y-5 p-6">
+              <div className="space-y-4 p-5">
                 <div className="space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="micro-label">{item.familyTitle}</span>
@@ -176,7 +176,7 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
           role="dialog"
         >
           <div
-            className="relative w-full max-w-6xl overflow-hidden rounded-[20px] border border-mega-accent/20 bg-[linear-gradient(180deg,rgba(10,28,35,0.98),rgba(8,21,27,0.98))] shadow-[0_32px_90px_rgba(0,0,0,0.5)]"
+            className="relative w-full max-w-6xl overflow-hidden rounded-[20px] border border-[#4f709a]/70 bg-[linear-gradient(145deg,rgba(9,19,34,0.98),rgba(17,35,60,0.98))] shadow-[0_32px_90px_rgba(0,0,0,0.5)]"
             onClick={(event) => event.stopPropagation()}
           >
             <button

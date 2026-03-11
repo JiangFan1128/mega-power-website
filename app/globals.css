@@ -12,10 +12,10 @@
   --clr-accent-glow: rgba(45, 212, 168, 0.4);
   --clr-energy: #00e5ff;
   --clr-warning: #f5a623;
-  --clr-dark: #0b1a1f;
-  --clr-dark-mid: #122830;
-  --clr-surface: #163038;
-  --clr-surface-light: #1d3e48;
+  --clr-dark: #081120;
+  --clr-dark-mid: #102034;
+  --clr-surface: #13273f;
+  --clr-surface-light: #173252;
   --clr-text: #e8f4f0;
   --clr-text-dim: #8aacb8;
 }
@@ -28,8 +28,8 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(13, 125, 122, 0.16), transparent),
-    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(45, 212, 168, 0.08), transparent),
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(70, 162, 255, 0.12), transparent),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(45, 212, 168, 0.06), transparent),
     var(--clr-dark);
   color: var(--clr-text);
   line-height: 1.65;
@@ -65,15 +65,21 @@ body {
   }
 
   .section-space {
-    @apply py-20 lg:py-[120px];
+    @apply py-14 lg:py-16;
   }
 
   .panel {
-    @apply rounded-[16px] border border-[rgba(45,212,168,0.08)] bg-mega-dark-mid/90 shadow-panel backdrop-blur;
+    background:
+      linear-gradient(150deg, rgba(18, 34, 56, 0.96), rgba(23, 50, 82, 0.84));
+    border-color: rgba(47, 74, 112, 0.92);
+    @apply rounded-[16px] border shadow-panel backdrop-blur;
   }
 
   .panel-strong {
-    @apply rounded-[20px] border border-[rgba(45,212,168,0.12)] bg-mega-dark-mid/85 shadow-panel backdrop-blur;
+    background:
+      linear-gradient(145deg, rgba(13, 25, 45, 0.98), rgba(22, 42, 70, 0.9));
+    border-color: rgba(53, 87, 127, 0.85);
+    @apply rounded-[20px] border shadow-panel backdrop-blur;
   }
 
   .eyebrow {
@@ -85,11 +91,11 @@ body {
   }
 
   .section-subtitle {
-    @apply text-[1.1rem] leading-[1.7] text-mega-muted;
+    @apply text-[1.02rem] leading-[1.62] text-mega-muted;
   }
 
   .hero-copy {
-    @apply text-[1.2rem] leading-[1.7] text-mega-muted;
+    @apply text-[1.08rem] leading-[1.62] text-mega-muted;
   }
 
   .hero-stat-value {
@@ -113,7 +119,7 @@ body {
   }
 
   .card-copy {
-    @apply text-[0.92rem] leading-[1.65] text-mega-muted;
+    @apply text-[0.9rem] leading-[1.58] text-mega-muted;
   }
 
   .micro-label {
@@ -175,7 +181,7 @@ body {
 
 @media (max-width: 1024px) {
   .section-space {
-    @apply py-24;
+    @apply py-12;
   }
 }
 
@@ -185,6 +191,6 @@ body {
   }
 
   .section-space {
-    @apply py-20;
+    @apply py-10;
   }
 }

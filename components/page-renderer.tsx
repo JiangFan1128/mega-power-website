@@ -79,7 +79,7 @@ function HomeScenarioPreviewGrid({
       {items.map((item) => (
         <article
           key={item.title}
-          className="panel rounded-[18px] border border-mega-accent/12 bg-[linear-gradient(180deg,rgba(14,48,58,0.84),rgba(10,34,42,0.92))] p-6"
+          className="panel rounded-[18px] border border-[#35577f]/65 bg-[linear-gradient(150deg,rgba(18,34,56,0.96),rgba(23,50,82,0.84))] p-5"
         >
           <div className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-mega-accent/12 bg-mega-accent/10 font-mono text-[0.76rem] font-bold uppercase tracking-[0.16em] text-mega-accent">
             {item.badge ?? item.title.slice(0, 2)}
@@ -94,7 +94,7 @@ function HomeScenarioPreviewGrid({
       ))}
       {action ? (
         <Link
-          className="group flex min-h-[16.5rem] flex-col justify-between rounded-[18px] border border-mega-accent/35 bg-[linear-gradient(180deg,rgba(5,14,18,0.98),rgba(8,20,27,0.98))] p-6 shadow-[0_24px_54px_rgba(0,0,0,0.34)] transition hover:-translate-y-1 hover:border-mega-energy/45 hover:bg-[linear-gradient(180deg,rgba(7,18,24,0.99),rgba(10,24,31,0.99))]"
+          className="group flex min-h-[14.5rem] flex-col justify-between rounded-[18px] border border-[#4f709a]/85 bg-[linear-gradient(145deg,rgba(9,19,34,0.98),rgba(17,35,60,0.98))] p-5 shadow-[0_24px_54px_rgba(0,0,0,0.34)] transition hover:-translate-y-1 hover:border-mega-energy/45 hover:bg-[linear-gradient(145deg,rgba(11,23,40,0.99),rgba(20,40,68,0.99))]"
           href={pageKeyToHref(locale, action.page)}
         >
           <div className="flex h-11 w-11 items-center justify-center rounded-[10px] border border-mega-accent/20 bg-mega-accent/12 text-[1rem] font-bold text-mega-accent">
@@ -215,15 +215,15 @@ function Hero({ hero, locale }: { hero: HeroContent; locale: Locale }) {
   }[locale];
 
   return (
-    <section className="relative overflow-hidden py-16 lg:min-h-[calc(86vh-80px)] lg:py-20">
+    <section className="relative overflow-hidden py-14 lg:min-h-[calc(82vh-80px)] lg:py-16">
       <div className="absolute inset-0 bg-hero-radial opacity-90" />
       <div className="absolute inset-0 bg-grid-fade bg-[size:72px_72px] opacity-25 [mask-image:radial-gradient(circle_at_center,black_22%,transparent_82%)]" />
       <div className="absolute right-[-14rem] top-1/2 hidden h-[34rem] w-[34rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(45,212,168,0.14),transparent_65%)] lg:block" />
       <div className="absolute right-[4rem] top-1/2 hidden h-[25rem] w-[25rem] -translate-y-1/2 rounded-full border border-[rgba(45,212,168,0.18)] lg:block" />
       <div className="absolute right-[7.5rem] top-1/2 hidden h-[17rem] w-[17rem] -translate-y-1/2 rounded-full border border-dashed border-[rgba(45,212,168,0.08)] lg:block" />
       <div className="shell relative">
-        <div className="max-w-[62rem] space-y-8 lg:ml-10 xl:ml-14">
-          <div className="space-y-6">
+        <div className="max-w-[62rem] space-y-7 lg:ml-10 xl:ml-14">
+          <div className="space-y-5">
             <div className="eyebrow">{hero.eyebrow}</div>
             <h1 className={`${heroTitleClass} font-extrabold tracking-[-0.04em] text-white`}>
               {renderHeroTitle(hero.title, locale)}
@@ -248,7 +248,7 @@ function Hero({ hero, locale }: { hero: HeroContent; locale: Locale }) {
               ) : null}
             </div>
           </div>
-          <div className="max-w-[56rem] space-y-5 border-t border-[rgba(45,212,168,0.15)] pt-8">
+          <div className="max-w-[56rem] space-y-4 border-t border-[#35577f]/55 pt-6">
             <div className="font-mono text-xs uppercase tracking-[0.34em] text-mega-accent">
               {heroCopy.capabilities}
             </div>
@@ -286,7 +286,7 @@ function ScenarioGrid({ items, locale }: { items: ScenarioCard[]; locale: Locale
   return (
     <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       {items.map((item) => (
-        <article key={item.title} className="panel min-h-[28rem] rounded-[22px] border border-mega-accent/15 bg-[linear-gradient(180deg,rgba(13,47,58,0.95),rgba(10,38,47,0.96))] p-7 shadow-[0_24px_60px_rgba(0,0,0,0.28)]">
+        <article key={item.title} className="panel min-h-[23rem] rounded-[22px] border border-[#35577f]/70 bg-[linear-gradient(150deg,rgba(18,34,56,0.98),rgba(23,50,82,0.88))] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.28)]">
           <div className="flex h-12 w-12 items-center justify-center rounded-[12px] border border-mega-accent/12 bg-mega-accent/10 font-mono text-[0.78rem] font-bold uppercase tracking-[0.18em] text-mega-accent">
             {item.badge ?? item.title.slice(0, 2)}
           </div>
@@ -458,7 +458,7 @@ function PlatformCapabilitySection({
 }) {
   return (
     <section className="section-space">
-      <div className="shell space-y-10">
+      <div className="shell space-y-8">
         <div className="space-y-5">
           <SectionIntro section={intro} />
           <div className="flex flex-wrap gap-3">
@@ -601,7 +601,7 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
       <Hero hero={content.home.hero} locale={locale} />
 
       <section className="section-space">
-        <div className="shell space-y-10">
+        <div className="shell space-y-8">
           <HomeScenarioIntro section={content.home.scenarios} showGuide={false} />
           <HomeScenarioPreviewGrid
             action={content.home.scenarios.action}
@@ -612,7 +612,7 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
       </section>
 
       <section className="section-space bg-black/10">
-        <div className="shell space-y-10">
+        <div className="shell space-y-8">
           <SectionIntro section={content.home.solutions} />
           <SolutionGrid items={content.home.solutions.items} />
         </div>
@@ -643,7 +643,7 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
       </section>
 
       <section className="section-space bg-black/10">
-        <div className="shell space-y-10">
+        <div className="shell space-y-8">
           <SectionIntro section={content.home.products} />
           <ProductFamilyTabs locale={locale} />
         </div>
@@ -667,7 +667,7 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
       </section>
 
       <section className="section-space">
-        <div className="shell space-y-10">
+        <div className="shell space-y-8">
           <SectionIntro section={content.home.services} />
           <div className="grid gap-5 md:grid-cols-3">
             {content.home.services.items.map((item) => (
@@ -719,13 +719,13 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
         <>
           <PageHero {...content.scenarios.hero} eyebrow={content.navigation.scenarios} />
           <section className="section-space">
-            <div className="shell space-y-10">
+            <div className="shell space-y-8">
               <HomeScenarioIntro section={content.home.scenarios} />
               <ScenarioGrid items={content.home.scenarios.items} locale={locale} />
             </div>
           </section>
           <section className="section-space">
-            <div className="shell space-y-10">
+            <div className="shell space-y-8">
               <SectionIntro section={content.scenarios.intro} />
               <DetailGrid items={content.scenarios.details} locale={locale} />
             </div>
@@ -744,7 +744,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
         <>
           <PageHero {...content.solutions.hero} eyebrow={content.navigation.solutions} />
           <section className="section-space">
-            <div className="shell space-y-10">
+            <div className="shell space-y-8">
               <SectionIntro section={content.solutions.intro} />
               <SolutionGrid items={content.solutions.items} />
             </div>
@@ -774,7 +774,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
         <>
           <PageHero {...content.products.hero} eyebrow={content.navigation.products} />
           <section className="section-space">
-            <div className="shell space-y-10">
+            <div className="shell space-y-8">
               <SectionIntro section={content.products.intro} />
               <ProductGallery locale={locale} />
             </div>
@@ -792,7 +792,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
         <>
           <PageHero {...content.safety.hero} eyebrow={content.navigation.safety} />
           <section className="section-space">
-            <div className="shell space-y-10">
+            <div className="shell space-y-8">
               <SectionIntro section={content.safety.intro} />
               <TrustGrid items={content.safety.items} />
             </div>
@@ -810,7 +810,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
         <>
           <PageHero {...content.services.hero} eyebrow={content.navigation.services} />
           <section className="section-space">
-            <div className="shell space-y-10">
+            <div className="shell space-y-8">
               <SectionIntro section={content.services.intro} />
               <div className="grid gap-6 lg:grid-cols-2">
                 <div className="space-y-5">
@@ -845,7 +845,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
         <>
           <PageHero {...content.about.hero} eyebrow={content.navigation.about} />
           <section className="section-space">
-            <div className="shell space-y-10">
+            <div className="shell space-y-8">
               <SectionIntro section={content.about.intro} />
               <TrustGrid items={content.about.pillars} />
             </div>
