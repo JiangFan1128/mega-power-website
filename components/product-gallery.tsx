@@ -3,15 +3,18 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
-import { productFamilies } from "@/content/products";
-import type { ProductFamilyKey } from "@/content/types";
+import {
+  productGalleryFamilies,
+  productGalleryItems,
+  type ProductGalleryFamilyKey,
+} from "@/content/product-gallery";
 import type { Locale } from "@/lib/i18n";
 
 type ProductGalleryProps = {
   locale: Locale;
 };
 
-type FilterKey = "all" | ProductFamilyKey;
+type FilterKey = "all" | ProductGalleryFamilyKey;
 
 export function ProductGallery({ locale }: ProductGalleryProps) {
   const [selected, setSelected] = useState<FilterKey>("all");
@@ -30,6 +33,7 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
       zoom: "Click to enlarge",
       preview: "Preview",
       close: "Close",
+      model: "Model",
     },
     ja: {
       all: "All",
@@ -38,6 +42,7 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
       zoom: "クリックして拡大",
       preview: "プレビュー",
       close: "閉じる",
+      model: "Model",
     },
     zh: {
       all: "All",
@@ -46,13 +51,14 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
       zoom: "点击放大预览",
       preview: "预览",
       close: "关闭",
+      model: "型号",
     },
   }[locale];
 
   const filters = useMemo(
     () => [
       { key: "all" as const, label: copy.all },
-      ...productFamilies.map((family) => ({
+      ...productGalleryFamilies.map((family) => ({
         key: family.key,
         label: family.title[locale],
       })),
@@ -61,18 +67,19 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
   );
 
   const items = useMemo(
-    () =>
-      productFamilies.flatMap((family) =>
-        family.products.map((product) => ({
-          familyKey: family.key,
-          familyTitle: family.title[locale],
-          name: product.name,
-          model: product.model,
-          description: product.description[locale],
-          image: product.image,
-          specs: product.specs.slice(0, 2),
-        })),
-      ),
+    () => {
+      const titleByFamily = Object.fromEntries(
+        productGalleryFamilies.map((family) => [family.key, family.title[locale]]),
+      ) as Record<ProductGalleryFamilyKey, string>;
+
+      return productGalleryItems.map((product) => ({
+        familyKey: product.family,
+        familyTitle: titleByFamily[product.family],
+        name: product.title[locale],
+        model: product.model,
+        image: product.image,
+      }));
+    },
     [locale],
   );
 
@@ -120,7 +127,7 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
             >
               <button
                 aria-label={`${copy.preview}: ${item.name}`}
-                className="group relative flex h-[22rem] w-full items-center justify-center overflow-hidden border-b border-mega-accent/10 bg-[radial-gradient(circle_at_top,rgba(45,212,168,0.14),transparent_52%),linear-gradient(180deg,rgba(233,244,244,0.96),rgba(212,228,230,0.98))] p-5"
+                className="group relative flex h-[24rem] w-full items-center justify-center overflow-hidden border-b border-mega-accent/10 bg-[radial-gradient(circle_at_top,rgba(45,212,168,0.14),transparent_52%),linear-gradient(180deg,rgba(233,244,244,0.96),rgba(212,228,230,0.98))] p-4"
                 onClick={() =>
                   setPreview({
                     src: item.image,
@@ -147,26 +154,14 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
                 <div className="space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="micro-label">{item.familyTitle}</span>
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[0.7rem] uppercase tracking-[0.12rem] text-mega-text">
-                      {item.model}
-                    </span>
                   </div>
                   <h3 className="text-[1.4rem] font-extrabold leading-[1.22] tracking-[-0.025em] text-white">
                     {item.name}
                   </h3>
-                  <p className="card-copy max-w-[52ch]">{item.description}</p>
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {item.specs.map((spec) => (
-                    <div
-                      key={`${item.model}-${spec.label}`}
-                      className="rounded-[14px] border border-white/10 bg-black/10 p-3"
-                    >
-                      <div className="spec-label">{spec.label}</div>
-                      <div className="spec-value">{spec.value}</div>
-                    </div>
-                  ))}
+                  <div className="rounded-[14px] border border-white/10 bg-black/10 p-3">
+                    <div className="spec-label">{copy.model}</div>
+                    <div className="model-copy mt-1 text-mega-text">{item.model}</div>
+                  </div>
                 </div>
               </div>
             </article>
