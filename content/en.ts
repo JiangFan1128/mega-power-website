@@ -211,15 +211,15 @@ export const en: SiteContent = {
         "Energy scenarios page covering grid integration, frequency regulation, weak-grid charging, C&I optimization, emergency power, and Japan-specific deployment needs.",
     },
     hero: {
-      title: "Energy scenarios, translated into deployable systems",
+      title: "Find the right MEGA POWER solution by operating scenario",
       subtitle:
-        "MEGA POWER approaches energy projects from the customer's operating environment first: grid conditions, land constraints, reliability requirements, charging demand, and service expectations.",
+        "Start from the customer's real operating environment, then move directly into the integrated solution stack, product families, digital capability, and support logic that fit best.",
     },
     intro: {
       label: "Scenario Logic",
-      title: "Customer environment first, then system architecture",
+      title: "One page to move from customer environment to solution decision",
       body:
-        "This page explains the pressure points behind each use case before presenting MEGA POWER's integrated response in storage, charging, digital monitoring, and service support.",
+        "Each scenario below connects the operating challenge with a recommended solution stack, supporting product families, platform capability, safety logic, and service readiness.",
     },
     details: [
       {
@@ -286,9 +286,9 @@ export const en: SiteContent = {
     },
     cta: {
       label: "Next Step",
-      title: "Move from scenario understanding to solution architecture",
-      body: "Explore the five solution systems and the product families that support them.",
-      action: { label: "View Solutions", page: "solutions" },
+      title: "Review the product families behind these scenario-based systems",
+      body: "After identifying the right operating scenario and solution stack, continue into the product page for parameter sheets and equipment families.",
+      action: { label: "View Products", page: "products" },
     },
   },
   solutions: {
@@ -298,15 +298,15 @@ export const en: SiteContent = {
         "Five integrated solution systems spanning utility storage, frequency regulation, PV-ESS-charging, transportable storage, and C&I energy storage.",
     },
     hero: {
-      title: "Five solution systems, one integrated logic",
+      title: "Solution architecture overview for MEGA POWER systems",
       subtitle:
-        "MEGA POWER's solution architecture connects core products, digital management, and operational support across grid, industry, transport, and charging scenarios.",
+        "This page is a short overview of the main solution systems. The full scenario-to-solution matching logic lives on the Scenarios page.",
     },
     intro: {
       label: "Solution Framework",
-      title: "System design starts with operating conditions, then scales through modular capabilities",
+      title: "A concise overview of the main solution stacks",
       body:
-        "Each solution family combines conversion, storage, control, warning, monitoring, and service logic into a coherent deployment model.",
+        "Use this page to understand the overall solution portfolio, then go back to Scenarios when you need the full mapping from customer environment to deployment logic.",
     },
     items: [
       {
@@ -336,10 +336,10 @@ export const en: SiteContent = {
       },
     ],
     cta: {
-      label: "Products",
-      title: "See the hardware families behind the solution systems",
-      body: "The product page organizes real models from the source PDF by deployment role and scenario fit.",
-      action: { label: "View Products", page: "products" },
+      label: "Scenarios",
+      title: "Go back to the complete scenario-to-solution decision page",
+      body: "The Scenarios page is now the main place to match operating environments with solution logic, product families, platform support, and service readiness.",
+      action: { label: "View Scenarios", page: "scenarios" },
     },
   },
   platform: {

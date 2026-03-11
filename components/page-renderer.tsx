@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ProductGallery } from "@/components/product-gallery";
 import { ProductFamilyTabs } from "@/components/product-family-tabs";
+import { productFamilies } from "@/content/products";
 import type {
   HeroContent,
   ScenarioCard,
@@ -408,6 +409,224 @@ function DetailGrid({ items, locale }: { items: ScenarioDetail[]; locale: Locale
   );
 }
 
+function ScenarioSolutionSections({
+  locale,
+  scenarios,
+  solutions,
+  platformBullets,
+  safetyBullets,
+  serviceBullets,
+}: {
+  locale: Locale;
+  scenarios: ScenarioDetail[];
+  solutions: SolutionItem[];
+  platformBullets: string[];
+  safetyBullets: string[];
+  serviceBullets: string[];
+}) {
+  const labels = {
+    en: {
+      challenge: "Main Challenge",
+      stack: "Recommended Solution Stack",
+      products: "Typical Product Families",
+      platform: "Platform Support",
+      safety: "Safety & Service Support",
+      japan: "Japan Deployment Notes",
+    },
+    ja: {
+      challenge: "主な課題",
+      stack: "推奨ソリューション構成",
+      products: "代表的な製品ファミリー",
+      platform: "プラットフォーム支援",
+      safety: "安全・サービス支援",
+      japan: "日本導入メモ",
+    },
+    zh: {
+      challenge: "主要问题",
+      stack: "推荐解决方案组合",
+      products: "典型产品家族",
+      platform: "平台支撑",
+      safety: "安全与服务支撑",
+      japan: "日本部署提示",
+    },
+  }[locale];
+
+  const familyTitles = {
+    grid: productFamilies.find((family) => family.key === "grid")?.title[locale] ?? "Grid",
+    pvess: productFamilies.find((family) => family.key === "pvess")?.title[locale] ?? "PV-ESS",
+    transport:
+      productFamilies.find((family) => family.key === "transport")?.title[locale] ??
+      "Transport",
+    ci: productFamilies.find((family) => family.key === "ci")?.title[locale] ?? "C&I",
+  };
+
+  const productMap = [
+    [familyTitles.grid],
+    [familyTitles.grid],
+    [familyTitles.pvess],
+    [familyTitles.ci],
+    [familyTitles.transport],
+  ];
+
+  const pairings = scenarios.slice(0, 5).map((scenario, index) => {
+    const solutionOrder = [0, 1, 2, 4, 3];
+    const solution = solutions[solutionOrder[index]];
+
+    return {
+      scenario,
+      solution,
+      products: productMap[index],
+    };
+  });
+
+  return (
+    <div className="space-y-6">
+      {pairings.map(({ scenario, solution, products }) => (
+        <article
+          className="panel-strong grid gap-6 overflow-hidden p-6 lg:grid-cols-[0.96fr_1.04fr] lg:p-7"
+          key={scenario.title}
+        >
+          <div className="space-y-5">
+            <div className="eyebrow">{labels.challenge}</div>
+            <h3 className="text-[clamp(1.45rem,2.6vw,2rem)] font-extrabold leading-[1.16] tracking-[-0.03em] text-white">
+              {scenario.title}
+            </h3>
+            <p className="card-copy text-[0.96rem] leading-[1.72] text-mega-text">
+              {scenario.problem}
+            </p>
+            <div className="rounded-[16px] border border-[#35577f]/60 bg-[rgba(8,17,32,0.42)] p-4">
+              <div className="micro-label">{labels.japan}</div>
+              <p className="mt-2 card-copy">
+                {locale === "en"
+                  ? "Compact integration, reliability, maintainability, and service clarity remain important, especially for Japan-facing deployments."
+                  : locale === "ja"
+                    ? "特に日本向け案件では、コンパクト統合、信頼性、保守性、支援体制の明確さが重要です。"
+                    : "尤其面向日本市场时，紧凑集成、可靠性、可维护性和服务清晰度会更加重要。"}
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            <div>
+              <div className="eyebrow">{labels.stack}</div>
+              <h4 className="mt-2 text-[1.22rem] font-bold leading-[1.25] text-white">
+                {solution.title}
+              </h4>
+              <p className="mt-3 card-copy">{solution.summary}</p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-[16px] border border-[#35577f]/60 bg-[rgba(8,17,32,0.38)] p-4">
+                <div className="micro-label">{labels.products}</div>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {products.map((product) => (
+                    <span
+                      className="rounded-full border border-mega-accent/15 bg-mega-accent/10 px-3 py-1 text-[0.72rem] font-mono uppercase tracking-[0.14rem] text-mega-accent"
+                      key={`${scenario.title}-${product}`}
+                    >
+                      {product}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-[16px] border border-[#35577f]/60 bg-[rgba(8,17,32,0.38)] p-4">
+                <div className="micro-label">{labels.platform}</div>
+                <ul className="mt-3 space-y-2">
+                  {platformBullets.slice(0, 3).map((bullet) => (
+                    <li className="card-copy" key={`${scenario.title}-${bullet}`}>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-[16px] border border-[#35577f]/60 bg-[rgba(8,17,32,0.38)] p-4">
+              <div className="micro-label">{labels.safety}</div>
+              <div className="mt-3 grid gap-3 md:grid-cols-2">
+                {[...safetyBullets.slice(0, 2), ...serviceBullets.slice(0, 2)].map((bullet) => (
+                  <span
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[0.8rem] leading-[1.4] text-mega-text"
+                    key={`${scenario.title}-${bullet}`}
+                  >
+                    {bullet}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[16px] border border-[#35577f]/60 bg-[rgba(8,17,32,0.38)] p-4">
+              <div className="micro-label">
+                {locale === "en"
+                  ? "Solution Outcomes"
+                  : locale === "ja"
+                    ? "期待される効果"
+                    : "方案价值方向"}
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {scenario.benefits.map((benefit) => (
+                  <span
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[0.8rem] text-white"
+                    key={`${scenario.title}-${benefit}`}
+                  >
+                    {benefit}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function SolutionOverviewMatrix({
+  locale,
+  scenarios,
+  solutions,
+}: {
+  locale: Locale;
+  scenarios: ScenarioDetail[];
+  solutions: SolutionItem[];
+}) {
+  const label = {
+    en: "Best Matched Scenarios",
+    ja: "適合するシナリオ",
+    zh: "适配场景",
+  }[locale];
+
+  const map = [
+    [scenarios[0]?.title, scenarios[5]?.title],
+    [scenarios[1]?.title, scenarios[5]?.title],
+    [scenarios[2]?.title, scenarios[5]?.title],
+    [scenarios[4]?.title, scenarios[5]?.title],
+    [scenarios[3]?.title, scenarios[5]?.title],
+  ];
+
+  return (
+    <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+      {solutions.map((solution, index) => (
+        <article className="panel p-5" key={solution.title}>
+          <div className="micro-label">{label}</div>
+          <h3 className="mt-3 card-title">{solution.title}</h3>
+          <p className="mt-3 card-copy">{solution.summary}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {map[index].filter(Boolean).map((scenario) => (
+              <span
+                className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[0.78rem] text-mega-text"
+                key={`${solution.title}-${scenario}`}
+              >
+                {scenario}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 function TrustGrid({ items }: { items: TrustItem[] }) {
   return (
     <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -727,7 +946,14 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
           <section className="section-space">
             <div className="shell space-y-8">
               <SectionIntro section={content.scenarios.intro} />
-              <DetailGrid items={content.scenarios.details} locale={locale} />
+              <ScenarioSolutionSections
+                locale={locale}
+                platformBullets={content.home.platform.bullets}
+                safetyBullets={content.home.safety.bullets}
+                scenarios={content.scenarios.details}
+                serviceBullets={content.services.japan.bullets}
+                solutions={content.solutions.items}
+              />
             </div>
           </section>
           <section className="section-space bg-black/10">
@@ -747,6 +973,16 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
             <div className="shell space-y-8">
               <SectionIntro section={content.solutions.intro} />
               <SolutionGrid items={content.solutions.items} />
+            </div>
+          </section>
+          <section className="section-space bg-black/10">
+            <div className="shell space-y-8">
+              <BulletPanel {...content.scenarios.mapping} />
+              <SolutionOverviewMatrix
+                locale={locale}
+                scenarios={content.scenarios.details}
+                solutions={content.solutions.items}
+              />
             </div>
           </section>
           <CTASection locale={locale} {...content.solutions.cta} />
