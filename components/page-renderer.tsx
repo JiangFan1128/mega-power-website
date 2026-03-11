@@ -411,6 +411,7 @@ function DetailGrid({ items, locale }: { items: ScenarioDetail[]; locale: Locale
 
 function ScenarioSolutionSections({
   locale,
+  previews,
   scenarios,
   solutions,
   platformBullets,
@@ -418,6 +419,7 @@ function ScenarioSolutionSections({
   serviceBullets,
 }: {
   locale: Locale;
+  previews: ScenarioCard[];
   scenarios: ScenarioDetail[];
   solutions: SolutionItem[];
   platformBullets: string[];
@@ -471,8 +473,10 @@ function ScenarioSolutionSections({
   const pairings = scenarios.slice(0, 5).map((scenario, index) => {
     const solutionOrder = [0, 1, 2, 4, 3];
     const solution = solutions[solutionOrder[index]];
+    const preview = previews[index];
 
     return {
+      preview,
       scenario,
       solution,
       products: productMap[index],
@@ -481,7 +485,7 @@ function ScenarioSolutionSections({
 
   return (
     <div className="space-y-6">
-      {pairings.map(({ scenario, solution, products }) => (
+      {pairings.map(({ preview, scenario, solution, products }) => (
         <article
           className="panel-strong grid gap-6 overflow-hidden p-6 lg:grid-cols-[0.96fr_1.04fr] lg:p-7"
           key={scenario.title}
@@ -491,8 +495,13 @@ function ScenarioSolutionSections({
             <h3 className="text-[clamp(1.45rem,2.6vw,2rem)] font-extrabold leading-[1.16] tracking-[-0.03em] text-white">
               {scenario.title}
             </h3>
+            {preview?.preview ? (
+              <p className="text-[0.98rem] font-semibold leading-[1.65] text-[#d8eef7]">
+                {preview.preview}
+              </p>
+            ) : null}
             <p className="card-copy text-[0.96rem] leading-[1.72] text-mega-text">
-              {scenario.problem}
+              {preview?.summary ? `${preview.summary} ${scenario.problem}` : scenario.problem}
             </p>
             <div className="rounded-[16px] border border-[#35577f]/60 bg-[rgba(8,17,32,0.42)] p-4">
               <div className="micro-label">{labels.japan}</div>
@@ -939,16 +948,11 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
           <PageHero {...content.scenarios.hero} eyebrow={content.navigation.scenarios} />
           <section className="section-space">
             <div className="shell space-y-8">
-              <HomeScenarioIntro section={content.home.scenarios} />
-              <ScenarioGrid items={content.home.scenarios.items} locale={locale} />
-            </div>
-          </section>
-          <section className="section-space">
-            <div className="shell space-y-8">
               <SectionIntro section={content.scenarios.intro} />
               <ScenarioSolutionSections
                 locale={locale}
                 platformBullets={content.home.platform.bullets}
+                previews={content.home.scenarios.items}
                 safetyBullets={content.home.safety.bullets}
                 scenarios={content.scenarios.details}
                 serviceBullets={content.services.japan.bullets}
