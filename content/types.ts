@@ -24,6 +24,12 @@ export type HeroContent = {
   stats?: HeroStat[];
 };
 
+export type PageHeroContent = {
+  title: string;
+  subtitle: string;
+  highlight?: string;
+};
+
 export type SectionLead = {
   label: string;
   title: string;
@@ -45,6 +51,66 @@ export type ScenarioDetail = {
   problem: string;
   approach: string;
   benefits: string[];
+};
+
+export type ScenarioDecisionIcon =
+  | "grid"
+  | "frequency"
+  | "ev"
+  | "mobile"
+  | "commercial"
+  | "japan";
+
+export type ScenarioDecisionMetric = {
+  value: string;
+  label: string;
+};
+
+export type ScenarioDecisionProduct = {
+  title: string;
+  model: string;
+  highlights: string[];
+};
+
+export type ScenarioDecisionSupport = {
+  label: string;
+  title: string;
+  items: string[];
+};
+
+export type ScenarioDecisionArchitectureNode = {
+  title: string;
+  subtitle?: string;
+  tone?: "default" | "highlight" | "platform";
+};
+
+export type ScenarioDecisionArchitectureRow = {
+  nodes: ScenarioDecisionArchitectureNode[];
+};
+
+export type ScenarioDecisionArchitecture = {
+  label: string;
+  rows: ScenarioDecisionArchitectureRow[];
+};
+
+export type ScenarioDecisionPanel = {
+  key: string;
+  icon: ScenarioDecisionIcon;
+  buttonTitle: string;
+  buttonSubtitle: string;
+  problemLabel: string;
+  problemTitle: string;
+  problemBody: string;
+  solutionLabel: string;
+  solutionTitle: string;
+  solutionBody: string;
+  solutionValues: string[];
+  metrics: ScenarioDecisionMetric[];
+  architecture?: ScenarioDecisionArchitecture;
+  productsLabel: string;
+  products: ScenarioDecisionProduct[];
+  platform: ScenarioDecisionSupport;
+  service: ScenarioDecisionSupport;
 };
 
 export type SolutionItem = {
@@ -138,11 +204,10 @@ export type SiteContent = {
   };
   scenarios: {
     metadata: MetadataContent;
-    hero: {
-      title: string;
-      subtitle: string;
-    };
+    hero: PageHeroContent;
     intro: SectionLead;
+    selectorLabel: string;
+    panels: ScenarioDecisionPanel[];
     details: ScenarioDetail[];
     japanBlock: SectionLead & { bullets: string[] };
     mapping: SectionLead & { bullets: string[] };
@@ -150,20 +215,14 @@ export type SiteContent = {
   };
   solutions: {
     metadata: MetadataContent;
-    hero: {
-      title: string;
-      subtitle: string;
-    };
+    hero: PageHeroContent;
     intro: SectionLead;
     items: SolutionItem[];
     cta: SectionLead & { action: LinkAction };
   };
   platform: {
     metadata: MetadataContent;
-    hero: {
-      title: string;
-      subtitle: string;
-    };
+    hero: PageHeroContent;
     intro: SectionLead;
     capability: {
       pills: string[];
@@ -184,20 +243,14 @@ export type SiteContent = {
   };
   products: {
     metadata: MetadataContent;
-    hero: {
-      title: string;
-      subtitle: string;
-    };
+    hero: PageHeroContent;
     intro: SectionLead;
     related: SectionLead & { bullets: string[] };
     cta: SectionLead & { action: LinkAction };
   };
   safety: {
     metadata: MetadataContent;
-    hero: {
-      title: string;
-      subtitle: string;
-    };
+    hero: PageHeroContent;
     intro: SectionLead;
     items: TrustItem[];
     japan: SectionLead & { bullets: string[] };
@@ -205,10 +258,7 @@ export type SiteContent = {
   };
   services: {
     metadata: MetadataContent;
-    hero: {
-      title: string;
-      subtitle: string;
-    };
+    hero: PageHeroContent;
     intro: SectionLead;
     strategy: ServiceItem[];
     mechanism: ServiceItem[];
@@ -217,10 +267,7 @@ export type SiteContent = {
   };
   about: {
     metadata: MetadataContent;
-    hero: {
-      title: string;
-      subtitle: string;
-    };
+    hero: PageHeroContent;
     intro: SectionLead;
     pillars: TrustItem[];
     japan: SectionLead & { body: string };
@@ -228,10 +275,7 @@ export type SiteContent = {
   };
   contact: {
     metadata: MetadataContent;
-    hero: {
-      title: string;
-      subtitle: string;
-    };
+    hero: PageHeroContent;
     intro: SectionLead;
     items: ContactItem[];
     note: string;

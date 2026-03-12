@@ -32,7 +32,7 @@ export const zh: SiteContent = {
       subtitle:
         "MEGA POWER 将光伏、灵活储能、高效充电与智能管理整合，面向电网、工业、交通与充电基础设施提供综合数字绿色能源解决方案。",
       primaryCta: { label: "查看应用场景", page: "scenarios" },
-      secondaryCta: { label: "查看解决方案", page: "solutions" },
+      secondaryCta: { label: "查看平台能力", page: "platform" },
       stats: [
         { value: "20+", label: "20+ 年行业经验" },
         { value: "6S+EDR", label: "专利安全系统" },
@@ -173,6 +173,7 @@ export const zh: SiteContent = {
       title: "按运行场景找到最合适的 MEGA POWER 解决方案",
       subtitle:
         "先从客户的真实运行环境出发，再直接看到对应的解决方案组合、产品家族、平台能力与服务支撑逻辑。",
+      highlight: "运行场景",
     },
     intro: {
       label: "Scenario Logic",
@@ -180,6 +181,384 @@ export const zh: SiteContent = {
       body:
         "下列每个场景都会直接连接对应的推荐解决方案组合、典型产品家族、平台能力、安全逻辑与服务准备，而不是让用户再跳去别的页面拼接信息。",
     },
+    selectorLabel: "选择你当前面临的运行场景",
+    panels: [
+      {
+        key: "grid",
+        icon: "grid",
+        buttonTitle: "电网与新能源并网",
+        buttonSubtitle: "风电场 · 光伏电站",
+        problemLabel: "客户面临的问题",
+        problemTitle: "新能源出力不稳定，弃电率升高，并网合规压力持续加大",
+        problemBody:
+          "风电和光伏发电天然存在间歇性，发电高峰与用电高峰并不总是匹配。电网侧越来越希望项目通过储能提升稳定性和调度灵活性，否则更容易面临消纳不足、限电和并网考核压力。",
+        solutionLabel: "MEGA POWER 的响应",
+        solutionTitle: "电网侧储能解决方案",
+        solutionBody:
+          "MEGA POWER 在电网侧或发电侧部署 MW 级储能系统，通过时间维度转移能量，并与数字调度逻辑联动，实现平滑出力、削峰移峰、电网支撑和更高的新能源消纳能力。",
+        solutionValues: ["提升新能源消纳", "削峰移峰", "增强电网灵活性", "黑启动准备"],
+        metrics: [
+          { value: "<50ms", label: "有功 / 无功功率调节响应" },
+          { value: "2750kW", label: "单集装箱最大输出功率" },
+          { value: "5MWh", label: "单电池舱容量" },
+          { value: "28 天", label: "BWS 提前预警窗口" },
+        ],
+        architecture: {
+          label: "系统架构概览",
+          rows: [
+            {
+              nodes: [
+                { title: "光伏电站", subtitle: "Solar generation" },
+                { title: "升压集装箱", subtitle: "Voltage elevation" },
+                { title: "PCS 升压一体舱", subtitle: "变流 + 升压", tone: "highlight" },
+                { title: "电网", subtitle: "Utility interconnection" },
+              ],
+            },
+            {
+              nodes: [
+                { title: "风力发电", subtitle: "Wind generation" },
+                { title: "风电升压", subtitle: "Collection side" },
+                { title: "MCS / EMS", subtitle: "数字调度平台", tone: "platform" },
+              ],
+            },
+            {
+              nodes: [
+                { title: "电池储能舱", subtitle: "5015kWh LFP" },
+                { title: "PCS 升压一体舱", subtitle: "变流 + 电网支撑", tone: "highlight" },
+              ],
+            },
+          ],
+        },
+        productsLabel: "对应产品家族",
+        products: [
+          {
+            title: "PCS 升压一体舱（簇式）",
+            model: "iBCS100-2500B/20-AC",
+            highlights: ["2500kW 额定", "12 路 DC 通道", "20kV", "IP54 / PCS IP66"],
+          },
+          {
+            title: "PCS 升压一体舱（集成式）",
+            model: "iBCS100-2500A/20-AC",
+            highlights: ["2750kW 最大", "20/35kV", "≤18T", "一体化部署"],
+          },
+          {
+            title: "DC 电池储能集装箱",
+            model: "iESS100-5015B2-LC",
+            highlights: ["5015kWh LFP", "液冷", "IP54", "适配大储"],
+          },
+        ],
+        platform: {
+          label: "平台能力支撑",
+          title: "从调度到追溯的数字化可视能力",
+          items: [
+            "HCS 提供毫秒级控制响应",
+            "BWS 提供最长 28 天的电池故障预警",
+            "EMS 负责调度协调与策略优化",
+            "EDR 负责全过程事件追溯",
+          ],
+        },
+        service: {
+          label: "服务准备",
+          title: "面向公用事业级项目的交付支持",
+          items: [
+            "面向电网侧项目的站级工程协调",
+            "适合长周期运行的预防性维护计划",
+            "关键站点可用的备件和远程支持逻辑",
+          ],
+        },
+      },
+      {
+        key: "frequency",
+        icon: "frequency",
+        buttonTitle: "调频与电网稳定",
+        buttonSubtitle: "快速响应 · 微电网",
+        problemLabel: "客户面临的问题",
+        problemTitle: "频率偏差需要比传统调节方式更快、更稳定的响应",
+        problemBody:
+          "当电网频率围绕目标值波动时，传统热电或水电调节往往速度不够快、精度也不够高。高响应系统需要连续、低延迟、可重复的调频能力，才能更好地跟随调度指令。",
+        solutionLabel: "MEGA POWER 的响应",
+        solutionTitle: "调频储能解决方案",
+        solutionBody:
+          "MEGA POWER 将储能变流、高速控制和事件追溯能力整合为调频方案，实现更快响应、更精准跟随和更连续的辅助服务价值输出。",
+        solutionValues: ["毫秒级响应", "双向调节", "辅助服务价值", "稳定支撑 50Hz"],
+        metrics: [
+          { value: "<50ms", label: "调度响应延迟" },
+          { value: "2500kW", label: "双向调节功率" },
+          { value: "50Hz", label: "目标频率跟踪" },
+          { value: "EDR", label: "全过程事件留痕" },
+        ],
+        productsLabel: "对应产品家族",
+        products: [
+          {
+            title: "PCS 升压一体舱（簇式）",
+            model: "iBCS100-2500B/20-AC",
+            highlights: ["2500kW 额定", "快速调频", "12 路 DC 通道"],
+          },
+          {
+            title: "PCS 升压一体舱（集成式）",
+            model: "iBCS100-2500A/20-AC",
+            highlights: ["2750kW 最大", "20/35kV", "适合微电网"],
+          },
+          {
+            title: "DC 电池储能集装箱",
+            model: "iESS100-5015B2-LC",
+            highlights: ["5015kWh LFP", "液冷", "适合高频循环"],
+          },
+        ],
+        platform: {
+          label: "平台能力支撑",
+          title: "面向高响应调频的闭环控制",
+          items: [
+            "HCS 提供毫秒级同步控制",
+            "EDR 记录调频事件并支持事后分析",
+            "OMS 支撑告警响应和工单流程",
+            "BMS / BWS 强化高频循环下的电池状态感知",
+          ],
+        },
+        service: {
+          label: "服务准备",
+          title: "保障调频收益和可用性的稳定性",
+          items: [
+            "面向关键调度系统的 7×24 紧急响应",
+            "通过预防性维护减少停机损失",
+            "关键变流部件的快速备件支持",
+          ],
+        },
+      },
+      {
+        key: "ev",
+        icon: "ev",
+        buttonTitle: "EV 充电",
+        buttonSubtitle: "弱电网 · 大功率",
+        problemLabel: "客户面临的问题",
+        problemTitle: "需要建设大功率充电站，但站点弱电网、容量受限，甚至没有电网接入",
+        problemBody:
+          "公交场站、重卡走廊、物流园和乘用车快充站常常受制于配电容量。电网扩容周期长、成本高，而很多站点又希望尽快形成稳定充电能力。",
+        solutionLabel: "MEGA POWER 的响应",
+        solutionTitle: "光储充一体解决方案",
+        solutionBody:
+          "MEGA POWER 通过 AC / DC 耦合的系统设计，把光伏、储能和充电整合为可调度的微网结构，让弱电网、离网或场地受限条件下的大功率充电部署更灵活。",
+        solutionValues: ["虚拟增容", "并离网切换", "模块化部署", "6S+EDR 智能运维"],
+        metrics: [
+          { value: "200kW", label: "乘用车快充节点" },
+          { value: "240kW×N", label: "公交场站多枪充电" },
+          { value: "480kW×N", label: "重卡超充配置" },
+          { value: "1440kW", label: "功率柜额定输出" },
+        ],
+        productsLabel: "对应产品家族",
+        products: [
+          {
+            title: "光储一体机",
+            model: "iPES100-100-215-AC-100",
+            highlights: ["100kW AC", "215.04kWh", "2×50kW 光伏输入", "IP55"],
+          },
+          {
+            title: "储能一体式充电机",
+            model: "iEFC100-80/120-AL-C",
+            highlights: ["120kW 额定", "186 / 209kWh", "DC200-1000V", "IP55"],
+          },
+          {
+            title: "功率柜与高功率终端",
+            model: "iEFC Series",
+            highlights: ["1440kW 功率柜", "12 路输出", "2×600A + 10×250A"],
+          },
+        ],
+        platform: {
+          label: "平台能力支撑",
+          title: "把充电运营、监控和策略调度放进同一层",
+          items: [
+            "EMS 负责充电与储能策略调度",
+            "OMS 负责站点监控和工单执行",
+            "BWS 负责储能电池异常预警",
+            "EDR 负责充电站事件记录与分析",
+          ],
+        },
+        service: {
+          label: "服务准备",
+          title: "让充电站更稳定地持续运营",
+          items: [
+            "通过客户培训降低现场误操作",
+            "通过定期巡检降低设备故障风险",
+            "通过伙伴协作扩大本地响应覆盖",
+          ],
+        },
+      },
+      {
+        key: "mobile",
+        icon: "mobile",
+        buttonTitle: "移动与应急供电",
+        buttonSubtitle: "离网 · 临时场站",
+        problemLabel: "客户面临的问题",
+        problemTitle: "远程或应急场地需要快速供电，无法等待固定基础设施建设完成",
+        problemBody:
+          "灾害救援、临时施工、偏远矿区和现场作业，往往没有条件先建设永久电力设施。真正关键的是电力系统能否快速移动、快速部署，并在到场后尽快恢复供电能力。",
+        solutionLabel: "MEGA POWER 的响应",
+        solutionTitle: "可运输储能解决方案",
+        solutionBody:
+          "MEGA POWER 通过集装箱、拖车和车辆式能源系统，建立快速部署的供电能力，并结合抗振设计、液冷和模块化调度，适配各种移动能源场景。",
+        solutionValues: ["快速部署", "车规级抗振", "电池周转灵活", "独立离网供电"],
+        metrics: [
+          { value: "10,000+", label: "快插接口循环寿命" },
+          { value: "2500kW", label: "离网额定放电功率" },
+          { value: "6000", label: "95%DOD 条件下电池循环次数" },
+          { value: "A1", label: "阻燃材料等级" },
+        ],
+        productsLabel: "对应产品家族",
+        products: [
+          {
+            title: "并网充电集装箱",
+            model: "iBCS100-1725A/10-AC",
+            highlights: ["1725kW", "10kV", "≤13T", "快速部署"],
+          },
+          {
+            title: "离网放电集装箱",
+            model: "iBCS100-2x2500A/10-AC",
+            highlights: ["2510kW", "2500kW 离网输出", "10kV", "IP54 / PCS IP66"],
+          },
+          {
+            title: "电池储能运输车",
+            model: "iESS100-3343B2-LC-M",
+            highlights: ["6000 次循环", "抗振设计", "液冷", "IP54 / C4"],
+          },
+        ],
+        platform: {
+          label: "平台能力支撑",
+          title: "适配不稳定场地条件的调度智能",
+          items: [
+            "SCS 支撑突变负载下的稳定控制",
+            "DMS 式调度逻辑协调移动场景充放电",
+            "BWS / EDR 提供现场预警与事件追溯",
+            "OMS 让远程服务流程更可见",
+          ],
+        },
+        service: {
+          label: "服务准备",
+          title: "面向紧急和临时部署的快速支撑",
+          items: [
+            "7×24 紧急热线处理高优先级事件",
+            "通过备件网络缩短关键部件恢复时间",
+            "通过现场培训减少搭建和运行错误",
+          ],
+        },
+      },
+      {
+        key: "commercial",
+        icon: "commercial",
+        buttonTitle: "工商业优化",
+        buttonSubtitle: "工厂 · 园区",
+        problemLabel: "客户面临的问题",
+        problemTitle: "电费成本不断上升，而供电中断会直接影响业务连续性",
+        problemBody:
+          "工厂、商业建筑、医院、学校和产业园区，不仅需要降低电费和需量压力，还要增强在停电或波动条件下的供电韧性，同时兼顾绿色转型目标。",
+        solutionLabel: "MEGA POWER 的响应",
+        solutionTitle: "工商业储能解决方案",
+        solutionBody:
+          "MEGA POWER 提供从储能柜到多 MWh 系统的灵活配置，帮助客户优化负荷曲线、提升备用能力，并通过可控的系统逻辑支持更低碳、更稳定的长期运行。",
+        solutionValues: ["削峰降本", "备用电源韧性", "灵活扩容", "低碳转型"],
+        metrics: [
+          { value: "≤2MWh", label: "小型用户：261kWh 储能柜 × N" },
+          { value: "2-10MWh", label: "中型用户：418kWh 储能柜 × N" },
+          { value: "≥5MWh", label: "大型用户：大储舱 × N" },
+          { value: "≥88%", label: "系统转换效率" },
+        ],
+        productsLabel: "对应产品家族",
+        products: [
+          {
+            title: "分布式储能柜（125kW）",
+            model: "iDPS100-125/261 LC",
+            highlights: ["125kW", "261kWh", "AC380V", "IP55"],
+          },
+          {
+            title: "分布式储能柜（200kW）",
+            model: "iDPS200-200/418 LC",
+            highlights: ["200kW", "418kWh", "AC690V", "IP55 / C4"],
+          },
+          {
+            title: "DC 电池储能集装箱",
+            model: "iESS100-5015B2-LC",
+            highlights: ["5015kWh", "液冷", "支持大型站点扩展"],
+          },
+        ],
+        platform: {
+          label: "平台能力支撑",
+          title: "把容量决策、优化控制和运行可视化结合起来",
+          items: [
+            "ECS 提高容量评估和方案决策精度",
+            "EMS 负责充放电策略和站点级优化",
+            "OMS 提供监控、维护流程和任务可见性",
+            "OTA 支撑结构化远程升级",
+          ],
+        },
+        service: {
+          label: "服务准备",
+          title: "定制化交付与长期站点支持",
+          items: [
+            "部署前现场勘测和容量评估",
+            "并网协调与项目支持逻辑",
+            "适合长期运行的预防性维护计划",
+          ],
+        },
+      },
+      {
+        key: "japan",
+        icon: "japan",
+        buttonTitle: "日本市场",
+        buttonSubtitle: "紧凑场地 · 可靠性",
+        problemLabel: "市场特殊需求",
+        problemTitle: "日本项目对紧凑场地、可靠性、可维护性和沟通信任有更高要求",
+        problemBody:
+          "日本项目往往同时面对安装空间受限、设备可靠性要求高、运行纪律严格，以及对服务质量和长期维护性更敏感等现实条件，部署逻辑必须从一开始就尊重这些运行环境。",
+        solutionLabel: "MEGA POWER 的响应",
+        solutionTitle: "面向日本市场的部署方式",
+        solutionBody:
+          "MEGA POWER 以紧凑集成设计、以可靠性为先的系统思路、透明的数字化监控和有支撑力的服务沟通，建立面向日本项目的长期运行信心，而不是只交付硬件。",
+        solutionValues: ["紧凑集成设计", "可靠性优先", "长期可维护运行", "本地化支持准备"],
+        metrics: [
+          { value: "IP55", label: "适应户外气候的防护等级" },
+          { value: "C4", label: "高湿与沿海环境防腐等级" },
+          { value: "6S+EDR", label: "专利安全体系" },
+          { value: "Tokyo", label: "本地业务支持据点" },
+        ],
+        productsLabel: "对应产品家族",
+        products: [
+          {
+            title: "分布式储能柜（125kW）",
+            model: "iDPS100-125/261 LC",
+            highlights: ["紧凑型柜体", "261kWh", "IP55", "适合受限场地"],
+          },
+          {
+            title: "储能一体式充电机",
+            model: "iEFC100-80/120-AL-C",
+            highlights: ["一体化充电", "209kWh", "适合弱电网"],
+          },
+          {
+            title: "PCS 升压一体舱（集成式）",
+            model: "iBCS100-2500A/20-AC",
+            highlights: ["集成部署", "20/35kV", "适合大型项目"],
+          },
+        ],
+        platform: {
+          label: "平台能力支撑",
+          title: "为紧凑部署建立更可控的运行可视性",
+          items: [
+            "EMS 提供本地化监控和运行透明度",
+            "BWS 更早发现电池异常趋势",
+            "EDR 支撑客观的事故追溯和复盘",
+            "OMS 支撑长期运行中的维护流程透明",
+          ],
+        },
+        service: {
+          label: "服务准备",
+          title: "建立本地执行力与沟通信任",
+          items: [
+            "东京业务据点支撑更紧密的项目沟通",
+            "跨文化沟通方法提升交付清晰度",
+            "持续技术支持而非一次性交付",
+            "通过伙伴协作扩大本地执行覆盖",
+          ],
+        },
+      },
+    ],
     details: [
       { title: "电网与新能源并网", problem: "新能源项目需要更强的稳定性、控制能力与调度灵活性。", approach: "MEGA POWER 结合储能与数字能源逻辑，同时支持电网侧和新能源侧应用。", benefits: ["提升新能源消纳", "支持削峰与平衡", "增强系统灵活性", "强化电网支撑"] },
       { title: "调频与电网稳定", problem: "动态调频要求极快且精准的功率调节能力。", approach: "MEGA POWER 通过储能调频能力支持稳定、可响应的电网运行。", benefits: ["快速响应", "精准调节", "双向功率调节", "提升运营价值"] },
@@ -219,6 +598,7 @@ export const zh: SiteContent = {
       title: "MEGA POWER 解决方案体系总览",
       subtitle:
         "这里是解决方案组合的简明总览。完整的“场景到方案”匹配逻辑已经放到应用场景页面中。",
+      highlight: "MEGA POWER",
     },
     intro: {
       label: "Solution Framework",
@@ -250,6 +630,7 @@ export const zh: SiteContent = {
       title: "跨越预警、控制与运维的平台能力",
       subtitle:
         "平台层不是附属功能，而是差异化能力。它连接数据可视化、事件追溯、控制逻辑与现场运维流程。",
+      highlight: "平台能力",
     },
     intro: {
       label: "6S+EDR Capability",
@@ -393,9 +774,9 @@ export const zh: SiteContent = {
     },
     cta: {
       label: "Trust Layer",
-      title: "查看平台能力如何直接支撑安全与可靠性",
+      title: "查看平台能力如何连接解决方案中的信任与保障逻辑",
       body: "预警、追溯与流程设计是 MEGA POWER 建立信任的重要基础。",
-      action: { label: "安全与可靠性", page: "safety" },
+      action: { label: "查看应用场景", page: "scenarios" },
     },
   },
   products: {
@@ -408,6 +789,7 @@ export const zh: SiteContent = {
       title: "支撑各类解决方案的核心产品",
       subtitle:
         "产品以部署角色和场景适配为维度组织，使用源 PDF 中的真实产品图片与规格信息。",
+      highlight: "核心产品",
     },
     intro: {
       label: "Product Families",
@@ -439,6 +821,7 @@ export const zh: SiteContent = {
       title: "把安全、追溯与运行信心内建到系统中",
       subtitle:
         "MEGA POWER 被呈现为一个通过综合安全逻辑和运行体系帮助客户降低不确定性的企业。",
+      highlight: "追溯",
     },
     intro: {
       label: "Safety Architecture",
@@ -476,12 +859,12 @@ export const zh: SiteContent = {
       title: "为长期合作而设计的服务与运维",
       subtitle:
         "服务是产品体验的一部分。网站把运维、沟通和支持准备视为长期系统价值的重要组成。",
+      highlight: "长期合作",
     },
     intro: {
       label: "Service Strategy",
       title: "兼顾本地响应与长期运行纪律的服务逻辑",
-      body:
-        "服务叙事基于源 PDF 中的本地团队、跨文化沟通、持续技术支持和伙伴网络扩展。",
+      body: "",
     },
     strategy: [
       { title: "本地化服务团队模型", body: "围绕本地市场理解和定制化支持来组织服务能力。" },
@@ -518,6 +901,7 @@ export const zh: SiteContent = {
       title: "关于 MEGA POWER",
       subtitle:
         "面向变化中的能源格局，MEGA POWER 以电力、储能、充电、数字控制与服务能力构建综合数字绿色能源解决方案。",
+      highlight: "MEGA POWER",
     },
     intro: {
       label: "Company Introduction",
@@ -552,6 +936,7 @@ export const zh: SiteContent = {
       title: "联系 MEGA POWER",
       subtitle:
         "用于项目和业务沟通的基础信息。本 MVP 不提供联系表单，也不会补充未经资料支持的运营信息。",
+      highlight: "MEGA POWER",
     },
     intro: {
       label: "Company Information",

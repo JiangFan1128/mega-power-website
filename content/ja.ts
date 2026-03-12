@@ -32,7 +32,7 @@ export const ja: SiteContent = {
       subtitle:
         "MEGA POWER は太陽光、柔軟な蓄電、高効率充電、インテリジェント管理を統合し、系統、産業、輸送、充電インフラに向けたデジタル・グリーンエネルギーソリューションを提供します。",
       primaryCta: { label: "導入シナリオを見る", page: "scenarios" },
-      secondaryCta: { label: "ソリューションを見る", page: "solutions" },
+      secondaryCta: { label: "プラットフォームを見る", page: "platform" },
       stats: [
         { value: "20+", label: "業界経験 20 年以上" },
         { value: "6S+EDR", label: "特許取得済み安全システム" },
@@ -179,6 +179,7 @@ export const ja: SiteContent = {
       title: "運用シナリオから最適な MEGA POWER ソリューションを見つける",
       subtitle:
         "顧客の実際の運用環境から出発し、その場で適したソリューション構成、製品ファミリー、プラットフォーム機能、サービス支援まで確認できる構成です。",
+      highlight: "運用シナリオ",
     },
     intro: {
       label: "Scenario Logic",
@@ -186,6 +187,384 @@ export const ja: SiteContent = {
       body:
         "以下の各シナリオでは、運用課題に対して推奨ソリューション構成、代表製品、プラットフォーム機能、安全ロジック、サービス準備をそのままつなげて示します。",
     },
+    selectorLabel: "現在直面している運用シナリオを選択",
+    panels: [
+      {
+        key: "grid",
+        icon: "grid",
+        buttonTitle: "系統・再エネ連系",
+        buttonSubtitle: "風力発電所 · 太陽光発電所",
+        problemLabel: "顧客の課題",
+        problemTitle: "再エネ出力が不安定で、出力抑制リスクと連系要求への対応負荷が高まる",
+        problemBody:
+          "風力・太陽光は本質的に出力変動を持ちます。発電ピークと需要ピークが一致しない一方で、系統側は蓄電併設による安定化と柔軟なディスパッチを求めています。適切な構成がないと、消納率低下や出力抑制の圧力が強まります。",
+        solutionLabel: "MEGA POWER の対応",
+        solutionTitle: "系統側エネルギー貯蔵ソリューション",
+        solutionBody:
+          "MEGA POWER は系統側または発電側に MW 級蓄電を配置し、時間軸でエネルギーを移しながらデジタルディスパッチと連携して、出力平滑化、ピークシフト、系統支援、再エネ消納向上を実現します。",
+        solutionValues: ["再エネ消納向上", "ピークシフト", "系統柔軟性向上", "ブラックスタート対応"],
+        metrics: [
+          { value: "<50ms", label: "有効 / 無効電力応答" },
+          { value: "2750kW", label: "単一コンテナ最大出力" },
+          { value: "5MWh", label: "単一電池キャビン容量" },
+          { value: "28 日", label: "BWS 事前警報ウィンドウ" },
+        ],
+        architecture: {
+          label: "システム構成イメージ",
+          rows: [
+            {
+              nodes: [
+                { title: "PV Station", subtitle: "Solar generation" },
+                { title: "Step-up Container", subtitle: "Voltage elevation" },
+                { title: "PCS Step-up Cabin", subtitle: "変換 + 昇圧", tone: "highlight" },
+                { title: "Grid", subtitle: "Utility interconnection" },
+              ],
+            },
+            {
+              nodes: [
+                { title: "Wind Farm", subtitle: "Wind generation" },
+                { title: "Wind Step-up", subtitle: "Collection side" },
+                { title: "MCS / EMS", subtitle: "デジタルディスパッチ", tone: "platform" },
+              ],
+            },
+            {
+              nodes: [
+                { title: "Battery Cabin", subtitle: "5015kWh LFP" },
+                { title: "PCS Step-up Cabin", subtitle: "変換 + 系統支援", tone: "highlight" },
+              ],
+            },
+          ],
+        },
+        productsLabel: "対応製品ファミリー",
+        products: [
+          {
+            title: "PCS 昇圧コンテナ（クラスタ型）",
+            model: "iBCS100-2500B/20-AC",
+            highlights: ["2500kW 定格", "12 DC チャネル", "20kV", "IP54 / PCS IP66"],
+          },
+          {
+            title: "PCS 昇圧コンテナ（一体型）",
+            model: "iBCS100-2500A/20-AC",
+            highlights: ["2750kW 最大", "20/35kV", "≤18T", "一体導入"],
+          },
+          {
+            title: "DC バッテリーコンテナ",
+            model: "iESS100-5015B2-LC",
+            highlights: ["5015kWh LFP", "液冷", "IP54", "大規模案件対応"],
+          },
+        ],
+        platform: {
+          label: "プラットフォーム支援",
+          title: "ディスパッチから追跡性までを見える化",
+          items: [
+            "HCS によるミリ秒級制御応答",
+            "BWS による最大 28 日前の電池異常予兆検知",
+            "EMS によるディスパッチ協調と最適化",
+            "EDR による全工程イベント追跡",
+          ],
+        },
+        service: {
+          label: "サービス体制",
+          title: "系統側導入を支える実行支援",
+          items: [
+            "系統側案件に向けたサイトエンジニアリング調整",
+            "長期運転に合わせた予防保全計画",
+            "重要サイト向けの予備品・遠隔支援ロジック",
+          ],
+        },
+      },
+      {
+        key: "frequency",
+        icon: "frequency",
+        buttonTitle: "調頻・系統安定化",
+        buttonSubtitle: "高速応答 · マイクログリッド",
+        problemLabel: "顧客の課題",
+        problemTitle: "周波数偏差に対して、従来方式より速く安定した応答が必要",
+        problemBody:
+          "系統周波数が目標値の周辺で揺らぐとき、火力や水力の応答では速度や精度が不足する場合があります。高応答システムには、低遅延で連続的に指令追従できる調頻能力が求められます。",
+        solutionLabel: "MEGA POWER の対応",
+        solutionTitle: "調頻用蓄電ソリューション",
+        solutionBody:
+          "MEGA POWER は蓄電変換、高速制御、イベント追跡性を組み合わせ、より速い応答、より精密な追従、より安定した補助サービス価値を実現します。",
+        solutionValues: ["ミリ秒級応答", "双方向調整", "補助サービス価値", "50Hz 安定支援"],
+        metrics: [
+          { value: "<50ms", label: "指令応答レイテンシ" },
+          { value: "2500kW", label: "双方向調整出力" },
+          { value: "50Hz", label: "目標周波数追従" },
+          { value: "EDR", label: "全工程イベント記録" },
+        ],
+        productsLabel: "対応製品ファミリー",
+        products: [
+          {
+            title: "PCS 昇圧コンテナ（クラスタ型）",
+            model: "iBCS100-2500B/20-AC",
+            highlights: ["2500kW 定格", "高速調頻", "12 DC チャネル"],
+          },
+          {
+            title: "PCS 昇圧コンテナ（一体型）",
+            model: "iBCS100-2500A/20-AC",
+            highlights: ["2750kW 最大", "20/35kV", "マイクログリッド対応"],
+          },
+          {
+            title: "DC バッテリーコンテナ",
+            model: "iESS100-5015B2-LC",
+            highlights: ["5015kWh LFP", "液冷", "高頻度サイクル対応"],
+          },
+        ],
+        platform: {
+          label: "プラットフォーム支援",
+          title: "高応答調頻のための閉ループ制御",
+          items: [
+            "HCS によるミリ秒級同期制御",
+            "EDR による調頻イベント追跡と事後分析",
+            "OMS によるアラーム対応と作業指示フロー",
+            "BMS / BWS による高頻度運転下の電池状態可視化",
+          ],
+        },
+        service: {
+          label: "サービス体制",
+          title: "調頻性能と可用性を安定維持",
+          items: [
+            "重要ディスパッチ系統向け 7×24 緊急対応",
+            "収益影響を抑える予防保全",
+            "主要変換部品向けの迅速な予備品支援",
+          ],
+        },
+      },
+      {
+        key: "ev",
+        icon: "ev",
+        buttonTitle: "EV 充電",
+        buttonSubtitle: "弱系統 · 高出力",
+        problemLabel: "顧客の課題",
+        problemTitle: "高出力充電を導入したいが、サイトは弱系統・容量制約・無電源条件にある",
+        problemBody:
+          "バスデポ、大型車充電回廊、物流拠点、乗用車急速充電サイトでは受電容量が制約になりやすく、系統増強には時間もコストもかかります。早期導入に向けた別の方法が必要です。",
+        solutionLabel: "MEGA POWER の対応",
+        solutionTitle: "光储充一体ソリューション",
+        solutionBody:
+          "MEGA POWER は AC / DC 結合のシステム設計で、太陽光、蓄電、充電を一つのマイクログリッドとして統合し、弱系統・無電源・狭小地でも高出力充電をより柔軟に実現します。",
+        solutionValues: ["仮想増容", "系統 / オフグリッド切替", "モジュール導入", "6S+EDR スマート O&M"],
+        metrics: [
+          { value: "200kW", label: "乗用車向け急速充電ノード" },
+          { value: "240kW×N", label: "バスデポ多ガン充電" },
+          { value: "480kW×N", label: "大型車超急速充電" },
+          { value: "1440kW", label: "パワーキャビネット定格出力" },
+        ],
+        productsLabel: "対応製品ファミリー",
+        products: [
+          {
+            title: "PV・蓄電ハイブリッドユニット",
+            model: "iPES100-100-215-AC-100",
+            highlights: ["100kW AC", "215.04kWh", "2×50kW PV 入力", "IP55"],
+          },
+          {
+            title: "蓄電一体型充電器",
+            model: "iEFC100-80/120-AL-C",
+            highlights: ["120kW 定格", "186 / 209kWh", "DC200-1000V", "IP55"],
+          },
+          {
+            title: "パワーキャビネット & 高出力端末",
+            model: "iEFC Series",
+            highlights: ["1440kW キャビネット", "12 出力", "2×600A + 10×250A"],
+          },
+        ],
+        platform: {
+          label: "プラットフォーム支援",
+          title: "充電運営、監視、戦略を一つのレイヤーへ",
+          items: [
+            "EMS による充電・蓄電戦略ディスパッチ",
+            "OMS によるサイト監視と作業管理",
+            "BWS による蓄電電池の異常予兆検知",
+            "EDR による充電サイトイベント記録と分析",
+          ],
+        },
+        service: {
+          label: "サービス体制",
+          title: "充電サイトの継続運営を支える",
+          items: [
+            "現場教育で運用ミスを低減",
+            "定期点検で設備故障リスクを抑制",
+            "パートナー連携で地域対応を拡張",
+          ],
+        },
+      },
+      {
+        key: "mobile",
+        icon: "mobile",
+        buttonTitle: "可搬・非常電源",
+        buttonSubtitle: "オフグリッド · 仮設現場",
+        problemLabel: "顧客の課題",
+        problemTitle: "遠隔地や緊急現場では、恒久インフラを待たずに迅速な給電が必要",
+        problemBody:
+          "災害対応、仮設工事、遠隔鉱山、現場作業では、恒久的な電力インフラを先に整備できないケースが多くあります。求められるのは、移動でき、すぐに使え、早く復旧できる電力です。",
+        solutionLabel: "MEGA POWER の対応",
+        solutionTitle: "可搬型蓄電ソリューション",
+        solutionBody:
+          "MEGA POWER はコンテナ、トレーラー、車両型のエネルギーシステムを用い、迅速な電力展開を実現します。耐振動設計、液冷、モジュール型運用により、移動用途にも対応します。",
+        solutionValues: ["迅速導入", "車両級耐振動", "電池周転の柔軟性", "独立オフグリッド供給"],
+        metrics: [
+          { value: "10,000+", label: "クイック接続インターフェース寿命" },
+          { value: "2500kW", label: "オフグリッド定格出力" },
+          { value: "6000", label: "95%DOD 条件での電池サイクル" },
+          { value: "A1", label: "難燃材料クラス" },
+        ],
+        productsLabel: "対応製品ファミリー",
+        products: [
+          {
+            title: "系統連系型充電コンテナ",
+            model: "iBCS100-1725A/10-AC",
+            highlights: ["1725kW", "10kV", "≤13T", "迅速導入"],
+          },
+          {
+            title: "オフグリッド放電コンテナ",
+            model: "iBCS100-2x2500A/10-AC",
+            highlights: ["2510kW", "2500kW オフグリッド", "10kV", "IP54 / PCS IP66"],
+          },
+          {
+            title: "バッテリー輸送車",
+            model: "iESS100-3343B2-LC-M",
+            highlights: ["6000 サイクル", "耐振動", "液冷", "IP54 / C4"],
+          },
+        ],
+        platform: {
+          label: "プラットフォーム支援",
+          title: "不安定な現場条件に対応するディスパッチ知能",
+          items: [
+            "SCS による急変負荷時の安定制御",
+            "DMS 的なディスパッチで移動型充放電を調整",
+            "BWS / EDR による現場警報と追跡性",
+            "OMS による遠隔サービスフロー可視化",
+          ],
+        },
+        service: {
+          label: "サービス体制",
+          title: "緊急・仮設導入を支える迅速対応",
+          items: [
+            "高優先度案件向け 7×24 緊急ホットライン",
+            "予備品ネットワークで復旧時間を短縮",
+            "現地教育で立上げ・運用ミスを抑制",
+          ],
+        },
+      },
+      {
+        key: "commercial",
+        icon: "commercial",
+        buttonTitle: "C&I 最適化",
+        buttonSubtitle: "工場 · キャンパス",
+        problemLabel: "顧客の課題",
+        problemTitle: "電力コストは上昇を続け、停電や変動は事業継続性を直接脅かす",
+        problemBody:
+          "工場、商業施設、病院、学校、産業パークでは、電力コスト低減、ピーク需要抑制、停電時のレジリエンス向上、脱炭素対応を同時に考える必要があります。",
+        solutionLabel: "MEGA POWER の対応",
+        solutionTitle: "工業・商業向け蓄電ソリューション",
+        solutionBody:
+          "MEGA POWER はキャビネット単位から複数 MWh クラスまで柔軟に構成でき、負荷最適化、バックアップ強化、低炭素化に向けた制御可能な運用を支えます。",
+        solutionValues: ["ピークシェービング", "バックアップレジリエンス", "柔軟な容量拡張", "低炭素転換"],
+        metrics: [
+          { value: "≤2MWh", label: "小規模：261kWh キャビネット × N" },
+          { value: "2-10MWh", label: "中規模：418kWh キャビネット × N" },
+          { value: "≥5MWh", label: "大規模：大容量キャビン × N" },
+          { value: "≥88%", label: "システム変換効率" },
+        ],
+        productsLabel: "対応製品ファミリー",
+        products: [
+          {
+            title: "分散型蓄電キャビネット（125kW）",
+            model: "iDPS100-125/261 LC",
+            highlights: ["125kW", "261kWh", "AC380V", "IP55"],
+          },
+          {
+            title: "分散型蓄電キャビネット（200kW）",
+            model: "iDPS200-200/418 LC",
+            highlights: ["200kW", "418kWh", "AC690V", "IP55 / C4"],
+          },
+          {
+            title: "DC バッテリーコンテナ",
+            model: "iESS100-5015B2-LC",
+            highlights: ["5015kWh", "液冷", "大規模拡張対応"],
+          },
+        ],
+        platform: {
+          label: "プラットフォーム支援",
+          title: "容量判断、最適制御、運用可視化を一体化",
+          items: [
+            "ECS によるより精度の高い容量判断",
+            "EMS による充放電戦略とサイト最適化",
+            "OMS による監視と保守ワークフロー可視化",
+            "OTA による構造化された遠隔更新",
+          ],
+        },
+        service: {
+          label: "サービス体制",
+          title: "カスタム導入と長期サイト支援",
+          items: [
+            "導入前の現地調査と容量評価",
+            "系統連系調整とプロジェクト支援",
+            "長期運用に向けた予防保全計画",
+          ],
+        },
+      },
+      {
+        key: "japan",
+        icon: "japan",
+        buttonTitle: "日本市場",
+        buttonSubtitle: "狭小地 · 信頼性",
+        problemLabel: "市場要件",
+        problemTitle: "日本案件では狭小地、信頼性、保守性、コミュニケーション品質への要求が高い",
+        problemBody:
+          "日本の案件では、設置スペースの制約、高い信頼性要求、厳格な運用姿勢、サービス品質と長期保守性への高い感度が同時に存在します。導入ロジックは最初からその実態を前提にすべきです。",
+        solutionLabel: "MEGA POWER の対応",
+        solutionTitle: "日本市場向け導入アプローチ",
+        solutionBody:
+          "MEGA POWER は、コンパクト統合設計、信頼性重視のシステム思想、透明なデジタル監視、長期運用を支えるサービスコミュニケーションを通じて、日本向けの運用安心感を形成します。",
+        solutionValues: ["コンパクト統合設計", "信頼性優先", "長期保守運用", "ローカル支援準備"],
+        metrics: [
+          { value: "IP55", label: "屋外気候に対応する保護等級" },
+          { value: "C4", label: "高湿・沿岸環境向け防食クラス" },
+          { value: "6S+EDR", label: "特許安全アーキテクチャ" },
+          { value: "Tokyo", label: "現地ビジネス拠点" },
+        ],
+        productsLabel: "対応製品ファミリー",
+        products: [
+          {
+            title: "分散型蓄電キャビネット（125kW）",
+            model: "iDPS100-125/261 LC",
+            highlights: ["コンパクト筐体", "261kWh", "IP55", "狭小地向け"],
+          },
+          {
+            title: "蓄電一体型充電器",
+            model: "iEFC100-80/120-AL-C",
+            highlights: ["統合充電", "209kWh", "弱系統適合"],
+          },
+          {
+            title: "PCS 昇圧コンテナ（一体型）",
+            model: "iBCS100-2500A/20-AC",
+            highlights: ["一体導入", "20/35kV", "大規模案件対応"],
+          },
+        ],
+        platform: {
+          label: "プラットフォーム支援",
+          title: "狭小地導入でも運用リスクを見える化しやすくする",
+          items: [
+            "EMS によるローカル監視と運用透明性",
+            "BWS による電池異常傾向の早期検知",
+            "EDR による客観的な事故追跡とレビュー",
+            "OMS による長期運用時の保守フロー可視化",
+          ],
+        },
+        service: {
+          label: "サービス体制",
+          title: "ローカル実行力とコミュニケーション信頼",
+          items: [
+            "東京拠点を基盤とした密な案件調整",
+            "異文化コミュニケーションで説明品質を向上",
+            "一度きりではない継続技術支援",
+            "パートナー連携による地域実行カバレッジ",
+          ],
+        },
+      },
+    ],
     details: [
       { title: "系統・再エネ連系", problem: "再エネ案件では、安定性、制御性、需給柔軟性が求められます。", approach: "MEGA POWER は蓄電とデジタル制御を組み合わせ、系統側・発電側双方の用途を支えます。", benefits: ["再エネ導入率向上", "ピークシフト対応", "柔軟性向上", "系統支援強化"] },
       { title: "調頻・系統安定化", problem: "周波数制御には極めて高速かつ高精度な電力調整が必要です。", approach: "MEGA POWER は蓄電ベースの調頻能力で安定した系統応答を支えます。", benefits: ["高速応答", "精密制御", "双方向調整", "運用価値向上"] },
@@ -225,6 +604,7 @@ export const ja: SiteContent = {
       title: "MEGA POWER ソリューション体系の概要",
       subtitle:
         "このページは主要ソリューションの要約です。シナリオからソリューションへの完全な対応関係は Scenarios ページに集約しています。",
+      highlight: "MEGA POWER",
     },
     intro: {
       label: "Solution Framework",
@@ -256,6 +636,7 @@ export const ja: SiteContent = {
       title: "警報、制御、O&M をつなぐデジタルプラットフォーム能力",
       subtitle:
         "プラットフォームは付属機能ではなく差別化要素です。データ可視化、追跡性、制御ロジック、現場保守をつなげます。",
+      highlight: "プラットフォーム能力",
     },
     intro: {
       label: "6S+EDR Capability",
@@ -399,9 +780,9 @@ export const ja: SiteContent = {
     },
     cta: {
       label: "Trust Layer",
-      title: "プラットフォーム能力が安全性にどう直結するかを見る",
+      title: "プラットフォーム能力がソリューションの信頼性にどうつながるかを見る",
       body: "警報、追跡性、ワークフローは MEGA POWER の信頼価値の中心です。",
-      action: { label: "安全性・信頼性へ", page: "safety" },
+      action: { label: "シナリオを見る", page: "scenarios" },
     },
   },
   products: {
@@ -414,6 +795,7 @@ export const ja: SiteContent = {
       title: "各ソリューションを支える中核製品",
       subtitle:
         "製品は導入役割とシナリオ適合性で整理し、ソース PDF の実仕様と実機画像を使用しています。",
+      highlight: "中核製品",
     },
     intro: {
       label: "Product Families",
@@ -445,6 +827,7 @@ export const ja: SiteContent = {
       title: "安全性、追跡性、運用安心感をシステムに内蔵",
       subtitle:
         "MEGA POWER は、統合された安全ロジックと運用設計によって不確実性を減らす企業として提示されます。",
+      highlight: "追跡性",
     },
     intro: {
       label: "Safety Architecture",
@@ -482,12 +865,12 @@ export const ja: SiteContent = {
       title: "長期パートナーシップのためのサービスと O&M",
       subtitle:
         "サービスは製品体験の一部です。O&M、コミュニケーション、支援準備を長期価値の中核として扱います。",
+      highlight: "長期パートナーシップ",
     },
     intro: {
       label: "Service Strategy",
       title: "ローカル対応と長期運用品質を両立するサービス設計",
-      body:
-        "提供資料にあるローカルチーム、異文化コミュニケーション、継続的技術更新、パートナー拡張を基に整理しています。",
+      body: "",
     },
     strategy: [
       { title: "ローカルサービスチームモデル", body: "市場理解と現地対応を前提としたサービス設計です。" },
@@ -524,6 +907,7 @@ export const ja: SiteContent = {
       title: "MEGA POWER について",
       subtitle:
         "電力、蓄電、充電、デジタル制御、サービス能力を組み合わせる統合型デジタル・グリーンエネルギーソリューション企業。",
+      highlight: "MEGA POWER",
     },
     intro: {
       label: "Company Introduction",
@@ -558,6 +942,7 @@ export const ja: SiteContent = {
       title: "お問い合わせ",
       subtitle:
         "案件・事業相談のための基本情報です。本 MVP ではフォームを設けず、裏付けのない運用情報も追加しません。",
+      highlight: "お問い合わせ",
     },
     intro: {
       label: "Company Information",

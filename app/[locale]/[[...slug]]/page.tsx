@@ -89,5 +89,9 @@ export default async function LocalePage({
     redirect(`/${locale}/about`);
   }
 
+  if (page === "safety" || page === "solutions") {
+    redirect(`/${locale}/scenarios`);
+  }
+
   return <PageRenderer content={content} locale={locale} page={page} />;
 }

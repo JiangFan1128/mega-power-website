@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -26,10 +27,8 @@ type HeaderProps = {
 const order = [
   "home",
   "scenarios",
-  "solutions",
   "platform",
   "products",
-  "safety",
   "services",
   "about",
 ] as const;
@@ -59,8 +58,15 @@ export function Header({ locale, navigation }: HeaderProps) {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b1a1fcc] backdrop-blur-xl">
       <div className="mx-auto flex min-h-20 w-full items-center justify-between gap-4 px-5 lg:grid lg:min-h-[5.25rem] lg:grid-cols-[minmax(15rem,1fr)_auto_minmax(15rem,1fr)] lg:items-center lg:px-8 xl:px-10 2xl:px-14">
         <Link className="flex shrink-0 items-center gap-3 lg:justify-self-start" href={`/${locale}`}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-[8px] border border-mega-accent/30 bg-gradient-to-br from-mega-accent to-mega-primary text-sm font-bold text-white">
-            MG
+          <span className="relative block h-10 w-[3.3rem] shrink-0">
+            <Image
+              alt="MEGA POWER logo"
+              className="object-contain"
+              fill
+              priority
+              sizes="52px"
+              src="/images/brand/mega-power-logo.png"
+            />
           </span>
           <div>
             <div className="text-[1.3rem] font-extrabold leading-none tracking-[-0.5px] text-white">
