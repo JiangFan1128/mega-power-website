@@ -18,7 +18,7 @@ export const zh: SiteContent = {
       "MEGA POWER 将储能、充电、数字控制与长期服务整合为一套面向绿色能源部署的统一运行系统。",
     address: "〒102-0083 东京都千代田区麹町3-10-1 TWG 麹町 5F",
     note:
-      "本 MVP 仅基于现有资料呈现核心业务、战略能力与主要产品族。",
+      "MEGA POWER 将系统架构、数字控制与长期服务支持整合为面向现代能源部署的一体化能力。",
   },
   home: {
     metadata: {
@@ -136,7 +136,7 @@ export const zh: SiteContent = {
       label: "Products",
       title: "按场景与系统角色组织核心产品",
       body:
-        "产品部分直接使用源 PDF 中的真实规格与产品图片，并以可读性优先的方式组织，而不是堆砌参数表。",
+        "按部署角色浏览主要产品家族，快速了解型号、关键参数与适配场景。",
     },
     safety: {
       label: "Safety",
@@ -159,7 +159,7 @@ export const zh: SiteContent = {
     cta: {
       label: "Contact",
       title: "与 MEGA POWER 开启业务沟通",
-      body: "当前 MVP 仅展示基础信息，不设置联系表单。",
+      body: "欢迎与 MEGA POWER 沟通项目需求、部署条件与长期运营目标。",
       action: { label: "联系信息", page: "contact" },
     },
   },
@@ -783,19 +783,19 @@ export const zh: SiteContent = {
     metadata: {
       title: "产品 | MEGA POWER",
       description:
-        "基于源 PDF 真实规格和图片整理的 MEGA POWER 产品族，覆盖电网、光储充、可运输与工商业应用。",
+        "覆盖电网、光储充、可运输与工商业应用的 MEGA POWER 产品家族，清晰呈现关键规格与部署适配关系。",
     },
     hero: {
       title: "支撑各类解决方案的核心产品",
       subtitle:
-        "产品以部署角色和场景适配为维度组织，使用源 PDF 中的真实产品图片与规格信息。",
+        "从部署角色出发浏览 MEGA POWER 核心产品家族，快速了解型号、关键参数和应用适配关系。",
       highlight: "核心产品",
     },
     intro: {
       label: "Product Families",
       title: "面向后续扩展的可读型产品架构",
       body:
-        "本 MVP 聚焦产品族理解、关键参数与场景关联，不提供 PDF 下载，也不把页面做成参数堆叠。",
+        "本页帮助你从产品家族、关键参数和典型应用三个维度快速建立判断，更高效地从方案规划走向设备选型。",
     },
     related: {
       label: "Related Solutions",
@@ -807,7 +807,7 @@ export const zh: SiteContent = {
     cta: {
       label: "Platform + Service",
       title: "硬件能力必须与数字控制和服务准备一起看",
-      body: "MEGA POWER 的产品叙事会回到平台、安全与长期支持能力。",
+      body: "每个产品家族都与 MEGA POWER 的数字平台、安全架构和长期服务支持协同工作。",
       action: { label: "查看服务", page: "services" },
     },
   },
@@ -923,7 +923,7 @@ export const zh: SiteContent = {
     cta: {
       label: "Contact",
       title: "开启业务沟通",
-      body: "本阶段已将基础公司信息直接整合进关于页面。",
+      body: "你可以通过下方公司信息与 MEGA POWER 进行项目交流和业务沟通。",
       action: { label: "关于 MEGA POWER", page: "about" },
     },
   },
@@ -935,21 +935,21 @@ export const zh: SiteContent = {
     hero: {
       title: "联系 MEGA POWER",
       subtitle:
-        "用于项目和业务沟通的基础信息。本 MVP 不提供联系表单，也不会补充未经资料支持的运营信息。",
+        "以下为项目沟通、业务咨询和部署协调所需的公司信息。",
       highlight: "MEGA POWER",
     },
     intro: {
       label: "Company Information",
-      title: "用于业务沟通的基础公司信息",
+      title: "公司信息",
       body:
-        "当前网站仅展示源资料中可以确认的公司信息，保持沟通路径简洁、克制且专业。",
+        "在这里查看 MEGA POWER 的核心公司信息，便于项目沟通与业务联系。",
     },
     items: [
       { label: "公司", value: "MEGA POWER CO., LTD" },
       { label: "地址", value: "〒102-0083\n东京都千代田区麹町3-10-1\nTWG 麹町 5F" },
     ],
     note:
-      "当前可核实资料中未提供电话和邮箱，因此此处保留字段但不编造信息；后续确认后可补充。联系表单仍不在现阶段范围内。",
+      "如需更多联系方式，可在项目沟通过程中由 MEGA POWER 团队进一步提供。",
     mapEmbed:
       "https://www.google.com/maps?q=%E3%80%92102-0083%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E9%BA%B9%E7%94%BA3-10-1%20TWG%20%E9%BA%B9%E7%94%BA%205F&output=embed",
   },
