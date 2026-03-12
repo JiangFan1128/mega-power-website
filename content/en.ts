@@ -18,7 +18,7 @@ export const en: SiteContent = {
       "MEGA POWER positions energy storage, charging, digital control, and long-term service as one integrated operating system for green energy deployment.",
     address: "TWG Kojimachi 5F, 3-10-1 Kojimachi, Chiyoda-ku, Tokyo 102-0083, Japan",
     note:
-      "This MVP presents core business information, strategic capabilities, and selected products from the source material only.",
+      "MEGA POWER brings together system architecture, digital control, and long-term service support for modern energy deployment.",
   },
   home: {
     metadata: {
@@ -162,7 +162,7 @@ export const en: SiteContent = {
       label: "Products",
       title: "Core products organized by scenario and system role",
       body:
-        "Product families use real specifications and images extracted from the source PDF, structured for readability rather than a dense datasheet experience.",
+        "Browse the main product families by deployment role, with clear model references, key specifications, and scenario fit.",
     },
     safety: {
       label: "Safety",
@@ -200,7 +200,7 @@ export const en: SiteContent = {
     cta: {
       label: "Contact",
       title: "Start a conversation with MEGA POWER",
-      body: "For this MVP, the site presents basic company information and a simple inquiry path without a contact form.",
+      body: "Discuss your project scope, site conditions, and long-term operating goals with the MEGA POWER team.",
       action: { label: "Contact Information", page: "contact" },
     },
   },
@@ -933,19 +933,19 @@ export const en: SiteContent = {
     metadata: {
       title: "Products | MEGA POWER",
       description:
-        "Real MEGA POWER product families with source-PDF specifications and extracted product images, organized by grid, PV-ESS-charging, transportable, and C&I use cases.",
+        "MEGA POWER product families organized by grid, PV-ESS-charging, transportable, and C&I use cases, with clear specifications and deployment relevance.",
     },
     hero: {
       title: "Core products supporting each solution family",
       subtitle:
-        "Products are organized by deployment role and scenario fit, using real specifications and product images from the source PDF.",
+        "Review the core MEGA POWER product families by deployment role, with clear model references, visual comparison, and practical technical highlights.",
       highlight: "Core products",
     },
     intro: {
       label: "Product Families",
       title: "Readable product architecture for future expansion",
       body:
-        "This MVP focuses on family-level understanding, key specifications, and scenario relevance. It intentionally avoids PDF download flows and dense catalog behavior.",
+        "This page gives decision-makers a clear view of each product family, key specifications, and typical deployment fit, making it easier to move from solution planning to equipment selection.",
     },
     related: {
       label: "Related Solutions",
@@ -957,7 +957,7 @@ export const en: SiteContent = {
     cta: {
       label: "Platform + Service",
       title: "Hardware is paired with digital control and service readiness",
-      body: "MEGA POWER's product story is intentionally tied back to platform, safety, and long-term support.",
+      body: "Every product family is designed to work with MEGA POWER's digital platform, safety architecture, and long-term service support.",
       action: { label: "View Services", page: "services" },
     },
   },
@@ -1073,7 +1073,7 @@ export const en: SiteContent = {
     cta: {
       label: "Contact",
       title: "Open a business conversation",
-      body: "Basic company information is presented directly in the about page for this MVP.",
+      body: "Use the company information below to connect with MEGA POWER for project discussions and business communication.",
       action: { label: "About MEGA POWER", page: "about" },
     },
   },
@@ -1085,14 +1085,14 @@ export const en: SiteContent = {
     hero: {
       title: "Contact MEGA POWER",
       subtitle:
-        "Basic company information for project and business inquiries. This MVP intentionally avoids a contact form and does not invent unsupported operational details.",
+        "Use the company information below to reach MEGA POWER for project discussions, business communication, and deployment coordination.",
       highlight: "MEGA POWER",
     },
     intro: {
       label: "Company Information",
-      title: "Basic company information for business communication",
+      title: "Company information",
       body:
-        "The current site presents only the company details that can be supported by the source material, while keeping the communication path simple and professional.",
+        "Find the core company details for business communication and project coordination with MEGA POWER.",
     },
     items: [
       { label: "Company", value: "MEGA POWER CO., LTD" },
@@ -1102,7 +1102,7 @@ export const en: SiteContent = {
       },
     ],
     note:
-      "Phone and email have not been published in the confirmed source materials available to this MVP. They can be added once verified. A contact form remains out of scope for the current phase.",
+      "Additional contact channels such as phone and email can be shared directly during project coordination when required.",
     mapEmbed:
       "https://www.google.com/maps?q=%E3%80%92102-0083%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E9%BA%B9%E7%94%BA3-10-1%20TWG%20%E9%BA%B9%E7%94%BA%205F&output=embed",
   },

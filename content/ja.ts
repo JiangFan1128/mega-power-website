@@ -18,7 +18,7 @@ export const ja: SiteContent = {
       "MEGA POWER は蓄電、充電、デジタル制御、長期保守を一体化したグリーンエネルギー運用システムとして提案します。",
     address: "〒102-0083 東京都千代田区麹町3-10-1 TWG 麹町 5F",
     note:
-      "この MVP は、提供資料に基づく事業概要、戦略能力、主要製品群を整理して紹介するものです。",
+      "MEGA POWER はシステム設計、デジタル制御、長期サポートを一体で提供するエネルギーパートナーです。",
   },
   home: {
     metadata: {
@@ -142,7 +142,7 @@ export const ja: SiteContent = {
       label: "Products",
       title: "シナリオとシステム役割で整理した中核製品",
       body:
-        "製品群は PDF の実機画像と実仕様を用い、カタログ過多にならない読みやすさを優先して構成します。",
+        "導入役割ごとに主要製品ファミリーを整理し、モデル、主要仕様、適用シーンを把握しやすく構成しています。",
     },
     safety: {
       label: "Safety",
@@ -165,7 +165,7 @@ export const ja: SiteContent = {
     cta: {
       label: "Contact",
       title: "MEGA POWER との対話を始める",
-      body: "本 MVP では、基本情報のみを掲載し、問い合わせフォームは設けません。",
+      body: "案件条件、導入環境、長期運用の考え方について MEGA POWER と直接ご相談ください。",
       action: { label: "お問い合わせ情報", page: "contact" },
     },
   },
@@ -789,19 +789,19 @@ export const ja: SiteContent = {
     metadata: {
       title: "製品 | MEGA POWER",
       description:
-        "PDF の実仕様と実機画像を用いた MEGA POWER 製品群。系統、光储充、可搬型、C&I の用途別に整理。",
+        "系統、光储充、可搬型、C&I の用途ごとに整理した MEGA POWER 製品群。主要仕様と導入適合性をわかりやすく紹介。",
     },
     hero: {
       title: "各ソリューションを支える中核製品",
       subtitle:
-        "製品は導入役割とシナリオ適合性で整理し、ソース PDF の実仕様と実機画像を使用しています。",
+        "導入役割ごとに MEGA POWER の主要製品ファミリーを比較し、モデル、主要仕様、適用シーンを把握できます。",
       highlight: "中核製品",
     },
     intro: {
       label: "Product Families",
       title: "今後の拡張に耐える、読みやすい製品アーキテクチャ",
       body:
-        "本 MVP では製品族理解と主要仕様を重視し、PDF ダウンロードや過密なカタログ構造は採用していません。",
+        "このページでは、製品ファミリー、主要仕様、代表的な適用先を整理し、ソリューション検討から機器選定までをよりスムーズに進められるようにしています。",
     },
     related: {
       label: "Related Solutions",
@@ -813,7 +813,7 @@ export const ja: SiteContent = {
     cta: {
       label: "Platform + Service",
       title: "ハードウェアはデジタル制御と保守体制と組で価値を持つ",
-      body: "製品ストーリーをプラットフォーム、安全性、長期支援へつなげます。",
+      body: "各製品ファミリーは、MEGA POWER のデジタルプラットフォーム、安全設計、長期サポート体制と連動して価値を発揮します。",
       action: { label: "サービスを見る", page: "services" },
     },
   },
@@ -929,7 +929,7 @@ export const ja: SiteContent = {
     cta: {
       label: "Contact",
       title: "ビジネス対話を始める",
-      body: "本 MVP では基本会社情報を会社情報ページ内に統合しています。",
+      body: "以下の会社情報を通じて、案件相談やビジネスコミュニケーションを開始できます。",
       action: { label: "会社情報へ", page: "about" },
     },
   },
@@ -941,20 +941,20 @@ export const ja: SiteContent = {
     hero: {
       title: "お問い合わせ",
       subtitle:
-        "案件・事業相談のための基本情報です。本 MVP ではフォームを設けず、裏付けのない運用情報も追加しません。",
+        "案件相談、ビジネス連絡、導入調整に向けた会社情報をご案内します。",
       highlight: "お問い合わせ",
     },
     intro: {
       label: "Company Information",
-      title: "ビジネス対話に向けた基本会社情報",
-      body: "現段階では、提供資料で確認できる会社情報のみを掲載し、連絡導線は簡潔かつプロフェッショナルに保ちます。",
+      title: "会社情報",
+      body: "MEGA POWER との案件相談やビジネスコミュニケーションに必要な基本情報をご確認いただけます。",
     },
     items: [
       { label: "会社名", value: "MEGA POWER CO., LTD" },
       { label: "住所", value: "〒102-0083\n東京都千代田区麹町3-10-1\nTWG 麹町 5F" },
     ],
     note:
-      "電話番号とメールアドレスは、現時点で確認済みの提供資料に掲載がないため未反映です。確認後に追加可能です。問い合わせフォームは現段階の対象外です。",
+      "追加の連絡先が必要な場合は、案件調整の過程で MEGA POWER チームより個別にご案内します。",
     mapEmbed:
       "https://www.google.com/maps?q=%E3%80%92102-0083%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E9%BA%B9%E7%94%BA3-10-1%20TWG%20%E9%BA%B9%E7%94%BA%205F&output=embed",
   },
