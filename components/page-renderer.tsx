@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ProductGallery } from "@/components/product-gallery";
 import { ProductFamilyTabs } from "@/components/product-family-tabs";
+import { ScenariosDecisionHub } from "@/components/scenarios-decision-hub";
 import { productFamilies } from "@/content/products";
 import type {
   HeroContent,
@@ -25,8 +26,106 @@ function SectionIntro({ section }: { section: SectionLead }) {
     <div className="space-y-4">
       <div className="eyebrow">{section.label}</div>
       <h2 className="section-title max-w-4xl">{section.title}</h2>
-      <p className="section-subtitle max-w-3xl">{section.body}</p>
+      {section.body ? (
+        <p className="section-subtitle max-w-3xl">{section.body}</p>
+      ) : null}
     </div>
+  );
+}
+
+function ServiceIconBase({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex h-12 w-12 items-center justify-center rounded-[12px] border border-mega-accent/20 bg-mega-accent/10 text-mega-accent">
+      <svg
+        aria-hidden="true"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+        viewBox="0 0 24 24"
+      >
+        {children}
+      </svg>
+    </div>
+  );
+}
+
+function ServiceIcon({ index }: { index: number }) {
+  const icons: Array<() => React.ReactNode> = [
+    () => (
+      <>
+        <path d="M4 18V8.5A2.5 2.5 0 0 1 6.5 6H10l2 2h5.5A2.5 2.5 0 0 1 20 10.5V18" />
+        <path d="M4 18h16" />
+        <path d="M8 12h8" />
+      </>
+    ),
+    () => (
+      <>
+        <path d="M7 7a8 8 0 0 1 10 10" />
+        <path d="M7 11a4 4 0 0 1 6 6" />
+        <path d="M6 18h.01" />
+        <path d="M18 6l-4 4" />
+      </>
+    ),
+    () => (
+      <>
+        <path d="M6 18 18 6" />
+        <path d="M9 6h9v9" />
+        <path d="M6 12v6h6" />
+      </>
+    ),
+    () => (
+      <>
+        <path d="M6 8.5 12 5l6 3.5v7L12 19l-6-3.5z" />
+        <path d="M12 5v14" />
+        <path d="M6 8.5 12 12l6-3.5" />
+      </>
+    ),
+    () => (
+      <>
+        <path d="M12 3v7" />
+        <path d="M9 7h6" />
+        <path d="M5 14a7 7 0 1 0 14 0" />
+      </>
+    ),
+    () => (
+      <>
+        <path d="M12 4v8" />
+        <path d="M8 8h8" />
+        <path d="M6 20v-3a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v3" />
+      </>
+    ),
+    () => (
+      <>
+        <path d="M7 18v-5" />
+        <path d="M12 18V9" />
+        <path d="M17 18v-8" />
+        <path d="M5 18h14" />
+      </>
+    ),
+    () => (
+      <>
+        <path d="M6 8h12" />
+        <path d="M8 8V6h8v2" />
+        <path d="M7 8v10" />
+        <path d="M17 8v10" />
+        <path d="M9.5 12h5" />
+        <path d="M9.5 15h5" />
+      </>
+    ),
+  ];
+
+  const IconMarkup = icons[index] ?? icons[0];
+  return (
+    <ServiceIconBase>
+      <IconMarkup />
+    </ServiceIconBase>
   );
 }
 
@@ -164,12 +263,19 @@ function renderHeroTitle(title: string, locale: Locale) {
 function PageHero({
   title,
   subtitle,
+  highlight,
+  locale,
   eyebrow = "MEGA",
 }: {
   title: string;
   subtitle: string;
+  highlight?: string;
+  locale: Locale;
   eyebrow?: string;
 }) {
+  const titleIndex = highlight ? title.indexOf(highlight) : -1;
+  const highlightNoWrap = locale === "en" || locale === "ja";
+
   return (
     <section className="section-space relative overflow-hidden">
       <div className="absolute inset-0 bg-hero-radial opacity-90" />
@@ -178,7 +284,22 @@ function PageHero({
         <div className="panel-strong max-w-5xl p-8 sm:p-10 lg:p-14">
           <div className="eyebrow">{eyebrow}</div>
           <h1 className="display-title mt-4 max-w-4xl">
-            {title}
+            {titleIndex >= 0 && highlight ? (
+              <>
+                {title.slice(0, titleIndex)}
+                <span
+                  className={[
+                    "bg-gradient-to-r from-mega-accent to-mega-energy bg-clip-text text-transparent",
+                    highlightNoWrap ? "whitespace-nowrap" : "",
+                  ].join(" ")}
+                >
+                  {highlight}
+                </span>
+                {title.slice(titleIndex + highlight.length)}
+              </>
+            ) : (
+              title
+            )}
           </h1>
           <p className="section-subtitle mt-6 max-w-3xl">
             {subtitle}
@@ -1012,34 +1133,24 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
     case "scenarios":
       return (
         <>
-          <PageHero {...content.scenarios.hero} eyebrow={content.navigation.scenarios} />
-          <section className="section-space">
+          <PageHero {...content.scenarios.hero} eyebrow={content.navigation.scenarios} locale={locale} />
+          <section className="section-space pb-0">
             <div className="shell space-y-8">
               <SectionIntro section={content.scenarios.intro} />
-              <ScenarioSolutionSections
-                locale={locale}
-                platformBullets={content.home.platform.bullets}
-                previews={content.home.scenarios.items}
-                safetyBullets={content.home.safety.bullets}
-                scenarios={content.scenarios.details}
-                serviceBullets={content.services.japan.bullets}
-                solutions={content.solutions.items}
-              />
             </div>
           </section>
-          <section className="section-space bg-black/10">
-            <div className="shell grid gap-6 lg:grid-cols-2">
-              <BulletPanel {...content.scenarios.japanBlock} />
-              <BulletPanel {...content.scenarios.mapping} />
-            </div>
-          </section>
+          <ScenariosDecisionHub
+            locale={locale}
+            panels={content.scenarios.panels.slice(0, 5)}
+            selectorLabel={content.scenarios.selectorLabel}
+          />
           <CTASection locale={locale} {...content.scenarios.cta} />
         </>
       );
     case "solutions":
       return (
         <>
-          <PageHero {...content.solutions.hero} eyebrow={content.navigation.solutions} />
+          <PageHero {...content.solutions.hero} eyebrow={content.navigation.solutions} locale={locale} />
           <section className="section-space">
             <div className="shell space-y-8">
               <SectionIntro section={content.solutions.intro} />
@@ -1056,26 +1167,32 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
               />
             </div>
           </section>
+          <section className="section-space">
+            <div className="shell space-y-8">
+              <SectionIntro section={content.safety.intro} />
+              <TrustGrid items={content.safety.items} />
+            </div>
+          </section>
           <CTASection locale={locale} {...content.solutions.cta} />
         </>
       );
     case "platform":
       return (
         <>
-          <PageHero {...content.platform.hero} eyebrow={content.navigation.platform} />
+          <PageHero {...content.platform.hero} eyebrow={content.navigation.platform} locale={locale} />
           <PlatformCapabilitySection
             capability={content.platform.capability}
             intro={content.platform.intro}
           />
-          <PlatformManagementSection section={content.platform.management} />
           <PlatformSecuritySection section={content.platform.security} />
+          <PlatformManagementSection section={content.platform.management} />
           <CTASection locale={locale} {...content.platform.cta} />
         </>
       );
     case "products":
       return (
         <>
-          <PageHero {...content.products.hero} eyebrow={content.navigation.products} />
+          <PageHero {...content.products.hero} eyebrow={content.navigation.products} locale={locale} />
           <section className="section-space">
             <div className="shell space-y-8">
               <SectionIntro section={content.products.intro} />
@@ -1093,7 +1210,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
     case "safety":
       return (
         <>
-          <PageHero {...content.safety.hero} eyebrow={content.navigation.safety} />
+          <PageHero {...content.safety.hero} eyebrow={content.navigation.safety} locale={locale} />
           <section className="section-space">
             <div className="shell space-y-8">
               <SectionIntro section={content.safety.intro} />
@@ -1111,24 +1228,38 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
     case "services":
       return (
         <>
-          <PageHero {...content.services.hero} eyebrow={content.navigation.services} />
+          <PageHero {...content.services.hero} eyebrow={content.navigation.services} locale={locale} />
           <section className="section-space">
             <div className="shell space-y-8">
               <SectionIntro section={content.services.intro} />
               <div className="grid gap-6 lg:grid-cols-2">
                 <div className="space-y-5">
-                  {content.services.strategy.map((item) => (
+                  {content.services.strategy.map((item, index) => (
                     <article key={item.title} className="panel p-6">
-                      <h3 className="text-[0.95rem] font-bold text-white">{item.title}</h3>
-                      <p className="mt-2 text-[0.85rem] leading-[1.55] text-mega-muted">{item.body}</p>
+                      <div className="flex items-start gap-4">
+                        <div className="shrink-0">
+                          <ServiceIcon index={index} />
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="text-[0.95rem] font-bold text-white">{item.title}</h3>
+                          <p className="mt-2 text-[0.85rem] leading-[1.55] text-mega-muted">{item.body}</p>
+                        </div>
+                      </div>
                     </article>
                   ))}
                 </div>
                 <div className="space-y-5">
-                  {content.services.mechanism.map((item) => (
+                  {content.services.mechanism.map((item, index) => (
                     <article key={item.title} className="panel p-6">
-                      <h3 className="text-[0.95rem] font-bold text-white">{item.title}</h3>
-                      <p className="mt-2 text-[0.85rem] leading-[1.55] text-mega-muted">{item.body}</p>
+                      <div className="flex items-start gap-4">
+                        <div className="shrink-0">
+                          <ServiceIcon index={index + 4} />
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="text-[0.95rem] font-bold text-white">{item.title}</h3>
+                          <p className="mt-2 text-[0.85rem] leading-[1.55] text-mega-muted">{item.body}</p>
+                        </div>
+                      </div>
                     </article>
                   ))}
                 </div>
@@ -1141,7 +1272,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
     case "about":
       return (
         <>
-          <PageHero {...content.about.hero} eyebrow={content.navigation.about} />
+          <PageHero {...content.about.hero} eyebrow={content.navigation.about} locale={locale} />
           <section className="section-space">
             <div className="shell space-y-8">
               <SectionIntro section={content.about.intro} />
@@ -1178,7 +1309,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
     case "contact":
       return (
         <>
-          <PageHero {...content.contact.hero} eyebrow={content.navigation.contact} />
+          <PageHero {...content.contact.hero} eyebrow={content.navigation.contact} locale={locale} />
           <section className="section-space">
             <div className="shell grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
               <div className="panel-strong p-8">

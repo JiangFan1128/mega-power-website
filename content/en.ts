@@ -32,7 +32,7 @@ export const en: SiteContent = {
       subtitle:
         "Integrated digital green energy solutions combining photovoltaic generation, flexible storage, efficient charging, and intelligent management for grid, industry, transport, and charging infrastructure.",
       primaryCta: { label: "Explore Scenarios", page: "scenarios" },
-      secondaryCta: { label: "View Solutions", page: "solutions" },
+      secondaryCta: { label: "View Platform", page: "platform" },
       stats: [
         { value: "20+", label: "Years of Industry Expertise" },
         { value: "6S+EDR", label: "Patented Safety System" },
@@ -214,6 +214,7 @@ export const en: SiteContent = {
       title: "Find the right MEGA POWER solution by operating scenario",
       subtitle:
         "Start from the customer's real operating environment, then move directly into the integrated solution stack, product families, digital capability, and support logic that fit best.",
+      highlight: "operating scenario",
     },
     intro: {
       label: "Scenario Logic",
@@ -221,6 +222,432 @@ export const en: SiteContent = {
       body:
         "Each scenario below connects the operating challenge with a recommended solution stack, supporting product families, platform capability, safety logic, and service readiness.",
     },
+    selectorLabel: "Choose the operating scenario you are facing",
+    panels: [
+      {
+        key: "grid",
+        icon: "grid",
+        buttonTitle: "Grid & Renewable Integration",
+        buttonSubtitle: "Wind Farms · PV Stations",
+        problemLabel: "Customer Challenge",
+        problemTitle:
+          "Renewable output is unstable, curtailment risk rises, and interconnection compliance gets harder",
+        problemBody:
+          "Wind and solar output are naturally intermittent. Generation peaks often miss demand peaks, while grid operators expect storage support to improve stability and dispatch flexibility. Without the right architecture, renewable projects face lower absorption efficiency and higher curtailment pressure.",
+        solutionLabel: "MEGA POWER Response",
+        solutionTitle: "Grid-side energy storage solution",
+        solutionBody:
+          "MEGA POWER deploys megawatt-class storage on the grid side or generation side, shifting energy over time while coordinating with digital dispatch logic to smooth renewable output, support grid balancing, and improve operating flexibility.",
+        solutionValues: [
+          "Higher renewable absorption",
+          "Peak shaving and shifting",
+          "Grid flexibility",
+          "Black start readiness",
+        ],
+        metrics: [
+          { value: "<50ms", label: "Active / reactive power response" },
+          { value: "2750kW", label: "Maximum single-container output" },
+          { value: "5MWh", label: "Single battery cabin capacity" },
+          { value: "28 Days", label: "BWS advance warning window" },
+        ],
+        architecture: {
+          label: "System Architecture Snapshot",
+          rows: [
+            {
+              nodes: [
+                { title: "PV Station", subtitle: "Solar generation" },
+                { title: "Step-up Container", subtitle: "Voltage elevation" },
+                {
+                  title: "PCS Step-up Cabin",
+                  subtitle: "Conversion + step-up",
+                  tone: "highlight",
+                },
+                { title: "Grid", subtitle: "Utility interconnection" },
+              ],
+            },
+            {
+              nodes: [
+                { title: "Wind Farm", subtitle: "Wind generation" },
+                { title: "Wind Step-up", subtitle: "Collection side" },
+                {
+                  title: "MCS / EMS",
+                  subtitle: "Digital dispatch layer",
+                  tone: "platform",
+                },
+              ],
+            },
+            {
+              nodes: [
+                { title: "Battery Cabin", subtitle: "5015kWh LFP" },
+                {
+                  title: "PCS Step-up Cabin",
+                  subtitle: "Conversion + grid support",
+                  tone: "highlight",
+                },
+              ],
+            },
+          ],
+        },
+        productsLabel: "Mapped Product Families",
+        products: [
+          {
+            title: "PCS Step-up Container (Cluster)",
+            model: "iBCS100-2500B/20-AC",
+            highlights: ["2500kW rated", "12 DC channels", "20kV", "IP54 / PCS IP66"],
+          },
+          {
+            title: "PCS Step-up Container (Integrated)",
+            model: "iBCS100-2500A/20-AC",
+            highlights: ["2750kW max", "20/35kV", "≤18T", "Integrated deployment"],
+          },
+          {
+            title: "DC Battery Storage Container",
+            model: "iESS100-5015B2-LC",
+            highlights: ["5015kWh LFP", "Liquid cooling", "IP54", "Utility-scale ready"],
+          },
+        ],
+        platform: {
+          label: "Platform Support",
+          title: "Digital visibility from dispatch to traceability",
+          items: [
+            "HCS for millisecond-class control response",
+            "BWS for up to 28-day battery fault warning",
+            "EMS for dispatch coordination and optimization",
+            "EDR for full-process event traceability",
+          ],
+        },
+        service: {
+          label: "Service Readiness",
+          title: "Execution support for utility-scale deployment",
+          items: [
+            "Site-level engineering coordination for grid-side projects",
+            "Preventive maintenance plans for long operating cycles",
+            "Spare-parts and remote support logic for uptime-critical sites",
+          ],
+        },
+      },
+      {
+        key: "frequency",
+        icon: "frequency",
+        buttonTitle: "Frequency Regulation",
+        buttonSubtitle: "Fast Grid Response · Microgrids",
+        problemLabel: "Customer Challenge",
+        problemTitle:
+          "Frequency deviations require faster and more stable response than conventional regulation can deliver",
+        problemBody:
+          "When grid frequency moves around its target, thermal or hydropower response is often too slow or too coarse. High-response power systems need precise, repeatable adjustment that can follow dispatch signals continuously and with very low delay.",
+        solutionLabel: "MEGA POWER Response",
+        solutionTitle: "Frequency regulation storage solution",
+        solutionBody:
+          "MEGA POWER combines storage power conversion, high-speed control, and event traceability to create a frequency-regulation stack that responds rapidly, follows dispatch precisely, and supports ancillary-service value.",
+        solutionValues: [
+          "Millisecond response",
+          "Bidirectional regulation",
+          "Ancillary-service value",
+          "Stable 50Hz support",
+        ],
+        metrics: [
+          { value: "<50ms", label: "Dispatch response latency" },
+          { value: "2500kW", label: "Bidirectional regulation power" },
+          { value: "50Hz", label: "Grid target tracking" },
+          { value: "EDR", label: "Full event traceability" },
+        ],
+        productsLabel: "Mapped Product Families",
+        products: [
+          {
+            title: "PCS Step-up Container (Cluster)",
+            model: "iBCS100-2500B/20-AC",
+            highlights: ["2500kW rated", "Fast frequency support", "12 DC channels"],
+          },
+          {
+            title: "PCS Step-up Container (Integrated)",
+            model: "iBCS100-2500A/20-AC",
+            highlights: ["2750kW max", "20/35kV", "Integrated microgrid use"],
+          },
+          {
+            title: "DC Battery Storage Container",
+            model: "iESS100-5015B2-LC",
+            highlights: ["5015kWh LFP", "Liquid cooling", "High-cycle operation"],
+          },
+        ],
+        platform: {
+          label: "Platform Support",
+          title: "Closed-loop control for high-response regulation",
+          items: [
+            "HCS for millisecond-class synchronized control",
+            "EDR for frequency-event traceability and post-analysis",
+            "OMS for structured alarm response and work orders",
+            "BMS / BWS for battery-state awareness under rapid cycling",
+          ],
+        },
+        service: {
+          label: "Service Readiness",
+          title: "Keep regulation performance and availability stable",
+          items: [
+            "7×24 emergency response path for critical dispatch systems",
+            "Preventive maintenance that reduces revenue-impacting downtime",
+            "Fast spare-parts readiness for key conversion components",
+          ],
+        },
+      },
+      {
+        key: "ev",
+        icon: "ev",
+        buttonTitle: "EV Charging",
+        buttonSubtitle: "Weak Grid · High Power",
+        problemLabel: "Customer Challenge",
+        problemTitle:
+          "High-power charging is needed, but the site has weak-grid access, limited capacity, or no grid at all",
+        problemBody:
+          "Bus depots, heavy-truck corridors, logistics hubs, and passenger-car fast charging sites often face distribution limits. Upgrading the grid can be slow and expensive, while some sites need a charging deployment path immediately.",
+        solutionLabel: "MEGA POWER Response",
+        solutionTitle: "Integrated PV-ESS-charging solution",
+        solutionBody:
+          "MEGA POWER combines photovoltaic generation, storage, and charging through AC/DC coupled system design, making it possible to build high-power charging stations under weak-grid, no-grid, or space-constrained conditions with much more flexibility.",
+        solutionValues: [
+          "Virtual capacity expansion",
+          "On-grid / off-grid switching",
+          "Modular deployment",
+          "6S+EDR smart O&M",
+        ],
+        metrics: [
+          { value: "200kW", label: "Passenger-car HPC node" },
+          { value: "240kW×N", label: "Bus depot multi-gun charging" },
+          { value: "480kW×N", label: "Heavy-truck supercharging" },
+          { value: "1440kW", label: "Power cabinet rated output" },
+        ],
+        productsLabel: "Mapped Product Families",
+        products: [
+          {
+            title: "PV-Storage Hybrid Unit",
+            model: "iPES100-100-215-AC-100",
+            highlights: ["100kW AC", "215.04kWh", "2×50kW PV input", "IP55"],
+          },
+          {
+            title: "Energy Storage Integrated Charger",
+            model: "iEFC100-80/120-AL-C",
+            highlights: ["120kW rated", "186 / 209kWh", "DC200-1000V", "IP55"],
+          },
+          {
+            title: "Power Cabinet & Charging Terminal",
+            model: "iEFC Series",
+            highlights: ["1440kW cabinet", "12 outputs", "2×600A + 10×250A"],
+          },
+        ],
+        platform: {
+          label: "Platform Support",
+          title: "Charging operations, monitoring, and strategy in one layer",
+          items: [
+            "EMS for charging and storage strategy dispatch",
+            "OMS for station monitoring and work-order execution",
+            "BWS for battery abnormality warning inside storage assets",
+            "EDR for charging-site event recording and analysis",
+          ],
+        },
+        service: {
+          label: "Service Readiness",
+          title: "Keep charging stations running with less interruption",
+          items: [
+            "Customer training to reduce operational error on site",
+            "Periodic inspection to lower charging-equipment failure risk",
+            "Partner collaboration to extend local response coverage",
+          ],
+        },
+      },
+      {
+        key: "mobile",
+        icon: "mobile",
+        buttonTitle: "Mobile & Emergency Power",
+        buttonSubtitle: "Off-grid · Temporary Sites",
+        problemLabel: "Customer Challenge",
+        problemTitle:
+          "Remote or emergency sites need power fast, without waiting for permanent infrastructure",
+        problemBody:
+          "Disaster recovery, temporary construction, remote mining, and field operations cannot always wait for fixed electrical infrastructure. What matters is how fast a power system can move, deploy, and recover service continuity on site.",
+        solutionLabel: "MEGA POWER Response",
+        solutionTitle: "Transportable storage solution",
+        solutionBody:
+          "MEGA POWER uses containerized, trailer-based, and vehicle-based energy systems to create rapid-deployment power capability, with anti-vibration design, liquid cooling, and modular field dispatch suitable for mobile use cases.",
+        solutionValues: [
+          "Rapid deployment",
+          "Vehicle-grade anti-vibration",
+          "Battery turnover flexibility",
+          "Independent off-grid supply",
+        ],
+        metrics: [
+          { value: "10,000+", label: "Quick-connect interface cycles" },
+          { value: "2500kW", label: "Off-grid rated discharge output" },
+          { value: "6000", label: "Battery cycles at 95% DOD" },
+          { value: "A1", label: "Flame-retardant material class" },
+        ],
+        productsLabel: "Mapped Product Families",
+        products: [
+          {
+            title: "Grid-connected Charging Container",
+            model: "iBCS100-1725A/10-AC",
+            highlights: ["1725kW", "10kV", "≤13T", "Rapid deployment"],
+          },
+          {
+            title: "Off-grid Discharging Container",
+            model: "iBCS100-2x2500A/10-AC",
+            highlights: ["2510kW", "2500kW off-grid", "10kV", "IP54 / PCS IP66"],
+          },
+          {
+            title: "Battery Storage Transport Vehicle",
+            model: "iESS100-3343B2-LC-M",
+            highlights: ["6000 cycles", "Anti-vibration", "Liquid cooling", "IP54 / C4"],
+          },
+        ],
+        platform: {
+          label: "Platform Support",
+          title: "Field dispatch intelligence for unstable operating conditions",
+          items: [
+            "SCS logic for sudden-load stability control",
+            "DMS-style dispatch control for mobile charge / discharge scheduling",
+            "BWS / EDR for warning and incident traceability in the field",
+            "OMS workflow visibility for remote service coordination",
+          ],
+        },
+        service: {
+          label: "Service Readiness",
+          title: "Fast support for urgent and temporary deployments",
+          items: [
+            "7×24 emergency hotline for high-priority incidents",
+            "Spare-parts network to shorten recovery time on critical components",
+            "Field training to reduce avoidable setup and operation errors",
+          ],
+        },
+      },
+      {
+        key: "commercial",
+        icon: "commercial",
+        buttonTitle: "Commercial & Industrial",
+        buttonSubtitle: "Factories · Campuses",
+        problemLabel: "Customer Challenge",
+        problemTitle:
+          "Electricity costs keep rising, while power interruptions directly impact operating continuity",
+        problemBody:
+          "Factories, buildings, hospitals, schools, and commercial parks are under pressure to reduce electricity cost, lower peak-demand exposure, and strengthen resilience against interruption at the same time.",
+        solutionLabel: "MEGA POWER Response",
+        solutionTitle: "Commercial & industrial storage solution",
+        solutionBody:
+          "MEGA POWER provides flexible storage configurations from cabinet-level deployment to multi-megawatt-hour systems, helping customers optimize load profiles, improve backup capability, and progress toward lower-carbon operation with controllable system logic.",
+        solutionValues: [
+          "Peak shaving and cost control",
+          "Backup power resilience",
+          "Flexible capacity scaling",
+          "Low-carbon transition",
+        ],
+        metrics: [
+          { value: "≤2MWh", label: "Small users with 261kWh cabinets × N" },
+          { value: "2-10MWh", label: "Medium users with 418kWh cabinets × N" },
+          { value: "≥5MWh", label: "Large users with utility-scale cabins × N" },
+          { value: "≥88%", label: "System conversion efficiency" },
+        ],
+        productsLabel: "Mapped Product Families",
+        products: [
+          {
+            title: "Distributed Storage Cabinet (125kW)",
+            model: "iDPS100-125/261 LC",
+            highlights: ["125kW", "261kWh", "AC380V", "IP55"],
+          },
+          {
+            title: "Distributed Storage Cabinet (200kW)",
+            model: "iDPS200-200/418 LC",
+            highlights: ["200kW", "418kWh", "AC690V", "IP55 / C4"],
+          },
+          {
+            title: "DC Battery Storage Container",
+            model: "iESS100-5015B2-LC",
+            highlights: ["5015kWh", "Liquid cooling", "Large-site scaling"],
+          },
+        ],
+        platform: {
+          label: "Platform Support",
+          title: "Capacity planning, optimization, and visible operation",
+          items: [
+            "ECS for more accurate capacity planning and operating decisions",
+            "EMS for charge / discharge strategy and site-level optimization",
+            "OMS for monitoring, maintenance workflow, and task visibility",
+            "OTA support for structured remote updates",
+          ],
+        },
+        service: {
+          label: "Service Readiness",
+          title: "Custom delivery and long-term site support",
+          items: [
+            "Site survey and capacity assessment before deployment",
+            "Grid-connection coordination and project support logic",
+            "Preventive maintenance plans for long operating cycles",
+          ],
+        },
+      },
+      {
+        key: "japan",
+        icon: "japan",
+        buttonTitle: "Japan Market",
+        buttonSubtitle: "Compact Sites · Reliability",
+        problemLabel: "Market Requirement",
+        problemTitle:
+          "Projects in Japan demand tighter coordination around compact sites, reliability, maintainability, and communication trust",
+        problemBody:
+          "Japan projects often combine limited installation space, high reliability expectations, demanding operating discipline, and strong sensitivity around service quality and long-term maintainability. The deployment logic must respect those operating realities from the start.",
+        solutionLabel: "MEGA POWER Response",
+        solutionTitle: "Japan-oriented deployment approach",
+        solutionBody:
+          "MEGA POWER frames Japan deployment through compact integration, reliability-first system design, transparent digital monitoring, and service communication that supports long-term operating confidence rather than short-term hardware delivery only.",
+        solutionValues: [
+          "Compact integrated design",
+          "Reliability-first planning",
+          "Maintainable long-term operation",
+          "Localized support readiness",
+        ],
+        metrics: [
+          { value: "IP55", label: "Outdoor protection for climate exposure" },
+          { value: "C4", label: "Anti-corrosion class for harsh environments" },
+          { value: "6S+EDR", label: "Patented safety architecture" },
+          { value: "Tokyo", label: "Local business presence" },
+        ],
+        productsLabel: "Mapped Product Families",
+        products: [
+          {
+            title: "Distributed Storage Cabinet (125kW)",
+            model: "iDPS100-125/261 LC",
+            highlights: ["Compact cabinet", "261kWh", "IP55", "Site-friendly format"],
+          },
+          {
+            title: "Energy Storage Integrated Charger",
+            model: "iEFC100-80/120-AL-C",
+            highlights: ["Integrated charging", "209kWh", "Weak-grid fit"],
+          },
+          {
+            title: "PCS Step-up Container (Integrated)",
+            model: "iBCS100-2500A/20-AC",
+            highlights: ["Integrated deployment", "20/35kV", "Utility-ready"],
+          },
+        ],
+        platform: {
+          label: "Platform Support",
+          title: "Operational visibility and controllable risk for compact deployments",
+          items: [
+            "EMS for localized monitoring and operating transparency",
+            "BWS for earlier abnormality detection in battery assets",
+            "EDR for objective incident traceability and review",
+            "OMS for maintenance workflow visibility across long-term operation",
+          ],
+        },
+        service: {
+          label: "Service Readiness",
+          title: "Localized execution and communication trust",
+          items: [
+            "Tokyo-based business presence for closer coordination",
+            "Structured cross-cultural communication in project delivery",
+            "Continuous technical support instead of one-time handoff",
+            "Partner collaboration for local execution coverage",
+          ],
+        },
+      },
+    ],
     details: [
       {
         title: "Grid & Renewable Integration",
@@ -301,6 +728,7 @@ export const en: SiteContent = {
       title: "Solution architecture overview for MEGA POWER systems",
       subtitle:
         "This page is a short overview of the main solution systems. The full scenario-to-solution matching logic lives on the Scenarios page.",
+      highlight: "MEGA POWER systems",
     },
     intro: {
       label: "Solution Framework",
@@ -352,6 +780,7 @@ export const en: SiteContent = {
       title: "Digital platform capability across warning, control, and O&M",
       subtitle:
         "The platform layer is presented as a differentiator: it connects data visibility, event traceability, control logic, and field maintenance workflows.",
+      highlight: "platform capability",
     },
     intro: {
       label: "6S+EDR Capability",
@@ -495,9 +924,9 @@ export const en: SiteContent = {
     },
     cta: {
       label: "Trust Layer",
-      title: "See how platform capability connects directly to safety and reliability",
+      title: "See how platform capability connects directly to solution trust logic",
       body: "Warning, traceability, and workflow design are central to MEGA POWER's trust proposition.",
-      action: { label: "Safety & Reliability", page: "safety" },
+      action: { label: "View Scenarios", page: "scenarios" },
     },
   },
   products: {
@@ -510,6 +939,7 @@ export const en: SiteContent = {
       title: "Core products supporting each solution family",
       subtitle:
         "Products are organized by deployment role and scenario fit, using real specifications and product images from the source PDF.",
+      highlight: "Core products",
     },
     intro: {
       label: "Product Families",
@@ -541,6 +971,7 @@ export const en: SiteContent = {
       title: "Safety, traceability, and confidence built into the system",
       subtitle:
         "MEGA POWER is presented as a company that helps customers operate with more clarity and less uncertainty through integrated safety and operational logic.",
+      highlight: "traceability",
     },
     intro: {
       label: "Safety Architecture",
@@ -578,12 +1009,12 @@ export const en: SiteContent = {
       title: "Service and O&M designed for long-term partnership",
       subtitle:
         "Service is part of the product experience. The site positions O&M, communication, and support readiness as integral to long-term system value.",
+      highlight: "long-term partnership",
     },
     intro: {
       label: "Service Strategy",
       title: "Localized support logic with long-term operational discipline",
-      body:
-        "The service narrative is built from the source PDF: localized teams, cross-cultural communication, continuous technical updates, and partner-network expansion.",
+      body: "",
     },
     strategy: [
       { title: "Localized service team model", body: "Support is framed around local market understanding and tailored service delivery instead of a purely remote support posture." },
@@ -620,6 +1051,7 @@ export const en: SiteContent = {
       title: "About MEGA POWER",
       subtitle:
         "Integrated digital green energy solutions for a changing energy landscape, combining power, storage, charging, digital control, and service capability.",
+      highlight: "MEGA POWER",
     },
     intro: {
       label: "Company Introduction",
@@ -654,6 +1086,7 @@ export const en: SiteContent = {
       title: "Contact MEGA POWER",
       subtitle:
         "Basic company information for project and business inquiries. This MVP intentionally avoids a contact form and does not invent unsupported operational details.",
+      highlight: "MEGA POWER",
     },
     intro: {
       label: "Company Information",

@@ -26,11 +26,10 @@ export default async function LocaleLayout({
   const content = getSiteContent(locale as Locale);
 
   return (
-    <div className="min-h-screen bg-transparent text-mega-text">
+    <div className="site-shell min-h-screen bg-transparent text-mega-text" data-locale={locale}>
       <Header locale={locale} navigation={content.navigation} />
       <main>{children}</main>
       <Footer content={content} locale={locale} />
     </div>
   );
 }
-

@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
+import { Inter, Noto_Sans_JP, Space_Mono } from "next/font/google";
 
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const notoSansJp = Noto_Sans_JP({
+  subsets: ["latin"],
+  variable: "--font-jp",
+  weight: ["400", "500", "700", "800"],
+});
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
@@ -21,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={spaceMono.variable}>
+      <body className={`${inter.variable} ${notoSansJp.variable} ${spaceMono.variable}`}>
         {children}
       </body>
     </html>
