@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --clr-primary: #0a5e5c;
+  --clr-primary-light: #0d7d7a;
+  --clr-accent: #2dd4a8;
+  --clr-accent-glow: rgba(45, 212, 168, 0.4);
+  --clr-energy: #00e5ff;
+  --clr-warning: #f5a623;
+  --clr-dark: #081120;
+  --clr-dark-mid: #102034;
+  --clr-surface: #13273f;
+  --clr-surface-light: #173252;
+  --clr-text: #e8f4f0;
+  --clr-text-dim: #8aacb8;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(70, 162, 255, 0.12), transparent),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(45, 212, 168, 0.06), transparent),
+    var(--clr-dark);
+  color: var(--clr-text);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.site-shell[data-locale="en"] {
+  font-family: var(--font-inter), "Segoe UI", Arial, sans-serif;
+}
+
+.site-shell[data-locale="ja"] {
+  font-family: var(--font-jp), "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+.site-shell[data-locale="zh"] {
+  font-family: "Alibaba PuHuiTi 3.0", "Alibaba PuHuiTi", "PingFang SC",
+    "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
+::selection {
+  background: rgba(45, 212, 168, 0.28);
+  color: #f2fffb;
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+
+  a,
+  button {
+    @apply transition duration-300 ease-out;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-none ring-2 ring-mega-accent ring-offset-2 ring-offset-mega-dark;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 lg:px-10;
+  }
+
+  .section-space {
+    @apply py-14 lg:py-16;
+  }
+
+  .panel {
+    background:
+      linear-gradient(150deg, rgba(18, 34, 56, 0.96), rgba(23, 50, 82, 0.84));
+    border-color: rgba(47, 74, 112, 0.92);
+    @apply rounded-[16px] border shadow-panel backdrop-blur;
+  }
+
+  .panel-strong {
+    background:
+      linear-gradient(145deg, rgba(13, 25, 45, 0.98), rgba(22, 42, 70, 0.9));
+    border-color: rgba(53, 87, 127, 0.85);
+    @apply rounded-[20px] border shadow-panel backdrop-blur;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[0.75rem] uppercase tracking-[0.25rem] text-mega-accent;
+  }
+
+  .copy-muted {
+    @apply text-[0.92rem] leading-[1.65] text-mega-muted;
+  }
+
+  .section-subtitle {
+    @apply text-[1.02rem] leading-[1.62] text-mega-muted;
+  }
+
+  .hero-copy {
+    @apply text-[1.08rem] leading-[1.62] text-mega-muted;
+  }
+
+  .hero-stat-value {
+    @apply text-[2.4rem] font-extrabold leading-none text-mega-accent;
+  }
+
+  .hero-stat-label {
+    @apply mt-[6px] text-[0.85rem] leading-6 text-mega-muted;
+  }
+
+  .display-title {
+    @apply text-[clamp(2.8rem,6vw,5rem)] font-extrabold leading-[1.05] tracking-[-0.03em];
+  }
+
+  .section-title {
+    @apply text-[clamp(2rem,4vw,3.2rem)] font-extrabold leading-[1.15] tracking-[-0.025em];
+  }
+
+  .card-title {
+    @apply text-[1.2rem] font-bold leading-[1.25] tracking-[-0.02em] text-white;
+  }
+
+  .card-copy {
+    @apply text-[0.9rem] leading-[1.58] text-mega-muted;
+  }
+
+  .micro-label {
+    @apply font-mono text-[0.68rem] uppercase tracking-[0.18rem] text-mega-accent;
+  }
+
+  .model-copy {
+    @apply font-mono text-[0.8rem] leading-5 tracking-[0.12rem] text-mega-muted;
+  }
+
+  .spec-label {
+    @apply text-[0.78rem] uppercase tracking-[0.14rem] text-mega-muted;
+  }
+
+  .spec-value {
+    @apply mt-1 text-[0.78rem] font-semibold text-mega-text;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-[10px] px-8 py-[15px] text-[0.95rem] font-extrabold text-[#071926] transition duration-200 hover:-translate-y-0.5;
+    background-image: linear-gradient(90deg, #35e0c8 0%, #4ba8ff 100%);
+    box-shadow: 0 12px 28px rgba(28, 149, 255, 0.18);
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-[10px] border px-8 py-[15px] text-[0.95rem] font-extrabold text-white transition duration-200 hover:-translate-y-0.5;
+    border-color: rgba(103, 155, 214, 0.6);
+    background: linear-gradient(180deg, rgba(10, 30, 56, 0.9), rgba(8, 23, 42, 0.92));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .home-button-primary {
+    @apply inline-flex items-center justify-center rounded-[10px] px-8 py-[15px] text-[0.95rem] font-extrabold text-[#071926] transition duration-200 hover:-translate-y-0.5;
+    background-image: linear-gradient(90deg, #35e0c8 0%, #4ba8ff 100%);
+    box-shadow: 0 12px 28px rgba(28, 149, 255, 0.18);
+  }
+
+  .home-button-primary:hover {
+    box-shadow: 0 16px 34px rgba(28, 149, 255, 0.24);
+    filter: brightness(1.03);
+  }
+
+  .home-button-secondary {
+    @apply inline-flex items-center justify-center rounded-[10px] border px-8 py-[15px] text-[0.95rem] font-extrabold text-white transition duration-200 hover:-translate-y-0.5;
+    border-color: rgba(103, 155, 214, 0.6);
+    background: linear-gradient(180deg, rgba(10, 30, 56, 0.9), rgba(8, 23, 42, 0.92));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .home-button-secondary:hover {
+    border-color: rgba(133, 184, 241, 0.78);
+    background: linear-gradient(180deg, rgba(12, 35, 64, 0.94), rgba(9, 26, 48, 0.96));
+  }
+
+  .button-primary:hover {
+    box-shadow: 0 16px 34px rgba(28, 149, 255, 0.24);
+    filter: brightness(1.03);
+  }
+
+  .button-secondary:hover {
+    border-color: rgba(133, 184, 241, 0.78);
+    background: linear-gradient(180deg, rgba(12, 35, 64, 0.94), rgba(9, 26, 48, 0.96));
+  }
+
+  .cta-surface {
+    background-image:
+      radial-gradient(circle at 30% 50%, rgba(45, 212, 168, 0.15), transparent 50%),
+      radial-gradient(circle at 70% 50%, rgba(0, 229, 255, 0.08), transparent 50%),
+      linear-gradient(135deg, #0a5e5c, #122830);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-space {
+    @apply py-12;
+  }
+}
+
+@media (max-width: 768px) {
+  .shell {
+    @apply px-5;
+  }
+
+  .section-space {
+    @apply py-10;
+  }
+}
