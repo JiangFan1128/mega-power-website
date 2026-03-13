@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 import { useMemo, useRef, useState } from "react";
 
 import type {
+  ScenarioDecisionArchitecture,
+  ScenarioDecisionArchitectureChip,
   ScenarioDecisionArchitectureNode,
   ScenarioDecisionIcon,
   ScenarioDecisionPanel,
@@ -110,6 +112,184 @@ function ArchitectureNode({
         </div>
       ) : null}
     </div>
+  );
+}
+
+function ArchitectureChips({ chips }: { chips: ScenarioDecisionArchitectureChip[] }) {
+  if (chips.length === 0) {
+    return null;
+  }
+
+  const toneClass = (tone?: ScenarioDecisionArchitectureChip["tone"]) => {
+    if (tone === "warning") {
+      return "text-mega-warning";
+    }
+
+    if (tone === "energy") {
+      return "text-mega-energy";
+    }
+
+    return "text-mega-accent";
+  };
+
+  return (
+    <div className="mt-5 flex flex-wrap gap-4 border-t border-dashed border-mega-accent/18 pt-4">
+      {chips.map((chip) => (
+        <div
+          className="flex items-center gap-2 text-[0.78rem] leading-[1.5] text-mega-muted"
+          key={`${chip.name}-${chip.detail}`}
+        >
+          <span className={`font-mono font-semibold uppercase tracking-[0.08rem] ${toneClass(chip.tone)}`}>
+            {chip.name}
+          </span>
+          <span>{chip.detail}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ArchitectureSection({ architecture }: { architecture: ScenarioDecisionArchitecture }) {
+  const alignClass = {
+    start: "justify-start",
+    center: "justify-center",
+    end: "justify-end",
+  };
+
+  return (
+    <section className="rounded-[18px] border border-[#35577f]/55 bg-[rgba(15,34,41,0.82)] p-6 sm:p-8">
+      <div className="eyebrow">{architecture.label}</div>
+
+      {architecture.kind === "flow" ? (
+        <div className="mt-6 space-y-4">
+          {architecture.rows.map((row, rowIndex) => (
+            <div
+              className={`flex flex-wrap items-center gap-3 ${
+                alignClass[row.align ?? "start"]
+              }`}
+              key={`flow-row-${rowIndex}`}
+            >
+              {row.nodes.map((node, nodeIndex) => (
+                <div className="flex items-center gap-3" key={`flow-node-${rowIndex}-${nodeIndex}`}>
+                  <ArchitectureNode node={node} />
+                  {nodeIndex < row.nodes.length - 1 ? (
+                    <div className="text-[1.2rem] text-mega-accent/65">
+                      {row.arrow ?? "→"}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          ))}
+          <ArchitectureChips chips={architecture.chips ?? []} />
+        </div>
+      ) : null}
+
+      {architecture.kind === "scale" ? (
+        <div className="mt-6 space-y-5">
+          <div className="grid gap-4 lg:grid-cols-3">
+            {architecture.columns.map((column) => (
+              <article
+                className="rounded-[14px] border border-[#35577f]/55 bg-[rgba(19,45,54,0.78)] p-5 text-center"
+                key={`${column.title}-${column.subtitle}`}
+              >
+                <div className="font-mono text-[1.4rem] font-semibold leading-none text-mega-accent">
+                  {column.title}
+                </div>
+                <div className="mt-2 text-[0.78rem] text-mega-muted">{column.subtitle}</div>
+                <div className="mx-auto mt-4 inline-flex rounded-[6px] bg-mega-accent/8 px-3 py-1 text-[0.72rem] text-mega-muted">
+                  {column.input}
+                </div>
+                <div className="mt-4 space-y-2">
+                  {column.items.map((item) => (
+                    <div
+                      className="rounded-[8px] border border-mega-accent/8 bg-[rgba(24,56,64,0.78)] px-3 py-2 text-[0.76rem] font-medium text-white"
+                      key={item}
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+          <ArchitectureChips chips={architecture.chips ?? []} />
+        </div>
+      ) : null}
+
+      {architecture.kind === "tiers" ? (
+        <div className="mt-6 space-y-5">
+          <div className="grid gap-4 lg:grid-cols-3">
+            {architecture.tiers.map((tier) => (
+              <article
+                className="rounded-[14px] border border-[#35577f]/55 bg-[rgba(19,45,54,0.78)] p-5"
+                key={`${tier.title}-${tier.power}`}
+              >
+                <div className="text-[1.25rem] leading-none">{tier.icon}</div>
+                <div className="mt-3 text-[0.92rem] font-bold text-white">{tier.title}</div>
+                <div className="mt-2 font-mono text-[1.1rem] text-mega-accent">{tier.power}</div>
+                <p className="mt-3 text-[0.78rem] leading-[1.6] text-mega-muted">{tier.description}</p>
+                <div className="mt-4 space-y-2">
+                  {tier.items.map((item) => (
+                    <div
+                      className="rounded-[8px] border border-mega-accent/8 bg-[rgba(24,56,64,0.78)] px-3 py-2 text-[0.74rem] text-white"
+                      key={item}
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+          <ArchitectureChips chips={architecture.chips ?? []} />
+        </div>
+      ) : null}
+
+      {architecture.kind === "turnover" ? (
+        <div className="mt-6 space-y-4">
+          <div className="font-mono text-[0.68rem] uppercase tracking-[0.14rem] text-mega-muted">
+            {architecture.topLabel}
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {architecture.topNodes.map((node, nodeIndex) => (
+              <div className="flex items-center gap-3" key={`turnover-top-${nodeIndex}`}>
+                <ArchitectureNode node={node} />
+                {nodeIndex < architecture.topNodes.length - 1 ? (
+                  <div className="text-[1.1rem] text-mega-accent/65">→</div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+
+          <div className="h-px w-full bg-[linear-gradient(90deg,transparent,rgba(45,212,168,0.18),transparent)]" />
+
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {architecture.middleNodes.map((node) => (
+              <ArchitectureNode key={`${node.title}-${node.subtitle ?? ""}`} node={node} />
+            ))}
+          </div>
+
+          <div className="h-px w-full bg-[linear-gradient(90deg,transparent,rgba(45,212,168,0.18),transparent)]" />
+
+          <div className="font-mono text-[0.68rem] uppercase tracking-[0.14rem] text-mega-muted">
+            {architecture.bottomLabel}
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {architecture.bottomNodes.map((node, nodeIndex) => (
+              <div className="flex items-center gap-3" key={`turnover-bottom-${nodeIndex}`}>
+                <ArchitectureNode node={node} />
+                {nodeIndex < architecture.bottomNodes.length - 1 ? (
+                  <div className="text-[1.1rem] text-mega-accent/65">→</div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+
+          <ArchitectureChips chips={architecture.chips ?? []} />
+        </div>
+      ) : null}
+    </section>
   );
 }
 
@@ -266,31 +446,7 @@ export function ScenariosDecisionHub({
             </div>
           </div>
 
-          {activePanel.architecture ? (
-            <section className="rounded-[18px] border border-[#35577f]/55 bg-[rgba(15,34,41,0.82)] p-6 sm:p-8">
-              <div className="eyebrow">{activePanel.architecture.label}</div>
-              <div className="mt-6 space-y-4">
-                {activePanel.architecture.rows.map((row, rowIndex) => (
-                  <div
-                    className="flex flex-wrap items-center justify-center gap-3"
-                    key={`${activePanel.key}-arch-row-${rowIndex}`}
-                  >
-                    {row.nodes.map((node, nodeIndex) => (
-                      <div
-                        className="flex items-center gap-3"
-                        key={`${activePanel.key}-arch-node-${rowIndex}-${nodeIndex}`}
-                      >
-                        <ArchitectureNode node={node} />
-                        {nodeIndex < row.nodes.length - 1 ? (
-                          <div className="text-[1.2rem] text-mega-accent/65">→</div>
-                        ) : null}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </section>
-          ) : null}
+          {activePanel.architecture ? <ArchitectureSection architecture={activePanel.architecture} /> : null}
 
           <section className="space-y-4">
             <div className="eyebrow text-mega-muted">{activePanel.productsLabel || supportHeadings.products}</div>

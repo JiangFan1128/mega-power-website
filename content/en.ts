@@ -48,9 +48,9 @@ export const en: SiteContent = {
     },
     scenarios: {
       label: "Scenarios",
-      title: "Start with your real operating scenario, then identify the energy solution that fits best",
+      title: "Start with the operating scenario, then understand the solution path that fits best",
       body:
-        "Not every project faces the same constraint. Some need better renewable integration, some struggle with limited grid capacity, some are under pressure to reduce industrial energy costs, and others need temporary or emergency power resilience. It is often easier to identify the right system when you begin with your actual operating condition.",
+        "Not every project faces the same constraint. Some need stronger renewable integration, some struggle with grid limits, some are under pressure to reduce industrial energy costs, and others need temporary or emergency power resilience. On the homepage, each scenario is paired with a solution direction so visitors can move from problem recognition to system thinking more naturally.",
       action: { label: "View Scenario Details", page: "scenarios" },
       guide:
         "Help visitors recognize themselves quickly instead of asking them to decode technical categories first.",
@@ -179,29 +179,33 @@ export const en: SiteContent = {
     },
     services: {
       label: "Services",
-      title: "Service capability that supports long-term operation",
+      title: "Service readiness built for disciplined long-term operation",
       body:
-        "MEGA POWER's support direction emphasizes local readiness, long-term maintainability, and cross-cultural delivery capability with clear attention to Japan market expectations.",
+        "MEGA POWER frames service as an operating capability: local response structure, preventive maintenance, training, spare-parts readiness, and partner collaboration are organized to support long-term project continuity.",
       items: [
         {
-          title: "Localized service logic",
-          body: "Service structure is framed around local response, partner collaboration, and maintainable long-term operation.",
+          title: "Localized service structure",
+          body: "Service delivery is organized around local market understanding, tailored execution, and partner coordination instead of a purely remote support posture.",
         },
         {
-          title: "Cross-cultural communication",
-          body: "Support readiness includes communication trust and operational clarity for international project teams.",
+          title: "Emergency response path",
+          body: "A 7×24 emergency-response model is positioned to support urgent incidents and reduce interruption time for operating sites.",
         },
         {
-          title: "Technical continuity",
-          body: "Continuous updates, preventive maintenance logic, and workflow visibility reduce operational uncertainty.",
+          title: "Preventive maintenance discipline",
+          body: "Periodic inspection, structured maintenance planning, and workflow visibility are used to reduce avoidable failure risk over the long run.",
+        },
+        {
+          title: "Training and spare-parts readiness",
+          body: "Operator training, technical updates, and spare-parts support help customers keep systems stable while lowering avoidable service burden.",
         },
       ],
     },
     cta: {
-      label: "Contact",
-      title: "Start a conversation with MEGA POWER",
-      body: "Discuss your project scope, site conditions, and long-term operating goals with the MEGA POWER team.",
-      action: { label: "Contact Information", page: "contact" },
+      label: "Scenarios",
+      title: "The scenarios page is the best place to continue from here",
+      body: "If you want to move from a high-level company overview into concrete project fit, the scenarios page connects operating environments with solution logic, product families, platform support, and service readiness.",
+      action: { label: "Explore Scenarios", page: "scenarios" },
     },
   },
   scenarios: {
@@ -251,32 +255,36 @@ export const en: SiteContent = {
           { value: "28 Days", label: "BWS advance warning window" },
         ],
         architecture: {
+          kind: "flow",
           label: "System Architecture Snapshot",
           rows: [
             {
+              arrow: "→",
               nodes: [
                 { title: "PV Station", subtitle: "Solar generation" },
-                { title: "Step-up Container", subtitle: "Voltage elevation" },
+                { title: "PV Step-up Container", subtitle: "Voltage elevation" },
                 {
                   title: "PCS Step-up Cabin",
                   subtitle: "Conversion + step-up",
                   tone: "highlight",
                 },
                 { title: "Grid", subtitle: "Utility interconnection" },
-              ],
-            },
-            {
-              nodes: [
-                { title: "Wind Farm", subtitle: "Wind generation" },
-                { title: "Wind Step-up", subtitle: "Collection side" },
                 {
                   title: "MCS / EMS",
-                  subtitle: "Digital dispatch layer",
+                  subtitle: "Digital management layer",
                   tone: "platform",
                 },
               ],
             },
             {
+              arrow: "↗",
+              nodes: [
+                { title: "Wind Farm", subtitle: "Wind generation" },
+                { title: "Wind Step-up", subtitle: "Collection side" },
+              ],
+            },
+            {
+              arrow: "↗",
               nodes: [
                 { title: "Battery Cabin", subtitle: "5015kWh LFP" },
                 {
@@ -352,6 +360,47 @@ export const en: SiteContent = {
           { value: "50Hz", label: "Grid target tracking" },
           { value: "EDR", label: "Full event traceability" },
         ],
+        architecture: {
+          kind: "flow",
+          label: "System Architecture Snapshot",
+          rows: [
+            {
+              align: "center",
+              arrow: "⇌",
+              nodes: [
+                { title: "Grid", subtitle: "Frequency target" },
+                { title: "Step-up Container", subtitle: "Voltage interface" },
+                {
+                  title: "PCS-ES Storage",
+                  subtitle: "Bidirectional power response",
+                  tone: "highlight",
+                },
+              ],
+            },
+            {
+              align: "end",
+              arrow: "⇌",
+              nodes: [
+                {
+                  title: "Dispatch Center",
+                  subtitle: "Instruction source",
+                  tone: "platform",
+                },
+                {
+                  title: "EMS",
+                  subtitle: "Energy management system",
+                  tone: "platform",
+                },
+              ],
+            },
+          ],
+          chips: [
+            { name: "HCS", detail: "Millisecond-class frequency regulation" },
+            { name: "BWS", detail: "Up to 28-day early warning" },
+            { name: "EDR", detail: "Event data traceability" },
+            { name: "OMS", detail: "Work orders and progress tracking" },
+          ],
+        },
         productsLabel: "Mapped Product Families",
         products: [
           {
@@ -416,6 +465,41 @@ export const en: SiteContent = {
           { value: "480kW×N", label: "Heavy-truck supercharging" },
           { value: "1440kW", label: "Power cabinet rated output" },
         ],
+        architecture: {
+          kind: "tiers",
+          label: "Three-tier Charging Station Architecture",
+          tiers: [
+            {
+              icon: "🚗",
+              title: "HPC Power Node",
+              power: "120kW × 2 · Max 200kW",
+              description:
+                "Input power below 50kW, suitable for passenger-car fast charging at community and retail sites.",
+              items: ["Integrated storage charger × N"],
+            },
+            {
+              icon: "🚌",
+              title: "E-Bus Depot",
+              power: "240kW × N",
+              description:
+                "A modular combination of battery cabinets, power cabinets, and charging terminals for depot charging.",
+              items: ["Battery storage cabinet × N", "Power cabinet × N", "Charging terminal × N"],
+            },
+            {
+              icon: "🚛",
+              title: "Megawatt Charging Corridor / XFC",
+              power: "480kW × N",
+              description:
+                "Designed for heavy-truck supercharging and ultra-fast charging hubs with scalable output blocks.",
+              items: ["Battery storage cabinet × N", "Power cabinet × N", "High-power terminal × N"],
+            },
+          ],
+          chips: [
+            { name: "EMS", detail: "Cloud monitoring platform" },
+            { name: "OMS", detail: "Automated work-order flow" },
+            { name: "BTS", detail: "EV battery health analysis", tone: "energy" },
+          ],
+        },
         productsLabel: "Mapped Product Families",
         products: [
           {
@@ -480,6 +564,44 @@ export const en: SiteContent = {
           { value: "6000", label: "Battery cycles at 95% DOD" },
           { value: "A1", label: "Flame-retardant material class" },
         ],
+        architecture: {
+          kind: "turnover",
+          label: "Charge / Discharge Turnover Architecture",
+          topLabel: "Charging Side (Grid End)",
+          topNodes: [
+            { title: "Grid", subtitle: "Utility source" },
+            {
+              title: "Grid-connected Charging Cabin",
+              subtitle: "Charging-side conversion",
+              tone: "highlight",
+            },
+            { title: "Charging Battery Cabin", subtitle: "Charging-oriented" },
+          ],
+          middleNodes: [
+            {
+              title: "Battery Turnover",
+              subtitle: "Swap and circulation",
+              tone: "highlight",
+            },
+            { title: "Backup Battery Cabin", subtitle: "Standby pack" },
+          ],
+          bottomLabel: "Discharging Side (Load End)",
+          bottomNodes: [
+            { title: "Discharging Battery Cabin", subtitle: "Discharging-oriented" },
+            {
+              title: "Off-grid Discharging Cabin",
+              subtitle: "Independent supply",
+              tone: "highlight",
+            },
+            { title: "Load", subtitle: "Site-side consumption" },
+          ],
+          chips: [
+            { name: "SCS", detail: "Sudden-load stability control" },
+            { name: "DMS", detail: "Charge / discharge dispatch management", tone: "energy" },
+            { name: "BWS", detail: "Up to 28-day warning" },
+            { name: "EDR", detail: "Incident traceability" },
+          ],
+        },
         productsLabel: "Mapped Product Families",
         products: [
           {
@@ -544,6 +666,36 @@ export const en: SiteContent = {
           { value: "≥5MWh", label: "Large users with utility-scale cabins × N" },
           { value: "≥88%", label: "System conversion efficiency" },
         ],
+        architecture: {
+          kind: "scale",
+          label: "Configuration by Project Scale",
+          columns: [
+            {
+              title: "≤ 2MWh",
+              subtitle: "Small-scale users",
+              input: "0.4kV input",
+              items: ["261kWh storage cabinet × N"],
+            },
+            {
+              title: "2-10MWh",
+              subtitle: "Medium-scale users",
+              input: "10kV input",
+              items: ["Step-up transformer", "418kWh storage cabinet × N"],
+            },
+            {
+              title: "≥ 5MWh",
+              subtitle: "Large-scale users",
+              input: "≥10kV input",
+              items: ["PCS step-up cabin", "5MWh container × N"],
+            },
+          ],
+          chips: [
+            { name: "EMS", detail: "Cloud monitoring platform" },
+            { name: "ECS", detail: "Intelligent capacity sizing" },
+            { name: "EDR", detail: "Event traceability" },
+            { name: "OMS", detail: "Work-order management" },
+          ],
+        },
         productsLabel: "Mapped Product Families",
         products: [
           {
@@ -712,10 +864,10 @@ export const en: SiteContent = {
       ],
     },
     cta: {
-      label: "Next Step",
-      title: "Review the product families behind these scenario-based systems",
-      body: "After identifying the right operating scenario and solution stack, continue into the product page for parameter sheets and equipment families.",
-      action: { label: "View Products", page: "products" },
+      label: "Platform",
+      title: "The platform page shows how these scenario-based systems are monitored, controlled, and supported in operation",
+      body: "Once the operating scenario is clear, the next useful step is to understand the digital layer behind dispatch, warning, traceability, and O&M workflow.",
+      action: { label: "Explore Platform Capability", page: "platform" },
     },
   },
   solutions: {
@@ -923,10 +1075,10 @@ export const en: SiteContent = {
       ],
     },
     cta: {
-      label: "Trust Layer",
-      title: "See how platform capability connects directly to solution trust logic",
-      body: "Warning, traceability, and workflow design are central to MEGA POWER's trust proposition.",
-      action: { label: "View Scenarios", page: "scenarios" },
+      label: "Products",
+      title: "The product page brings these platform-enabled systems back to the equipment families behind them",
+      body: "After reviewing warning, control, and O&M capability, you can continue into the product families to see how MEGA POWER organizes the hardware layer that supports each solution.",
+      action: { label: "Browse Product Families", page: "products" },
     },
   },
   products: {
@@ -955,10 +1107,10 @@ export const en: SiteContent = {
       bullets: ["Grid and renewable integration", "Fast frequency response", "Weak-grid and high-power charging", "Transportable and emergency deployment", "Commercial and industrial optimization"],
     },
     cta: {
-      label: "Platform + Service",
-      title: "Hardware is paired with digital control and service readiness",
-      body: "Every product family is designed to work with MEGA POWER's digital platform, safety architecture, and long-term service support.",
-      action: { label: "View Services", page: "services" },
+      label: "Services",
+      title: "The service page explains how these product families are supported after delivery",
+      body: "The equipment story is only part of the system value. Service readiness, preventive maintenance, training, and response structure complete the long-term operating picture.",
+      action: { label: "Review Service Readiness", page: "services" },
     },
   },
   safety: {
@@ -1035,10 +1187,10 @@ export const en: SiteContent = {
       bullets: ["Maintainability for long operating horizons", "Structured communication with project stakeholders", "Support readiness under constrained site conditions", "Partner-friendly collaboration logic"],
     },
     cta: {
-      label: "Company",
-      title: "See how service capability fits into MEGA POWER's broader company positioning",
-      body: "The about page connects mission, integrated capability, and long-term service logic into one narrative.",
-      action: { label: "About MEGA POWER", page: "about" },
+      label: "About",
+      title: "The About page connects service capability with MEGA POWER's broader company story",
+      body: "If you want to place delivery, platform, products, and long-term support into one company narrative, the About page brings those elements together more clearly.",
+      action: { label: "Read About MEGA POWER", page: "about" },
     },
   },
   about: {

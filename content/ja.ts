@@ -48,9 +48,9 @@ export const ja: SiteContent = {
     },
     scenarios: {
       label: "Scenarios",
-      title: "実際の運用シナリオから始め、最適なエネルギーソリューションを見極める",
+      title: "運用シナリオから入り、適したソリューションの方向性までつなげて理解する",
       body:
-        "すべての案件が同じ制約を抱えるわけではありません。再エネ連系の安定化が必要な案件もあれば、系統容量の制約、工場の電力コスト圧力、仮設や非常時のレジリエンスが優先される案件もあります。実際の運用条件から出発したほうが、適切なシステムを見つけやすくなります。",
+        "すべての案件が同じ制約を抱えるわけではありません。再エネ連系の安定化が必要な案件もあれば、系統容量の制約、工場の電力コスト圧力、仮設や非常時のレジリエンスが優先される案件もあります。ホームでは各シナリオに対応するソリューションの方向性もあわせて示し、課題認識からシステム理解へ自然につなげます。",
       action: { label: "シナリオ詳細を見る", page: "scenarios" },
       guide:
         "技術分類を先に理解してもらうのではなく、まず自分の課題だと気づいてもらうための入口にします。",
@@ -153,20 +153,21 @@ export const ja: SiteContent = {
     },
     services: {
       label: "Services",
-      title: "長期運用を支えるサービス能力",
+      title: "長期安定運用を前提に設計されたサービス体制",
       body:
-        "MEGA POWER の支援方針は、現地対応、長期保守性、異文化間コミュニケーション、日本市場の期待への適合を重視します。",
+        "MEGA POWER はサービスを運用能力の一部として捉え、ローカル対応体制、予防保全、顧客教育、予備品準備、パートナー連携を長期プロジェクト継続の観点から整えています。",
       items: [
-        { title: "ローカルサービス設計", body: "現地対応、パートナー連携、保守しやすい長期運用を前提に設計します。" },
-        { title: "異文化コミュニケーション", body: "国際プロジェクトでの信頼形成と運用品質を支える要素として扱います。" },
-        { title: "技術継続性", body: "継続的な更新、予防保全、可視化されたワークフローで不確実性を抑えます。" },
+        { title: "ローカル対応のサービス構造", body: "地域市場の理解、案件ごとの実行体制、パートナー連携を前提に、遠隔依存ではないサービス提供を組み立てています。" },
+        { title: "緊急対応の導線", body: "7×24 の緊急対応ロジックを通じて、高優先度の障害に対する初動と復旧時間の短縮を重視しています。" },
+        { title: "予防保全の運用規律", body: "定期点検、計画保守、作業フロー可視化によって、回避可能な故障リスクを長期的に抑えます。" },
+        { title: "教育と予備品準備", body: "顧客教育、継続的な技術支援、重要部材の予備品準備を通じて、安定運用とサービス負荷の低減を図ります。" },
       ],
     },
     cta: {
-      label: "Contact",
-      title: "MEGA POWER との対話を始める",
-      body: "案件条件、導入環境、長期運用の考え方について MEGA POWER と直接ご相談ください。",
-      action: { label: "お問い合わせ情報", page: "contact" },
+      label: "Scenarios",
+      title: "全体像の次に見るなら、具体的な案件適合を確認できるシナリオページが最も自然です",
+      body: "シナリオページでは、実際の運用環境ごとにソリューション構成、製品ファミリー、プラットフォーム支援、サービス体制まで一続きで確認できます。",
+      action: { label: "シナリオを見る", page: "scenarios" },
     },
   },
   scenarios: {
@@ -210,24 +211,28 @@ export const ja: SiteContent = {
           { value: "28 日", label: "BWS 事前警報ウィンドウ" },
         ],
         architecture: {
+          kind: "flow",
           label: "システム構成イメージ",
           rows: [
             {
+              arrow: "→",
               nodes: [
                 { title: "PV Station", subtitle: "Solar generation" },
-                { title: "Step-up Container", subtitle: "Voltage elevation" },
+                { title: "PV Step-up Container", subtitle: "Voltage elevation" },
                 { title: "PCS Step-up Cabin", subtitle: "変換 + 昇圧", tone: "highlight" },
                 { title: "Grid", subtitle: "Utility interconnection" },
+                { title: "MCS / EMS", subtitle: "デジタル管理レイヤー", tone: "platform" },
               ],
             },
             {
+              arrow: "↗",
               nodes: [
                 { title: "Wind Farm", subtitle: "Wind generation" },
                 { title: "Wind Step-up", subtitle: "Collection side" },
-                { title: "MCS / EMS", subtitle: "デジタルディスパッチ", tone: "platform" },
               ],
             },
             {
+              arrow: "↗",
               nodes: [
                 { title: "Battery Cabin", subtitle: "5015kWh LFP" },
                 { title: "PCS Step-up Cabin", subtitle: "変換 + 系統支援", tone: "highlight" },
@@ -293,6 +298,39 @@ export const ja: SiteContent = {
           { value: "50Hz", label: "目標周波数追従" },
           { value: "EDR", label: "全工程イベント記録" },
         ],
+        architecture: {
+          kind: "flow",
+          label: "システム構成イメージ",
+          rows: [
+            {
+              align: "center",
+              arrow: "⇌",
+              nodes: [
+                { title: "Grid", subtitle: "周波数ターゲット" },
+                { title: "Step-up Container", subtitle: "電圧インターフェース" },
+                {
+                  title: "PCS-ES Storage",
+                  subtitle: "双方向電力応答",
+                  tone: "highlight",
+                },
+              ],
+            },
+            {
+              align: "end",
+              arrow: "⇌",
+              nodes: [
+                { title: "Dispatch Center", subtitle: "指令ソース", tone: "platform" },
+                { title: "EMS", subtitle: "エネルギー管理システム", tone: "platform" },
+              ],
+            },
+          ],
+          chips: [
+            { name: "HCS", detail: "ミリ秒級周波数調整" },
+            { name: "BWS", detail: "最長 28 日前警報" },
+            { name: "EDR", detail: "イベントデータ追跡" },
+            { name: "OMS", detail: "作業指示と進捗追跡" },
+          ],
+        },
         productsLabel: "対応製品ファミリー",
         products: [
           {
@@ -351,6 +389,41 @@ export const ja: SiteContent = {
           { value: "480kW×N", label: "大型車超急速充電" },
           { value: "1440kW", label: "パワーキャビネット定格出力" },
         ],
+        architecture: {
+          kind: "tiers",
+          label: "3 段階の充電ステーション構成",
+          tiers: [
+            {
+              icon: "🚗",
+              title: "HPC Power Node",
+              power: "120kW × 2 · MAX 200kW",
+              description:
+                "入力電力が 50kW 未満の条件でも、商業施設や地域拠点で乗用車急速充電に対応します。",
+              items: ["蓄電一体型充電器 × N"],
+            },
+            {
+              icon: "🚌",
+              title: "E-Bus デポ",
+              power: "240kW × N",
+              description:
+                "電池キャビネット、パワーキャビネット、充電端末を組み合わせるモジュール構成です。",
+              items: ["電池キャビネット × N", "パワーキャビネット × N", "充電端末 × N"],
+            },
+            {
+              icon: "🚛",
+              title: "メガワット充電回廊 / XFC",
+              power: "480kW × N",
+              description:
+                "大型車超急速充電や高出力充電ハブ向けの拡張性ある構成です。",
+              items: ["電池キャビネット × N", "パワーキャビネット × N", "高出力端末 × N"],
+            },
+          ],
+          chips: [
+            { name: "EMS", detail: "クラウド監視プラットフォーム" },
+            { name: "OMS", detail: "自動ワークフロー" },
+            { name: "BTS", detail: "EV バッテリー健全性分析", tone: "energy" },
+          ],
+        },
         productsLabel: "対応製品ファミリー",
         products: [
           {
@@ -409,6 +482,40 @@ export const ja: SiteContent = {
           { value: "6000", label: "95%DOD 条件での電池サイクル" },
           { value: "A1", label: "難燃材料クラス" },
         ],
+        architecture: {
+          kind: "turnover",
+          label: "充放電ターンオーバー構成",
+          topLabel: "充電側（系統端）",
+          topNodes: [
+            { title: "Grid", subtitle: "電力ソース" },
+            {
+              title: "Grid-connected Charging Cabin",
+              subtitle: "充電側変換",
+              tone: "highlight",
+            },
+            { title: "Charging Battery Cabin", subtitle: "充電用バッテリー" },
+          ],
+          middleNodes: [
+            { title: "Battery Turnover", subtitle: "バッテリー周転", tone: "highlight" },
+            { title: "Backup Battery Cabin", subtitle: "予備電池" },
+          ],
+          bottomLabel: "放電側（負荷端）",
+          bottomNodes: [
+            { title: "Discharging Battery Cabin", subtitle: "放電用バッテリー" },
+            {
+              title: "Off-grid Discharging Cabin",
+              subtitle: "独立給電",
+              tone: "highlight",
+            },
+            { title: "Load", subtitle: "サイト負荷" },
+          ],
+          chips: [
+            { name: "SCS", detail: "急変負荷安定制御" },
+            { name: "DMS", detail: "充放電ディスパッチ管理", tone: "energy" },
+            { name: "BWS", detail: "28 日前警報" },
+            { name: "EDR", detail: "イベント追跡" },
+          ],
+        },
         productsLabel: "対応製品ファミリー",
         products: [
           {
@@ -467,6 +574,36 @@ export const ja: SiteContent = {
           { value: "≥5MWh", label: "大規模：大容量キャビン × N" },
           { value: "≥88%", label: "システム変換効率" },
         ],
+        architecture: {
+          kind: "scale",
+          label: "規模別の構成アーキテクチャ",
+          columns: [
+            {
+              title: "≤ 2MWh",
+              subtitle: "小規模ユーザー",
+              input: "0.4kV 入力",
+              items: ["261kWh 蓄電キャビネット × N"],
+            },
+            {
+              title: "2-10MWh",
+              subtitle: "中規模ユーザー",
+              input: "10kV 入力",
+              items: ["昇圧変圧器", "418kWh 蓄電キャビネット × N"],
+            },
+            {
+              title: "≥ 5MWh",
+              subtitle: "大規模ユーザー",
+              input: "≥10kV 入力",
+              items: ["PCS 昇圧一体舎", "5MWh コンテナ × N"],
+            },
+          ],
+          chips: [
+            { name: "EMS", detail: "クラウド監視プラットフォーム" },
+            { name: "ECS", detail: "インテリジェント容量算定" },
+            { name: "EDR", detail: "イベント追跡" },
+            { name: "OMS", detail: "作業指示管理" },
+          ],
+        },
         productsLabel: "対応製品ファミリー",
         products: [
           {
@@ -588,10 +725,10 @@ export const ja: SiteContent = {
       bullets: ["系統・負荷条件に合わせた蓄電アーキテクチャ", "警報・監視・追跡性", "容量制約下での充電・制御", "長期運用を前提にしたサービス設計"],
     },
     cta: {
-      label: "Next Step",
-      title: "各シナリオを支える製品ファミリーを見る",
-      body: "シナリオとソリューション構成を確認した後は、製品ページでパラメータシートと機器ファミリーを確認できます。",
-      action: { label: "製品を見る", page: "products" },
+      label: "Platform",
+      title: "プラットフォームページでは、これらのシナリオが運用中にどのように監視・制御・支援されるかを確認できます",
+      body: "シナリオ判断ができた後は、ディスパッチ、警報、追跡性、O&M ワークフローを支えるデジタルレイヤーを見る流れが自然です。",
+      action: { label: "プラットフォームを見る", page: "platform" },
     },
   },
   solutions: {
@@ -779,10 +916,10 @@ export const ja: SiteContent = {
       ],
     },
     cta: {
-      label: "Trust Layer",
-      title: "プラットフォーム能力がソリューションの信頼性にどうつながるかを見る",
-      body: "警報、追跡性、ワークフローは MEGA POWER の信頼価値の中心です。",
-      action: { label: "シナリオを見る", page: "scenarios" },
+      label: "Products",
+      title: "製品ページでは、こうしたプラットフォーム機能を支える設備ファミリーを具体的にたどれます",
+      body: "警報、制御、O&M 能力を確認した後は、それを支える製品ファミリーと構成の考え方を見ると全体像がつながりやすくなります。",
+      action: { label: "製品ファミリーを見る", page: "products" },
     },
   },
   products: {
@@ -811,10 +948,10 @@ export const ja: SiteContent = {
       bullets: ["系統・再エネ連系", "高速調頻", "弱系統・高出力充電", "可搬・非常対応", "C&I 最適化"],
     },
     cta: {
-      label: "Platform + Service",
-      title: "ハードウェアはデジタル制御と保守体制と組で価値を持つ",
-      body: "各製品ファミリーは、MEGA POWER のデジタルプラットフォーム、安全設計、長期サポート体制と連動して価値を発揮します。",
-      action: { label: "サービスを見る", page: "services" },
+      label: "Services",
+      title: "サービスページでは、これらの製品が納入後にどのような体制で支えられるかを確認できます",
+      body: "設備そのものに加えて、教育、予防保全、予備品、対応導線まで含めて見ることで、長期運用のイメージがより明確になります。",
+      action: { label: "サービス体制を見る", page: "services" },
     },
   },
   safety: {
@@ -891,10 +1028,10 @@ export const ja: SiteContent = {
       bullets: ["長期運用に耐える保守性", "関係者との構造化された対話", "狭小地条件下での支援準備", "パートナー協業しやすい運用"],
     },
     cta: {
-      label: "Company",
-      title: "サービス能力を会社全体の位置付けで見る",
-      body: "会社情報ページでは、ミッション、統合能力、長期サービスロジックをまとめます。",
-      action: { label: "会社情報へ", page: "about" },
+      label: "About",
+      title: "About ページでは、サービス体制を含めた MEGA POWER 全体の会社像をより自然につなげて見られます",
+      body: "製品、プラットフォーム、導入支援、長期サービスを一つの会社ストーリーとして確認したい場合は、About ページが次の入口になります。",
+      action: { label: "About ページへ", page: "about" },
     },
   },
   about: {

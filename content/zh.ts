@@ -48,9 +48,9 @@ export const zh: SiteContent = {
     },
     scenarios: {
       label: "应用场景",
-      title: "先从真实运行场景出发，再判断最适合的能源解决方案",
+      title: "先从运行场景出发，再理解更适合的解决路径",
       body:
-        "并不是每个项目面对的约束都相同。有些项目首先要解决新能源并网波动，有些受限于电网容量，有些承受工商业降本压力，还有一些更关注临时或应急供电韧性。从真实运行条件出发，往往更容易识别最合适的系统方案。",
+        "并不是每个项目面对的约束都相同。有些项目首先要解决新能源并网波动，有些受限于电网容量，有些承受工商业降本压力，还有一些更关注临时或应急供电韧性。首页会把场景判断与对应的解决方向放在一起，让访问者更自然地从问题识别走向系统理解。",
       action: { label: "查看应用场景", page: "scenarios" },
       guide:
         "让访问者先识别自己的运行问题，而不是先去理解技术分类。",
@@ -147,20 +147,21 @@ export const zh: SiteContent = {
     },
     services: {
       label: "Services",
-      title: "支撑长期运行的服务能力",
+      title: "面向长期稳定运行构建的服务准备",
       body:
-        "MEGA POWER 的服务表达强调本地化准备、长期可维护性、跨文化交付能力，并特别关注日本市场的要求。",
+        "MEGA POWER 将服务定义为运行能力的一部分，本地响应组织、预防性维护、客户培训、备件准备和伙伴协同都围绕长期项目连续性展开。",
       items: [
-        { title: "本地化服务逻辑", body: "围绕本地响应、伙伴协同和长期可维护运行来组织服务能力。" },
-        { title: "跨文化沟通", body: "把沟通信任与协同清晰度视为国际项目交付的重要部分。" },
-        { title: "技术连续性", body: "通过持续更新、预防性维护与流程可视化降低运行不确定性。" },
+        { title: "本地化服务结构", body: "围绕本地市场理解、定制化执行和伙伴协同来组织服务能力，而不是完全依赖远程支持。" },
+        { title: "紧急响应路径", body: "以 7×24 紧急响应逻辑支撑高优先级事件处理，尽量缩短运行中断时间。" },
+        { title: "预防性维护纪律", body: "通过周期巡检、计划性维护和流程可视化降低可避免的故障风险。" },
+        { title: "培训与备件准备", body: "通过客户培训、持续技术支持和关键备件准备，帮助系统保持稳定运行并降低误操作带来的服务负担。" },
       ],
     },
     cta: {
-      label: "Contact",
-      title: "与 MEGA POWER 开启业务沟通",
-      body: "欢迎与 MEGA POWER 沟通项目需求、部署条件与长期运营目标。",
-      action: { label: "联系信息", page: "contact" },
+      label: "Scenarios",
+      title: "如果你想从概览继续进入更具体的项目判断，最适合下一步查看的是应用场景页面",
+      body: "在那里可以直接看到不同运行环境对应的解决方案逻辑、产品家族、平台支撑和服务准备，更容易判断哪些系统更适合你的项目。",
+      action: { label: "查看应用场景", page: "scenarios" },
     },
   },
   scenarios: {
@@ -204,24 +205,28 @@ export const zh: SiteContent = {
           { value: "28 天", label: "BWS 提前预警窗口" },
         ],
         architecture: {
+          kind: "flow",
           label: "系统架构概览",
           rows: [
             {
+              arrow: "→",
               nodes: [
-                { title: "光伏电站", subtitle: "Solar generation" },
-                { title: "升压集装箱", subtitle: "Voltage elevation" },
+                { title: "光伏电站", subtitle: "PV Station" },
+                { title: "PV 升压舱", subtitle: "Step-up Container" },
                 { title: "PCS 升压一体舱", subtitle: "变流 + 升压", tone: "highlight" },
-                { title: "电网", subtitle: "Utility interconnection" },
+                { title: "电网", subtitle: "Grid" },
+                { title: "MCS / EMS", subtitle: "数字管理平台", tone: "platform" },
               ],
             },
             {
+              arrow: "↗",
               nodes: [
-                { title: "风力发电", subtitle: "Wind generation" },
-                { title: "风电升压", subtitle: "Collection side" },
-                { title: "MCS / EMS", subtitle: "数字调度平台", tone: "platform" },
+                { title: "风力发电", subtitle: "Wind Farm" },
+                { title: "Wind 升压舱", subtitle: "Step-up Container" },
               ],
             },
             {
+              arrow: "↗",
               nodes: [
                 { title: "电池储能舱", subtitle: "5015kWh LFP" },
                 { title: "PCS 升压一体舱", subtitle: "变流 + 电网支撑", tone: "highlight" },
@@ -287,6 +292,35 @@ export const zh: SiteContent = {
           { value: "50Hz", label: "目标频率跟踪" },
           { value: "EDR", label: "全过程事件留痕" },
         ],
+        architecture: {
+          kind: "flow",
+          label: "系统架构概览",
+          rows: [
+            {
+              align: "center",
+              arrow: "⇌",
+              nodes: [
+                { title: "电网", subtitle: "Grid" },
+                { title: "升压舱", subtitle: "Step-up Container" },
+                { title: "PCS-ES 变流储能", subtitle: "Battery Storage Container", tone: "highlight" },
+              ],
+            },
+            {
+              align: "end",
+              arrow: "⇌",
+              nodes: [
+                { title: "调度中心", subtitle: "Dispatch Center", tone: "platform" },
+                { title: "EMS", subtitle: "能量管理系统", tone: "platform" },
+              ],
+            },
+          ],
+          chips: [
+            { name: "HCS", detail: "毫秒级频率调节" },
+            { name: "BWS", detail: "28 天提前预警" },
+            { name: "EDR", detail: "事件数据追溯" },
+            { name: "OMS", detail: "工单与进度跟踪" },
+          ],
+        },
         productsLabel: "对应产品家族",
         products: [
           {
@@ -345,6 +379,38 @@ export const zh: SiteContent = {
           { value: "480kW×N", label: "重卡超充配置" },
           { value: "1440kW", label: "功率柜额定输出" },
         ],
+        architecture: {
+          kind: "tiers",
+          label: "三级充电站配置架构",
+          tiers: [
+            {
+              icon: "🚗",
+              title: "HPC Power Node",
+              power: "120kW × 2 · MAX 200kW",
+              description: "输入功率 <50kW，适用于社区、商超等场景的乘用车快充配置。",
+              items: ["储充一体机 × N"],
+            },
+            {
+              icon: "🚌",
+              title: "E-Bus 公交场站",
+              power: "240kW × N",
+              description: "由电池储能柜、功率柜和充电终端组成的模块化组合。",
+              items: ["电池储能柜 × N", "功率柜 × N", "充电终端 × N"],
+            },
+            {
+              icon: "🚛",
+              title: "兆瓦充电走廊 / XFC",
+              power: "480kW × N",
+              description: "面向重卡超充和超快充电力园区的可扩展配置。",
+              items: ["电池储能柜 × N", "功率柜 × N", "大功率终端 × N"],
+            },
+          ],
+          chips: [
+            { name: "EMS", detail: "云端监控平台" },
+            { name: "OMS", detail: "自动工单流程" },
+            { name: "BTS", detail: "EV 电池健康分析", tone: "energy" },
+          ],
+        },
         productsLabel: "对应产品家族",
         products: [
           {
@@ -403,6 +469,32 @@ export const zh: SiteContent = {
           { value: "6000", label: "95%DOD 条件下电池循环次数" },
           { value: "A1", label: "阻燃材料等级" },
         ],
+        architecture: {
+          kind: "turnover",
+          label: "充放电周转架构",
+          topLabel: "充电侧（电网端）",
+          topNodes: [
+            { title: "电网", subtitle: "Grid" },
+            { title: "并网充电舱", subtitle: "Grid-connected Charging", tone: "highlight" },
+            { title: "充电电池舱", subtitle: "Charging-oriented" },
+          ],
+          middleNodes: [
+            { title: "电池周转", subtitle: "Battery Turnover", tone: "highlight" },
+            { title: "备用电池舱", subtitle: "Backup Battery" },
+          ],
+          bottomLabel: "放电侧（负载端）",
+          bottomNodes: [
+            { title: "放电电池舱", subtitle: "Discharging-oriented" },
+            { title: "离网放电舱", subtitle: "Off-grid Discharging", tone: "highlight" },
+            { title: "负载", subtitle: "Load" },
+          ],
+          chips: [
+            { name: "SCS", detail: "突变负载稳定控制" },
+            { name: "DMS", detail: "充放电调度管理", tone: "energy" },
+            { name: "BWS", detail: "28 天预警" },
+            { name: "EDR", detail: "事件追溯" },
+          ],
+        },
         productsLabel: "对应产品家族",
         products: [
           {
@@ -461,6 +553,36 @@ export const zh: SiteContent = {
           { value: "≥5MWh", label: "大型用户：大储舱 × N" },
           { value: "≥88%", label: "系统转换效率" },
         ],
+        architecture: {
+          kind: "scale",
+          label: "按规模配置架构",
+          columns: [
+            {
+              title: "≤ 2MWh",
+              subtitle: "小型用户",
+              input: "0.4kV 输入",
+              items: ["261kWh 储能柜 × N"],
+            },
+            {
+              title: "2-10MWh",
+              subtitle: "中型用户",
+              input: "10kV 输入",
+              items: ["升压变压器", "418kWh 储能柜 × N"],
+            },
+            {
+              title: "≥ 5MWh",
+              subtitle: "大型用户",
+              input: "≥10kV 输入",
+              items: ["PCS 升压一体舱", "5MWh 集装箱 × N"],
+            },
+          ],
+          chips: [
+            { name: "EMS", detail: "云端监控平台" },
+            { name: "ECS", detail: "智能容量测算" },
+            { name: "EDR", detail: "事件追溯" },
+            { name: "OMS", detail: "工单管理" },
+          ],
+        },
         productsLabel: "对应产品家族",
         products: [
           {
@@ -582,10 +704,10 @@ export const zh: SiteContent = {
       bullets: ["按电网或站点条件匹配储能架构", "预警、监控与事件追溯", "在容量受限条件下实现充电与调度控制", "面向长期运行的服务准备"],
     },
     cta: {
-      label: "Next Step",
-      title: "继续查看支撑这些场景系统的产品家族",
-      body: "确定了场景和解决方案组合之后，可以继续进入产品页查看参数图和设备家族。",
-      action: { label: "查看产品", page: "products" },
+      label: "Platform",
+      title: "平台能力页面会进一步说明这些场景系统在运行中的监控、控制与支撑逻辑",
+      body: "当场景判断已经明确，下一步更值得看的，是背后的数字化能力如何参与调度、预警、追溯和运维流程。",
+      action: { label: "查看平台能力", page: "platform" },
     },
   },
   solutions: {
@@ -773,10 +895,10 @@ export const zh: SiteContent = {
       ],
     },
     cta: {
-      label: "Trust Layer",
-      title: "查看平台能力如何连接解决方案中的信任与保障逻辑",
-      body: "预警、追溯与流程设计是 MEGA POWER 建立信任的重要基础。",
-      action: { label: "查看应用场景", page: "scenarios" },
+      label: "Products",
+      title: "产品页面会把这些平台能力背后的设备家族进一步展开",
+      body: "看完预警、控制和运维能力之后，可以继续到产品页面了解支撑这些方案的设备家族和核心配置方式。",
+      action: { label: "浏览产品家族", page: "products" },
     },
   },
   products: {
@@ -805,10 +927,10 @@ export const zh: SiteContent = {
       bullets: ["电网与新能源并网", "快速调频", "弱电网与大功率充电", "可运输与应急部署", "工商业优化"],
     },
     cta: {
-      label: "Platform + Service",
-      title: "硬件能力必须与数字控制和服务准备一起看",
-      body: "每个产品家族都与 MEGA POWER 的数字平台、安全架构和长期服务支持协同工作。",
-      action: { label: "查看服务", page: "services" },
+      label: "Services",
+      title: "服务页面会进一步说明这些产品在交付后的支持方式",
+      body: "设备只是系统的一部分，培训、预防性维护、备件准备和响应机制共同决定了长期运行体验。",
+      action: { label: "查看服务能力", page: "services" },
     },
   },
   safety: {
@@ -885,10 +1007,10 @@ export const zh: SiteContent = {
       bullets: ["面向长期运行的可维护性", "与项目相关方的结构化沟通", "受限场地下的支持准备", "适合伙伴协同的服务逻辑"],
     },
     cta: {
-      label: "Company",
-      title: "从公司定位角度理解服务能力",
-      body: "关于页面将把使命、综合能力与长期服务逻辑连接为一个整体叙事。",
-      action: { label: "关于 MEGA POWER", page: "about" },
+      label: "About",
+      title: "About 页面会把服务能力放回到 MEGA POWER 的整体公司定位中",
+      body: "如果你想从更完整的公司视角理解交付、平台、产品和长期支持之间的关系，可以继续查看 About 页面。",
+      action: { label: "查看 About 页面", page: "about" },
     },
   },
   about: {

@@ -100,10 +100,10 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
                   <button
                     key={filter.key}
                     className={[
-                      "rounded-[8px] border px-4 py-2 text-sm font-semibold",
+                      "rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-300",
                       active
-                        ? "border-mega-accent bg-mega-accent text-mega-dark shadow-accent"
-                        : "border-white/10 bg-white/5 text-mega-muted hover:border-mega-accent/40 hover:bg-mega-accent/10 hover:text-white",
+                        ? "border-mega-accent bg-mega-accent text-mega-dark"
+                        : "border-white/10 bg-white/5 text-mega-muted hover:border-mega-accent/40 hover:text-white",
                     ].join(" ")}
                     onClick={() => setSelected(filter.key)}
                     type="button"

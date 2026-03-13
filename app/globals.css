@@ -151,11 +151,49 @@ body {
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-[6px] bg-mega-accent px-8 py-[14px] text-[0.95rem] font-bold text-mega-dark shadow-accent hover:-translate-y-0.5 hover:bg-[#3eeab8];
+    @apply inline-flex items-center justify-center rounded-[10px] px-8 py-[15px] text-[0.95rem] font-extrabold text-[#071926] transition duration-200 hover:-translate-y-0.5;
+    background-image: linear-gradient(90deg, #35e0c8 0%, #4ba8ff 100%);
+    box-shadow: 0 12px 28px rgba(28, 149, 255, 0.18);
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center rounded-[6px] border-2 border-mega-accent px-8 py-[14px] text-[0.95rem] font-semibold text-mega-accent hover:-translate-y-0.5 hover:bg-mega-accent hover:text-mega-dark;
+    @apply inline-flex items-center justify-center rounded-[10px] border px-8 py-[15px] text-[0.95rem] font-extrabold text-white transition duration-200 hover:-translate-y-0.5;
+    border-color: rgba(103, 155, 214, 0.6);
+    background: linear-gradient(180deg, rgba(10, 30, 56, 0.9), rgba(8, 23, 42, 0.92));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .home-button-primary {
+    @apply inline-flex items-center justify-center rounded-[10px] px-8 py-[15px] text-[0.95rem] font-extrabold text-[#071926] transition duration-200 hover:-translate-y-0.5;
+    background-image: linear-gradient(90deg, #35e0c8 0%, #4ba8ff 100%);
+    box-shadow: 0 12px 28px rgba(28, 149, 255, 0.18);
+  }
+
+  .home-button-primary:hover {
+    box-shadow: 0 16px 34px rgba(28, 149, 255, 0.24);
+    filter: brightness(1.03);
+  }
+
+  .home-button-secondary {
+    @apply inline-flex items-center justify-center rounded-[10px] border px-8 py-[15px] text-[0.95rem] font-extrabold text-white transition duration-200 hover:-translate-y-0.5;
+    border-color: rgba(103, 155, 214, 0.6);
+    background: linear-gradient(180deg, rgba(10, 30, 56, 0.9), rgba(8, 23, 42, 0.92));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .home-button-secondary:hover {
+    border-color: rgba(133, 184, 241, 0.78);
+    background: linear-gradient(180deg, rgba(12, 35, 64, 0.94), rgba(9, 26, 48, 0.96));
+  }
+
+  .button-primary:hover {
+    box-shadow: 0 16px 34px rgba(28, 149, 255, 0.24);
+    filter: brightness(1.03);
+  }
+
+  .button-secondary:hover {
+    border-color: rgba(133, 184, 241, 0.78);
+    background: linear-gradient(180deg, rgba(12, 35, 64, 0.94), rgba(9, 26, 48, 0.96));
   }
 
   .cta-surface {

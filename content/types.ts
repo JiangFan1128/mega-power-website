@@ -84,14 +84,70 @@ export type ScenarioDecisionArchitectureNode = {
   tone?: "default" | "highlight" | "platform";
 };
 
-export type ScenarioDecisionArchitectureRow = {
+export type ScenarioDecisionArchitectureFlowRow = {
   nodes: ScenarioDecisionArchitectureNode[];
+  align?: "start" | "center" | "end";
+  arrow?: string;
 };
 
-export type ScenarioDecisionArchitecture = {
-  label: string;
-  rows: ScenarioDecisionArchitectureRow[];
+export type ScenarioDecisionArchitectureChip = {
+  name: string;
+  detail: string;
+  tone?: "accent" | "energy" | "warning";
 };
+
+export type ScenarioDecisionArchitectureFlow = {
+  kind: "flow";
+  label: string;
+  rows: ScenarioDecisionArchitectureFlowRow[];
+  chips?: ScenarioDecisionArchitectureChip[];
+};
+
+export type ScenarioDecisionArchitectureScaleColumn = {
+  title: string;
+  subtitle: string;
+  input: string;
+  items: string[];
+};
+
+export type ScenarioDecisionArchitectureScale = {
+  kind: "scale";
+  label: string;
+  columns: ScenarioDecisionArchitectureScaleColumn[];
+  chips?: ScenarioDecisionArchitectureChip[];
+};
+
+export type ScenarioDecisionArchitectureTier = {
+  icon: string;
+  title: string;
+  power: string;
+  description: string;
+  items: string[];
+};
+
+export type ScenarioDecisionArchitectureTiers = {
+  kind: "tiers";
+  label: string;
+  tiers: ScenarioDecisionArchitectureTier[];
+  chips?: ScenarioDecisionArchitectureChip[];
+};
+
+export type ScenarioDecisionArchitectureTurnover = {
+  kind: "turnover";
+  label: string;
+  topLabel: string;
+  topNodes: ScenarioDecisionArchitectureNode[];
+  middleNodes: ScenarioDecisionArchitectureNode[];
+  bottomLabel: string;
+  bottomNodes: ScenarioDecisionArchitectureNode[];
+  chips?: ScenarioDecisionArchitectureChip[];
+};
+
+export type ScenarioDecisionArchitecture =
+  | ScenarioDecisionArchitectureFlow
+  | ScenarioDecisionArchitectureScale
+  | ScenarioDecisionArchitectureTiers
+  | ScenarioDecisionArchitectureTurnover;
 
 export type ScenarioDecisionPanel = {
   key: string;

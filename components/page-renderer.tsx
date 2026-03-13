@@ -33,6 +33,29 @@ function SectionIntro({ section }: { section: SectionLead }) {
   );
 }
 
+function ProductSectionIntro({
+  locale,
+  section,
+}: {
+  locale: Locale;
+  section: SectionLead;
+}) {
+  const actionLabel = {
+    en: "View Products",
+    ja: "製品ページへ",
+    zh: "查看产品页",
+  }[locale];
+
+  return (
+    <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <SectionIntro section={section} />
+      <Link className="home-button-secondary shrink-0" href={pageKeyToHref(locale, "products")}>
+        {actionLabel}
+      </Link>
+    </div>
+  );
+}
+
 function ServiceIconBase({
   children,
 }: {
@@ -158,10 +181,12 @@ function HomeScenarioPreviewGrid({
   items,
   locale,
   action,
+  solutionItems,
 }: {
   items: ScenarioCard[];
   locale: Locale;
   action?: { label: string; page: PageKey };
+  solutionItems: SolutionItem[];
 }) {
   const cardCopy = {
     en: "Explore all scenarios.",
@@ -173,43 +198,83 @@ function HomeScenarioPreviewGrid({
     ja: "ページを見る",
     zh: "进入页面",
   }[locale];
+  const pathLabel = {
+    en: "Recommended Path",
+    ja: "推奨ソリューション",
+    zh: "推荐解决路径",
+  }[locale];
+  const pathSummaryLabel = {
+    en: "How MEGA POWER typically responds",
+    ja: "MEGA POWER の基本対応",
+    zh: "MEGA POWER 的典型响应",
+  }[locale];
+  const solutionOrder = [0, 1, 2, 3, 4];
 
   return (
     <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-      {items.map((item) => (
-        <article
-          key={item.title}
-          className="panel rounded-[18px] border border-[#35577f]/65 bg-[linear-gradient(150deg,rgba(18,34,56,0.96),rgba(23,50,82,0.84))] p-5"
-        >
-          <div className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-mega-accent/12 bg-mega-accent/10 font-mono text-[0.76rem] font-bold uppercase tracking-[0.16em] text-mega-accent">
-            {item.badge ?? item.title.slice(0, 2)}
-          </div>
-          <h3 className="mt-5 text-[1.28rem] font-bold leading-[1.28] tracking-[-0.025em] text-white">
-            {item.title}
-          </h3>
-          <p className="mt-3 text-[0.95rem] leading-[1.72] text-mega-muted">
-            {item.preview ?? item.summary}
-          </p>
-        </article>
-      ))}
+      {items.map((item, index) => {
+        const solution = solutionItems[solutionOrder[index]];
+
+        return (
+          <article
+            key={item.title}
+            className="panel flex min-h-[21.5rem] flex-col rounded-[18px] border border-[#35577f]/65 bg-[linear-gradient(150deg,rgba(18,34,56,0.96),rgba(23,50,82,0.84))] p-5"
+          >
+            <div className="space-y-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-mega-accent/12 bg-mega-accent/10 font-mono text-[0.76rem] font-bold uppercase tracking-[0.16em] text-mega-accent">
+                {item.badge ?? item.title.slice(0, 2)}
+              </div>
+              <h3 className="text-[1.22rem] font-bold leading-[1.28] tracking-[-0.025em] text-white">
+                {item.title}
+              </h3>
+              <p className="text-[0.92rem] leading-[1.68] text-mega-muted">
+                {item.preview ?? item.summary}
+              </p>
+            </div>
+            {solution ? (
+              <div className="mt-auto pt-5">
+                <div className="flex min-h-[7.25rem] flex-col rounded-[12px] border border-mega-accent/12 bg-[rgba(8,17,32,0.35)] p-4">
+                  <div className="font-mono text-[0.66rem] uppercase tracking-[0.14rem] text-mega-accent">
+                    {pathLabel}
+                  </div>
+                  <div className="mt-2 text-[0.95rem] font-semibold leading-[1.35] text-white">
+                    {solution.title}
+                  </div>
+                  <p className="mt-2 text-[0.82rem] leading-[1.55] text-mega-muted">
+                    {solution.summary}
+                  </p>
+                </div>
+              </div>
+            ) : null}
+          </article>
+        );
+      })}
       {action ? (
         <Link
-          className="group flex min-h-[14.5rem] flex-col justify-between rounded-[18px] border border-[#4f709a]/85 bg-[linear-gradient(145deg,rgba(9,19,34,0.98),rgba(17,35,60,0.98))] p-5 shadow-[0_24px_54px_rgba(0,0,0,0.34)] transition hover:-translate-y-1 hover:border-mega-energy/45 hover:bg-[linear-gradient(145deg,rgba(11,23,40,0.99),rgba(20,40,68,0.99))]"
+          className="group relative flex min-h-[21.5rem] flex-col overflow-hidden rounded-[18px] border border-[#4f709a]/80 bg-[linear-gradient(135deg,rgba(12,64,69,0.92),rgba(10,29,49,0.96)_62%,rgba(8,22,39,0.98))] p-5 shadow-[0_24px_54px_rgba(0,0,0,0.34)] transition hover:-translate-y-1 hover:border-mega-energy/45"
           href={pageKeyToHref(locale, action.page)}
         >
-          <div className="flex h-11 w-11 items-center justify-center rounded-[10px] border border-mega-accent/20 bg-mega-accent/12 text-[1rem] font-bold text-mega-accent">
-            {"->"}
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_24%_22%,rgba(45,212,168,0.16),transparent_34%),radial-gradient(circle_at_82%_78%,rgba(0,229,255,0.12),transparent_28%)] opacity-95" />
+          <div className="relative flex items-start justify-between gap-4">
+            <div className="relative flex h-11 w-11 items-center justify-center rounded-[10px] border border-mega-accent/22 bg-[rgba(8,35,43,0.42)] text-[1rem] font-bold text-mega-accent shadow-[0_0_0_1px_rgba(45,212,168,0.04)]">
+              {"->"}
+            </div>
+            <div className="relative font-mono text-[0.74rem] uppercase tracking-[0.16rem] text-mega-accent/95 transition group-hover:text-mega-energy">
+              {openLabel}
+            </div>
           </div>
-          <div className="space-y-3">
+          <div className="relative mt-4 space-y-3">
             <h3 className="text-[1.45rem] font-extrabold leading-[1.18] tracking-[-0.03em] text-white">
               {action.label}
             </h3>
-            <p className="max-w-[18rem] text-[0.92rem] leading-[1.65] text-mega-text/72">
+            <p className="max-w-[18rem] text-[0.92rem] leading-[1.65] text-mega-text/80">
               {cardCopy}
             </p>
           </div>
-          <div className="font-mono text-[0.74rem] uppercase tracking-[0.16rem] text-mega-accent/90 transition group-hover:text-mega-energy">
-            {openLabel}
+          <div className="relative mt-auto pt-5">
+            <div className="flex min-h-[7.25rem] flex-col rounded-[12px] border border-mega-accent/14 bg-[rgba(7,23,39,0.34)] p-4 text-[0.8rem] leading-[1.55] text-[#a9d8d8]">
+              {pathSummaryLabel}
+            </div>
           </div>
         </Link>
       ) : null}
@@ -355,14 +420,14 @@ function Hero({ hero, locale }: { hero: HeroContent; locale: Locale }) {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                className="button-primary"
+                className="home-button-primary"
                 href={pageKeyToHref(locale, hero.primaryCta.page)}
               >
                 {hero.primaryCta.label}
               </Link>
               {hero.secondaryCta ? (
                 <Link
-                  className="button-secondary"
+                  className="home-button-secondary"
                   href={pageKeyToHref(locale, hero.secondaryCta.page)}
                 >
                   {hero.secondaryCta.label}
@@ -978,12 +1043,14 @@ function CTASection({
   body,
   label,
   action,
+  buttonClassName = "button-primary",
 }: {
   locale: Locale;
   title: string;
   body: string;
   label: string;
   action: { label: string; page: PageKey };
+  buttonClassName?: string;
 }) {
   return (
     <section className="section-space">
@@ -995,7 +1062,7 @@ function CTASection({
               <h2 className="section-title">{title}</h2>
               <p className="section-subtitle">{body}</p>
             </div>
-            <Link className="button-primary" href={pageKeyToHref(locale, action.page)}>
+            <Link className={buttonClassName} href={pageKeyToHref(locale, action.page)}>
               {action.label}
             </Link>
           </div>
@@ -1023,14 +1090,8 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
             action={content.home.scenarios.action}
             items={content.home.scenarios.items}
             locale={locale}
+            solutionItems={content.home.solutions.items}
           />
-        </div>
-      </section>
-
-      <section className="section-space bg-black/10">
-        <div className="shell space-y-8">
-          <SectionIntro section={content.home.solutions} />
-          <SolutionGrid items={content.home.solutions.items} />
         </div>
       </section>
 
@@ -1060,32 +1121,15 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
 
       <section className="section-space bg-black/10">
         <div className="shell space-y-8">
-          <SectionIntro section={content.home.products} />
+          <ProductSectionIntro locale={locale} section={content.home.products} />
           <ProductFamilyTabs locale={locale} />
-        </div>
-      </section>
-
-      <section className="section-space">
-        <div className="shell grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-          <BulletPanel
-            body={content.home.safety.body}
-            bullets={content.home.safety.bullets}
-            label={content.home.safety.label}
-            title={content.home.safety.title}
-          />
-          <BulletPanel
-            body={content.services.japan.body}
-            bullets={content.services.japan.bullets}
-            label={content.services.japan.label}
-            title={content.home.services.title}
-          />
         </div>
       </section>
 
       <section className="section-space">
         <div className="shell space-y-8">
           <SectionIntro section={content.home.services} />
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {content.home.services.items.map((item) => (
               <article key={item.title} className="panel p-6">
                 <h3 className="text-[0.95rem] font-bold text-white">{item.title}</h3>
@@ -1117,6 +1161,7 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
 
       <CTASection
         action={content.home.cta.action}
+        buttonClassName="home-button-primary"
         body={content.home.cta.body}
         label={content.home.cta.label}
         locale={locale}
