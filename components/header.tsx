@@ -57,28 +57,20 @@ export function Header({ locale, navigation }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b1a1fcc] backdrop-blur-xl">
       <div className="mx-auto flex min-h-20 w-full items-center justify-between gap-4 px-5 lg:grid lg:min-h-[5.25rem] lg:grid-cols-[minmax(15rem,1fr)_auto_minmax(15rem,1fr)] lg:items-center lg:px-8 xl:px-10 2xl:px-14">
-        <Link className="flex shrink-0 items-center gap-3 lg:justify-self-start" href={`/${locale}`}>
-          <span className="relative block h-10 w-[3.3rem] shrink-0">
+        <Link className="flex shrink-0 items-center gap-0 lg:justify-self-start" href={`/${locale}`}>
+          <span className="relative block h-[3.05rem] w-[3.7rem] shrink-0">
             <Image
               alt="MEGA POWER logo"
               className="object-contain"
               fill
               priority
-              sizes="52px"
+              sizes="60px"
               src="/images/brand/mega-power-logo.png"
             />
           </span>
-          <div>
-            <div className="text-[1.3rem] font-extrabold leading-none tracking-[-0.5px] text-white">
-              MEGA POWER
-            </div>
-            <div
-              className={[
-                "font-mono text-[0.68rem] uppercase tracking-[0.22rem] text-mega-muted",
-                compactHeader ? "hidden 2xl:block" : "",
-              ].join(" ")}
-            >
-              Digital Green Energy
+          <div className="flex min-h-10 items-center">
+            <div className="whitespace-nowrap text-[1.04rem] font-semibold leading-none tracking-[0.03em] text-white xl:text-[1.1rem]">
+              MEGA POWER TECHNOLOGY
             </div>
           </div>
         </Link>

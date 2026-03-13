@@ -41,22 +41,19 @@ export function Footer({ locale, content }: FooterProps) {
     <footer className="border-t border-white/10 bg-black/20">
       <div className="shell grid gap-12 py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:items-start lg:gap-16">
         <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <span className="relative block h-10 w-[3.3rem] shrink-0">
+          <div className="flex items-center gap-0">
+            <span className="relative block h-[3.05rem] w-[3.7rem] shrink-0">
               <Image
                 alt="MEGA POWER logo"
                 className="object-contain"
                 fill
-                sizes="52px"
+                sizes="60px"
                 src="/images/brand/mega-power-logo.png"
               />
             </span>
-            <div>
-              <div className="text-[1.3rem] font-extrabold leading-none tracking-[-0.5px] text-white">
-                MEGA POWER
-              </div>
-              <div className="font-mono text-[0.68rem] uppercase tracking-[0.22rem] text-mega-muted">
-                Integrated Energy Systems
+            <div className="flex min-h-10 items-center">
+              <div className="whitespace-nowrap text-[1.04rem] font-semibold leading-none tracking-[0.03em] text-white xl:text-[1.1rem]">
+                MEGA POWER TECHNOLOGY
               </div>
             </div>
           </div>
