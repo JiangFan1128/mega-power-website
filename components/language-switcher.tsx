@@ -4,6 +4,8 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { locales, type Locale } from "@/lib/i18n";
 
+const visibleLocales = locales.filter((locale) => locale !== "zh");
+
 type LanguageSwitcherProps = {
   currentLocale: Locale;
   labels: Record<Locale, string>;
@@ -15,6 +17,7 @@ export function LanguageSwitcher({
 }: LanguageSwitcherProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const selectValue = currentLocale === "zh" ? "" : currentLocale;
 
   const currentPath =
     pathname.startsWith(`/${currentLocale}`)
@@ -33,9 +36,14 @@ export function LanguageSwitcher({
             const nextLocale = event.target.value as Locale;
             router.push(`/${nextLocale}${currentPath}`);
           }}
-          value={currentLocale}
+          value={selectValue}
         >
-          {locales.map((locale) => (
+          {currentLocale === "zh" ? (
+            <option className="toolbar-option" disabled hidden value="">
+              Language
+            </option>
+          ) : null}
+          {visibleLocales.map((locale) => (
             <option className="toolbar-option" key={locale} value={locale}>
               {labels[locale]}
             </option>
