@@ -18,7 +18,7 @@ export const en: SiteContent = {
       "MEGA POWER positions energy storage, charging, digital control, and long-term service as one integrated operating system for green energy deployment.",
     address: "TWG Kojimachi 5F, 3-10-1 Kojimachi, Chiyoda-ku, Tokyo 102-0083, Japan",
     note:
-      "MEGA POWER brings together system architecture, digital control, and long-term service support for modern energy deployment.",
+    "MEGA POWER combines system architecture, digital control, and long-term service support for modern energy deployment.",
   },
   home: {
     metadata: {
@@ -48,7 +48,7 @@ export const en: SiteContent = {
     },
     scenarios: {
       label: "Scenarios",
-      title: "Start with the operating scenario, then understand the solution path that fits best",
+      title: "Find the right solution path for your operating scenario",
       body:
         "Not every project faces the same constraint. Some need stronger renewable integration, some struggle with grid limits, some are under pressure to reduce industrial energy costs, and others need temporary or emergency power resilience. On the homepage, each scenario is paired with a solution direction so visitors can move from problem recognition to system thinking more naturally.",
       action: { label: "View Scenario Details", page: "scenarios" },
@@ -168,7 +168,7 @@ export const en: SiteContent = {
       label: "Safety",
       title: "Engineered for reliability, traceability, and operational confidence",
       body:
-        "Safety is presented as a system architecture spanning hardware, warning logic, event recording, and maintainability, not as a standalone claim.",
+        "MEGA POWER builds safety into hardware, warning logic, event recording, and maintainability as one operating architecture rather than treating safety as an isolated claim.",
       bullets: [
         "Multi-layer safety logic",
         "Early warning and fault awareness",
@@ -189,7 +189,7 @@ export const en: SiteContent = {
         },
         {
           title: "Emergency response path",
-          body: "A 7×24 emergency-response model is positioned to support urgent incidents and reduce interruption time for operating sites.",
+          body: "A 7×24 emergency-response path helps operating sites handle urgent incidents faster and reduce interruption time.",
         },
         {
           title: "Preventive maintenance discipline",
@@ -204,7 +204,7 @@ export const en: SiteContent = {
     cta: {
       label: "Scenarios",
       title: "The scenarios page is the best place to continue from here",
-      body: "If you want to move from a high-level company overview into concrete project fit, the scenarios page connects operating environments with solution logic, product families, platform support, and service readiness.",
+      body: "If you want to move from a high-level company overview into concrete project fit, the scenarios page shows how operating environments align with solution logic, product families, platform support, and service readiness.",
       action: { label: "Explore Scenarios", page: "scenarios" },
     },
   },
@@ -222,9 +222,9 @@ export const en: SiteContent = {
     },
     intro: {
       label: "Scenario Logic",
-      title: "One page to move from customer environment to solution decision",
+      title: "Move from operating challenge to the right solution path",
       body:
-        "Each scenario below connects the operating challenge with a recommended solution stack, supporting product families, platform capability, safety logic, and service readiness.",
+        "Each scenario below pairs the operating challenge with a recommended solution stack, product families, platform capability, safety logic, and service readiness.",
     },
     selectorLabel: "Choose the operating scenario you are facing",
     panels: [
@@ -931,7 +931,7 @@ export const en: SiteContent = {
     hero: {
       title: "Digital platform capability across warning, control, and O&M",
       subtitle:
-        "The platform layer is presented as a differentiator: it connects data visibility, event traceability, control logic, and field maintenance workflows.",
+        "MEGA POWER connects data visibility, event traceability, control logic, and field maintenance workflows in one platform layer.",
       highlight: "platform capability",
     },
     intro: {
@@ -942,6 +942,20 @@ export const en: SiteContent = {
     },
     capability: {
       pills: ["AI Powered", "ms-level Response", "Full Lifecycle Logging"],
+      explainer: {
+        label: "What 6S + EDR Means",
+        body:
+          "Here, 6S refers to six core system layers inside the MEGA POWER architecture: BWS, HCS, PCS, BMS, EMS, and OMS. EDR adds event recording and fault traceability, completing the 6S+EDR safety architecture.",
+        systems: [
+          { name: "BWS", title: "Battery Warning System" },
+          { name: "HCS", title: "High-speed Control System" },
+          { name: "PCS", title: "Power Conversion System" },
+          { name: "BMS", title: "Battery Management System" },
+          { name: "EMS", title: "Energy Management System" },
+          { name: "OMS", title: "Operations & Maintenance System" },
+        ],
+        recorder: { name: "EDR", title: "Event Data Recorder" },
+      },
       base: {
         label: "Safety Base",
         title: "Risk prediction and incident traceability",
@@ -1016,7 +1030,7 @@ export const en: SiteContent = {
       label: "Digital Energy Management Platform",
       title: "Comprehensive data storage, visualized analysis, and safer O&M coordination",
       body:
-        "The platform is presented as a comprehensive digital layer for large, medium, and small energy storage systems, integrating event recording, strategy dispatch, monitoring, warning, and O&M execution into one operating surface.",
+        "MEGA POWER brings event recording, strategy dispatch, monitoring, warning, and O&M execution into one digital operating layer for energy storage systems of different scales.",
       systems: ["EDR", "ECS", "EMS", "OMS", "BWS"],
       highlights: [
         {
@@ -1049,7 +1063,7 @@ export const en: SiteContent = {
       label: "EMS On-Premises Deployment & Data Safety",
       title: "Localized deployment by project scale with layered security safeguards",
       body:
-        "The source material describes localized EMS deployment for small-scale, medium-scale, and large-scale projects, supported by safeguards across collection, transmission, storage, functional access, server protection, and compliance-oriented control.",
+        "MEGA POWER supports localized EMS deployment for small-scale, medium-scale, and large-scale projects with layered safeguards across data collection, transmission, storage, access control, server protection, and audit management.",
       deployment: [
         "Small-scale deployment: under 1 MWh",
         "Medium-scale deployment: 1 MWh to 5 MWh",
@@ -1122,17 +1136,17 @@ export const en: SiteContent = {
     hero: {
       title: "Safety, traceability, and confidence built into the system",
       subtitle:
-        "MEGA POWER is presented as a company that helps customers operate with more clarity and less uncertainty through integrated safety and operational logic.",
+        "MEGA POWER helps customers operate with more clarity and less uncertainty through integrated safety logic and system-level operating control.",
       highlight: "traceability",
     },
     intro: {
       label: "Safety Architecture",
       title: "A system-level view of protection, response, and maintainability",
       body:
-        "The safety narrative spans battery warning, partitioned control, event recording, fire protection linkage, and maintenance visibility across the operating lifecycle.",
+        "This safety architecture combines battery warning, partitioned control, event recording, fire protection linkage, and maintenance visibility across the operating lifecycle.",
     },
     items: [
-      { title: "Multi-layer protection", body: "Protection is described across cell, PACK, system, and operational layers rather than a single equipment feature." },
+      { title: "Multi-layer protection", body: "MEGA POWER applies protection across cell, PACK, system, and operating layers rather than relying on a single equipment feature." },
       { title: "Warning and response", body: "Battery warning, incident recording, and control logic improve fault awareness and response speed." },
       { title: "Event traceability", body: "EDR positions traceability as a source of operational confidence and post-event clarity." },
       { title: "O&M efficiency", body: "Monitoring and work-order logic help maintenance teams move from passive troubleshooting to structured action." },
@@ -1141,7 +1155,7 @@ export const en: SiteContent = {
       label: "Japan-facing Trust",
       title: "Reliability messaging aligned with Japan market expectations",
       body:
-        "For Japan, safety is framed around operational confidence, maintainability, disciplined communication, and resilient long-term use under constrained site conditions.",
+        "In Japan, MEGA POWER emphasizes operational confidence, maintainability, disciplined communication, and resilient long-term use under constrained site conditions.",
       bullets: ["Operational confidence in compact deployments", "Maintainability over the full lifecycle", "Clear warning and response visibility", "Trust-building through system traceability"],
     },
     cta: {
@@ -1169,16 +1183,16 @@ export const en: SiteContent = {
       body: "",
     },
     strategy: [
-      { title: "Localized service team model", body: "Support is framed around local market understanding and tailored service delivery instead of a purely remote support posture." },
+      { title: "Localized service team model", body: "MEGA POWER organizes service around local market understanding and tailored execution instead of relying on a purely remote support posture." },
       { title: "Cross-cultural communication training", body: "Communication readiness matters for international collaboration, alignment, and long-term project trust." },
-      { title: "Continuous technical support and updates", body: "Technical continuity is presented as an ongoing discipline rather than a post-delivery add-on." },
+      { title: "Continuous technical support and updates", body: "MEGA POWER treats technical continuity as an ongoing operating discipline rather than a post-delivery add-on." },
       { title: "Partner network expansion", body: "Local partnerships help extend response capability, market understanding, and service coverage." },
     ],
     mechanism: [
-      { title: "Emergency fault resolution", body: "The source material highlights a 7 x 24 emergency hotline model for urgent after-sales support." },
+      { title: "Emergency fault resolution", body: "A 7×24 emergency hotline supports urgent after-sales response when operating issues need immediate attention." },
       { title: "Preventive maintenance", body: "Periodic inspection and preventive maintenance are used to reduce system failure risk and support continuity." },
       { title: "Customer training and support", body: "Online and on-site training help operators use the system correctly and lower avoidable service burden." },
-      { title: "Replacement parts readiness", body: "A replacement-parts network is described as a way to reduce repair time for critical components." },
+      { title: "Replacement parts readiness", body: "A replacement-parts network helps shorten repair time for critical components and improve service continuity." },
     ],
     japan: {
       label: "",
@@ -1188,8 +1202,8 @@ export const en: SiteContent = {
     },
     cta: {
       label: "About",
-      title: "The About page connects service capability with MEGA POWER's broader company story",
-      body: "If you want to place delivery, platform, products, and long-term support into one company narrative, the About page brings those elements together more clearly.",
+      title: "See how service capability fits into the full MEGA POWER offering",
+      body: "If you want to understand how delivery, platform capability, products, and long-term support work together, the About page gives a clearer company-level view.",
       action: { label: "Read About MEGA POWER", page: "about" },
     },
   },
@@ -1207,15 +1221,15 @@ export const en: SiteContent = {
     },
     intro: {
       label: "Company Introduction",
-      title: "Positioned as an integrated digital green energy solutions provider",
+      title: "An integrated digital green energy solutions provider",
       body:
-        "MEGA POWER is not presented as a hardware vendor alone. The company narrative brings together integrated energy architecture, digital operating capability, and service readiness.",
+        "MEGA POWER goes beyond standalone hardware by combining integrated energy architecture, digital operating capability, and service readiness in one offering.",
     },
     pillars: [
       { title: "Integrated solution logic", body: "MEGA POWER connects photovoltaic generation, storage, charging, and digital management into one coherent solution framework." },
-      { title: "Scenario-based market approach", body: "The company story is organized around grid, industry, transport, charging, and emergency use cases rather than isolated equipment categories." },
-      { title: "Platform and safety differentiation", body: "Digital warning, traceability, monitoring, and O&M workflow logic are treated as strategic differentiators." },
-      { title: "Operational support mindset", body: "Long-term maintainability and localized delivery logic are built into the brand story from the start." },
+      { title: "Scenario-based market approach", body: "MEGA POWER addresses grid, industry, transport, charging, and emergency use cases instead of presenting isolated equipment categories." },
+      { title: "Platform and safety differentiation", body: "Digital warning, traceability, monitoring, and O&M workflow logic strengthen system trust and operational visibility." },
+      { title: "Operational support mindset", body: "Long-term maintainability and localized delivery logic support stable operation from deployment through daily use." },
     ],
     japan: {
       label: "",

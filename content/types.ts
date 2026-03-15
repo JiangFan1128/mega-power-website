@@ -193,6 +193,19 @@ export type PlatformCapabilityGroup = {
   items: PlatformModule[];
 };
 
+export type PlatformCapabilityExplainer = {
+  label: string;
+  body: string;
+  systems: Array<{
+    name: string;
+    title: string;
+  }>;
+  recorder: {
+    name: string;
+    title: string;
+  };
+};
+
 export type TrustItem = {
   title: string;
   body: string;
@@ -279,13 +292,14 @@ export type SiteContent = {
   platform: {
     metadata: MetadataContent;
     hero: PageHeroContent;
-    intro: SectionLead;
-    capability: {
-      pills: string[];
-      base: PlatformCapabilityGroup;
-      control: PlatformCapabilityGroup;
-      brain: PlatformCapabilityGroup;
-    };
+      intro: SectionLead;
+      capability: {
+        pills: string[];
+        explainer: PlatformCapabilityExplainer;
+        base: PlatformCapabilityGroup;
+        control: PlatformCapabilityGroup;
+        brain: PlatformCapabilityGroup;
+      };
     management: SectionLead & {
       systems: string[];
       highlights: PlatformFeatureCard[];

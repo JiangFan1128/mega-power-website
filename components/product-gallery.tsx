@@ -103,7 +103,7 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
                       "rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-300",
                       active
                         ? "border-mega-accent bg-mega-accent text-mega-dark"
-                        : "border-white/10 bg-white/5 text-mega-muted hover:border-mega-accent/40 hover:text-white",
+                        : "border-white/10 bg-white/5 text-[#e1ebf4] hover:border-mega-accent/40 hover:text-white",
                     ].join(" ")}
                     onClick={() => setSelected(filter.key)}
                     type="button"
@@ -160,7 +160,7 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
                   </h3>
                   <div className="rounded-[14px] border border-white/10 bg-black/10 p-3">
                     <div className="spec-label">{copy.model}</div>
-                    <div className="model-copy mt-1 text-mega-text">{item.model}</div>
+                    <div className="model-copy mt-1 text-[#dce7f1]">{item.model}</div>
                   </div>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { pageKeyToHref, pageSlugs, type Locale } from "@/lib/i18n";
 
 type HeaderProps = {
@@ -55,7 +56,7 @@ export function Header({ locale, navigation }: HeaderProps) {
   } satisfies Record<Locale, string>;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b1a1fcc] backdrop-blur-xl">
+    <header className="site-header sticky top-0 z-50 border-b backdrop-blur-xl">
       <div className="mx-auto flex min-h-20 w-full items-center justify-between gap-4 px-5 lg:grid lg:min-h-[5.25rem] lg:grid-cols-[minmax(15rem,1fr)_auto_minmax(15rem,1fr)] lg:items-center lg:px-8 xl:px-10 2xl:px-14">
         <Link className="flex shrink-0 items-center gap-0 lg:justify-self-start" href={`/${locale}`}>
           <span className="relative block h-[3.05rem] w-[3.7rem] shrink-0">
@@ -69,7 +70,7 @@ export function Header({ locale, navigation }: HeaderProps) {
             />
           </span>
           <div className="flex min-h-10 items-center">
-            <div className="whitespace-nowrap text-[1.04rem] font-semibold leading-none tracking-[0.03em] text-white xl:text-[1.1rem]">
+            <div className="whitespace-nowrap text-[1.04rem] font-semibold leading-none tracking-[0.03em] text-mega-text xl:text-[1.1rem]">
               MEGA POWER TECHNOLOGY
             </div>
           </div>
@@ -87,7 +88,7 @@ export function Header({ locale, navigation }: HeaderProps) {
                 className={[
                   "whitespace-nowrap font-medium",
                   compactHeader ? "text-[0.82rem]" : "text-[0.9rem]",
-                  active ? "text-mega-accent" : "text-mega-muted hover:text-white",
+                  active ? "text-mega-accent" : "text-mega-muted hover:text-mega-text",
                 ].join(" ")}
                 href={pageKeyToHref(locale, page)}
               >
@@ -98,6 +99,7 @@ export function Header({ locale, navigation }: HeaderProps) {
         </nav>
 
         <div className="hidden shrink-0 items-center gap-2.5 lg:flex lg:justify-self-end">
+          <ThemeToggle />
           <LanguageSwitcher currentLocale={locale} labels={languageLabels} />
         </div>
 
@@ -113,9 +115,10 @@ export function Header({ locale, navigation }: HeaderProps) {
       </div>
 
       {open ? (
-        <div className="border-t border-white/10 bg-mega-dark-mid/95 lg:hidden">
+        <div className="site-header border-t lg:hidden">
           <div className="mx-auto flex w-full flex-col gap-4 px-5 py-5">
             <div className="flex flex-wrap gap-3">
+              <ThemeToggle />
               <LanguageSwitcher currentLocale={locale} labels={languageLabels} />
             </div>
             <nav className="grid gap-3">

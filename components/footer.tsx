@@ -38,7 +38,7 @@ export function Footer({ locale, content }: FooterProps) {
   }[locale];
 
   return (
-    <footer className="border-t border-white/10 bg-black/20">
+    <footer className="site-footer border-t">
       <div className="shell grid gap-12 py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:items-start lg:gap-16">
         <div className="space-y-6">
           <div className="flex items-center gap-0">
@@ -52,7 +52,7 @@ export function Footer({ locale, content }: FooterProps) {
               />
             </span>
             <div className="flex min-h-10 items-center">
-              <div className="whitespace-nowrap text-[1.04rem] font-semibold leading-none tracking-[0.03em] text-white xl:text-[1.1rem]">
+              <div className="whitespace-nowrap text-[1.04rem] font-semibold leading-none tracking-[0.03em] text-mega-text xl:text-[1.1rem]">
                 MEGA POWER TECHNOLOGY
               </div>
             </div>
@@ -67,14 +67,14 @@ export function Footer({ locale, content }: FooterProps) {
           <div className="grid gap-8 sm:grid-cols-3">
             {footerCopy.groups.map((group) => (
               <div key={group.title} className="space-y-4">
-                <div className="text-[0.78rem] font-semibold uppercase tracking-[0.18em] text-white/55">
+                <div className="text-[0.78rem] font-semibold uppercase tracking-[0.18em] text-mega-muted">
                   {group.title}
                 </div>
                 <div className="grid gap-3">
                   {group.pages.map((page) => (
                     <Link
                       key={page}
-                      className="text-[0.96rem] text-mega-muted hover:text-white"
+                      className="text-[0.96rem] text-mega-muted hover:text-mega-text"
                       href={pageKeyToHref(locale, page)}
                     >
                       {content.navigation[page]}
@@ -84,8 +84,8 @@ export function Footer({ locale, content }: FooterProps) {
               </div>
             ))}
           </div>
-          <div className="border-t border-white/8 pt-5 text-[0.78rem] uppercase tracking-[0.16em] text-white/35">
-            MEGA POWER
+          <div className="border-t border-white/8 pt-5 text-[0.78rem] uppercase tracking-[0.16em] text-mega-muted/70">
+            © 2026 MEGA POWER TECHNOLOGY CO., LTD.
           </div>
         </div>
       </div>

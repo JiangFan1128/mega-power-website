@@ -412,7 +412,7 @@ function Hero({ hero, locale }: { hero: HeroContent; locale: Locale }) {
         <div className="max-w-[62rem] space-y-7 lg:ml-10 xl:ml-14">
           <div className="space-y-5">
             <div className="eyebrow">{hero.eyebrow}</div>
-            <h1 className={`${heroTitleClass} font-extrabold tracking-[-0.04em] text-white`}>
+            <h1 className={`${heroTitleClass} hero-title-main font-extrabold tracking-[-0.04em]`}>
               {renderHeroTitle(hero.title, locale)}
             </h1>
             <p className={`${heroSubtitleClass} text-mega-muted`}>
@@ -518,7 +518,7 @@ function SolutionGrid({ items }: { items: SolutionItem[] }) {
     <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
       {items.map((item) => (
         <article key={item.title} className="panel p-6">
-          <h3 className="text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold leading-[1.2] tracking-[-0.025em] text-white">
+          <h3 className="text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold leading-[1.2] tracking-[-0.025em] text-mega-text">
             {item.title}
           </h3>
           <p className="mt-4 text-base leading-[1.7] text-mega-muted">{item.summary}</p>
@@ -559,7 +559,7 @@ function DetailGrid({ items, locale }: { items: ScenarioDetail[]; locale: Locale
     <div className="grid gap-5 xl:grid-cols-2">
       {items.map((item) => (
         <article key={item.title} className="panel p-6 sm:p-8">
-          <h3 className="text-2xl font-bold text-white">{item.title}</h3>
+          <h3 className="text-2xl font-bold text-mega-text">{item.title}</h3>
           <div className="mt-6 grid gap-5">
             <div>
               <div className="eyebrow">
@@ -581,7 +581,7 @@ function DetailGrid({ items, locale }: { items: ScenarioDetail[]; locale: Locale
                 {item.benefits.map((benefit) => (
                   <span
                     key={benefit}
-                    className="rounded-full border border-white/10 bg-black/10 px-3 py-1.5 text-sm text-white"
+                    className="rounded-full border border-mega-border/55 bg-black/10 px-3 py-1.5 text-sm text-mega-text"
                   >
                     {benefit}
                   </span>
@@ -675,7 +675,7 @@ function ScenarioSolutionSections({
         >
           <div className="space-y-5">
             <div className="eyebrow">{labels.challenge}</div>
-            <h3 className="text-[clamp(1.45rem,2.6vw,2rem)] font-extrabold leading-[1.16] tracking-[-0.03em] text-white">
+            <h3 className="text-[clamp(1.45rem,2.6vw,2rem)] font-extrabold leading-[1.16] tracking-[-0.03em] text-mega-text">
               {preview?.title ?? scenario.title}
             </h3>
             {preview?.preview ? (
@@ -691,7 +691,7 @@ function ScenarioSolutionSections({
           <div className="space-y-5">
             <div>
               <div className="eyebrow">{labels.stack}</div>
-              <h4 className="mt-2 text-[1.22rem] font-bold leading-[1.25] text-white">
+              <h4 className="mt-2 text-[1.22rem] font-bold leading-[1.25] text-mega-text">
                 {solution.title}
               </h4>
               <p className="mt-3 card-copy">{solution.summary}</p>
@@ -748,7 +748,7 @@ function ScenarioSolutionSections({
               <div className="mt-3 flex flex-wrap gap-2">
                 {scenario.benefits.map((benefit) => (
                   <span
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[0.8rem] text-white"
+                    className="rounded-full border border-mega-border/55 bg-white/5 px-3 py-1.5 text-[0.8rem] text-mega-text"
                     key={`${scenario.title}-${benefit}`}
                   >
                     {benefit}
@@ -814,7 +814,7 @@ function TrustGrid({ items }: { items: TrustItem[] }) {
     <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
       {items.map((item) => (
         <article key={item.title} className="panel p-6">
-          <h3 className="text-[1rem] font-bold leading-[1.35] text-white">{item.title}</h3>
+          <h3 className="text-[1rem] font-bold leading-[1.35] text-mega-text">{item.title}</h3>
           <p className="mt-3 text-[0.85rem] leading-[1.55] text-mega-muted">{item.body}</p>
         </article>
       ))}
@@ -836,7 +836,7 @@ function BulletPanel({
   return (
     <div className="panel-strong p-6 sm:p-8">
       <div className="eyebrow">{label}</div>
-      <h3 className="mt-4 text-2xl font-bold text-white">{title}</h3>
+      <h3 className="mt-4 text-2xl font-bold text-mega-text">{title}</h3>
       <p className="card-copy mt-4">{body}</p>
       <ul className="mt-6 space-y-3">
         {bullets.map((bullet) => (
@@ -872,7 +872,7 @@ function PlatformManagementSection({
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {section.highlights.map((item) => (
             <article className="panel p-6" key={item.title}>
-              <h3 className="text-[1.15rem] font-bold leading-[1.28] text-white">
+              <h3 className="text-[1.15rem] font-bold leading-[1.28] text-mega-text">
                 {item.title}
               </h3>
               <p className="mt-3 card-copy">{item.body}</p>
@@ -898,7 +898,7 @@ function PlatformSecuritySection({
             <div className="eyebrow">
               {section.label}
             </div>
-            <h3 className="mt-4 text-2xl font-bold text-white">
+            <h3 className="mt-4 text-2xl font-bold text-mega-text">
               {section.title}
             </h3>
             <div className="mt-6 grid gap-3">
@@ -945,12 +945,41 @@ function PlatformCapabilitySection({
           <div className="flex flex-wrap gap-3">
             {capability.pills.map((pill) => (
               <span
-                className="rounded-full border border-mega-accent/15 bg-mega-accent/10 px-4 py-2 text-[0.72rem] font-mono uppercase tracking-[0.16rem] text-mega-accent"
+                className="rounded-full border border-[#5ccfd5]/45 bg-[rgba(137,221,226,0.18)] px-4 py-2 text-[0.72rem] font-mono font-semibold uppercase tracking-[0.16rem] text-[#0b6f7a]"
                 key={pill}
               >
                 {pill}
               </span>
             ))}
+          </div>
+          <div className="panel p-5 sm:p-6">
+            <div className="eyebrow">{capability.explainer.label}</div>
+            <p className="mt-3 max-w-4xl text-[0.95rem] leading-[1.75] text-mega-muted">
+              {capability.explainer.body}
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {capability.explainer.systems.map((item) => (
+                <div
+                  className="rounded-[12px] border border-mega-border/60 bg-[rgba(137,221,226,0.08)] px-4 py-3"
+                  key={`${item.name}-${item.title}`}
+                >
+                  <div className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.16rem] text-[#0b6f7a]">
+                    {item.name}
+                  </div>
+                  <div className="mt-1 text-[0.82rem] font-medium text-mega-text">
+                    {item.title}
+                  </div>
+                </div>
+              ))}
+              <div className="rounded-[12px] border border-mega-accent/25 bg-mega-accent/10 px-4 py-3">
+                <div className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.16rem] text-mega-accent">
+                  {capability.explainer.recorder.name}
+                </div>
+                <div className="mt-1 text-[0.82rem] font-medium text-mega-text">
+                  {capability.explainer.recorder.title}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -959,7 +988,7 @@ function PlatformCapabilitySection({
             <div className="relative space-y-8">
               <div className="space-y-4">
                 <div className="eyebrow">{capability.base.label}</div>
-                <h3 className="text-[clamp(1.9rem,3vw,2.6rem)] font-extrabold leading-[1.12] tracking-[-0.03em] text-white">
+                <h3 className="text-[clamp(1.9rem,3vw,2.6rem)] font-extrabold leading-[1.12] tracking-[-0.03em] text-mega-text">
                   {capability.base.title}
                 </h3>
               </div>
@@ -969,7 +998,7 @@ function PlatformCapabilitySection({
                     <div className="font-mono text-[2rem] font-bold leading-none text-mega-accent">
                       {item.name}
                     </div>
-                    <h4 className="mt-3 text-[1rem] font-bold text-white">{item.title}</h4>
+                    <h4 className="mt-3 text-[1rem] font-bold text-mega-text">{item.title}</h4>
                     <p className="mt-3 text-[0.9rem] leading-[1.7] text-mega-muted">
                       {item.description}
                     </p>
@@ -982,7 +1011,7 @@ function PlatformCapabilitySection({
           <div className="panel p-8 sm:p-10">
             <div className="space-y-4">
               <div className="eyebrow">{capability.control.label}</div>
-              <h3 className="text-[clamp(1.7rem,2.7vw,2.35rem)] font-extrabold leading-[1.14] tracking-[-0.03em] text-white">
+              <h3 className="text-[clamp(1.7rem,2.7vw,2.35rem)] font-extrabold leading-[1.14] tracking-[-0.03em] text-mega-text">
                 {capability.control.title}
               </h3>
             </div>
@@ -990,7 +1019,7 @@ function PlatformCapabilitySection({
               {capability.control.items.map((item) => (
                 <div className="border-l-2 border-white/10 pl-5" key={item.name}>
                   <div className="flex items-center justify-between gap-4">
-                    <div className="font-mono text-[2rem] font-bold leading-none text-white">
+                    <div className="font-mono text-[2rem] font-bold leading-none text-mega-text">
                       {item.name}
                     </div>
                     <div className="font-mono text-[0.65rem] uppercase tracking-[0.16rem] text-mega-muted">
@@ -1012,7 +1041,7 @@ function PlatformCapabilitySection({
             <div className="h-px flex-1 bg-white/10" />
           </div>
           <div className="space-y-4">
-            <h3 className="text-[clamp(1.6rem,2.8vw,2.25rem)] font-extrabold leading-[1.16] tracking-[-0.03em] text-white">
+            <h3 className="text-[clamp(1.6rem,2.8vw,2.25rem)] font-extrabold leading-[1.16] tracking-[-0.03em] text-mega-text">
               {capability.brain.title}
             </h3>
           </div>
@@ -1109,7 +1138,7 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
                 <div className="font-mono text-[1.8rem] font-bold leading-none text-mega-accent">
                   {module.name}
                 </div>
-                <h3 className="mt-2 text-[0.92rem] font-bold text-white">{module.title}</h3>
+                <h3 className="mt-2 text-[0.92rem] font-bold text-mega-text">{module.title}</h3>
                 <p className="mt-3 text-[0.85rem] leading-[1.6] text-mega-muted">
                   {module.description}
                 </p>
@@ -1132,7 +1161,7 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {content.home.services.items.map((item) => (
               <article key={item.title} className="panel p-6">
-                <h3 className="text-[0.95rem] font-bold text-white">{item.title}</h3>
+                <h3 className="text-[0.95rem] font-bold text-mega-text">{item.title}</h3>
                 <p className="mt-2 text-[0.85rem] leading-[1.55] text-mega-muted">{item.body}</p>
               </article>
             ))}
@@ -1286,7 +1315,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
                           <ServiceIcon index={index} />
                         </div>
                         <div className="min-w-0">
-                          <h3 className="text-[0.95rem] font-bold text-white">{item.title}</h3>
+                          <h3 className="text-[0.95rem] font-bold text-mega-text">{item.title}</h3>
                           <p className="mt-2 text-[0.85rem] leading-[1.55] text-mega-muted">{item.body}</p>
                         </div>
                       </div>
@@ -1301,7 +1330,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
                           <ServiceIcon index={index + 4} />
                         </div>
                         <div className="min-w-0">
-                          <h3 className="text-[0.95rem] font-bold text-white">{item.title}</h3>
+                          <h3 className="text-[0.95rem] font-bold text-mega-text">{item.title}</h3>
                           <p className="mt-2 text-[0.85rem] leading-[1.55] text-mega-muted">{item.body}</p>
                         </div>
                       </div>
@@ -1332,7 +1361,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
                     <div className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-mega-accent">
                       {item.label}
                     </div>
-                    <div className="mt-3 whitespace-pre-line text-lg font-semibold leading-[1.55] text-white">
+                    <div className="mt-3 whitespace-pre-line text-lg font-semibold leading-[1.55] text-mega-text">
                       {item.value}
                     </div>
                   </article>
@@ -1366,7 +1395,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
                     <div className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-mega-accent">
                       {item.label}
                     </div>
-                    <div className="mt-3 text-xl font-semibold text-white">
+                    <div className="mt-3 text-xl font-semibold text-mega-text">
                       {item.value}
                     </div>
                   </article>

@@ -99,7 +99,7 @@ function ArchitectureNode({
         : "border-[#35577f]/65 bg-[rgba(19,45,54,0.74)] text-white";
 
   const subtitleClass =
-    node.tone === "highlight" ? "text-mega-dark/70" : "text-mega-muted";
+    node.tone === "highlight" ? "text-mega-dark/70" : "text-white/68";
 
   return (
     <div
@@ -136,7 +136,7 @@ function ArchitectureChips({ chips }: { chips: ScenarioDecisionArchitectureChip[
     <div className="mt-5 flex flex-wrap gap-4 border-t border-dashed border-mega-accent/18 pt-4">
       {chips.map((chip) => (
         <div
-          className="flex items-center gap-2 text-[0.78rem] leading-[1.5] text-mega-muted"
+          className="flex items-center gap-2 text-[0.78rem] leading-[1.5] text-white/74"
           key={`${chip.name}-${chip.detail}`}
         >
           <span className={`font-mono font-semibold uppercase tracking-[0.08rem] ${toneClass(chip.tone)}`}>
@@ -196,8 +196,8 @@ function ArchitectureSection({ architecture }: { architecture: ScenarioDecisionA
                 <div className="font-mono text-[1.4rem] font-semibold leading-none text-mega-accent">
                   {column.title}
                 </div>
-                <div className="mt-2 text-[0.78rem] text-mega-muted">{column.subtitle}</div>
-                <div className="mx-auto mt-4 inline-flex rounded-[6px] bg-mega-accent/8 px-3 py-1 text-[0.72rem] text-mega-muted">
+                <div className="mt-2 text-[0.78rem] text-white/72">{column.subtitle}</div>
+                <div className="mx-auto mt-4 inline-flex rounded-[6px] bg-mega-accent/8 px-3 py-1 text-[0.72rem] text-white/74">
                   {column.input}
                 </div>
                 <div className="mt-4 space-y-2">
@@ -228,7 +228,7 @@ function ArchitectureSection({ architecture }: { architecture: ScenarioDecisionA
                 <div className="text-[1.25rem] leading-none">{tier.icon}</div>
                 <div className="mt-3 text-[0.92rem] font-bold text-white">{tier.title}</div>
                 <div className="mt-2 font-mono text-[1.1rem] text-mega-accent">{tier.power}</div>
-                <p className="mt-3 text-[0.78rem] leading-[1.6] text-mega-muted">{tier.description}</p>
+                <p className="mt-3 text-[0.78rem] leading-[1.6] text-white/76">{tier.description}</p>
                 <div className="mt-4 space-y-2">
                   {tier.items.map((item) => (
                     <div
@@ -345,7 +345,7 @@ export function ScenariosDecisionHub({
                   className={`group flex min-w-[15rem] shrink-0 items-center gap-3 rounded-[12px] border px-4 py-3 text-left transition-all duration-300 ${
                     isActive
                       ? "border-mega-accent bg-[rgba(24,56,64,0.9)] text-white shadow-[0_0_24px_rgba(45,212,168,0.12)]"
-                      : "border-[#35577f]/55 bg-[rgba(19,45,54,0.78)] text-mega-muted hover:border-mega-accent/25 hover:bg-[rgba(24,56,64,0.86)] hover:text-white"
+                      : "border-[#35577f]/55 bg-[rgba(19,45,54,0.78)] text-[#eef6fb] hover:border-mega-accent/25 hover:bg-[rgba(24,56,64,0.86)] hover:text-white"
                   }`}
                   id={`scenario-tab-${panel.key}`}
                   key={panel.key}
@@ -360,18 +360,18 @@ export function ScenariosDecisionHub({
                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] border ${
                       isActive
                         ? "border-mega-accent/30 bg-mega-accent/16 text-mega-accent"
-                        : "border-[#35577f]/55 bg-[rgba(10,22,36,0.5)] text-mega-text/70 group-hover:border-mega-accent/20 group-hover:text-mega-accent"
+                        : "border-[#35577f]/55 bg-[rgba(10,22,36,0.5)] text-[#d5e2ed] group-hover:border-mega-accent/20 group-hover:text-mega-accent"
                     }`}
                   >
                     <ScenarioSelectorIcon icon={panel.icon} />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-[0.88rem] font-semibold leading-[1.3]">
+                    <div className={`text-[0.88rem] font-semibold leading-[1.3] ${isActive ? "text-white" : "text-[#eef6fb]"}`}>
                       {panel.buttonTitle}
                     </div>
                     <div
                       className={`mt-1 text-[0.7rem] leading-[1.35] ${
-                        isActive ? "text-mega-text/78" : "text-mega-muted/80"
+                        isActive ? "text-[#dfe9f2]" : "text-[#cad8e3]"
                       }`}
                     >
                       {panel.buttonSubtitle}
@@ -395,7 +395,7 @@ export function ScenariosDecisionHub({
               <div className="font-mono text-[0.7rem] uppercase tracking-[0.18rem] text-mega-warning">
                 {activePanel.problemLabel}
               </div>
-              <h2 className="max-w-[26rem] text-[clamp(1.8rem,3vw,2.45rem)] font-extrabold leading-[1.14] tracking-[-0.03em] text-white">
+              <h2 className="max-w-[26rem] text-[clamp(1.8rem,3vw,2.45rem)] font-extrabold leading-[1.14] tracking-[-0.03em] text-mega-text">
                 {activePanel.problemTitle}
               </h2>
               <p className="max-w-[34rem] text-[0.98rem] leading-[1.78] text-mega-muted">
@@ -411,7 +411,7 @@ export function ScenariosDecisionHub({
               <h3 className="mt-3 text-[1.4rem] font-bold leading-[1.22] tracking-[-0.025em] text-white">
                 {activePanel.solutionTitle}
               </h3>
-              <p className="mt-3 text-[0.94rem] leading-[1.78] text-mega-muted">
+              <p className="mt-3 text-[0.94rem] leading-[1.78] text-[#d9e5ef]">
                 {activePanel.solutionBody}
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
@@ -438,7 +438,7 @@ export function ScenariosDecisionHub({
                   <div className="font-mono text-[1.9rem] font-semibold leading-none text-mega-accent">
                     {metric.value}
                   </div>
-                  <div className="mt-3 text-[0.78rem] leading-[1.55] text-mega-muted">
+                  <div className="mt-3 text-[0.78rem] leading-[1.55] text-[#d7e3ee]">
                     {metric.label}
                   </div>
                 </article>
@@ -457,7 +457,7 @@ export function ScenariosDecisionHub({
                   key={`${product.model}-${product.title}`}
                 >
                   <h3 className="text-[1rem] font-bold leading-[1.4] text-white">{product.title}</h3>
-                  <div className="mt-2 font-mono text-[0.72rem] uppercase tracking-[0.12rem] text-mega-muted">
+                  <div className="mt-2 font-mono text-[0.72rem] uppercase tracking-[0.12rem] text-[#dce7f1]">
                     {product.model}
                   </div>
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -483,7 +483,7 @@ export function ScenariosDecisionHub({
               <h3 className="mt-3 text-[1.04rem] font-bold text-white">{activePanel.platform.title}</h3>
               <div className="mt-5 space-y-3">
                 {activePanel.platform.items.map((item) => (
-                  <div className="flex gap-3 text-[0.88rem] leading-[1.6] text-mega-muted" key={item}>
+                  <div className="flex gap-3 text-[0.88rem] leading-[1.6] text-white/80" key={item}>
                     <span className="mt-[0.48rem] h-[6px] w-[6px] shrink-0 rounded-full bg-mega-energy" />
                     <span>{item}</span>
                   </div>
@@ -498,7 +498,7 @@ export function ScenariosDecisionHub({
               <h3 className="mt-3 text-[1.04rem] font-bold text-white">{activePanel.service.title}</h3>
               <div className="mt-5 space-y-3">
                 {activePanel.service.items.map((item) => (
-                  <div className="flex gap-3 text-[0.88rem] leading-[1.6] text-mega-muted" key={item}>
+                  <div className="flex gap-3 text-[0.88rem] leading-[1.6] text-white/80" key={item}>
                     <span className="mt-[0.48rem] h-[6px] w-[6px] shrink-0 rounded-full bg-mega-warning" />
                     <span>{item}</span>
                   </div>

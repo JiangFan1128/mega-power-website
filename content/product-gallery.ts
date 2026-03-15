@@ -22,9 +22,9 @@ export const productGalleryFamilies: ProductGalleryFamily[] = [
   {
     key: "microgrid",
     title: {
-      en: "Microgrid / Frequency",
-      ja: "マイクログリッド / 調周",
-      zh: "微网 / 调频",
+      en: "Grid & Frequency",
+      ja: "系統・周波数調整",
+      zh: "电网与调频",
     },
   },
   {
@@ -38,17 +38,17 @@ export const productGalleryFamilies: ProductGalleryFamily[] = [
   {
     key: "transport",
     title: {
-      en: "Transportable Storage",
-      ja: "可搬型蓄電",
-      zh: "移动储能",
+      en: "Transportable",
+      ja: "可搬型",
+      zh: "可运输储能",
     },
   },
   {
     key: "distributed",
     title: {
-      en: "Distributed Storage",
-      ja: "分散型蓄電",
-      zh: "分布式储能",
+      en: "C&I / Distributed",
+      ja: "産業・分散型",
+      zh: "工商业 / 分布式",
     },
   },
 ];

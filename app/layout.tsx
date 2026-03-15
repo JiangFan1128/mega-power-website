@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP, Space_Mono } from "next/font/google";
+import Script from "next/script";
 
 import "./globals.css";
 
@@ -25,6 +26,20 @@ export const metadata: Metadata = {
   description: "Integrated digital green energy solutions for grid, industry, transport, and charging infrastructure.",
 };
 
+const themeInitScript = `
+  (function () {
+    try {
+      var savedTheme = localStorage.getItem('mega-theme');
+      var theme = savedTheme === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'dark';
+      document.documentElement.style.colorScheme = 'dark';
+    }
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,6 +48,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${notoSansJp.variable} ${spaceMono.variable}`}>
+        <Script
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+          id="theme-init"
+          strategy="beforeInteractive"
+        />
         {children}
       </body>
     </html>
