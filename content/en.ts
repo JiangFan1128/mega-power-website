@@ -16,7 +16,7 @@ export const en: SiteContent = {
   footer: {
     summary:
       "MEGA POWER positions energy storage, charging, digital control, and long-term service as one integrated operating system for green energy deployment.",
-    address: "TWG Kojimachi 5F, 3-10-1 Kojimachi, Chiyoda-ku, Tokyo 102-0083, Japan",
+    address: "Bancho Heim 637-B, 1-2 Nibancho, Chiyoda-ku, Tokyo 102-0084, Japan",
     note:
     "MEGA POWER combines system architecture, digital control, and long-term service support for modern energy deployment.",
   },
@@ -1264,12 +1264,12 @@ export const en: SiteContent = {
       { label: "Company", value: "MEGA POWER CO., LTD" },
       {
         label: "Address",
-        value: "TWG Kojimachi 5F\n3-10-1 Kojimachi, Chiyoda-ku\nTokyo 102-0083, Japan",
+        value: "Bancho Heim 637-B\n1-2 Nibancho, Chiyoda-ku\nTokyo 102-0084, Japan",
       },
     ],
     note:
       "Additional contact channels such as phone and email can be shared directly during project coordination when required.",
     mapEmbed:
-      "https://www.google.com/maps?q=%E3%80%92102-0083%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E9%BA%B9%E7%94%BA3-10-1%20TWG%20%E9%BA%B9%E7%94%BA%205F&output=embed",
+      "https://www.google.com/maps?q=%E3%80%92102-0084%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E4%BA%8C%E7%95%AA%E7%94%BA1-2%20%E7%95%AA%E7%94%BA%E5%85%AB%E3%82%A4%E3%83%A0637-B&output=embed",
   },
 };
