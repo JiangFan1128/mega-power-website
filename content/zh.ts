@@ -16,7 +16,7 @@ export const zh: SiteContent = {
   footer: {
     summary:
       "MEGA POWER 将储能、充电、数字控制与长期服务整合为一套面向绿色能源部署的统一运行系统。",
-    address: "〒102-0083 东京都千代田区麹町3-10-1 TWG 麹町 5F",
+    address: "〒102-0084 东京都千代田区二番町1-2 番町八イム637-B",
     note:
       "MEGA POWER 将系统架构、数字控制与长期服务支持整合为面向现代能源部署的一体化能力。",
   },
@@ -1082,11 +1082,11 @@ export const zh: SiteContent = {
     },
     items: [
       { label: "公司", value: "MEGA POWER CO., LTD" },
-      { label: "地址", value: "〒102-0083\n东京都千代田区麹町3-10-1\nTWG 麹町 5F" },
+      { label: "地址", value: "〒102-0084\n东京都千代田区二番町1-2\n番町八イム637-B" },
     ],
     note:
       "如需更多联系方式，可在项目沟通过程中由 MEGA POWER 团队进一步提供。",
     mapEmbed:
-      "https://www.google.com/maps?q=%E3%80%92102-0083%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E9%BA%B9%E7%94%BA3-10-1%20TWG%20%E9%BA%B9%E7%94%BA%205F&output=embed",
+      "https://www.google.com/maps?q=%E3%80%92102-0084%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E4%BA%8C%E7%95%AA%E7%94%BA1-2%20%E7%95%AA%E7%94%BA%E5%85%AB%E3%82%A4%E3%83%A0637-B&output=embed",
   },
 };
