@@ -6,7 +6,6 @@ import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { pageKeyToHref, pageSlugs, type Locale } from "@/lib/i18n";
 
 type HeaderProps = {
@@ -99,7 +98,6 @@ export function Header({ locale, navigation }: HeaderProps) {
         </nav>
 
         <div className="hidden shrink-0 items-center gap-2.5 lg:flex lg:justify-self-end">
-          <ThemeToggle />
           <LanguageSwitcher currentLocale={locale} labels={languageLabels} />
         </div>
 
@@ -118,7 +116,6 @@ export function Header({ locale, navigation }: HeaderProps) {
         <div className="site-header border-t lg:hidden">
           <div className="mx-auto flex w-full flex-col gap-4 px-5 py-5">
             <div className="flex flex-wrap gap-3">
-              <ThemeToggle />
               <LanguageSwitcher currentLocale={locale} labels={languageLabels} />
             </div>
             <nav className="grid gap-3">
