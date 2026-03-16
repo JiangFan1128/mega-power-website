@@ -403,7 +403,12 @@ function Hero({ hero, locale }: { hero: HeroContent; locale: Locale }) {
 
   return (
     <section className="relative overflow-hidden py-14 lg:min-h-[calc(82vh-80px)] lg:py-16">
-      <div className="absolute inset-0 bg-hero-radial opacity-90" />
+      <div
+        className="absolute inset-0 bg-cover bg-[62%_center] bg-no-repeat opacity-[0.68] lg:bg-[68%_center]"
+        style={{ backgroundImage: "url('/images/hero/hero01.png')" }}
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,11,26,0.94)_0%,rgba(5,17,38,0.86)_28%,rgba(6,22,48,0.58)_54%,rgba(7,26,55,0.68)_100%)]" />
+      <div className="absolute inset-0 bg-hero-radial opacity-70" />
       <div className="absolute inset-0 bg-grid-fade bg-[size:72px_72px] opacity-25 [mask-image:radial-gradient(circle_at_center,black_22%,transparent_82%)]" />
       <div className="absolute right-[-14rem] top-1/2 hidden h-[34rem] w-[34rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(45,212,168,0.14),transparent_65%)] lg:block" />
       <div className="absolute right-[4rem] top-1/2 hidden h-[25rem] w-[25rem] -translate-y-1/2 rounded-full border border-[rgba(45,212,168,0.18)] lg:block" />
