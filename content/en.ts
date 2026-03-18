@@ -1261,7 +1261,7 @@ export const en: SiteContent = {
         "Find the core company details for business communication and project coordination with MEGA POWER.",
     },
     items: [
-      { label: "Company", value: "MEGA POWER CO., LTD" },
+      { label: "Company", value: "MEGA POWER TECHNOLOGY CO., LTD." },
       {
         label: "Address",
         value: "Bancho Heim 637-B\n1-2 Nibancho, Chiyoda-ku\nTokyo 102-0084, Japan",
@@ -1270,6 +1270,6 @@ export const en: SiteContent = {
     note:
       "Additional contact channels such as phone and email can be shared directly during project coordination when required.",
     mapEmbed:
-      "https://www.google.com/maps?q=%E3%80%92102-0084%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E4%BA%8C%E7%95%AA%E7%94%BA1-2%20%E7%95%AA%E7%94%BA%E5%85%AB%E3%82%A4%E3%83%A0637-B&output=embed",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.6176343097136!2d139.73810179999998!3d35.6864159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c646178ab73%3A0x6a25c1427f6845a5!2zSmFwYW4sIOOAkjEwMi0wMDg0IFRva3lvLCBDaGl5b2RhIENpdHksIE5pYmFuY2jFjSwgMeKIkjIg55Wq55S644OP44Kk44OgIDYzNw!5e0!3m2!1sen!2sus!4v1773691732795!5m2!1sen!2sus",
   },
 };

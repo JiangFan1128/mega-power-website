@@ -343,19 +343,24 @@ function PageHero({
 
   return (
     <section className="section-space relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-[66%_center] bg-no-repeat opacity-[0.44] lg:bg-[72%_center]"
+        style={{ backgroundImage: "url('/images/hero/hero01.png')" }}
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,14,31,0.9)_0%,rgba(7,20,42,0.8)_34%,rgba(10,28,57,0.58)_58%,rgba(11,30,59,0.66)_100%)]" />
       <div className="absolute inset-0 bg-hero-radial opacity-90" />
       <div className="absolute inset-0 bg-grid-fade bg-[size:72px_72px] opacity-20 [mask-image:radial-gradient(circle_at_center,black_28%,transparent_82%)]" />
       <div className="shell relative">
-        <div className="panel-strong max-w-5xl p-8 sm:p-10 lg:p-14">
+        <div className="max-w-5xl rounded-[20px] border border-[#35577f]/72 bg-transparent p-7 shadow-panel backdrop-blur-[2px] sm:p-10 lg:p-14">
           <div className="eyebrow">{eyebrow}</div>
-          <h1 className="display-title mt-4 max-w-4xl">
+          <h1 className="mt-4 max-w-4xl text-[clamp(2.1rem,8.8vw,3.45rem)] font-extrabold leading-[1.04] tracking-[-0.04em] sm:text-[clamp(2.6rem,6vw,4.35rem)] lg:text-[clamp(3rem,5vw,5rem)]">
             {titleIndex >= 0 && highlight ? (
               <>
                 {title.slice(0, titleIndex)}
                 <span
                   className={[
                     "bg-gradient-to-r from-mega-accent to-mega-energy bg-clip-text text-transparent",
-                    highlightNoWrap ? "whitespace-nowrap" : "",
+                    highlightNoWrap ? "sm:whitespace-nowrap" : "",
                   ].join(" ")}
                 >
                   {highlight}

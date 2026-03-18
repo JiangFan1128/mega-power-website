@@ -104,11 +104,15 @@ export function Header({ locale, navigation }: HeaderProps) {
         <button
           aria-expanded={open}
           aria-label={menuLabel}
-          className="rounded-[6px] border border-white/10 px-4 py-2 text-[0.9rem] text-mega-text lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-[10px] border border-white/10 text-mega-text lg:hidden"
           onClick={() => setOpen((value) => !value)}
           type="button"
         >
-          {menuLabel}
+          <span aria-hidden="true" className="flex flex-col gap-1.5">
+            <span className="block h-[2px] w-5 rounded-full bg-current" />
+            <span className="block h-[2px] w-5 rounded-full bg-current" />
+            <span className="block h-[2px] w-5 rounded-full bg-current" />
+          </span>
         </button>
       </div>
 
