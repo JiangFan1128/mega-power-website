@@ -344,7 +344,11 @@ function PageHero({
   return (
     <section className="section-space relative overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-[66%_center] bg-no-repeat opacity-[0.44] lg:bg-[72%_center]"
+        className="absolute inset-0 bg-cover bg-[64%_center] bg-no-repeat opacity-[0.44] lg:hidden"
+        style={{ backgroundImage: "url('/images/hero/hero02.png')" }}
+      />
+      <div
+        className="absolute inset-0 hidden bg-cover bg-[66%_center] bg-no-repeat opacity-[0.44] lg:block lg:bg-[72%_center]"
         style={{ backgroundImage: "url('/images/hero/hero01.png')" }}
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,14,31,0.9)_0%,rgba(7,20,42,0.8)_34%,rgba(10,28,57,0.58)_58%,rgba(11,30,59,0.66)_100%)]" />
@@ -409,7 +413,11 @@ function Hero({ hero, locale }: { hero: HeroContent; locale: Locale }) {
   return (
     <section className="relative overflow-hidden py-14 lg:min-h-[calc(82vh-80px)] lg:py-16">
       <div
-        className="absolute inset-0 bg-cover bg-[62%_center] bg-no-repeat opacity-[0.68] lg:bg-[68%_center]"
+        className="absolute inset-0 bg-cover bg-[64%_center] bg-no-repeat opacity-[0.68] lg:hidden"
+        style={{ backgroundImage: "url('/images/hero/hero02.png')" }}
+      />
+      <div
+        className="absolute inset-0 hidden bg-cover bg-[62%_center] bg-no-repeat opacity-[0.68] lg:block lg:bg-[68%_center]"
         style={{ backgroundImage: "url('/images/hero/hero01.png')" }}
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,11,26,0.94)_0%,rgba(5,17,38,0.86)_28%,rgba(6,22,48,0.58)_54%,rgba(7,26,55,0.68)_100%)]" />
