@@ -198,11 +198,11 @@ body {
   }
 
   .hero-stat-value {
-    @apply text-[2.4rem] font-extrabold leading-none text-mega-accent;
+    @apply text-[1.72rem] font-extrabold leading-none text-mega-accent sm:text-[2.4rem];
   }
 
   .hero-stat-label {
-    @apply mt-[6px] text-[0.85rem] leading-6 text-mega-muted;
+    @apply mt-[6px] text-[0.72rem] leading-5 text-mega-muted sm:text-[0.85rem] sm:leading-6;
   }
 
   .hero-title-main {

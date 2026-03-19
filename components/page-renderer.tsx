@@ -353,7 +353,7 @@ function PageHero({
       <div className="shell relative">
         <div className="max-w-5xl rounded-[20px] border border-[#35577f]/72 bg-transparent p-7 shadow-panel backdrop-blur-[2px] sm:p-10 lg:p-14">
           <div className="eyebrow">{eyebrow}</div>
-          <h1 className="mt-4 max-w-4xl text-[clamp(2.1rem,8.8vw,3.45rem)] font-extrabold leading-[1.04] tracking-[-0.04em] sm:text-[clamp(2.6rem,6vw,4.35rem)] lg:text-[clamp(3rem,5vw,5rem)]">
+          <h1 className="mt-4 max-w-4xl text-[clamp(1.74rem,7vw,2.95rem)] font-extrabold leading-[1.04] tracking-[-0.04em] sm:text-[clamp(2.45rem,6vw,4.2rem)] lg:text-[clamp(3rem,5vw,5rem)]">
             {titleIndex >= 0 && highlight ? (
               <>
                 {title.slice(0, titleIndex)}
@@ -396,9 +396,9 @@ function Hero({ hero, locale }: { hero: HeroContent; locale: Locale }) {
     },
   }[locale];
   const heroTitleClass = {
-    en: "max-w-[56rem] text-[clamp(2.45rem,4.95vw,4.95rem)] leading-[1.01]",
-    ja: "max-w-[52rem] text-[clamp(2.12rem,4.35vw,4.3rem)] leading-[1.06]",
-    zh: "max-w-[47rem] text-[clamp(2.3rem,4.65vw,4.65rem)] leading-[1.04]",
+    en: "max-w-[56rem] text-[clamp(2rem,4.35vw,4.95rem)] leading-[1.01]",
+    ja: "max-w-[52rem] text-[clamp(1.82rem,3.8vw,4.3rem)] leading-[1.06]",
+    zh: "max-w-[47rem] text-[clamp(1.9rem,3.95vw,4.65rem)] leading-[1.04]",
   }[locale];
   const heroSubtitleClass = {
     en: "max-w-[50rem] text-[1.08rem] leading-[1.72]",
@@ -446,12 +446,12 @@ function Hero({ hero, locale }: { hero: HeroContent; locale: Locale }) {
             </div>
           </div>
           <div className="max-w-[56rem] space-y-4 border-t border-[#35577f]/55 pt-6">
-            <div className="font-mono text-xs uppercase tracking-[0.34em] text-mega-accent">
+            <div className="font-mono text-[0.58rem] uppercase tracking-[0.22em] text-mega-accent sm:text-xs sm:tracking-[0.34em]">
               {heroCopy.capabilities}
             </div>
-            <div className="grid gap-x-10 gap-y-6 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:gap-x-10 sm:gap-y-6 xl:grid-cols-4">
               {hero.stats?.map((item) => (
-                <div key={item.label}>
+                <div className="text-center sm:text-left" key={item.label}>
                   <div className="hero-stat-value">{item.value}</div>
                   <div className="hero-stat-label">{item.label}</div>
                 </div>
@@ -1005,7 +1005,7 @@ function PlatformCapabilitySection({
               <div className="grid gap-5 md:grid-cols-2">
                 {capability.base.items.map((item) => (
                   <article className="rounded-[18px] border border-white/10 bg-white/5 p-6" key={item.name}>
-                    <div className="font-mono text-[2rem] font-bold leading-none text-mega-accent">
+                    <div className="font-mono text-[1.6rem] font-bold leading-none text-mega-accent sm:text-[2rem]">
                       {item.name}
                     </div>
                     <h4 className="mt-3 text-[1rem] font-bold text-mega-text">{item.title}</h4>
@@ -1029,7 +1029,7 @@ function PlatformCapabilitySection({
               {capability.control.items.map((item) => (
                 <div className="border-l-2 border-white/10 pl-5" key={item.name}>
                   <div className="flex items-center justify-between gap-4">
-                    <div className="font-mono text-[2rem] font-bold leading-none text-mega-text">
+                    <div className="font-mono text-[1.6rem] font-bold leading-none text-mega-text sm:text-[2rem]">
                       {item.name}
                     </div>
                     <div className="font-mono text-[0.65rem] uppercase tracking-[0.16rem] text-mega-muted">
@@ -1058,7 +1058,7 @@ function PlatformCapabilitySection({
           <div className="grid gap-5 md:grid-cols-3">
             {capability.brain.items.map((item) => (
               <article className="panel p-6 sm:p-7" key={item.name}>
-                <div className="font-mono text-[2rem] font-bold leading-none text-mega-accent">
+                <div className="font-mono text-[1.6rem] font-bold leading-none text-mega-accent sm:text-[2rem]">
                   {item.name}
                 </div>
                 <div className="mt-2 text-[0.72rem] font-mono uppercase tracking-[0.14rem] text-mega-muted">
@@ -1145,7 +1145,7 @@ function HomePage({ locale, content }: { locale: Locale; content: SiteContent })
           <div className="grid gap-5 md:grid-cols-2">
             {content.platform.modules.slice(0, 4).map((module) => (
               <article key={module.name} className="panel p-6">
-                <div className="font-mono text-[1.8rem] font-bold leading-none text-mega-accent">
+                <div className="font-mono text-[1.5rem] font-bold leading-none text-mega-accent sm:text-[1.8rem]">
                   {module.name}
                 </div>
                 <h3 className="mt-2 text-[0.92rem] font-bold text-mega-text">{module.title}</h3>

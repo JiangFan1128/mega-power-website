@@ -435,7 +435,7 @@ export function ScenariosDecisionHub({
                   className="rounded-[14px] border border-[#35577f]/55 bg-[rgba(19,45,54,0.76)] px-5 py-6 text-center transition-transform duration-300 hover:-translate-y-1 hover:border-mega-accent/18"
                   key={`${metric.value}-${metric.label}`}
                 >
-                  <div className="font-mono text-[1.9rem] font-semibold leading-none text-mega-accent">
+                  <div className="font-mono text-[1.6rem] font-semibold leading-none text-mega-accent sm:text-[1.9rem]">
                     {metric.value}
                   </div>
                   <div className="mt-3 text-[0.78rem] leading-[1.55] text-[#d7e3ee]">
@@ -457,7 +457,7 @@ export function ScenariosDecisionHub({
                   key={`${product.model}-${product.title}`}
                 >
                   <h3 className="text-[1rem] font-bold leading-[1.4] text-white">{product.title}</h3>
-                  <div className="mt-2 font-mono text-[0.72rem] uppercase tracking-[0.12rem] text-[#dce7f1]">
+                  <div className="mt-2 font-mono text-[0.64rem] uppercase tracking-[0.1rem] text-[#dce7f1] sm:text-[0.72rem] sm:tracking-[0.12rem]">
                     {product.model}
                   </div>
                   <div className="mt-4 flex flex-wrap gap-2">

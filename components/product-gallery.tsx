@@ -100,7 +100,7 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
                   <button
                     key={filter.key}
                     className={[
-                      "rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-300",
+                      "rounded-full border px-3.5 py-2 text-[0.88rem] font-semibold transition-all duration-300 sm:px-4 sm:text-sm",
                       active
                         ? "border-mega-accent bg-mega-accent text-mega-dark"
                         : "border-white/10 bg-white/5 text-[#e1ebf4] hover:border-mega-accent/40 hover:text-white",
@@ -114,7 +114,7 @@ export function ProductGallery({ locale }: ProductGalleryProps) {
               })}
             </div>
           </div>
-          <div className="rounded-full border border-mega-accent/20 bg-mega-accent/10 px-4 py-2 text-[0.75rem] font-medium uppercase tracking-[0.14rem] text-mega-accent">
+          <div className="rounded-full border border-mega-accent/20 bg-mega-accent/10 px-3.5 py-2 text-[0.68rem] font-medium uppercase tracking-[0.12rem] text-mega-accent sm:px-4 sm:text-[0.75rem] sm:tracking-[0.14rem]">
             {visibleItems.length} {copy.showing}
           </div>
         </div>
