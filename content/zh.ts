@@ -10,27 +10,27 @@ export const zh: SiteContent = {
     products: "产品",
     safety: "安全与可靠性",
     services: "服务",
-    about: "关于 MEGA POWER",
+    about: "关于公司",
     contact: "联系",
   },
   footer: {
     summary:
-      "MEGA POWER 将储能、充电、数字控制与长期服务整合为一套面向绿色能源部署的统一运行系统。",
+      "MEGA POWER TECHNOLOGY 将储能、充电、数字控制与长期服务整合为一套面向绿色能源部署的统一运行系统。",
     address: "〒102-0084 东京都千代田区二番町1-2 番町ハイム637-B",
     note:
-      "MEGA POWER 将系统架构、数字控制与长期服务支持整合为面向现代能源部署的一体化能力。",
+      "MEGA POWER TECHNOLOGY 将系统架构、数字控制与长期服务支持整合为面向现代能源部署的一体化能力。",
   },
   home: {
     metadata: {
-      title: "MEGA POWER | 综合数字绿色能源解决方案",
+      title: "MEGA POWER TECHNOLOGY | 综合数字绿色能源解决方案",
       description:
-        "以场景为先，突出大储、调频、光储充一体、数字平台、安全能力与日本市场适配的 MEGA POWER 企业官网。",
+        "以场景为先，突出大储、调频、光储充一体、数字平台、安全能力与日本市场适配的 MEGA POWER TECHNOLOGY 企业官网。",
     },
     hero: {
       eyebrow: "MEGA POWER TECHNOLOGY",
       title: "赋能全球可持续能源发展",
       subtitle:
-        "MEGA POWER 将光伏、灵活储能、高效充电与智能管理整合，面向电网、工业、交通与充电基础设施提供综合数字绿色能源解决方案。",
+        "MEGA POWER TECHNOLOGY 将光伏、灵活储能、高效充电与智能管理整合，面向电网、工业、交通与充电基础设施提供综合数字绿色能源解决方案。",
       primaryCta: { label: "查看应用场景", page: "scenarios" },
       secondaryCta: { label: "查看平台能力", page: "platform" },
       stats: [
@@ -41,10 +41,10 @@ export const zh: SiteContent = {
       ],
     },
     value: {
-      label: "Why MEGA POWER",
+      label: "整合方案的价值",
       title: "从核心设备到数字化管理，按一个能源系统整体构建",
       body:
-        "MEGA POWER 面向的不只是采购单机硬件的客户。公司将变流、储能、充电、数字监控、预警与运维逻辑整合为一体，使系统更易部署、管理与扩展。",
+        "MEGA POWER TECHNOLOGY 面向的不只是采购单机硬件的客户。公司将变流、储能、充电、数字监控、预警与运维逻辑整合为一体，使系统更易部署、管理与扩展。",
     },
     scenarios: {
       label: "应用场景",
@@ -62,7 +62,7 @@ export const zh: SiteContent = {
           summary:
             "如果你在运营风电场、光伏电站或并网型新能源项目，出力波动会带来调度压力、电网稳定性要求以及并网效率下降。",
           approach:
-            "MEGA POWER 通过储能与数字化调度能力的结合，提升系统灵活性、电能质量和新能源消纳表现。",
+        "MEGA POWER TECHNOLOGY 通过储能与数字化调度能力的结合，提升系统灵活性、电能质量和新能源消纳表现。",
           fit: "风电场、光伏电站、变电站及各类并网型新能源项目",
           tags: ["风电场", "光伏电站", "电网稳定", "灵活调度"],
         },
@@ -142,14 +142,14 @@ export const zh: SiteContent = {
       label: "Safety",
       title: "围绕可靠性、可追溯性与运行信心进行设计",
       body:
-        "MEGA POWER 将安全能力融入硬件、预警逻辑、事件记录和可维护性之中，形成一体化的运行架构。",
+        "MEGA POWER TECHNOLOGY 将安全能力融入硬件、预警逻辑、事件记录和可维护性之中，形成一体化的运行架构。",
       bullets: ["多层级安全逻辑", "早期预警", "数字化事件追溯", "更高效的运维支持", "以可靠性为先的系统思维"],
     },
     services: {
       label: "Services",
       title: "面向长期稳定运行构建的服务准备",
       body:
-        "MEGA POWER 将服务作为运行能力的一部分来建设，本地响应组织、预防性维护、客户培训、备件准备和伙伴协同都服务于长期项目连续性。",
+        "公司将服务作为运行能力的一部分来建设，本地响应组织、预防性维护、客户培训、备件准备和伙伴协同都服务于长期项目连续性。",
       items: [
         { title: "本地化服务结构", body: "围绕本地市场理解、定制化执行和伙伴协同来组织服务能力，而不是完全依赖远程支持。" },
         { title: "紧急响应路径", body: "通过 7×24 紧急响应机制，帮助高优先级事件更快进入处置流程，并尽量缩短运行中断时间。" },
@@ -166,12 +166,12 @@ export const zh: SiteContent = {
   },
   scenarios: {
     metadata: {
-      title: "应用场景 | MEGA POWER",
+      title: "应用场景 | MEGA POWER TECHNOLOGY",
       description:
         "覆盖并网、新能源、调频、弱电网充电、工商业优化、应急供电及日本市场部署诉求的场景页面。",
     },
     hero: {
-      title: "按运行场景找到最合适的 MEGA POWER 解决方案",
+      title: "按运行场景找到最合适的解决方案",
       subtitle:
         "先从客户的真实运行环境出发，再直接看到对应的解决方案组合、产品家族、平台能力与服务支撑逻辑。",
       highlight: "运行场景",
@@ -193,7 +193,7 @@ export const zh: SiteContent = {
         problemTitle: "新能源出力不稳定，弃电率升高，并网合规压力持续加大",
         problemBody:
           "风电和光伏发电天然存在间歇性，发电高峰与用电高峰并不总是匹配。电网侧越来越希望项目通过储能提升稳定性和调度灵活性，否则更容易面临消纳不足、限电和并网考核压力。",
-        solutionLabel: "MEGA POWER 的响应",
+        solutionLabel: "推荐解决路径",
         solutionTitle: "电网侧储能解决方案",
         solutionBody:
           "MEGA POWER 在电网侧或发电侧部署 MW 级储能系统，通过时间维度转移能量，并与数字调度逻辑联动，实现平滑出力、削峰移峰、电网支撑和更高的新能源消纳能力。",
@@ -281,10 +281,10 @@ export const zh: SiteContent = {
         problemTitle: "频率偏差需要比传统调节方式更快、更稳定的响应",
         problemBody:
           "当电网频率围绕目标值波动时，传统热电或水电调节往往速度不够快、精度也不够高。高响应系统需要连续、低延迟、可重复的调频能力，才能更好地跟随调度指令。",
-        solutionLabel: "MEGA POWER 的响应",
+        solutionLabel: "推荐解决路径",
         solutionTitle: "调频储能解决方案",
         solutionBody:
-          "MEGA POWER 将储能变流、高速控制和事件追溯能力整合为调频方案，实现更快响应、更精准跟随和更连续的辅助服务价值输出。",
+          "MEGA POWER TECHNOLOGY 将储能变流、高速控制和事件追溯能力整合为调频方案，实现更快响应、更精准跟随和更连续的辅助服务价值输出。",
         solutionValues: ["毫秒级响应", "双向调节", "辅助服务价值", "稳定支撑 50Hz"],
         metrics: [
           { value: "<50ms", label: "调度响应延迟" },
@@ -368,10 +368,10 @@ export const zh: SiteContent = {
         problemTitle: "需要建设大功率充电站，但站点弱电网、容量受限，甚至没有电网接入",
         problemBody:
           "公交场站、重卡走廊、物流园和乘用车快充站常常受制于配电容量。电网扩容周期长、成本高，而很多站点又希望尽快形成稳定充电能力。",
-        solutionLabel: "MEGA POWER 的响应",
+        solutionLabel: "推荐解决路径",
         solutionTitle: "光储充一体解决方案",
         solutionBody:
-          "MEGA POWER 通过 AC / DC 耦合的系统设计，把光伏、储能和充电整合为可调度的微网结构，让弱电网、离网或场地受限条件下的大功率充电部署更灵活。",
+          "MEGA POWER TECHNOLOGY 通过 AC / DC 耦合的系统设计，把光伏、储能和充电整合为可调度的微网结构，让弱电网、离网或场地受限条件下的大功率充电部署更灵活。",
         solutionValues: ["虚拟增容", "并离网切换", "模块化部署", "6S+EDR 智能运维"],
         metrics: [
           { value: "200kW", label: "乘用车快充节点" },
@@ -458,10 +458,10 @@ export const zh: SiteContent = {
         problemTitle: "远程或应急场地需要快速供电，无法等待固定基础设施建设完成",
         problemBody:
           "灾害救援、临时施工、偏远矿区和现场作业，往往没有条件先建设永久电力设施。真正关键的是电力系统能否快速移动、快速部署，并在到场后尽快恢复供电能力。",
-        solutionLabel: "MEGA POWER 的响应",
+        solutionLabel: "推荐解决路径",
         solutionTitle: "可运输储能解决方案",
         solutionBody:
-          "MEGA POWER 通过集装箱、拖车和车辆式能源系统，建立快速部署的供电能力，并结合抗振设计、液冷和模块化调度，适配各种移动能源场景。",
+          "MEGA POWER TECHNOLOGY 通过集装箱、拖车和车辆式能源系统，建立快速部署的供电能力，并结合抗振设计、液冷和模块化调度，适配各种移动能源场景。",
         solutionValues: ["快速部署", "车规级抗振", "电池周转灵活", "独立离网供电"],
         metrics: [
           { value: "10,000+", label: "快插接口循环寿命" },
@@ -542,10 +542,10 @@ export const zh: SiteContent = {
         problemTitle: "电费成本不断上升，而供电中断会直接影响业务连续性",
         problemBody:
           "工厂、商业建筑、医院、学校和产业园区，不仅需要降低电费和需量压力，还要增强在停电或波动条件下的供电韧性，同时兼顾绿色转型目标。",
-        solutionLabel: "MEGA POWER 的响应",
+        solutionLabel: "推荐解决路径",
         solutionTitle: "工商业储能解决方案",
         solutionBody:
-          "MEGA POWER 提供从储能柜到多 MWh 系统的灵活配置，帮助客户优化负荷曲线、提升备用能力，并通过可控的系统逻辑支持更低碳、更稳定的长期运行。",
+          "MEGA POWER TECHNOLOGY 提供从储能柜到多 MWh 系统的灵活配置，帮助客户优化负荷曲线、提升备用能力，并通过可控的系统逻辑支持更低碳、更稳定的长期运行。",
         solutionValues: ["削峰降本", "备用电源韧性", "灵活扩容", "低碳转型"],
         metrics: [
           { value: "≤2MWh", label: "小型用户：261kWh 储能柜 × N" },
@@ -630,10 +630,10 @@ export const zh: SiteContent = {
         problemTitle: "日本项目对紧凑场地、可靠性、可维护性和沟通信任有更高要求",
         problemBody:
           "日本项目往往同时面对安装空间受限、设备可靠性要求高、运行纪律严格，以及对服务质量和长期维护性更敏感等现实条件，部署逻辑必须从一开始就尊重这些运行环境。",
-        solutionLabel: "MEGA POWER 的响应",
+        solutionLabel: "推荐解决路径",
         solutionTitle: "面向日本市场的部署方式",
         solutionBody:
-          "MEGA POWER 以紧凑集成设计、以可靠性为先的系统思路、透明的数字化监控和有支撑力的服务沟通，建立面向日本项目的长期运行信心，而不是只交付硬件。",
+          "公司以紧凑集成设计、以可靠性为先的系统思路、透明的数字化监控和有支撑力的服务沟通，建立面向日本项目的长期运行信心，而不是只交付硬件。",
         solutionValues: ["紧凑集成设计", "可靠性优先", "长期可维护运行", "本地化支持准备"],
         metrics: [
           { value: "IP55", label: "适应户外气候的防护等级" },
@@ -683,11 +683,11 @@ export const zh: SiteContent = {
     ],
     details: [
       { title: "电网与新能源并网", problem: "新能源项目需要更强的稳定性、控制能力与调度灵活性。", approach: "MEGA POWER 结合储能与数字能源逻辑，同时支持电网侧和新能源侧应用。", benefits: ["提升新能源消纳", "支持削峰与平衡", "增强系统灵活性", "强化电网支撑"] },
-      { title: "调频与电网稳定", problem: "动态调频要求极快且精准的功率调节能力。", approach: "MEGA POWER 通过储能调频能力支持稳定、可响应的电网运行。", benefits: ["快速响应", "精准调节", "双向功率调节", "提升运营价值"] },
-      { title: "弱电网或受限场地 EV 充电", problem: "充电需求可能迅速超过电网容量和站点条件。", approach: "MEGA POWER 将储能、充电和数字监控整合，提升部署灵活性。", benefits: ["减轻电网扩容压力", "平滑峰值需求", "支持模块化部署", "提升充电连续性"] },
-      { title: "工商业成本优化", problem: "工商业用户需要在降低能耗成本的同时保持稳定运行。", approach: "MEGA POWER 提供基于储能的能量优化与可控电力支撑。", benefits: ["降低峰值需量压力", "增强能源灵活性", "提高连续性", "支持低碳转型"] },
-      { title: "离网 / 临时 / 应急供电", problem: "远程或应急站点往往缺乏可用的永久电网接入。", approach: "MEGA POWER 通过可运输能源系统实现快速部署与灵活供能。", benefits: ["快速部署", "灵活适应场地", "移动供电能力", "更强应急韧性"] },
-      { title: "日本市场部署需求", problem: "日本项目通常对场地限制、可靠性与维护性有更高要求。", approach: "MEGA POWER 以紧凑集成、运行信心、沟通信任与支持准备来组织日本市场部署表达。", benefits: ["适配受限场地", "以可靠性为先", "可维护的长期运行", "更清晰的沟通支持"] },
+      { title: "调频与电网稳定", problem: "动态调频要求极快且精准的功率调节能力。", approach: "公司通过储能调频能力支持稳定、可响应的电网运行。", benefits: ["快速响应", "精准调节", "双向功率调节", "提升运营价值"] },
+      { title: "弱电网或受限场地 EV 充电", problem: "充电需求可能迅速超过电网容量和站点条件。", approach: "MEGA POWER TECHNOLOGY 将储能、充电和数字监控整合，提升部署灵活性。", benefits: ["减轻电网扩容压力", "平滑峰值需求", "支持模块化部署", "提升充电连续性"] },
+      { title: "工商业成本优化", problem: "工商业用户需要在降低能耗成本的同时保持稳定运行。", approach: "公司提供基于储能的能量优化与可控电力支撑。", benefits: ["降低峰值需量压力", "增强能源灵活性", "提高连续性", "支持低碳转型"] },
+      { title: "离网 / 临时 / 应急供电", problem: "远程或应急站点往往缺乏可用的永久电网接入。", approach: "MEGA POWER TECHNOLOGY 通过可运输能源系统实现快速部署与灵活供能。", benefits: ["快速部署", "灵活适应场地", "移动供电能力", "更强应急韧性"] },
+      { title: "日本市场部署需求", problem: "日本项目通常对场地限制、可靠性与维护性有更高要求。", approach: "公司以紧凑集成、运行信心、沟通信任与支持准备来组织日本市场部署表达。", benefits: ["适配受限场地", "以可靠性为先", "可维护的长期运行", "更清晰的沟通支持"] },
     ],
     japanBlock: {
       label: "Japan Priority",
@@ -697,7 +697,7 @@ export const zh: SiteContent = {
       bullets: ["受限场地条件", "可靠性优先", "备电与韧性意识", "可维护性与安全", "支持准备与沟通质量"],
     },
     mapping: {
-      label: "How MEGA POWER Responds",
+      label: "解决路径逻辑",
       title: "把场景需求映射为综合方案逻辑",
       body:
         "MEGA POWER 不把设备、软件与运维拆开讲，而是把产品、数字模块与服务流程整合为同一运行体系。",
@@ -712,7 +712,7 @@ export const zh: SiteContent = {
   },
   solutions: {
     metadata: {
-      title: "解决方案 | MEGA POWER",
+      title: "解决方案 | MEGA POWER TECHNOLOGY",
       description:
         "覆盖大储、调频、光储充一体、可运输储能与工商业储能的五大综合解决方案。",
     },
@@ -744,7 +744,7 @@ export const zh: SiteContent = {
   },
   platform: {
     metadata: {
-      title: "平台能力 | MEGA POWER",
+      title: "平台能力 | MEGA POWER TECHNOLOGY",
       description:
         "覆盖预警、追溯、监控、控制、运维流程与数据安全的 MEGA POWER 数字平台页面。",
     },
@@ -883,7 +883,7 @@ export const zh: SiteContent = {
       label: "EMS 本地化部署与数据安全保障",
       title: "按项目规模部署 EMS，并建立分层数据安全机制",
       body:
-        "MEGA POWER 支持面向小型、中型和大型项目的本地化 EMS 部署，并在数据采集、传输、存储、访问控制、服务器保护和审计管理等层面建立了分层安全保障。",
+        "公司支持面向小型、中型和大型项目的本地化 EMS 部署，并在数据采集、传输、存储、访问控制、服务器保护和审计管理等层面建立了分层安全保障。",
       deployment: [
         "小型项目部署：1MWh 以下",
         "中型项目部署：1MWh 至 5MWh",
@@ -917,7 +917,7 @@ export const zh: SiteContent = {
   },
   products: {
     metadata: {
-      title: "产品 | MEGA POWER",
+      title: "产品 | MEGA POWER TECHNOLOGY",
       description:
         "覆盖电网、光储充、可运输与工商业应用的 MEGA POWER 产品家族，清晰呈现关键规格与部署适配关系。",
     },
@@ -949,14 +949,14 @@ export const zh: SiteContent = {
   },
   safety: {
     metadata: {
-      title: "安全与可靠性 | MEGA POWER",
+      title: "安全与可靠性 | MEGA POWER TECHNOLOGY",
       description:
         "涵盖多层防护、预警响应、事件追溯、运维效率以及日本市场信任表达的页面。",
     },
     hero: {
       title: "把安全、追溯与运行信心内建到系统中",
       subtitle:
-        "MEGA POWER 通过综合安全逻辑与系统化运行控制，帮助客户降低运行中的不确定性。",
+        "MEGA POWER TECHNOLOGY 通过综合安全逻辑与系统化运行控制，帮助客户降低运行中的不确定性。",
       highlight: "追溯",
     },
     intro: {
@@ -987,7 +987,7 @@ export const zh: SiteContent = {
   },
   services: {
     metadata: {
-      title: "服务 | MEGA POWER",
+      title: "服务 | MEGA POWER TECHNOLOGY",
       description:
         "围绕运维策略、本地化服务、伙伴协同与技术连续性的服务页面。",
     },
@@ -1005,7 +1005,7 @@ export const zh: SiteContent = {
     strategy: [
       { title: "本地化服务团队模型", body: "MEGA POWER 围绕本地市场理解和定制化支持来组织服务能力。" },
       { title: "跨文化沟通训练", body: "把国际协同中的沟通质量视为长期合作的重要基础。" },
-      { title: "持续技术支持与更新", body: "MEGA POWER 将交付后的持续技术支持与更新视为长期运行的一部分，而不是一次性交付后的附加项。" },
+      { title: "持续技术支持与更新", body: "公司将交付后的持续技术支持与更新视为长期运行的一部分，而不是一次性交付后的附加项。" },
       { title: "伙伴网络扩展", body: "通过本地伙伴提升服务覆盖与响应能力。" },
     ],
     mechanism: [
@@ -1022,28 +1022,28 @@ export const zh: SiteContent = {
     },
     cta: {
       label: "About",
-      title: "About 页面会把服务能力放回到 MEGA POWER 的整体公司定位中",
+      title: "About 页面会把服务能力放回到整体公司定位中",
       body: "如果你想从更完整的公司视角理解交付、平台、产品和长期支持之间的关系，可以继续查看 About 页面。",
       action: { label: "查看 About 页面", page: "about" },
     },
   },
   about: {
     metadata: {
-      title: "关于 MEGA POWER | MEGA POWER",
+      title: "关于公司 | MEGA POWER TECHNOLOGY",
       description:
-        "展示 MEGA POWER 作为综合数字绿色能源解决方案提供商的公司定位与能力。",
+        "展示 MEGA POWER TECHNOLOGY 作为综合数字绿色能源解决方案提供商的公司定位与能力。",
     },
     hero: {
-      title: "关于 MEGA POWER",
+      title: "关于公司",
       subtitle:
-        "面向变化中的能源格局，MEGA POWER 以电力、储能、充电、数字控制与服务能力构建综合数字绿色能源解决方案。",
+        "面向变化中的能源格局，MEGA POWER TECHNOLOGY 以电力、储能、充电、数字控制与服务能力构建综合数字绿色能源解决方案。",
       highlight: "MEGA POWER",
     },
     intro: {
       label: "Company Introduction",
       title: "定位为综合数字绿色能源解决方案提供商，而非单一硬件厂商",
       body:
-        "MEGA POWER 不只提供硬件产品，还把综合能源架构、数字化运行能力和服务准备整合为一个完整方案。",
+        "MEGA POWER TECHNOLOGY 不只提供硬件产品，还把综合能源架构、数字化运行能力和服务准备整合为一个完整方案。",
     },
     pillars: [
       { title: "综合解决方案逻辑", body: "把光伏、储能、充电与数字管理连接为一个统一框架。" },
@@ -1059,17 +1059,17 @@ export const zh: SiteContent = {
     cta: {
       label: "Contact",
       title: "开启业务沟通",
-      body: "你可以通过下方公司信息与 MEGA POWER 进行项目交流和业务沟通。",
-      action: { label: "关于 MEGA POWER", page: "about" },
+      body: "你可以通过下方公司信息开展项目交流和业务沟通。",
+      action: { label: "查看公司信息", page: "about" },
     },
   },
   contact: {
     metadata: {
-      title: "公司信息 | MEGA POWER",
+      title: "公司信息 | MEGA POWER TECHNOLOGY",
       description: "包含公司名称、所在地背景以及待确认联系方式字段的基础公司信息区块。",
     },
     hero: {
-      title: "联系 MEGA POWER",
+      title: "公司信息",
       subtitle:
         "以下为项目沟通、业务咨询和部署协调所需的公司信息。",
       highlight: "MEGA POWER",
@@ -1078,14 +1078,14 @@ export const zh: SiteContent = {
       label: "Company Information",
       title: "公司信息",
       body:
-        "在这里查看 MEGA POWER 的核心公司信息，便于项目沟通与业务联系。",
+        "在这里查看核心公司信息，便于项目沟通与业务联系。",
     },
     items: [
       { label: "公司", value: "MEGA POWER TECHNOLOGY CO., LTD." },
       { label: "地址", value: "〒102-0084\n东京都千代田区二番町1-2\n番町ハイム637-B" },
     ],
     note:
-      "如需更多联系方式，可在项目沟通过程中由 MEGA POWER 团队进一步提供。",
+      "如需更多联系方式，可在项目沟通过程中由相关团队进一步提供。",
     mapEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.6176343097136!2d139.73810179999998!3d35.6864159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c646178ab73%3A0x6a25c1427f6845a5!2zSmFwYW4sIOOAkjEwMi0wMDg0IFRva3lvLCBDaGl5b2RhIENpdHksIE5pYmFuY2jFjSwgMeKIkjIg55Wq55S644OP44Kk44OgIDYzNw!5e0!3m2!1sen!2sus!4v1773691732795!5m2!1sen!2sus",
   },

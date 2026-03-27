@@ -60,7 +60,7 @@ export function Header({ locale, navigation }: HeaderProps) {
         <Link className="flex shrink-0 items-center gap-0 lg:justify-self-start" href={`/${locale}`}>
           <span className="relative block h-[3.05rem] w-[3.7rem] shrink-0">
             <Image
-              alt="MEGA POWER logo"
+              alt="MEGA POWER TECHNOLOGY logo"
               className="object-contain"
               fill
               priority

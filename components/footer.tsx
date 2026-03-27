@@ -44,7 +44,7 @@ export function Footer({ locale, content }: FooterProps) {
           <div className="flex items-center gap-0">
             <span className="relative block h-[3.05rem] w-[3.7rem] shrink-0">
               <Image
-                alt="MEGA POWER logo"
+                alt="MEGA POWER TECHNOLOGY logo"
                 className="object-contain"
                 fill
                 sizes="60px"

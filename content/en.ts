@@ -15,16 +15,16 @@ export const en: SiteContent = {
   },
   footer: {
     summary:
-      "MEGA POWER positions energy storage, charging, digital control, and long-term service as one integrated operating system for green energy deployment.",
+      "MEGA POWER TECHNOLOGY positions energy storage, charging, digital control, and long-term service as one integrated operating system for green energy deployment.",
     address: "Bancho Heim 637-B, 1-2 Nibancho, Chiyoda-ku, Tokyo 102-0084, Japan",
     note:
-    "MEGA POWER combines system architecture, digital control, and long-term service support for modern energy deployment.",
+    "MEGA POWER TECHNOLOGY combines system architecture, digital control, and long-term service support for modern energy deployment.",
   },
   home: {
     metadata: {
-      title: "MEGA POWER | Integrated Digital Green Energy Solutions",
+      title: "MEGA POWER TECHNOLOGY | Integrated Digital Green Energy Solutions",
       description:
-        "Scenario-first corporate website for MEGA POWER, covering utility storage, frequency regulation, PV-ESS-charging, digital platform capability, safety, and Japan market readiness.",
+        "Scenario-first corporate website for MEGA POWER TECHNOLOGY, covering utility storage, frequency regulation, PV-ESS-charging, digital platform capability, safety, and Japan market readiness.",
     },
     hero: {
       eyebrow: "MEGA POWER TECHNOLOGY",
@@ -41,10 +41,10 @@ export const en: SiteContent = {
       ],
     },
     value: {
-      label: "Why MEGA POWER",
+      label: "Why the Integrated Approach Works",
       title: "From core equipment to digital management, built as one energy system",
       body:
-        "MEGA POWER is designed for customers who need more than standalone hardware. The company integrates power conversion, storage, charging, digital monitoring, warning, and O&M logic into a solution system that is easier to deploy, manage, and scale.",
+        "MEGA POWER TECHNOLOGY is built for customers who need more than standalone hardware. The company integrates power conversion, storage, charging, digital monitoring, warning, and O&M logic into a solution system that is easier to deploy, manage, and scale.",
     },
     scenarios: {
       label: "Scenarios",
@@ -62,7 +62,7 @@ export const en: SiteContent = {
           summary:
             "If you operate a wind farm, solar plant, or grid-connected renewable project, output fluctuation can create dispatch pressure, grid-stability requirements, and lower integration efficiency.",
           approach:
-            "By combining energy storage with digital dispatch capability, MEGA POWER helps improve system flexibility, grid quality, and renewable integration performance.",
+          "By combining energy storage with digital dispatch capability, MEGA POWER TECHNOLOGY helps improve system flexibility, grid quality, and renewable integration performance.",
           fit: "Wind farms, PV plants, substations, and grid-connected renewable projects",
           tags: ["Wind Farms", "PV Plants", "Grid Stability", "Flexible Dispatch"],
         },
@@ -73,7 +73,7 @@ export const en: SiteContent = {
           summary:
             "If your power system requires faster response to grid-frequency fluctuations, conventional methods may be limited in speed, precision, and continuity.",
           approach:
-            "MEGA POWER's storage-based frequency regulation capability supports faster power response and helps strengthen system stability and ancillary-service performance.",
+          "The company's storage-based frequency regulation capability supports faster power response and helps strengthen system stability and ancillary-service performance.",
           fit: "Frequency regulation projects, ancillary services, microgrids, and high-response power systems",
           tags: ["Frequency Control", "Ancillary Services", "Microgrids", "Fast Response"],
         },
@@ -84,7 +84,7 @@ export const en: SiteContent = {
           summary:
             "If you want to deploy charging infrastructure for buses, logistics fleets, or heavy-duty trucks, but the site has limited grid capacity, weak-grid conditions, or even no grid access, deployment becomes much harder.",
           approach:
-            "Through an integrated PV-ESS-charging system, MEGA POWER supports more flexible high-power charging deployment in constrained conditions, especially where reliability and build efficiency matter.",
+          "Through an integrated PV-ESS-charging system, MEGA POWER TECHNOLOGY supports more flexible high-power charging deployment in constrained conditions, especially where reliability and build efficiency matter.",
           fit: "Weak-grid sites, off-grid sites, bus depots, truck charging hubs, and logistics parks",
           tags: ["Weak-grid", "Off-grid Sites", "Bus Depots", "Truck Charging"],
         },
@@ -95,7 +95,7 @@ export const en: SiteContent = {
           summary:
             "If you need to supply power for remote locations, construction sites, mining operations, temporary activities, or emergency response, fixed infrastructure is often too slow, too rigid, or too expensive.",
           approach:
-            "MEGA POWER's transportable energy systems enable faster deployment and more flexible power supply, making them suitable for projects that value resilience and rapid recovery.",
+          "The company's transportable energy systems enable faster deployment and more flexible power supply, making them suitable for projects that value resilience and rapid recovery.",
           fit: "Emergency response, temporary construction power, mining sites, remote areas, and mobile deployment needs",
           tags: ["Emergency Response", "Temporary Power", "Remote Areas", "Rapid Deployment"],
         },
@@ -106,7 +106,7 @@ export const en: SiteContent = {
           summary:
             "If you operate a factory, business park, hospital, or school, you are likely balancing electricity cost, operational continuity, resilience expectations, and low-carbon transition goals.",
           approach:
-            "MEGA POWER's C&I storage solutions help optimize load profiles, improve energy flexibility, and strengthen power stability in critical operating conditions.",
+          "The company's C&I storage solutions help optimize load profiles, improve energy flexibility, and strengthen power stability in critical operating conditions.",
           fit: "Industrial facilities, commercial parks, hospitals, schools, and public infrastructure",
           tags: ["Industrial Sites", "Commercial Parks", "Hospitals & Schools", "Peak Shaving"],
         },
@@ -116,7 +116,7 @@ export const en: SiteContent = {
       label: "Solutions",
       title: "A complete solution portfolio across power, storage, and charging",
       body:
-        "MEGA POWER's solution system spans utility-scale storage, frequency regulation, integrated PV-ESS-charging, transportable energy systems, and commercial & industrial storage.",
+        "The solution system spans utility-scale storage, frequency regulation, integrated PV-ESS-charging, transportable energy systems, and commercial & industrial storage.",
       items: [
         {
           title: "Utility-scale Energy Storage",
@@ -149,7 +149,7 @@ export const en: SiteContent = {
       label: "Platform",
       title: "Digital visibility, warning, control, and O&M in one layer",
       body:
-        "MEGA POWER's platform capability connects warning, traceability, monitoring, dispatch, and maintenance workflows so that customers gain more transparency and faster response across the system lifecycle.",
+        "The platform capability connects warning, traceability, monitoring, dispatch, and maintenance workflows so that customers gain more transparency and faster response across the system lifecycle.",
       bullets: [
         "Battery warning and system awareness",
         "Event traceability and incident recording",
@@ -168,7 +168,7 @@ export const en: SiteContent = {
       label: "Safety",
       title: "Engineered for reliability, traceability, and operational confidence",
       body:
-        "MEGA POWER builds safety into hardware, warning logic, event recording, and maintainability as one operating architecture rather than treating safety as an isolated claim.",
+        "MEGA POWER TECHNOLOGY builds safety into hardware, warning logic, event recording, and maintainability as one operating architecture rather than treating safety as an isolated claim.",
       bullets: [
         "Multi-layer safety logic",
         "Early warning and fault awareness",
@@ -181,7 +181,7 @@ export const en: SiteContent = {
       label: "Services",
       title: "Service readiness built for disciplined long-term operation",
       body:
-        "MEGA POWER frames service as an operating capability: local response structure, preventive maintenance, training, spare-parts readiness, and partner collaboration are organized to support long-term project continuity.",
+        "The service model is organized as an operating capability: local response structure, preventive maintenance, training, spare-parts readiness, and partner collaboration all support long-term project continuity.",
       items: [
         {
           title: "Localized service structure",
@@ -210,12 +210,12 @@ export const en: SiteContent = {
   },
   scenarios: {
     metadata: {
-      title: "Scenarios | MEGA POWER",
+      title: "Scenarios | MEGA POWER TECHNOLOGY",
       description:
         "Energy scenarios page covering grid integration, frequency regulation, weak-grid charging, C&I optimization, emergency power, and Japan-specific deployment needs.",
     },
     hero: {
-      title: "Find the right MEGA POWER solution by operating scenario",
+      title: "Find the right solution by operating scenario",
       subtitle:
         "Start from the customer's real operating environment, then move directly into the integrated solution stack, product families, digital capability, and support logic that fit best.",
       highlight: "operating scenario",
@@ -238,10 +238,10 @@ export const en: SiteContent = {
           "Renewable output is unstable, curtailment risk rises, and interconnection compliance gets harder",
         problemBody:
           "Wind and solar output are naturally intermittent. Generation peaks often miss demand peaks, while grid operators expect storage support to improve stability and dispatch flexibility. Without the right architecture, renewable projects face lower absorption efficiency and higher curtailment pressure.",
-        solutionLabel: "MEGA POWER Response",
+        solutionLabel: "Recommended Solution",
         solutionTitle: "Grid-side energy storage solution",
         solutionBody:
-          "MEGA POWER deploys megawatt-class storage on the grid side or generation side, shifting energy over time while coordinating with digital dispatch logic to smooth renewable output, support grid balancing, and improve operating flexibility.",
+          "MEGA POWER TECHNOLOGY deploys megawatt-class storage on the grid side or generation side, shifting energy over time while coordinating with digital dispatch logic to smooth renewable output, support grid balancing, and improve operating flexibility.",
         solutionValues: [
           "Higher renewable absorption",
           "Peak shaving and shifting",
@@ -344,10 +344,10 @@ export const en: SiteContent = {
           "Frequency deviations require faster and more stable response than conventional regulation can deliver",
         problemBody:
           "When grid frequency moves around its target, thermal or hydropower response is often too slow or too coarse. High-response power systems need precise, repeatable adjustment that can follow dispatch signals continuously and with very low delay.",
-        solutionLabel: "MEGA POWER Response",
+        solutionLabel: "Recommended Solution",
         solutionTitle: "Frequency regulation storage solution",
         solutionBody:
-          "MEGA POWER combines storage power conversion, high-speed control, and event traceability to create a frequency-regulation stack that responds rapidly, follows dispatch precisely, and supports ancillary-service value.",
+          "MEGA POWER TECHNOLOGY combines storage power conversion, high-speed control, and event traceability to create a frequency-regulation stack that responds rapidly, follows dispatch precisely, and supports ancillary-service value.",
         solutionValues: [
           "Millisecond response",
           "Bidirectional regulation",
@@ -449,10 +449,10 @@ export const en: SiteContent = {
           "High-power charging is needed, but the site has weak-grid access, limited capacity, or no grid at all",
         problemBody:
           "Bus depots, heavy-truck corridors, logistics hubs, and passenger-car fast charging sites often face distribution limits. Upgrading the grid can be slow and expensive, while some sites need a charging deployment path immediately.",
-        solutionLabel: "MEGA POWER Response",
+        solutionLabel: "Recommended Solution",
         solutionTitle: "Integrated PV-ESS-charging solution",
         solutionBody:
-          "MEGA POWER combines photovoltaic generation, storage, and charging through AC/DC coupled system design, making it possible to build high-power charging stations under weak-grid, no-grid, or space-constrained conditions with much more flexibility.",
+          "MEGA POWER TECHNOLOGY combines photovoltaic generation, storage, and charging through AC/DC coupled system design, making it possible to build high-power charging stations under weak-grid, no-grid, or space-constrained conditions with much more flexibility.",
         solutionValues: [
           "Virtual capacity expansion",
           "On-grid / off-grid switching",
@@ -548,10 +548,10 @@ export const en: SiteContent = {
           "Remote or emergency sites need power fast, without waiting for permanent infrastructure",
         problemBody:
           "Disaster recovery, temporary construction, remote mining, and field operations cannot always wait for fixed electrical infrastructure. What matters is how fast a power system can move, deploy, and recover service continuity on site.",
-        solutionLabel: "MEGA POWER Response",
+        solutionLabel: "Recommended Solution",
         solutionTitle: "Transportable storage solution",
         solutionBody:
-          "MEGA POWER uses containerized, trailer-based, and vehicle-based energy systems to create rapid-deployment power capability, with anti-vibration design, liquid cooling, and modular field dispatch suitable for mobile use cases.",
+          "MEGA POWER TECHNOLOGY uses containerized, trailer-based, and vehicle-based energy systems to create rapid-deployment power capability, with anti-vibration design, liquid cooling, and modular field dispatch suitable for mobile use cases.",
         solutionValues: [
           "Rapid deployment",
           "Vehicle-grade anti-vibration",
@@ -650,10 +650,10 @@ export const en: SiteContent = {
           "Electricity costs keep rising, while power interruptions directly impact operating continuity",
         problemBody:
           "Factories, buildings, hospitals, schools, and commercial parks are under pressure to reduce electricity cost, lower peak-demand exposure, and strengthen resilience against interruption at the same time.",
-        solutionLabel: "MEGA POWER Response",
+        solutionLabel: "Recommended Solution",
         solutionTitle: "Commercial & industrial storage solution",
         solutionBody:
-          "MEGA POWER provides flexible storage configurations from cabinet-level deployment to multi-megawatt-hour systems, helping customers optimize load profiles, improve backup capability, and progress toward lower-carbon operation with controllable system logic.",
+          "MEGA POWER TECHNOLOGY provides flexible storage configurations from cabinet-level deployment to multi-megawatt-hour systems, helping customers optimize load profiles, improve backup capability, and progress toward lower-carbon operation with controllable system logic.",
         solutionValues: [
           "Peak shaving and cost control",
           "Backup power resilience",
@@ -744,10 +744,10 @@ export const en: SiteContent = {
           "Projects in Japan demand tighter coordination around compact sites, reliability, maintainability, and communication trust",
         problemBody:
           "Japan projects often combine limited installation space, high reliability expectations, demanding operating discipline, and strong sensitivity around service quality and long-term maintainability. The deployment logic must respect those operating realities from the start.",
-        solutionLabel: "MEGA POWER Response",
+        solutionLabel: "Recommended Solution",
         solutionTitle: "Japan-oriented deployment approach",
         solutionBody:
-          "MEGA POWER frames Japan deployment through compact integration, reliability-first system design, transparent digital monitoring, and service communication that supports long-term operating confidence rather than short-term hardware delivery only.",
+          "For Japan deployments, the company emphasizes compact integration, reliability-first system design, transparent digital monitoring, and service communication that supports long-term operating confidence rather than short-term hardware delivery only.",
         solutionValues: [
           "Compact integrated design",
           "Reliability-first planning",
@@ -804,37 +804,37 @@ export const en: SiteContent = {
       {
         title: "Grid & Renewable Integration",
         problem: "Renewable projects need more stability, control, and dispatch flexibility.",
-        approach: "MEGA POWER combines storage and digital energy logic to support both grid-side and renewable-side applications.",
+        approach: "MEGA POWER TECHNOLOGY combines storage and digital energy logic to support both grid-side and renewable-side applications.",
         benefits: ["Improve renewable integration", "Support peak shifting and balancing", "Increase system flexibility", "Strengthen grid support capability"],
       },
       {
         title: "Frequency Regulation & Grid Stability",
         problem: "Dynamic frequency response requires very fast and precise power adjustment.",
-        approach: "MEGA POWER uses storage-based frequency regulation capability to support stable and responsive power-system operation.",
+        approach: "The company uses storage-based frequency regulation capability to support stable and responsive power-system operation.",
         benefits: ["Fast response", "Precise regulation", "Two-way power adjustment", "Better operational value"],
       },
       {
         title: "EV Charging in Weak-grid or Space-constrained Conditions",
         problem: "Charging demand can outgrow grid capacity and site limitations.",
-        approach: "MEGA POWER combines storage, charging, and digital monitoring to make charging deployment more flexible.",
+        approach: "MEGA POWER TECHNOLOGY combines storage, charging, and digital monitoring to make charging deployment more flexible.",
         benefits: ["Reduce grid-upgrade pressure", "Smooth demand peaks", "Support modular deployment", "Improve charging continuity"],
       },
       {
         title: "Commercial & Industrial Cost Optimization",
         problem: "Industrial and commercial users need lower energy costs and more stable operation.",
-        approach: "MEGA POWER provides storage-based energy optimization and controllable power support for variable site loads.",
+        approach: "The company provides storage-based energy optimization and controllable power support for variable site loads.",
         benefits: ["Reduce peak-demand pressure", "Improve energy flexibility", "Strengthen continuity", "Support low-carbon transition"],
       },
       {
         title: "Off-grid / Temporary / Emergency Power",
         problem: "Remote or urgent sites need energy where permanent grid access is limited or unavailable.",
-        approach: "MEGA POWER deploys transportable energy systems with rapid setup and flexible supply capability.",
+        approach: "MEGA POWER TECHNOLOGY deploys transportable energy systems with rapid setup and flexible supply capability.",
         benefits: ["Rapid deployment", "Adaptable site use", "Mobile power support", "Resilient emergency response"],
       },
       {
         title: "Japan-specific Deployment Needs",
         problem: "Projects in Japan often require tighter coordination around site limits, reliability, and maintainability.",
-        approach: "MEGA POWER frames Japan deployment around compact integration, operational confidence, communication trust, and support readiness.",
+        approach: "Japan deployment is organized around compact integration, operational confidence, communication trust, and support readiness.",
         benefits: ["Constrained-site fit", "Reliability-first planning", "Maintainable long-term operation", "Clear communication support"],
       },
     ],
@@ -852,10 +852,10 @@ export const en: SiteContent = {
       ],
     },
     mapping: {
-      label: "How MEGA POWER Responds",
+      label: "How the Solution Works",
       title: "Scenario demand mapped to integrated solution logic",
       body:
-        "Across these environments, MEGA POWER combines core products, digital modules, and service workflows rather than treating equipment, software, and O&M as separate layers.",
+        "Across these environments, the company combines core products, digital modules, and service workflows rather than treating equipment, software, and O&M as separate layers.",
       bullets: [
         "Storage architecture matched to grid or site operating logic",
         "Digital warning, monitoring, and event traceability",
@@ -872,15 +872,15 @@ export const en: SiteContent = {
   },
   solutions: {
     metadata: {
-      title: "Solutions | MEGA POWER",
+      title: "Solutions | MEGA POWER TECHNOLOGY",
       description:
         "Five integrated solution systems spanning utility storage, frequency regulation, PV-ESS-charging, transportable storage, and C&I energy storage.",
     },
     hero: {
-      title: "Solution architecture overview for MEGA POWER systems",
+      title: "Solution architecture overview for integrated energy systems",
       subtitle:
         "This page is a short overview of the main solution systems. The full scenario-to-solution matching logic lives on the Scenarios page.",
-      highlight: "MEGA POWER systems",
+      highlight: "integrated energy systems",
     },
     intro: {
       label: "Solution Framework",
@@ -924,28 +924,28 @@ export const en: SiteContent = {
   },
   platform: {
     metadata: {
-      title: "Platform | MEGA POWER",
+      title: "Platform | MEGA POWER TECHNOLOGY",
       description:
-        "Digital platform page for MEGA POWER covering warning, traceability, monitoring, control, O&M workflow, and data security logic.",
+        "Digital platform page for MEGA POWER TECHNOLOGY covering warning, traceability, monitoring, control, O&M workflow, and data security logic.",
     },
     hero: {
       title: "Digital platform capability across warning, control, and O&M",
       subtitle:
-        "MEGA POWER connects data visibility, event traceability, control logic, and field maintenance workflows in one platform layer.",
+        "MEGA POWER TECHNOLOGY connects data visibility, event traceability, control logic, and field maintenance workflows in one platform layer.",
       highlight: "platform capability",
     },
     intro: {
       label: "6S+EDR Capability",
       title: "Shift from passive remediation toward proactive prevention",
       body:
-        "Backed by long-term industry data accumulation and local real-time processing, MEGA POWER adds an enhanced safety layer to conventional storage architecture to address the sector's core pain points.",
+        "Backed by long-term industry data accumulation and local real-time processing, the platform adds an enhanced safety layer to conventional storage architecture to address the sector's core pain points.",
     },
     capability: {
       pills: ["AI Powered", "ms-level Response", "Full Lifecycle Logging"],
       explainer: {
         label: "What 6S + EDR Means",
         body:
-          "Here, 6S refers to six core system layers inside the MEGA POWER architecture: BWS, HCS, PCS, BMS, EMS, and OMS. EDR adds event recording and fault traceability, completing the 6S+EDR safety architecture.",
+        "Here, 6S refers to six core system layers inside this platform architecture: BWS, HCS, PCS, BMS, EMS, and OMS. EDR adds event recording and fault traceability, completing the 6S+EDR safety architecture.",
         systems: [
           { name: "BWS", title: "Battery Warning System" },
           { name: "HCS", title: "High-speed Control System" },
@@ -1030,7 +1030,7 @@ export const en: SiteContent = {
       label: "Digital Energy Management Platform",
       title: "Comprehensive data storage, visualized analysis, and safer O&M coordination",
       body:
-        "MEGA POWER brings event recording, strategy dispatch, monitoring, warning, and O&M execution into one digital operating layer for energy storage systems of different scales.",
+        "MEGA POWER TECHNOLOGY brings event recording, strategy dispatch, monitoring, warning, and O&M execution into one digital operating layer for energy storage systems of different scales.",
       systems: ["EDR", "ECS", "EMS", "OMS", "BWS"],
       highlights: [
         {
@@ -1063,7 +1063,7 @@ export const en: SiteContent = {
       label: "EMS On-Premises Deployment & Data Safety",
       title: "Localized deployment by project scale with layered security safeguards",
       body:
-        "MEGA POWER supports localized EMS deployment for small-scale, medium-scale, and large-scale projects with layered safeguards across data collection, transmission, storage, access control, server protection, and audit management.",
+        "The company supports localized EMS deployment for small-scale, medium-scale, and large-scale projects with layered safeguards across data collection, transmission, storage, access control, server protection, and audit management.",
       deployment: [
         "Small-scale deployment: under 1 MWh",
         "Medium-scale deployment: 1 MWh to 5 MWh",
@@ -1091,20 +1091,20 @@ export const en: SiteContent = {
     cta: {
       label: "Products",
       title: "The product page brings these platform-enabled systems back to the equipment families behind them",
-      body: "After reviewing warning, control, and O&M capability, you can continue into the product families to see how MEGA POWER organizes the hardware layer that supports each solution.",
+      body: "After reviewing warning, control, and O&M capability, you can continue into the product families to see how the hardware layer supports each solution.",
       action: { label: "Browse Product Families", page: "products" },
     },
   },
   products: {
     metadata: {
-      title: "Products | MEGA POWER",
+      title: "Products | MEGA POWER TECHNOLOGY",
       description:
-        "MEGA POWER product families organized by grid, PV-ESS-charging, transportable, and C&I use cases, with clear specifications and deployment relevance.",
+        "MEGA POWER TECHNOLOGY product families organized by grid, PV-ESS-charging, transportable, and C&I use cases, with clear specifications and deployment relevance.",
     },
     hero: {
       title: "Core products supporting each solution family",
       subtitle:
-        "Review the core MEGA POWER product families by deployment role, with clear model references, visual comparison, and practical technical highlights.",
+        "Review the core product families by deployment role, with clear model references, visual comparison, and practical technical highlights.",
       highlight: "Core products",
     },
     intro: {
@@ -1129,14 +1129,14 @@ export const en: SiteContent = {
   },
   safety: {
     metadata: {
-      title: "Safety & Reliability | MEGA POWER",
+      title: "Safety & Reliability | MEGA POWER TECHNOLOGY",
       description:
         "Safety architecture page covering multi-layer protection, warning and response, event traceability, O&M efficiency, and Japan-facing trust messaging.",
     },
     hero: {
       title: "Safety, traceability, and confidence built into the system",
       subtitle:
-        "MEGA POWER helps customers operate with more clarity and less uncertainty through integrated safety logic and system-level operating control.",
+        "MEGA POWER TECHNOLOGY helps customers operate with more clarity and less uncertainty through integrated safety logic and system-level operating control.",
       highlight: "traceability",
     },
     intro: {
@@ -1146,7 +1146,7 @@ export const en: SiteContent = {
         "This safety architecture combines battery warning, partitioned control, event recording, fire protection linkage, and maintenance visibility across the operating lifecycle.",
     },
     items: [
-      { title: "Multi-layer protection", body: "MEGA POWER applies protection across cell, PACK, system, and operating layers rather than relying on a single equipment feature." },
+      { title: "Multi-layer protection", body: "The company applies protection across cell, PACK, system, and operating layers rather than relying on a single equipment feature." },
       { title: "Warning and response", body: "Battery warning, incident recording, and control logic improve fault awareness and response speed." },
       { title: "Event traceability", body: "EDR positions traceability as a source of operational confidence and post-event clarity." },
       { title: "O&M efficiency", body: "Monitoring and work-order logic help maintenance teams move from passive troubleshooting to structured action." },
@@ -1155,7 +1155,7 @@ export const en: SiteContent = {
       label: "Japan-facing Trust",
       title: "Reliability messaging aligned with Japan market expectations",
       body:
-        "In Japan, MEGA POWER emphasizes operational confidence, maintainability, disciplined communication, and resilient long-term use under constrained site conditions.",
+        "In Japan, the company emphasizes operational confidence, maintainability, disciplined communication, and resilient long-term use under constrained site conditions.",
       bullets: ["Operational confidence in compact deployments", "Maintainability over the full lifecycle", "Clear warning and response visibility", "Trust-building through system traceability"],
     },
     cta: {
@@ -1167,14 +1167,14 @@ export const en: SiteContent = {
   },
   services: {
     metadata: {
-      title: "Services | MEGA POWER",
+      title: "Services | MEGA POWER TECHNOLOGY",
       description:
-        "Service page for MEGA POWER covering O&M strategy, localized service logic, partner collaboration, and technical continuity.",
+        "Service page for MEGA POWER TECHNOLOGY covering O&M strategy, localized service logic, partner collaboration, and technical continuity.",
     },
     hero: {
       title: "Service and O&M designed for long-term partnership",
       subtitle:
-        "Service is part of the product experience. The site positions O&M, communication, and support readiness as integral to long-term system value.",
+        "Service is part of the product experience. O&M, communication, and support readiness are treated as integral to long-term system value.",
       highlight: "long-term partnership",
     },
     intro: {
@@ -1183,9 +1183,9 @@ export const en: SiteContent = {
       body: "",
     },
     strategy: [
-      { title: "Localized service team model", body: "MEGA POWER organizes service around local market understanding and tailored execution instead of relying on a purely remote support posture." },
+      { title: "Localized service team model", body: "The company organizes service around local market understanding and tailored execution instead of relying on a purely remote support posture." },
       { title: "Cross-cultural communication training", body: "Communication readiness matters for international collaboration, alignment, and long-term project trust." },
-      { title: "Continuous technical support and updates", body: "MEGA POWER treats technical continuity as an ongoing operating discipline rather than a post-delivery add-on." },
+      { title: "Continuous technical support and updates", body: "The company treats technical continuity as an ongoing operating discipline rather than a post-delivery add-on." },
       { title: "Partner network expansion", body: "Local partnerships help extend response capability, market understanding, and service coverage." },
     ],
     mechanism: [
@@ -1202,32 +1202,32 @@ export const en: SiteContent = {
     },
     cta: {
       label: "About",
-      title: "See how service capability fits into the full MEGA POWER offering",
+      title: "See how service capability fits into the full company offering",
       body: "If you want to understand how delivery, platform capability, products, and long-term support work together, the About page gives a clearer company-level view.",
-      action: { label: "Read About MEGA POWER", page: "about" },
+      action: { label: "View Company Overview", page: "about" },
     },
   },
   about: {
     metadata: {
-      title: "About | MEGA POWER",
+      title: "About | MEGA POWER TECHNOLOGY",
       description:
-        "About MEGA POWER page covering company introduction, integrated digital green energy positioning, and mission.",
+        "Company overview page covering integrated digital green energy positioning, business scope, and mission.",
     },
     hero: {
-      title: "About MEGA POWER",
+      title: "Company Overview",
       subtitle:
         "Integrated digital green energy solutions for a changing energy landscape, combining power, storage, charging, digital control, and service capability.",
-      highlight: "MEGA POWER",
+      highlight: "company overview",
     },
     intro: {
       label: "Company Introduction",
       title: "An integrated digital green energy solutions provider",
       body:
-        "MEGA POWER goes beyond standalone hardware by combining integrated energy architecture, digital operating capability, and service readiness in one offering.",
+        "MEGA POWER TECHNOLOGY goes beyond standalone hardware by combining integrated energy architecture, digital operating capability, and service readiness in one offering.",
     },
     pillars: [
-      { title: "Integrated solution logic", body: "MEGA POWER connects photovoltaic generation, storage, charging, and digital management into one coherent solution framework." },
-      { title: "Scenario-based market approach", body: "MEGA POWER addresses grid, industry, transport, charging, and emergency use cases instead of presenting isolated equipment categories." },
+      { title: "Integrated solution logic", body: "The company connects photovoltaic generation, storage, charging, and digital management into one coherent solution framework." },
+      { title: "Scenario-based market approach", body: "The company addresses grid, industry, transport, charging, and emergency use cases instead of presenting isolated equipment categories." },
       { title: "Platform and safety differentiation", body: "Digital warning, traceability, monitoring, and O&M workflow logic strengthen system trust and operational visibility." },
       { title: "Operational support mindset", body: "Long-term maintainability and localized delivery logic support stable operation from deployment through daily use." },
     ],
@@ -1239,26 +1239,26 @@ export const en: SiteContent = {
     cta: {
       label: "Contact",
       title: "Open a business conversation",
-      body: "Use the company information below to connect with MEGA POWER for project discussions and business communication.",
-      action: { label: "About MEGA POWER", page: "about" },
+      body: "Use the company information below to begin project discussions and business communication.",
+      action: { label: "Company Information", page: "about" },
     },
   },
   contact: {
     metadata: {
-      title: "Company Information | MEGA POWER",
-      description: "Basic MEGA POWER company information section covering company name, address context, and pending contact details.",
+      title: "Company Information | MEGA POWER TECHNOLOGY",
+      description: "Basic company information section covering company name, address, and business contact context.",
     },
     hero: {
-      title: "Contact MEGA POWER",
+      title: "Company Information",
       subtitle:
-        "Use the company information below to reach MEGA POWER for project discussions, business communication, and deployment coordination.",
-      highlight: "MEGA POWER",
+        "Use the company information below for project discussions, business communication, and deployment coordination.",
+      highlight: "company information",
     },
     intro: {
       label: "Company Information",
       title: "Company information",
       body:
-        "Find the core company details for business communication and project coordination with MEGA POWER.",
+        "Find the core company details for business communication and project coordination.",
     },
     items: [
       { label: "Company", value: "MEGA POWER TECHNOLOGY CO., LTD." },

@@ -204,9 +204,9 @@ function HomeScenarioPreviewGrid({
     zh: "推荐解决路径",
   }[locale];
   const pathSummaryLabel = {
-    en: "How MEGA POWER typically responds",
-    ja: "MEGA POWER の基本対応",
-    zh: "MEGA POWER 的典型响应",
+      en: "Typical response logic",
+      ja: "典型的な対応ロジック",
+      zh: "典型解决逻辑",
   }[locale];
   const solutionOrder = [0, 1, 2, 3, 4];
 
@@ -475,15 +475,15 @@ function Hero({ hero, locale }: { hero: HeroContent; locale: Locale }) {
 function ScenarioGrid({ items, locale }: { items: ScenarioCard[]; locale: Locale }) {
   const labels = {
     en: {
-      help: "How MEGA POWER Helps",
+      help: "Recommended Solution",
       fit: "Best Fit For",
     },
     ja: {
-      help: "How MEGA POWER Helps",
+      help: "Recommended Solution",
       fit: "Best Fit For",
     },
     zh: {
-      help: "MEGA POWER 如何支持",
+      help: "推荐解决路径",
       fit: "适用场景",
     },
   }[locale];
@@ -1391,7 +1391,7 @@ export function PageRenderer({ locale, page, content }: PageRendererProps) {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   src={content.contact.mapEmbed}
-                  title="MEGA POWER Map"
+            title="Company location map"
                 />
               </div>
             </div>
