@@ -75,7 +75,7 @@ function cabinet(g: THREE.Group, x: number, z: number, height = 1.4) {
 }
 export function createModel(
   kind: ModelKind,
-  options?: Pick<SceneNode, "batteryForm" | "rating">,
+  options?: Pick<SceneNode, "batteryForm" | "rating" | "visualForm">,
 ): {
   group: THREE.Group;
   animate?: (time: number) => void;
@@ -83,7 +83,46 @@ export function createModel(
   const g = new THREE.Group();
   let animate: ((time: number) => void) | undefined;
   box(g, [2.65, 0.14, 2.1], [0, 0.04, 0], palette.dark);
-  if (kind === "busbar") {
+  if (options?.visualForm === "dispatch") {
+    box(g, [2.4, 1.45, 1.5], [0, 0.87, 0], palette.shell);
+    box(g, [2.6, 0.12, 1.7], [0, 1.66, 0], palette.light);
+    for (const x of [-0.75, 0, 0.75])
+      box(g, [0.58, 0.48, 0.06], [x, 1.1, 0.79], palette.cyan, true);
+    rod(g, [0.85, 1.7, -0.4], [0.85, 2.4, -0.4], 0.035);
+    rod(g, [0.5, 2.2, -0.4], [1.2, 2.2, -0.4], 0.035);
+  } else if (options?.visualForm === "ems") {
+    cabinet(g, -0.55, -0.2, 1.8);
+    cabinet(g, 0.55, -0.2, 1.8);
+    box(g, [1.85, 0.6, 0.1], [0, 1.05, 0.7], palette.deep);
+    box(g, [1.65, 0.4, 0.03], [0, 1.05, 0.77], palette.cyan, true);
+  } else if (
+    options?.visualForm === "pcs" ||
+    options?.visualForm === "power-cabinet"
+  ) {
+    for (const x of [-0.8, 0, 0.8]) cabinet(g, x, 0, 1.65);
+    box(g, [2.5, 0.12, 1.15], [0, 1.86, 0], palette.light);
+    if (options.visualForm === "pcs") {
+      box(g, [2.4, 0.45, 0.48], [0, 0.4, -0.75], palette.dark);
+      for (const x of [-0.8, 0, 0.8])
+        rod(g, [x, 0.6, -0.75], [x, 1.25, -0.75], 0.075);
+    }
+  } else if (options?.visualForm === "pv-stepup") {
+    box(g, [2.4, 1.55, 1.45], [0, 0.92, 0], palette.shell);
+    for (const x of [-0.75, 0, 0.75]) {
+      box(g, [0.65, 1.3, 0.05], [x, 0.9, 0.76], palette.dark);
+      for (let i = 0; i < 6; i++)
+        box(g, [0.5, 0.05, 0.04], [x, 0.55 + i * 0.12, 0.8], palette.light);
+    }
+    box(g, [2.5, 0.1, 1.55], [0, 1.75, 0], palette.light);
+  } else if (options?.visualForm === "integrated-charger") {
+    cabinet(g, -0.45, 0, 1.8);
+    cabinet(g, 0.5, 0, 1.8);
+    box(g, [0.6, 0.5, 0.08], [0.5, 1.45, 0.55], palette.cyan, true);
+    for (const x of [-1.1, 1.15]) {
+      rod(g, [x, 1.5, 0.3], [x, 0.45, 0.3], 0.065, palette.deep);
+      rod(g, [x, 0.45, 0.3], [x, 1.1, 0.65], 0.065, palette.deep);
+    }
+  } else if (kind === "busbar") {
     for (const x of [-0.8, 0, 0.8]) cabinet(g, x, 0, 1.15);
     for (const z of [-0.23, 0.05, 0.33])
       box(g, [2.45, 0.065, 0.065], [0, 1.47, z], palette.accent);
@@ -215,8 +254,15 @@ export function createModel(
     box(g, [1.55, 0.55, 0.09], [0, 1.2, 0.72], palette.deep);
     box(g, [1.35, 0.35, 0.03], [0, 1.2, 0.78], palette.cyan, true);
   } else if (kind === "charger") {
-    for (const x of [-0.65, 0.65]) {
-      box(g, [0.54, 1.45, 0.46], [x, 0.88, 0], palette.light);
+    for (const x of options?.visualForm === "high-power-charger"
+      ? [0]
+      : [-0.65, 0.65]) {
+      box(
+        g,
+        [options?.visualForm === "high-power-charger" ? 1.1 : 0.54, 1.45, 0.46],
+        [x, 0.88, 0],
+        palette.light,
+      );
       box(g, [0.42, 0.45, 0.025], [x, 1.18, 0.25], palette.deep);
       box(g, [0.3, 0.23, 0.03], [x, 1.23, 0.27], palette.accent, true);
       const curve = new THREE.CatmullRomCurve3([
@@ -290,6 +336,10 @@ export function createModel(
     box(g, [0.48, 0.65, 0.04], [0.5, 0.47, 0.81], palette.deep);
     rod(g, [-0.7, 1.35, -0.5], [-0.7, 2.15, -0.5], 0.14, palette.light);
   }
+  if (options?.visualForm === "storage-system") {
+    cabinet(g, 1.05, 0.1, 1.7);
+    box(g, [0.7, 0.1, 1], [1.05, 1.9, 0.1], palette.light);
+  }
   if (options?.rating) {
     const canvas = document.createElement("canvas");
     canvas.width = 768;
@@ -310,7 +360,8 @@ export function createModel(
     const label = new THREE.Sprite(
       new THREE.SpriteMaterial({ map: texture, depthTest: false }),
     );
-    label.position.set(0, options.batteryForm ? 2.65 : 1.95, 0);
+    const top = new THREE.Box3().setFromObject(g).max.y;
+    label.position.set(0, top + 0.42, 0);
     label.scale.set(3.1, 0.52, 1);
     label.renderOrder = 10;
     g.add(label);

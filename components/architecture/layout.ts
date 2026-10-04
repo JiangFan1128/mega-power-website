@@ -25,6 +25,15 @@ export type SceneNode = {
   scale?: number;
   batteryForm?: "cabinet" | "wide-cabinet";
   rating?: string;
+  visualForm?:
+    | "pcs"
+    | "pv-stepup"
+    | "dispatch"
+    | "ems"
+    | "integrated-charger"
+    | "power-cabinet"
+    | "high-power-charger"
+    | "storage-system";
   items?: string[];
 };
 export type SceneLink = {
@@ -309,6 +318,41 @@ export function architectureLayout(
         ];
       }
     }
+  }
+  // Explicit roles keep visual differences identical across translations.
+  const set = (id: string, props: Partial<SceneNode>) =>
+    Object.assign(nodes.find((n) => n.id === id)!, props);
+  if (scenario === "grid") {
+    set("0-1", { visualForm: "pv-stepup" });
+    set("0-4", { visualForm: "ems" });
+    set("2-0", { rating: "5015 kWh" });
+    set("2-1", { visualForm: "pcs", rating: "PCS" });
+  } else if (scenario === "frequency") {
+    set("0-2", { visualForm: "storage-system", rating: "2500 kW" });
+    set("1-0", { visualForm: "dispatch" });
+    set("1-1", { visualForm: "ems", rating: "EMS" });
+  } else if (architecture.kind === "turnover") {
+    const states =
+      locale === "ja"
+        ? ["充電", "待機", "放電"]
+        : locale === "zh"
+          ? ["充电", "备用", "放电"]
+          : ["CHARGING", "STANDBY", "DISCHARGING"];
+    ["0-2", "1-1", "2-0"].forEach((id, i) => set(id, { rating: states[i] }));
+    set("0-1", { visualForm: "pcs", rating: "1725 kW" });
+    set("2-1", { visualForm: "pcs", rating: "2500 kW" });
+  } else if (architecture.kind === "tiers") {
+    set("0-0", { visualForm: "integrated-charger", rating: "Max 200 kW" });
+    for (const n of [1, 2]) {
+      set(`${n}-0`, { batteryForm: "wide-cabinet" });
+      set(`${n}-1`, { visualForm: "power-cabinet", rating: "1440 kW" });
+      set(`${n}-2`, {
+        rating: n === 1 ? "240 kW" : "480 kW",
+        ...(n === 2 ? { visualForm: "high-power-charger" as const } : {}),
+      });
+    }
+  } else if (architecture.kind === "scale") {
+    set("2-pcs", { visualForm: "pcs", rating: "PCS" });
   }
   return { nodes, links };
 }
