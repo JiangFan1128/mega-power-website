@@ -7,3 +7,5 @@ dist
 .tools
 .fang_cloud_tmp_dir
 .vercel
+
+*.tsbuildinfo
