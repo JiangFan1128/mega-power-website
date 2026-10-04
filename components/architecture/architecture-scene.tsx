@@ -19,7 +19,7 @@ const copy = {
   en: {
     tag: "ENERGY IN MOTION",
     hint: "Drag to explore · Select equipment below",
-    touch: "Use two fingers to rotate · Select equipment below",
+    touch: "Drag to rotate · Scroll outside the scene",
     pause: "Pause animation",
     play: "Play animation",
     reset: "Reset view",
@@ -39,7 +39,7 @@ const copy = {
   ja: {
     tag: "エネルギーの流れ",
     hint: "ドラッグして回転 · 下の設備を選択",
-    touch: "2 本指で回転 · 下の設備を選択",
+    touch: "指でドラッグして回転 · 画面外でスクロール",
     pause: "アニメーションを停止",
     play: "アニメーションを再生",
     reset: "視点を戻す",
@@ -58,7 +58,7 @@ const copy = {
   zh: {
     tag: "看见能量的流动",
     hint: "拖动查看角度 · 点击下方设备查看详情",
-    touch: "双指旋转 · 点击下方设备查看详情",
+    touch: "单指拖动旋转 · 画面外滑动页面",
     pause: "暂停动画",
     play: "播放动画",
     reset: "重置视角",

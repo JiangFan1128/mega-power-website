@@ -21,7 +21,6 @@ export function mountArchitecture(
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   host.appendChild(renderer.domElement);
   renderer.domElement.setAttribute("aria-hidden", "true");
-  renderer.domElement.style.touchAction = "pan-y";
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 150);
   const controls = new OrbitControls(camera, renderer.domElement);
@@ -31,9 +30,10 @@ export function mountArchitecture(
   controls.minPolarAngle = 0.12;
   controls.maxPolarAngle = 1.48;
   // Horizontal orbit is unrestricted so equipment can be inspected from behind.
-  // A single touch keeps scrolling the page; two fingers rotate the model.
-  controls.touches.ONE = -1 as THREE.TOUCH;
-  controls.touches.TWO = THREE.TOUCH.ROTATE;
+  // OrbitControls reserves canvas touch gestures; scroll the page outside it.
+  renderer.domElement.style.touchAction = "none";
+  controls.touches.ONE = THREE.TOUCH.ROTATE;
+  controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
   scene.add(new THREE.HemisphereLight(0xdbfaff, 0x163346, 2.8));
   const sun = new THREE.DirectionalLight(0xffffff, 3.2);
   sun.position.set(-8, 16, 10);
