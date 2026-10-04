@@ -26,6 +26,7 @@ export type SceneNode = {
   batteryForm?: "cabinet" | "wide-cabinet";
   rating?: string;
   visualForm?:
+    | "battery-transporter"
     | "pcs"
     | "pv-stepup"
     | "dispatch"
@@ -332,6 +333,7 @@ export function architectureLayout(
     set("1-0", { visualForm: "dispatch" });
     set("1-1", { visualForm: "ems", rating: "EMS" });
   } else if (architecture.kind === "turnover") {
+    set("1-0", { visualForm: "battery-transporter" });
     const states =
       locale === "ja"
         ? ["充電", "待機", "放電"]

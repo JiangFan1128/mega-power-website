@@ -283,7 +283,38 @@ export function createModel(
   } else if (["car", "bus", "truck"].includes(kind)) {
     const length = kind === "car" ? 1.8 : 2.6;
     box(g, [length, 0.48, 1.02], [0, 0.65, 0], palette.light);
-    if (kind === "truck") {
+    if (kind === "truck" && options?.visualForm === "battery-transporter") {
+      // Open flatbed with individually removable battery modules and restraints.
+      box(g, [1.9, 0.12, 1.18], [-0.32, 0.94, 0], palette.dark);
+      box(g, [0.64, 0.7, 1.02], [0.98, 1.12, 0], palette.accent);
+      box(g, [0.03, 0.38, 0.85], [1.315, 1.24, 0], palette.deep);
+      box(g, [0.45, 0.3, 0.025], [0.98, 1.28, 0.53], palette.cyan);
+      for (const x of [-0.95, -0.35, 0.25]) {
+        box(g, [0.49, 0.83, 0.92], [x, 1.42, 0], palette.shell);
+        box(g, [0.39, 0.63, 0.035], [x, 1.43, 0.48], palette.deep);
+        // Battery glyph on the side: bright outline, terminal and three cells.
+        box(g, [0.29, 0.39, 0.025], [x, 1.45, 0.51], palette.accent, true);
+        box(g, [0.22, 0.31, 0.028], [x, 1.45, 0.53], palette.deep);
+        box(g, [0.12, 0.06, 0.028], [x, 1.68, 0.52], palette.accent, true);
+        for (let i = 0; i < 3; i++)
+          box(
+            g,
+            [0.16, 0.055, 0.03],
+            [x, 1.35 + i * 0.1, 0.55],
+            palette.accent,
+            true,
+          );
+        for (const z of [-0.32, 0.32])
+          box(g, [0.22, 0.06, 0.1], [x, 1.87, z], palette.light);
+      }
+      for (const x of [-1.28, 0.56]) {
+        for (const z of [-0.58, 0.58])
+          rod(g, [x, 0.94, z], [x, 1.98, z], 0.045, palette.light);
+        rod(g, [x, 1.98, -0.58], [x, 1.98, 0.58], 0.045, palette.light);
+      }
+      for (const x of [-1.1, -0.65, -0.2, 0.25])
+        box(g, [0.23, 0.1, 0.04], [x, 0.95, 0.62], 0xffcc55);
+    } else if (kind === "truck") {
       box(g, [1.65, 0.95, 1.07], [-0.4, 1.24, 0], palette.shell);
       box(g, [0.64, 0.63, 0.94], [0.93, 1.1, 0], palette.accent);
       box(g, [0.025, 0.36, 0.8], [1.265, 1.17, 0], palette.deep);
