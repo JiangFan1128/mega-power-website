@@ -25,7 +25,7 @@ export function mountArchitecture(
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 150);
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enablePan = false;
-  controls.enableZoom = false;
+  controls.enableZoom = true;
   controls.enableDamping = false;
   controls.minPolarAngle = 0.12;
   controls.maxPolarAngle = 1.48;
@@ -235,7 +235,8 @@ export function mountArchitecture(
     frame = 0,
     last = 0,
     time = 0,
-    zoom = 1;
+    zoom = 1,
+    baseDistance = 0;
   const target = new THREE.Vector3(0, 0.2, centerZ);
   controls.target.copy(target);
   const projected = new THREE.Vector3();
@@ -247,13 +248,14 @@ export function mountArchitecture(
     camera.updateProjectionMatrix();
     renderer.setSize(w, h);
     const halfFov = Math.tan(THREE.MathUtils.degToRad(19));
-    const distance =
-      (Math.max(
+    baseDistance =
+      Math.max(
         (width + depth * 0.18) / (2 * halfFov * camera.aspect),
         (depth * 0.72 + 3.3) / (2 * halfFov),
-      ) *
-        1.18) /
-      zoom;
+      ) * 1.18;
+    const distance = baseDistance / zoom;
+    controls.minDistance = baseDistance / 1.7;
+    controls.maxDistance = baseDistance / 0.8;
     const direction = reset
       ? new THREE.Vector3(0, 1.05, 1).normalize()
       : camera.position.clone().sub(target).normalize();
@@ -336,7 +338,15 @@ export function mountArchitecture(
   });
   observer.observe(host);
   document.addEventListener("visibilitychange", sync);
-  controls.addEventListener("change", draw);
+  controls.addEventListener("change", () => {
+    if (baseDistance > 0)
+      zoom = THREE.MathUtils.clamp(
+        baseDistance / camera.position.distanceTo(target),
+        0.8,
+        1.7,
+      );
+    draw();
+  });
   const raycaster = new THREE.Raycaster();
   let downX = 0,
     downY = 0;
