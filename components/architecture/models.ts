@@ -281,7 +281,7 @@ export function createModel(
     box(g, [2.5, 0.11, 1.7], [0, 1.88, 0], palette.dark);
     box(g, [2.4, 0.04, 0.06], [0, 1.85, 0.86], palette.accent, true);
   } else if (["car", "bus", "truck"].includes(kind)) {
-    const length = kind === "car" ? 1.8 : 2.6;
+    const length = kind === "car" ? 1.8 : kind === "bus" ? 3.2 : 2.6;
     box(g, [length, 0.48, 1.02], [0, 0.65, 0], palette.light);
     if (kind === "truck" && options?.visualForm === "battery-transporter") {
       // Open flatbed with individually removable battery modules and restraints.
@@ -318,18 +318,45 @@ export function createModel(
       box(g, [1.65, 0.95, 1.07], [-0.4, 1.24, 0], palette.shell);
       box(g, [0.64, 0.63, 0.94], [0.93, 1.1, 0], palette.accent);
       box(g, [0.025, 0.36, 0.8], [1.265, 1.17, 0], palette.deep);
+    } else if (kind === "bus") {
+      // Full-height, flat-front city bus: no sedan hood or recessed cabin.
+      box(g, [3.2, 1.1, 1.04], [0, 1.14, 0], palette.light);
+      box(g, [3.24, 0.12, 1.08], [0, 1.75, 0], palette.shell);
+      for (const z of [-0.54, 0.54]) {
+        box(g, [3.0, 0.52, 0.025], [0, 1.36, z], palette.deep);
+        for (let i = 0; i < 6; i++)
+          box(
+            g,
+            [0.39, 0.4, 0.03],
+            [-1.25 + i * 0.5, 1.37, z * 1.03],
+            palette.cyan,
+          );
+        box(g, [3.05, 0.12, 0.03], [0, 0.91, z], palette.accent);
+      }
+      // Two double-leaf passenger doors on the visible boarding side.
+      for (const x of [-0.35, 1.15]) {
+        box(g, [0.59, 1.0, 0.04], [x, 1.03, 0.57], palette.deep);
+        for (const offset of [-0.14, 0.14])
+          box(g, [0.23, 0.65, 0.03], [x + offset, 1.15, 0.6], palette.cyan);
+        box(g, [0.025, 0.93, 0.035], [x, 1.02, 0.62], palette.light);
+      }
+      box(g, [0.035, 0.65, 0.9], [1.62, 1.3, 0], palette.deep);
+      box(g, [0.04, 0.42, 0.79], [1.645, 1.27, 0], palette.cyan);
+      box(g, [0.04, 0.12, 0.64], [1.65, 1.6, 0], palette.accent, true);
+      box(g, [1.05, 0.19, 0.7], [-0.35, 1.9, 0], palette.light);
+      for (let i = 0; i < 5; i++)
+        box(g, [0.055, 0.025, 0.51], [-0.7 + i * 0.17, 2.01, 0], palette.dark);
+      for (const z of [-0.65, 0.65]) {
+        rod(g, [1.42, 1.53, z * 0.8], [1.5, 1.53, z], 0.025);
+        box(g, [0.1, 0.23, 0.09], [1.5, 1.43, z], palette.dark);
+      }
     } else {
-      box(
-        g,
-        [length * 0.72, kind === "bus" ? 0.85 : 0.4, 0.91],
-        [-0.08, kind === "bus" ? 1.18 : 1.02, 0],
-        palette.dark,
-      );
-      for (let i = 0; i < (kind === "bus" ? 5 : 2); i++)
+      box(g, [length * 0.72, 0.4, 0.91], [-0.08, 1.02, 0], palette.dark);
+      for (let i = 0; i < 2; i++)
         box(
           g,
           [0.24, 0.28, 0.025],
-          [-length * 0.32 + i * 0.39, kind === "bus" ? 1.35 : 1.04, 0.47],
+          [-length * 0.32 + i * 0.39, 1.04, 0.47],
           palette.cyan,
         );
     }
