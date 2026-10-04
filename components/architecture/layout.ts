@@ -85,6 +85,14 @@ export function architectureLayout(
       });
     });
     if (scenario === "frequency") {
+      const positions: Record<string, [number, number]> = {
+        "0-0": [-5, 2],
+        "0-1": [0, 2],
+        "0-2": [5, 2],
+        "1-0": [0, -3],
+        "1-1": [5, -3],
+      };
+      for (const node of nodes) [node.x, node.z] = positions[node.id];
       link("0-0", "0-1", "power", true);
       link("0-1", "0-2", "power", true);
       nodes.find((n) => n.id === "0-2")!.detail += ` · ${text.integrated}`;
@@ -160,19 +168,32 @@ export function architectureLayout(
         if (n && r !== 1) link(`${r}-${n - 1}`, `${r}-${n}`);
       }),
     );
+    // Serpentine arrangement: charge left-to-right, transport down the right,
+    // discharge right-to-left. The spare-battery branch stays in the middle.
+    const positions: Record<string, [number, number]> = {
+      "0-0": [-6, -4],
+      "0-1": [0, -4],
+      "0-2": [6, -4],
+      "1-0": [6, 0],
+      "1-1": [-6, 0],
+      "2-0": [6, 4],
+      "2-1": [0, 4],
+      "2-2": [-6, 4],
+    };
+    for (const node of nodes) [node.x, node.z] = positions[node.id];
     link("0-2", "1-0", "transport", true);
     link("1-0", "2-0", "transport", true);
     link("1-1", "1-0", "transport", true);
   } else if (architecture.kind === "tiers") {
     architecture.tiers.forEach((tier, n) => {
-      const x = (n - 1) * 5.6;
+      const x = (n - 1) * 7;
       nodes.push({
         id: `${n}-grid`,
         title: text.grid,
         detail: text.gridDetail,
         model: "grid",
-        x: x - 1.5,
-        z: -4.5,
+        x: x - 1.6,
+        z: -5,
       });
       tier.items.forEach((item, i) => {
         const model: ModelKind =
@@ -188,8 +209,8 @@ export function architectureLayout(
           title: item,
           detail: `${tier.title} · ${tier.power} · ${tier.description}`,
           model,
-          x: n > 0 && i === 0 ? x + 1.3 : x,
-          z: n === 0 ? 1 : i === 0 ? -4.5 : i === 1 ? 0 : 3.5,
+          x: n > 0 && i === 0 ? x + 1.6 : x,
+          z: n === 0 ? 3 : i === 0 ? -5 : i === 1 ? -1 : 3,
         });
         if (i) link(`${n}-${i - 1}`, `${n}-${i}`, "power", i === 1);
         if (i === (n === 0 ? 0 : 1)) link(`${n}-grid`, `${n}-${i}`);
@@ -215,15 +236,15 @@ export function architectureLayout(
         title: text.grid,
         detail,
         model: "grid",
-        x: x - 1.4,
-        z: -5,
+        x: x - 1.6,
+        z: -4.5,
       });
       nodes.push({
         id: `${n}-bus`,
         title: text.bus,
         detail: text.busDetail,
         model: "busbar",
-        x: x - 1.4,
+        x: x - 1.6,
         z: 0,
       });
       nodes.push({
@@ -231,7 +252,7 @@ export function architectureLayout(
         title: column.subtitle,
         detail,
         model: "factory",
-        x: x - 1.4,
+        x: x - 1.6,
         z: 4.5,
         scale: 0.75 + n * 0.15,
       });
@@ -240,7 +261,7 @@ export function architectureLayout(
         title: column.items[column.items.length - 1],
         detail: n < 2 ? `${detail} · ${text.integrated}` : detail,
         model: "battery",
-        x: x + 1.7,
+        x: x + 1.6,
         z: 4.5,
       });
       link(`${n}-bus`, `${n}-load`);
@@ -250,8 +271,8 @@ export function architectureLayout(
           title: text.siteTransformer,
           detail,
           model: "transformer",
-          x: x - 1.4,
-          z: -2.5,
+          x: x + 1.6,
+          z: -4.5,
         });
         link(`${n}-grid`, `${n}-transformer`);
         link(`${n}-transformer`, `${n}-bus`);
@@ -262,7 +283,7 @@ export function architectureLayout(
           title: column.items[0],
           detail: text.converterDetail,
           model: "transformer",
-          x: x + 1.7,
+          x: x + 1.6,
           z: 0,
         });
         link(`${n}-battery`, `${n}-pcs`, "power", true);
@@ -271,5 +292,18 @@ export function architectureLayout(
     });
   }
 
+  if (architecture.kind === "tiers" || architecture.kind === "scale") {
+    for (const edge of links) {
+      const from = nodes.find((node) => node.id === edge.from)!;
+      const to = nodes.find((node) => node.id === edge.to)!;
+      if (from.x !== to.x && from.z !== to.z) {
+        const laneZ = (from.z + to.z) / 2;
+        edge.via = [
+          [from.x, 0.25, laneZ],
+          [to.x, 0.25, laneZ],
+        ];
+      }
+    }
+  }
   return { nodes, links };
 }
