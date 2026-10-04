@@ -23,6 +23,8 @@ export type SceneNode = {
   x: number;
   z: number;
   scale?: number;
+  batteryForm?: "cabinet" | "wide-cabinet";
+  rating?: string;
   items?: string[];
 };
 export type SceneLink = {
@@ -261,6 +263,9 @@ export function architectureLayout(
         title: column.items[column.items.length - 1],
         detail: n < 2 ? `${detail} · ${text.integrated}` : detail,
         model: "battery",
+        batteryForm: n === 0 ? "cabinet" : n === 1 ? "wide-cabinet" : undefined,
+        rating:
+          n === 0 ? "125 kW / 261 kWh" : n === 1 ? "200 kW / 418 kWh" : "5 MWh",
         x: x + 1.6,
         z: 4.5,
       });

@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import type { ModelKind } from "./layout";
+import type { ModelKind, SceneNode } from "./layout";
 
 export const palette = {
   shell: 0x729ba6,
@@ -73,7 +73,10 @@ function cabinet(g: THREE.Group, x: number, z: number, height = 1.4) {
   );
   box(g, [0.035, 0.25, 0.045], [x + 0.29, 0.83, z + 0.51], palette.light);
 }
-export function createModel(kind: ModelKind): {
+export function createModel(
+  kind: ModelKind,
+  options?: Pick<SceneNode, "batteryForm" | "rating">,
+): {
   group: THREE.Group;
   animate?: (time: number) => void;
 } {
@@ -149,6 +152,19 @@ export function createModel(kind: ModelKind): {
       for (const x of [-0.9, 0.9])
         rod(g, [x, y, 0], [x, y - 0.27, 0], 0.065, palette.accent);
     }
+  } else if (kind === "battery" && options?.batteryForm) {
+    // Schematic cabinet silhouettes, not dimensioned product CAD.
+    const wide = options.batteryForm === "wide-cabinet";
+    if (wide) {
+      cabinet(g, -0.48, 0, 2.05);
+      cabinet(g, 0.48, 0, 2.05);
+    } else cabinet(g, 0, 0, 1.85);
+    box(
+      g,
+      [wide ? 2 : 1.05, 0.09, 1.04],
+      [0, wide ? 2.24 : 2.04, 0],
+      palette.light,
+    );
   } else if (kind === "battery") {
     box(g, [2.35, 1.35, 1.45], [0, 0.82, 0], palette.shell);
     for (let i = 0; i < 13; i++) {
@@ -273,6 +289,31 @@ export function createModel(kind: ModelKind): {
       box(g, [0.23, 0.26, 0.03], [-0.8 + i * 0.39, 1, 0.79], palette.cyan);
     box(g, [0.48, 0.65, 0.04], [0.5, 0.47, 0.81], palette.deep);
     rod(g, [-0.7, 1.35, -0.5], [-0.7, 2.15, -0.5], 0.14, palette.light);
+  }
+  if (options?.rating) {
+    const canvas = document.createElement("canvas");
+    canvas.width = 768;
+    canvas.height = 128;
+    const ctx = canvas.getContext("2d")!;
+    ctx.fillStyle = "#102a36";
+    ctx.fillRect(0, 0, 768, 128);
+    ctx.strokeStyle = "#6ee0b0";
+    ctx.lineWidth = 5;
+    ctx.strokeRect(3, 3, 762, 122);
+    ctx.fillStyle = "#dcfff0";
+    ctx.font = "bold 54px sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(options.rating, 384, 66);
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    const label = new THREE.Sprite(
+      new THREE.SpriteMaterial({ map: texture, depthTest: false }),
+    );
+    label.position.set(0, options.batteryForm ? 2.65 : 1.95, 0);
+    label.scale.set(3.1, 0.52, 1);
+    label.renderOrder = 10;
+    g.add(label);
   }
   return { group: g, animate };
 }

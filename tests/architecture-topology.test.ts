@@ -130,3 +130,18 @@ test("repeated equipment shares an identifier without merging independent statio
   for (const edge of graph.links)
     assert.equal(edge.from.split("-")[0], edge.to.split("-")[0]);
 });
+
+test("commercial storage distinguishes rated cabinets from the DC container", () => {
+  const graph = layout("commercial");
+  const storage = [0, 1, 2].map(
+    (n) => graph.nodes.find((node) => node.id === `${n}-battery`)!,
+  );
+  assert.deepEqual(
+    storage.map((n) => n.batteryForm),
+    ["cabinet", "wide-cabinet", undefined],
+  );
+  assert.deepEqual(
+    storage.map((n) => n.rating),
+    ["125 kW / 261 kWh", "200 kW / 418 kWh", "5 MWh"],
+  );
+});

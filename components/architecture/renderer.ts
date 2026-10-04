@@ -99,7 +99,7 @@ export function mountArchitecture(
   const animations: ((time: number) => void)[] = [];
   const rings: THREE.Mesh[] = [];
   layout.nodes.forEach((node, index) => {
-    const model = createModel(node.model);
+    const model = createModel(node.model, node);
     model.group.position.set(node.x, 0, node.z);
     model.group.scale.setScalar(node.scale ?? 1);
     model.group.userData.index = index;
